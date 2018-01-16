@@ -30,7 +30,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         
     },
     handleLoginRoute:function(){
-        debugger
+        //debugger
         var session = this.session;
         if(session&&session.isValid()){
             this.redirectTo('',{required:true});

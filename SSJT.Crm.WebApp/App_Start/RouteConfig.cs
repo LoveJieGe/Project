@@ -21,7 +21,7 @@ namespace SSJT.Crm.WebApp
             //routes.MapRoute(
             //    name: "Default",
             //    url: "Main",
-            //    defaults: "Main"
+            //    defaults: ""
             //);
         }
     }

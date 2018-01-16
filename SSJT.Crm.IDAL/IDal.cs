@@ -89,6 +89,10 @@ namespace SSJT.Crm.IDAL
 	{
 
 	}
+    public partial interface ISessionInfoDal:IBaseDal<Model.SessionInfo>
+	{
+
+	}
     public partial interface ISysAppDal:IBaseDal<Model.SysApp>
 	{
 

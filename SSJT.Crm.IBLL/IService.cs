@@ -89,6 +89,10 @@ namespace SSJT.Crm.IBLL
 	{
 
 	}
+    public partial interface ISessionInfoService:IBaseService<Model.SessionInfo>
+	{
+
+	}
     public partial interface ISysAppService:IBaseService<Model.SysApp>
 	{
 

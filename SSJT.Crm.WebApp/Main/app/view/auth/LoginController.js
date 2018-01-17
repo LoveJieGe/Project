@@ -15,12 +15,11 @@ Ext.define('SSJT.view.auth.LoginController', {
         var me = this,
             form = me.lookup('form'),
             values = form.getValues();
-
         form.clearErrors();
-
-        Ext.Viewport.setMasked({ xtype: 'loadmask' });
-
-        App.model.Session.login(values.username, values.password)
+        if(form.validate()){
+            
+            Ext.Viewport.setMasked({ xtype: 'loadmask' });
+            App.model.Session.login(values.username, values.password)
             .then(function(session) {
                 me.fireEvent('login', session);
             })
@@ -30,5 +29,6 @@ Ext.define('SSJT.view.auth.LoginController', {
             .then(function(session) {
                 Ext.Viewport.setMasked(false);
             });
+        }
     }
 });

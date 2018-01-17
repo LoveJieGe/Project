@@ -16,19 +16,21 @@ Ext.define('SSJT.view.auth.Login', {
         cls: 'auth-header',
         html:
             '<span class="logo x-fa fa-circle-o-notch"></span>'+
-            //'<div class="title">ËÎÊ·¼¯ÍÅ</div>'+
+            //'<div class="title">ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½</div>'+
             '<div class="caption">CRMÏµÍ³</div>'
     }, {
         xtype: 'formpanel',
         reference: 'form',
         layout: 'vbox',
         ui: 'auth',
-
+        bodyStyle:{
+            background:'#fff'
+        },
         items: [{
             xtype: 'textfield',
             name: 'username',
             placeholder: 'Username',
-            required: true
+            required: true,
         }, {
             xtype: 'passwordfield',
             name: 'password',
@@ -36,7 +38,7 @@ Ext.define('SSJT.view.auth.Login', {
             required: true
         }, {
             xtype: 'button',
-            text: 'µÇÂ¼',
+            text: 'ï¿½ï¿½Â¼',
             iconAlign: 'right',
             iconCls: 'x-fa fa-angle-right',
             handler: 'onLoginTap',

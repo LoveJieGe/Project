@@ -1,14 +1,13 @@
-/**
+﻿/**
  * 通用 帮助类
- * @author jiangwei
  */
-Ext.define('MX.util.Utils', {
+Ext.define('Utils.util.Utils', {
     alternateClassName: 'Utils',
     singleton: true,
     requires: [
         'Ext.Toast',
         'Ext.MessageBox',
-        'MX.model.ValueText'
+        //'MX.model.ValueText'
     ],
 
     /**
@@ -843,7 +842,8 @@ Ext.define('MX.util.Utils', {
     },
 
     /**
-     * 时间 转 几分钟前
+     * 时间 转 刚刚、几分钟前、几小时前、几天前、今天 10:30、昨天 18:55 等
+     * 太久就显示为 01-15 11:12、2017-10-05 15:47
      * @param {Date} date
      * @param {Boolean} withTime 带上时间?
      * @param {String} unit 几x前，x精确到什么单位
@@ -882,6 +882,65 @@ Ext.define('MX.util.Utils', {
         }
 
         return Ext.util.Format.date(date, isThisYear ? 'm-d' : 'Y-m-d') + timeStr;
+    },
+
+    /**
+     * 时间 转 消逝
+     * 刚刚、几分钟前、几小时前、几天零几小时前、几周零几天前、几个月零几天前、几年零几个月前
+     * @param {Number/Date} date 时间
+     * @return {String}
+     */
+    datetime2Elapse(date) {
+        if (!date) return '';
+        const me = this,
+            now = Date.now(),
+            floor = Math.floor,
+            part = me._elapsePart;
+
+        var seconds = floor((now - date) / 1000),
+            minutes = floor(seconds / 60),
+            hours = floor(minutes / 60),
+            days = floor(hours / 24),
+            weeks = floor(days / 7),
+            months = floor(days / 30),
+            years = floor(days / 365),
+            ret1, ret2;
+
+        months %= 12;
+        weeks %= 52;
+        days %= 365;
+        hours %= 24;
+        minutes %= 60;
+        seconds %= 60;
+
+        if (years) {
+            ret1 = part(years, '年');
+            ret2 = part(months, '个月');
+        } else if (months) {
+            ret1 = part(months, '个月');
+            ret2 = part(days, '天');
+        } else if (weeks) {
+            ret1 = part(weeks, '周');
+            ret2 = part(days, '天');
+        } else if (days) {
+            ret1 = part(days, '天');
+            ret2 = part(hours, '小时');
+        } else if (hours) {
+            ret1 = part(hours, '小时');
+        } else if (minutes) {
+            ret1 = part(minutes, '分钟');
+        } else {
+            return '刚刚';
+        }
+
+        if (!ret2) return `${ret1}前`;
+
+        return `${ret1}零${ret2}前`;
+    },
+    _elapsePart(value, type, gap) {
+        const ret = value ? `${(gap || '') + value}${type}` : '';
+
+        return ret;
     },
 
     /**

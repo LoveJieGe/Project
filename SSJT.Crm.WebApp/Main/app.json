@@ -19,8 +19,8 @@
         "package-loader",
         "font-awesome",
         "modern-locale",
-        "MX",
-        "Common"
+        "Common",
+        "Utils"
     ],
     "locale":"zh_CN",
     /**

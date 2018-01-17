@@ -2,7 +2,7 @@
     /**
      * The name of the package.
      */
-    "name": "MX",
+    "name": "Utils",
 
     "sencha": {
         /**
@@ -17,7 +17,7 @@
           * As a general rule, all classes that belong to this package should be under this namespace
           * if multiple namespaces are part of this package, set this to "".
           */
-         "namespace": "MX",
+         "namespace": "Utils",
 
         /**
          * The package type.
@@ -115,15 +115,15 @@
         "sass" : {
             /**
              * The namespace to which this package's SASS corresponds. The default value of
-             * "MX" means that the files in ./sass/src (and ./sass/var) match classes in
-             * the MX" root namespace. In other words, "MX.panel.Panel" maps to
+             * "Utils" means that the files in ./sass/src (and ./sass/var) match classes in
+             * the Utils" root namespace. In other words, "Utils.panel.Panel" maps to
              * ./sass/src/panel/Panel.scss.
              *
              * To style classes from any namespace, set this to blank. If this is blank,
-             * then to style "MX.panel.Panel" you would put SASS in
-             * ./sass/src/MX/panel/Panel.scss.
+             * then to style "Utils.panel.Panel" you would put SASS in
+             * ./sass/src/Utils/panel/Panel.scss.
              */
-            "namespace": "MX",
+            "namespace": "Utils",
 
             /**
              * Comma-separated list of files or folders containing extra Sass. These

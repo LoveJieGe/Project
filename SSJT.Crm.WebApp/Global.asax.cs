@@ -20,7 +20,7 @@ namespace SSJT.Crm.WebApp
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            if (Context.Request.FilePath != "/"&& Context.Request.FilePath != "/Home") Context.Response.Redirect("/Home");
+            //if (Context.Request.FilePath != "/"&& Context.Request.FilePath != "/Home") Context.Response.Redirect("/Home");
         }
     }
 }

@@ -148,6 +148,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidateCode.ashx.cs">
+      <DependentUpon>ValidateCode.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -6728,6 +6731,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="ValidateCode.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6747,6 +6751,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SSJT.Crm.Common\SSJT.Crm.Common.csproj">
+      <Project>{a464abbe-68f9-43c2-9b3e-aa677cfc2f7b}</Project>
+      <Name>SSJT.Crm.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SSJT.Crm.Model\SSJT.Crm.Model.csproj">
       <Project>{5ef9ec4d-0cdc-40f5-aa76-9fa994d6a87e}</Project>
       <Name>SSJT.Crm.Model</Name>

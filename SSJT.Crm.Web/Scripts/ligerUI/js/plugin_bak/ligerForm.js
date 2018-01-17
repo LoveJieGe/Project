@@ -1,0 +1,1 @@
+(function(A){A.fn.ligerFrom=function(B){B=B||{};return this.each(function(){A(":text[ltype=text]",this).ligerTextBox();A("select",this).ligerComboBox();A(":text[ltype=int]",this).ligerSpinner({type:"int"});A(":text[ltype=date]",this).ligerDateEditor();A("input:radio",this).ligerRadio();A("input:checkbox",this).ligerCheckBox()})}})(jQuery);

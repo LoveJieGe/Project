@@ -43,7 +43,11 @@
     <Compile Include="DataAccess\ICrmContact.cs" />
     <Compile Include="DataAccess\IHrEmployee.cs" />
     <Compile Include="IBaseDal.cs" />
-    <Compile Include="IDal.cs" />
+    <Compile Include="IDal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IDal.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +58,12 @@
       <Project>{5ef9ec4d-0cdc-40f5-aa76-9fa994d6a87e}</Project>
       <Name>SSJT.Crm.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IDal.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IDal.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

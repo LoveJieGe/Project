@@ -4,10 +4,11 @@ Ext.define('SSJT.view.auth.LoginController', {
 
     init: function() {
         this.callParent(arguments);
-        this.lookup('form').setValues({
-            username: 'norma.flores',
-            password: 'wvyrEDvxI'
-        });
+        //this.lookup('form').setValues({
+        //    username: 'norma.flores',
+        //    password: 'wvyrEDvxI'
+        //});
+        console.log("/path");
     },
 
     onLoginTap: function() {

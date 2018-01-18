@@ -3,7 +3,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     alias:'controller.viewport',
     required:[
         'Ext.Package',
-        'Utils.util.Utils'
     ],
     listen:{
         controller:{
@@ -19,26 +18,18 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     onLaunch:function(){
         this.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
-        Ext.route.Router.suspend();
-        Ext.Ajax.request({
-            url:'/handler/login/Login.ashx',
-            method:'Post',
-            success(r){
-                console.log('成功')
+        //Ext.route.Router.suspend();
+        Utils.ajax('ajax/OA.UserAuth/CurrentUserInfo', {
+            success(r) {
+                console.log('已经是登录状态', r);
+                me.onUser(r);
             },
-            failure(r){
-                console.log('失败')
-            }
-        })
-        // Utils.ajax('/handler/login/Login.ashx',{
-        //     success(data){
-        //         console.log('登陆成功')
-        //     },
-        //     callBack(){
-
-        //     },
-        //     maskTarget:false
-        // })
+            callback() {
+                Ext.getBody().removeCls('launching');
+            },
+            maskTarget: false
+        });
+       
     },
     handleUnmatchedRoute:function(route){
         var me = this;

@@ -7,12 +7,7 @@ Ext.application({
 
     name: 'SSJT',
 
-    requires: [
-        // This will automatically load all classes in the SSJT namespace
-        // so that application classes do not need to require each other.
-        'SSJT.*'
-    ],
-
+   
     // The name of the initial view to create.
     //mainView: 'SSJT.view.main.Main'
 });

@@ -147,6 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ApiHandler\Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidateCode.ashx.cs">
       <DependentUpon>ValidateCode.ashx</DependentUpon>
@@ -5191,8 +5194,10 @@
     <Content Include="Main\packages\local\modern-locale\sass\example\fashion.html" />
     <Content Include="Main\packages\local\theme-default\build.xml" />
     <Content Include="Main\packages\local\theme-default\overrides\init.js" />
-    <Content Include="Main\packages\local\Utils\build.xml" />
-    <Content Include="Main\packages\local\Utils\src\util\Utils.js" />
+    <Content Include="Main\packages\local\Util\build.xml" />
+    <Content Include="Main\packages\local\Util\src\model\ValueText.js" />
+    <Content Include="Main\packages\local\Util\src\util\Config.js" />
+    <Content Include="Main\packages\local\Util\src\util\Utils.js" />
     <Content Include="Main\resources\config.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -6676,19 +6681,20 @@
     <Content Include="Main\Readme.md" />
     <Content Include="Main\resources\Readme.md" />
     <Content Include="Main\workspace.json" />
-    <Content Include="Main\packages\local\Utils\examples\Readme.md" />
-    <Content Include="Main\packages\local\Utils\licenses\Readme.md" />
-    <Content Include="Main\packages\local\Utils\overrides\Readme.md" />
-    <Content Include="Main\packages\local\Utils\package.json" />
-    <Content Include="Main\packages\local\Utils\Readme.md" />
-    <Content Include="Main\packages\local\Utils\resources\Readme.md" />
-    <Content Include="Main\packages\local\Utils\sass\config.rb" />
-    <Content Include="Main\packages\local\Utils\sass\etc\all.scss" />
-    <Content Include="Main\packages\local\Utils\sass\etc\Readme.md" />
-    <Content Include="Main\packages\local\Utils\sass\Readme.md" />
-    <Content Include="Main\packages\local\Utils\sass\src\Readme.md" />
-    <Content Include="Main\packages\local\Utils\sass\var\Readme.md" />
-    <Content Include="Main\packages\local\Utils\src\Readme.md" />
+    <Content Include="ApiHandler\Login.ashx" />
+    <Content Include="Main\packages\local\Util\examples\Readme.md" />
+    <Content Include="Main\packages\local\Util\licenses\Readme.md" />
+    <Content Include="Main\packages\local\Util\overrides\Readme.md" />
+    <Content Include="Main\packages\local\Util\package.json" />
+    <Content Include="Main\packages\local\Util\Readme.md" />
+    <Content Include="Main\packages\local\Util\resources\Readme.md" />
+    <Content Include="Main\packages\local\Util\sass\config.rb" />
+    <Content Include="Main\packages\local\Util\sass\etc\all.scss" />
+    <Content Include="Main\packages\local\Util\sass\etc\Readme.md" />
+    <Content Include="Main\packages\local\Util\sass\Readme.md" />
+    <Content Include="Main\packages\local\Util\sass\src\Readme.md" />
+    <Content Include="Main\packages\local\Util\sass\var\Readme.md" />
+    <Content Include="Main\packages\local\Util\src\Readme.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -16,10 +16,9 @@
      *      ]
      */
     "requires": [
-        "package-loader",
         "font-awesome",
         "modern-locale",
-        "Utils"
+        "Util"
     ],
     "locale":"zh_CN",
     /**

@@ -1,7 +1,7 @@
 $app-name:  dynamic( 'SSJT' );
 $image-search-path: 'F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/build/production/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
-$include-common-util-user: dynamic(true);;
+$include-config: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(false);;
 $include-ext-abstractmanager: dynamic(false);;
 $include-ext-abstractplugin: dynamic(true);;
@@ -53,7 +53,6 @@ $include-ext-mixin: dynamic(true);;
 $include-ext-modelmgr: dynamic(false);;
 $include-ext-navigationview: dynamic(false);;
 $include-ext-nestedlist: dynamic(false);;
-$include-ext-package: dynamic(false);;
 $include-ext-panel: dynamic(true);;
 $include-ext-perf: dynamic(false);;
 $include-ext-picker: dynamic(true);;
@@ -613,7 +612,6 @@ $include-ext-overrides-app-application: dynamic(true);;
 $include-ext-overrides-dom-element: dynamic(true);;
 $include-ext-overrides-list-tree: dynamic(false);;
 $include-ext-overrides-list-treeitem: dynamic(false);;
-$include-ext-package-entry: dynamic(false);;
 $include-ext-panel-collapser: dynamic(false);;
 $include-ext-panel-collapsible: dynamic(false);;
 $include-ext-panel-date: dynamic(true);;
@@ -761,8 +759,6 @@ $include-ext-viewport-viewport: dynamic(true);;
 $include-ext-viewport-wp: dynamic(true);;
 $include-ext-viewport-windowsphone: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
-$include-mx-model-valuetext: dynamic(true);;
-$include-mx-util-utils: dynamic(true);;
 $include-ssjt-application: dynamic(true);;
 $include-ssjt-model-base: dynamic(true);;
 $include-ssjt-model-personnel: dynamic(true);;
@@ -777,7 +773,9 @@ $include-ssjt-view-main-main: dynamic(true);;
 $include-ssjt-view-main-maincontroller: dynamic(true);;
 $include-ssjt-view-main-mainmodel: dynamic(true);;
 $include-ssjt-view-viewport-viewportcontroller: dynamic(true);;
-$include-user: dynamic(true);;
+$include-util-model-valuetext: dynamic(true);;
+$include-util-util-config: dynamic(true);;
+$include-util-util-utils: dynamic(true);;
 $include-utils: dynamic(true);;
 $output-paths: ("path": "../resources");
 
@@ -839,21 +837,13 @@ $current-resource-root: $theme-default-resource-root;
 $relative-image-path-for-uis: $theme-default-resource-path;
 @import '../../../../../packages/local/theme-default/sass/etc/all';
 
-/* including package MX */
-$MX-resource-root: 'MX' !default;
-$MX-resource-path: 'MX/images' !default;
-$current-package: 'MX';
-$current-resource-root: $MX-resource-root;
-$relative-image-path-for-uis: $MX-resource-path;
-@import '../../../../../packages/local/MX/sass/etc/all';
-
-/* including package Common */
-$Common-resource-root: 'Common' !default;
-$Common-resource-path: 'Common/images' !default;
-$current-package: 'Common';
-$current-resource-root: $Common-resource-root;
-$relative-image-path-for-uis: $Common-resource-path;
-@import '../../../../../packages/Common/sass/etc/all';
+/* including package Util */
+$Util-resource-root: 'Util' !default;
+$Util-resource-path: 'Util/images' !default;
+$current-package: 'Util';
+$current-resource-root: $Util-resource-root;
+$relative-image-path-for-uis: $Util-resource-path;
+@import '../../../../../packages/local/Util/sass/etc/all';
 
 
 /* ======================== VAR ======================== */
@@ -1182,14 +1172,6 @@ $relative-image-path-for-uis: $theme-default-resource-path;
 @import '../../../../../packages/local/theme-default/sass/src/grid/column/Column';
 @import '../../../../../packages/local/theme-default/sass/src/tab/Panel';
 
-/* including scss file adjacent to ..\..\..\..\..\app\Application.js */
-$default-resource-root: '' !default;
-$default-resource-path: 'images' !default;
-$current-package: false;
-$current-resource-root: $default-resource-root;
-$relative-image-path-for-uis: $default-resource-path;
-@import '../../../../../app/Application';
-
 /* including scss file adjacent to ..\..\..\..\..\app\view\auth\Login.js */
 $default-resource-root: '' !default;
 $default-resource-path: 'images' !default;
@@ -1213,3 +1195,11 @@ $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/main/List';
+
+/* including scss file adjacent to ..\..\..\..\..\app\Application.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/Application';

@@ -5,9 +5,13 @@
  */
 Ext.define('SSJT.Application', {
     extend: 'Ext.app.Application',
-
     name: 'SSJT',
-
+    requires: [
+        // This will automatically load all classes in the SSJT namespace
+        // so that application classes do not need to require each other.
+        'SSJT.*',
+        'Util.*'
+    ],
     quickTips: false,
     platformConfig: {
         desktop: {
@@ -20,6 +24,9 @@ Ext.define('SSJT.Application', {
     },
     launch:function(profile){
         Ext.Viewport.getController().onLaunch();
+    },
+    getClientInfo:function(){
+        return null;
     },
     onAppUpdate: function () {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',

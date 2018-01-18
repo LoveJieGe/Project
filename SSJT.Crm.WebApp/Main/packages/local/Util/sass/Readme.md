@@ -1,7 +1,7 @@
-# Utils/sass
+# Util/sass
 
 This folder contains SASS files of various kinds, organized in sub-folders:
 
-    Utils/sass/etc
-    Utils/sass/src
-    Utils/sass/var
+    Util/sass/etc
+    Util/sass/src
+    Util/sass/var

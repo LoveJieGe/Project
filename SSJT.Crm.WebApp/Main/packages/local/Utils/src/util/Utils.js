@@ -14,7 +14,7 @@ Ext.define('Utils.util.Utils', {
      * 常用正则
      */
     regex: {
-        url: /^(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-/]))?$/i
+        url: /(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$/i
     },
 
     /**
@@ -26,17 +26,11 @@ Ext.define('Utils.util.Utils', {
     },
 
     /**
-     * 当前是否是development模式
+     * 当前是否是开发模式
+     *  development/production
      * @property {Boolean}
      */
-    isDev: Ext.manifest.env === 'development', // development/production
-
-    /**
-     * 当前是否是web访问
-     * @property {Boolean}
-     */
-    isWeb: location.href.indexOf('http') == 0,
-
+    isDev: Ext.manifest.env === 'development', 
     /**
      * 获取应用程序的实例
      * @return {Ext.app.Application}
@@ -69,12 +63,11 @@ Ext.define('Utils.util.Utils', {
     /**
      * 获取localStorage存储的key，前面加上<AppName>-
      * @param  {String} key 原始key
-     * @return {String}     前面加了<AppName>-的key
+     * @return {String}     <AppName>-key
      */
-    getLsKey(key) {
+    geLocalStorageKey(key) {
         if (Ext.isEmpty(key)) return '';
-
-        return `${this.getAppName()}-${key}`;
+        return this.getAppName()+'-'+key;
     },
 
     /**
@@ -82,8 +75,8 @@ Ext.define('Utils.util.Utils', {
      * @param  {String} key 键
      * @return {String}     值
      */
-    getLsItem(key) {
-        return localStorage.getItem(this.getLsKey(key));
+    getLocalStorageItem(key) {
+        return localStorage.getItem(this.geLocalStorageKey(key));
     },
 
     /**
@@ -91,16 +84,16 @@ Ext.define('Utils.util.Utils', {
      * @param  {String} key 键
      * @param  {String} value 值
      */
-    setLsItem(key, value) {
-        localStorage.setItem(this.getLsKey(key), value);
+    setLocalStorageItem(key, value) {
+        localStorage.setItem(this.geLocalStorageKey(key), value);
     },
 
     /**
      * 根据key移除localStorage的值
      * @param  {String} key 键
      */
-    removeLsItem(key) {
-        localStorage.removeItem(this.getLsKey(key));
+    removeLocalStorageItem(key) {
+        localStorage.removeItem(this.geLocalStorageKey(key));
     },
 
     /** **************************路由跳转********************************/
@@ -211,16 +204,6 @@ Ext.define('Utils.util.Utils', {
     _handleOptions(options) {
         const me = this;
         options = options || {};
-
-        // 进度条
-        /* if (options.loadTarget !== false) {
-            if (Ext.isEmpty(options.loadTarget) || options.loadTarget === true) {
-                options.loadTarget = Ext.Viewport;
-            } else if (Ext.isString(options.loadTarget)) {
-                options.loadTarget = Ext.getCmp(options.loadTarget);
-            }
-        }*/
-
         // 遮罩层
         if (options.maskTarget) {
             if (options.maskTarget == true) {
@@ -254,12 +237,6 @@ Ext.define('Utils.util.Utils', {
             delete options.data;
         }
         options.params = Ext.apply({}, options.params, this.getApp().getClientInfo());
-
-        // 此ajax请求所关联的component控件，使得控件在destroy时可以abort终止该请求
-        if (!options.ajaxHost || !options.ajaxHost.isComponent || options.ajaxHost.isDestroying) {
-            delete options.ajaxHost;
-        }
-
         return options;
     },
 

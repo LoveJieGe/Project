@@ -5,7 +5,7 @@
     "framework": "ext",
     "toolkit": "modern",
     "theme": "theme-default",
-
+    "env":"{$build.environment}",
     /**
      * The list of required packages (with optional versions; default is "latest").
      *
@@ -19,7 +19,6 @@
         "package-loader",
         "font-awesome",
         "modern-locale",
-        "Common",
         "Utils"
     ],
     "locale":"zh_CN",

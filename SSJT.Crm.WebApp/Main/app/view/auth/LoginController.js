@@ -29,6 +29,7 @@ Ext.define('SSJT.view.auth.LoginController', {
             .then(function(session) {
                 Ext.Viewport.setMasked(false);
             });
+        }
     },
     onChangeValidate:function(sender,e){
         sender.setSrc('ValidateCode.ashx?_dc='+new Date().getTime());

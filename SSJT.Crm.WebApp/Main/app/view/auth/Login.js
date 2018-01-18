@@ -23,6 +23,9 @@ Ext.define('SSJT.view.auth.Login', {
         reference: 'form',
         layout: 'vbox',
         ui: 'auth',
+        bodyStyle:{
+            background:'#fff'
+        },
         items: [{
             xtype: 'textfield',
             name: 'username',

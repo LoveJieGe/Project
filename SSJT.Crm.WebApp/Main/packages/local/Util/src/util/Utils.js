@@ -89,12 +89,6 @@ Ext.define('Util.util.Utils',{
             delete options.data;
         }
         options.params = Ext.apply({}, options.params, this.getApp().getClientInfo());
-
-        // 此ajax请求所关联的component控件，使得控件在destroy时可以abort终止该请求
-        if (!options.ajaxHost || !options.ajaxHost.isComponent || options.ajaxHost.isDestroying) {
-            delete options.ajaxHost;
-        }
-
         return options;
     },
 
@@ -105,6 +99,7 @@ Ext.define('Util.util.Utils',{
     joinPath() {
         let result = '';
         Ext.each(Array.prototype.slice.call(arguments), function (str) {
+            debugger
             if (!Ext.isEmpty(str)) {
                 while (!Ext.isEmpty(result) && result[result.length - 1] == '/') {
                     result = result.substr(0, result.length - 1);

@@ -23,7 +23,9 @@ Ext.define('SSJT.Application', {
         controller:'viewport'
     },
     launch:function(profile){
+        var dev = Config.isDev;
         Ext.Viewport.getController().onLaunch();
+       
     },
     getClientInfo:function(){
         return null;

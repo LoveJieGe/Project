@@ -14,6 +14,8 @@ namespace SSJT.Crm.WebApp.ApiHandler
 
         public void ProcessRequest(HttpContext context)
         {
+
+            string data = context.Request["data"];
             context.Response.ContentType = "text/plain";
             context.Response.Write("Hello World");
         }

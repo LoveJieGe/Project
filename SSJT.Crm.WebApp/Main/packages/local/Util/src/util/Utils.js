@@ -207,6 +207,7 @@ Ext.define('Util.util.Utils',{
                 }
             },
             failure(r, op) {
+                debugger
                 let err = r.responseText;
                 if (!Ext.isEmpty(err)) {
                     try {

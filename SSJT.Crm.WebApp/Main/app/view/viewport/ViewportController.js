@@ -19,7 +19,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
         //Ext.route.Router.suspend();
-        Utils.ajax('Handler/Login.ashx', {
+        Utils.ajax('ApiHandler/Login.ashx', {
             success(r) {
                 console.log('已经是登录状态', r);
                 me.onUser(r);

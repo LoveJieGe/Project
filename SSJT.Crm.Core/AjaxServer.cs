@@ -6,24 +6,57 @@ using System.Threading.Tasks;
 using SSJT.Crm.Core.AjaxRequest;
 using System.Reflection;
 using System.ComponentModel;
+using System.Collections;
 
 namespace SSJT.Crm.Core
 {
     public class AjaxServer
     {
-        public AjaxMethod GetAjaxMethod(string className,string methodName)
+        private static Hashtable methodList = Hashtable.Synchronized(new Hashtable());
+        private static object lockObject = new object();
+        /// <summary>
+        /// 获取请求的Ajax 的方法的信息
+        /// </summary>
+        /// <param name="className"></param>
+        /// <param name="methodName"></param>
+        /// <returns></returns>
+        public static AjaxMethod GetAjaxMethod(string className,string methodName)
         {
-            string 
+            string key = string.Format("{0}.{1}", className, methodName);
+            if (!methodList.Contains(key))
+            {
+                lock (lockObject)
+                {
+                    AjaxMethod method = new AjaxMethod();
+                    Type type = Type.GetType(className);
+                    method.MethodInfo = Ajaxhelper.GetMethodInfo(type, methodName);
+                    SetAjaxMethod(method, method.MethodInfo);
+                    methodList.Add(key, method);
+                }
+            }
+            return (AjaxMethod)methodList[key];
         }
-        public void SetAjaxMethod(AjaxMethod method, MethodInfo methodInfo)
+        private static void SetAjaxMethod(AjaxMethod method, MethodInfo methodInfo)
         {
+            if (!methodInfo.DeclaringType.IsDefined(typeof(AjaxClassAttribute)))
+                throw new Exception(string.Format("无效的类[{0}]", methodInfo.DeclaringType));
             if (!methodInfo.IsDefined(typeof(AjaxMethodAttribute), true))
                 throw new Exception(string.Format("方法[{0}]不是AjaxMethod标记方法", methodInfo.Name));
+            method.DeclaringType = methodInfo.DeclaringType;
             method.MethodInfo = methodInfo;
             method.ReturnType = methodInfo.ReturnType;
             if (methodInfo.IsDefined(typeof(DescriptionAttribute), true))
                 method.Description = methodInfo.GetCustomAttribute<DescriptionAttribute>(true).Description;
-            method.DeclaringType = methodInfo.DeclaringType;
+        }
+        /// <summary>
+        /// 获取类的实例
+        /// </summary>
+        /// <param name="fullClassName"></param>
+        public static object GetInstance(string fullClassName)
+        {
+            Type type = Type.GetType(fullClassName);
+            object instance = Activator.CreateInstance(type);
+            return instance;
         }
     }
 }

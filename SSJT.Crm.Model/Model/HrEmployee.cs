@@ -13,7 +13,7 @@ namespace SSJT.Crm.Model
 		private int _id;
 		private string _uid;
 		private string _pwd;
-		private string _name;
+		private string _uname;
 		private string _cardid;
 		private string _birthday;
 		private int? _did;
@@ -33,15 +33,15 @@ namespace SSJT.Crm.Model
 		private string _education;
 		private string _levels;
 		private string _professional;
-		private int? _isdelete;
+		private string _isdelete;
 		private DateTime? _deletetime;
 		private byte[] _portal;
 		private string _theme;
-		private int? _canlogin;
+		private string _canlogin;
 		/// <summary>
 		/// 
 		/// </summary>
-		public int id
+		public int Id
 		{
 			set{ _id=value;}
 			get{return _id;}
@@ -65,10 +65,10 @@ namespace SSJT.Crm.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Name
+		public string UName
 		{
-			set{ _name=value;}
-			get{return _name;}
+			set{ _uname = value;}
+			get{return _uname; }
 		}
 		/// <summary>
 		/// 
@@ -225,7 +225,7 @@ namespace SSJT.Crm.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public int? IsDelete
+		public string IsDelete
 		{
 			set{ _isdelete=value;}
 			get{return _isdelete;}
@@ -257,7 +257,7 @@ namespace SSJT.Crm.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public int? CanLogin
+		public string CanLogin
 		{
 			set{ _canlogin=value;}
 			get{return _canlogin;}

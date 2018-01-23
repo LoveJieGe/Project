@@ -6,40 +6,19 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSJT.Crm.Test
+namespace SSJT.Crm.DBUtility
 {
-    class Program
+    public sealed class SafeHelper
     {
-
-        static void Main(string[] args)
-        {
-            string key = "Admin";
-
-            string source = "123456";
-
-            Console.WriteLine("Source  string: " + source);
-
-            string encryptStr = EncryptDES(source, key);
-            Console.WriteLine("Encrypt string: " + encryptStr);
-
-            string decryptStr = DecryptDES(encryptStr, key);
-            Console.WriteLine("Decrypt string: " + decryptStr);
-
-            Console.ReadKey();
-        }
-
         /// <summary>
         /// 进行DES加密
         /// </summary>
         /// <param name="pToEncrypt">要加密的字符串</param>
         /// <param name="key">密钥，必须为8位</param>
         /// <returns>以Base64格式返回的加密字符串</returns>
-        static string EncryptDES(string pToEncrypt, string sKey)
+        public static string EncryptDES(string pToEncrypt, string sKey)
         {
-            if (sKey.Length > 8)
-                sKey = sKey.Substring(0, 8);
-            else if (sKey.Length < 8)
-                sKey = sKey.PadRight(8, ' ');
+            sKey = GetKey(sKey, 8);
             using (DESCryptoServiceProvider des = new DESCryptoServiceProvider())
             {
                 byte[] inputByteArray = Encoding.UTF8.GetBytes(pToEncrypt);
@@ -57,13 +36,15 @@ namespace SSJT.Crm.Test
                 return str;
             }
         }
-
-        static string DecryptDES(string pToDecrypt, string sKey)
+        /// <summary>
+        /// 进行DES解密
+        /// </summary>
+        /// <param name="pToDecrypt">要解密的字符串</param>
+        /// <param name="sKey">密钥，必须为8位</param>
+        /// <returns>返回解密后的字符串</returns>
+        public static string DecryptDES(string pToDecrypt, string sKey)
         {
-            if (sKey.Length > 8)
-                sKey = sKey.Substring(0, 8);
-            else if (sKey.Length < 8)
-                sKey = sKey.PadRight(8, ' ');
+            sKey = GetKey(sKey, 8);
             byte[] inputByteArray = Convert.FromBase64String(pToDecrypt);
             using (DESCryptoServiceProvider des = new DESCryptoServiceProvider())
             {
@@ -81,7 +62,14 @@ namespace SSJT.Crm.Test
                 return str;
             }
         }
-        
 
+        private static string GetKey(string sKey,int length)
+        {
+            if (sKey.Length > length)
+                sKey = sKey.Substring(0, length);
+            else if (sKey.Length < length)
+                sKey = sKey.PadRight(length, ' ');
+            return sKey;
+        }
     }
 }

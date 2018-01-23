@@ -30,10 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -47,16 +55,35 @@
     <Compile Include="AjaxRequest\AjaxMethod.cs" />
     <Compile Include="AjaxRequest\AjaxReceive.cs" />
     <Compile Include="AjaxRequest\AjaxResult.cs" />
-    <Compile Include="AjaxServer.cs" />
+    <Compile Include="Client\UserResult.cs" />
+    <Compile Include="Client\UserAuthentication.cs" />
+    <Compile Include="Factory\SessionFactory.cs" />
+    <Compile Include="Server\AjaxServer.cs" />
     <Compile Include="Attribute\AjaxClassAttribute.cs" />
     <Compile Include="AjaxResponse\AjaxProcess.cs" />
     <Compile Include="AjaxResponse\IAjaxProcess.cs" />
     <Compile Include="Attribute\AjaxMethodAttribute.cs" />
     <Compile Include="Helper\Ajaxhelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\ISessionMode.cs" />
+    <Compile Include="Server\ISessionServer.cs" />
+    <Compile Include="Server\SessionMode.cs" />
+    <Compile Include="Server\SessionServer.cs" />
+    <Compile Include="SqlHelper\SqlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSJT.Crm.DBUtility\SSJT.Crm.DBUtility.csproj">
+      <Project>{ED84A816-FD0C-4D1A-861D-EBBFC2288AC5}</Project>
+      <Name>SSJT.Crm.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSJT.Crm.Model\SSJT.Crm.Model.csproj">
+      <Project>{5EF9EC4D-0CDC-40F5-AA76-9FA994D6A87E}</Project>
+      <Name>SSJT.Crm.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

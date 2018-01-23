@@ -8,18 +8,18 @@ namespace SSJT.Crm.Core.Client
 {
     public class UserResult
     {
-        private string _uid;
-        private string _uname;
+        private string _userid;
+        private string _username;
         private string _avatar;
-        public string Uid
+        public string UserID
         {
-            get { return this._uid; }
-            set { this._uid = value; } 
+            get { return this._userid; }
+            set { this._userid = value; } 
         }
-        public string UName
+        public string UserName
         {
-            get { return this._uname; }
-            set {this._uname = value;  } 
+            get { return this._username; }
+            set {this._username = value;  } 
         }
         public string Avatar
         {

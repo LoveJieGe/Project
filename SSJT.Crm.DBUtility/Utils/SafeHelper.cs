@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SSJT.Crm.DBUtility
 {
-    public sealed class SafeHelper
+    public class SafeHelper
     {
         /// <summary>
         /// 进行DES加密

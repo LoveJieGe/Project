@@ -11,5 +11,6 @@ namespace SSJT.Crm.Core.Server
         void RegSession(string userID, string password);
         void RemoveSession(string sessionID);
         SessionMode GetSessionMode(string sessionID);
+        string GetCurrentSessionID();
     }
 }

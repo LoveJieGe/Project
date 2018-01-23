@@ -100,6 +100,9 @@ namespace SSJT.Crm.Core.Server
             }
             return string.Empty;
         }
-
+        public string GetCurrentSessionID()
+        {
+            return string.Format("{0}.{2}", this.AppName, this.GetSessionID());
+        }
     }
 }

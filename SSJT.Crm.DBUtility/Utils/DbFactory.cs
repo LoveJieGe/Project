@@ -8,6 +8,7 @@ namespace SSJT.Crm.DBUtility
 {
     public class DbFactory
     {
-        public static IDbSession DbSession { get; }
+        public static IDbSession DbSession { get; set; }
+        public string Message { get; set; }
     }
 }

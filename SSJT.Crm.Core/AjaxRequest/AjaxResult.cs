@@ -13,6 +13,7 @@ namespace SSJT.Crm.Core.AjaxRequest
         public string Result { get; set; }
         public AjaxMethod Method { get; set; }
         public string ErrorMsg { get; set; }
+        public bool IsSuccess { get; set; }
         public void FillResponseText()
         {
             if (string.IsNullOrEmpty(this.Result))

@@ -16,22 +16,22 @@ namespace SSJT.Crm.Test
 
         static void Main(string[] args)
         {
-            //string key = "Admin";
+            string key = "Admin";
 
-            //string source = "123456";
+            string source = "123456";
 
-            //Console.WriteLine("Source  string: " + source);
+            Console.WriteLine("Source  string: " + source);
 
-            //string encryptStr = EncryptDES(source, key);
-            //Console.WriteLine("Encrypt string: " + encryptStr);
+            string encryptStr = EncryptDES(source, key);
+            Console.WriteLine("Encrypt string: " + encryptStr);
 
-            //string decryptStr = DecryptDES(encryptStr, key);
-            //Console.WriteLine("Decrypt string: " + decryptStr);
+            string decryptStr = DecryptDES(encryptStr, key);
+            Console.WriteLine("Decrypt string: " + decryptStr);
             //IApplicationContext ctx = ContextRegistry.GetContext();
             //DbFactory t = ctx.GetObject("DbFactory") as DbFactory;
             //string message = t.Msg;
             //Console.WriteLine(message);
-            Console.WriteLine("静态：" + DbFactory.Message);
+            //Console.WriteLine("静态：" + DbFactory.Message);
             Console.ReadKey();
         }
 

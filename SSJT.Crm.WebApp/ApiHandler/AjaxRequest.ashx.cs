@@ -20,28 +20,43 @@ namespace SSJT.Crm.WebApp.ApiHandler
                 AjaxReceive receive = new AjaxReceive();
                 receive.Fill(context);
                 AjaxResult result = ContextFactory.AjaxProcess.DoProcess(receive);
-                //string message = DbFactory.Message;
-                //string data = context.Request["data"];
-                if (!string.IsNullOrEmpty(result.ErrorMsg))
-                {
-                    WriteResponse(context, result.ErrorMsg);
-                }else
-                {
-                    context.Response.ContentType = "application/json";
-                    context.Response.Write(result.ResponseText);
-                }
+                WriteResponse(context, result);
             }
             catch (Exception e)
             {
-                WriteResponse(context, e.Message);
+                string msg = e.InnerException == null ? e.Message : e.InnerException.Message;
+                context.Response.Clear();
+                context.Response.ContentType = "application/json";
+                //context.Response.TrySkipIisCustomErrors = true;
+                context.Response.Write(Core.Ajaxhelper.ToJson(new
+                {
+                    Success = false,
+                    Message = msg
+                }));
             }
         }
-        private void WriteResponse(HttpContext context, string msg)
+        private void WriteResponse(HttpContext context, AjaxResult result)
         {
             context.Response.Clear();
-            context.Response.ContentType = "text/plain";
-            context.Response.TrySkipIisCustomErrors = true;
-            context.Response.Write(msg);
+            context.Response.ContentType = "application/json";
+            //context.Response.TrySkipIisCustomErrors = true;
+            if (result.IsSuccess)
+            {
+                context.Response.Write(Core.Ajaxhelper.ToJson(new
+                {
+                    Success = true,
+                    Data = result.ResponseText
+                }));
+            }
+            else
+            {
+                context.Response.Write(Core.Ajaxhelper.ToJson(new
+                {
+                    Success = false,
+                    Message = result.ErrorMsg
+                }));
+            }
+           
         }
         public bool IsReusable
         {

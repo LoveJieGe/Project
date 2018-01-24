@@ -99,7 +99,6 @@ Ext.define('Util.util.Utils',{
     joinPath() {
         let result = '';
         Ext.each(Array.prototype.slice.call(arguments), function (str) {
-            debugger
             if (!Ext.isEmpty(str)) {
                 while (!Ext.isEmpty(result) && result[result.length - 1] == '/') {
                     result = result.substr(0, result.length - 1);
@@ -164,7 +163,7 @@ Ext.define('Util.util.Utils',{
             me.loop(opt.loadTarget);
         }*/
         if (opt.maskTarget) {
-            this.mask(opt.maskTarget);
+            me.mask(opt.maskTarget);
         }
         const btnState = [];
         if (opt.button) {
@@ -181,6 +180,7 @@ Ext.define('Util.util.Utils',{
             withCredentials: true, // 跨域时带上cookies
 
             success(r, op) {
+                debugger
                 const contentType = r.getResponseHeader('content-type'),
                     isJson = /json/i.test(contentType);
                 let result = r.responseText,
@@ -190,17 +190,16 @@ Ext.define('Util.util.Utils',{
                         result = Ext.decode(result);
                     } catch (e) {}
                 }
-                if (result && result.hasOwnProperty('success')) { // 或者 result有success属性且为true时
-                    succeed = result.success;
+                if (result && result.hasOwnProperty('Success')) { // 或者 result有success属性且为true时
+                    succeed = result.Success;
                 }
 
                 if (succeed) { // result返回结果中success=true
                     if (opt.success) opt.success.call(this, result);
                 } else {
-                    const msg = result.message || '',
-                        errcode = result.code;
+                    const msg = result.Message || '';
                     if (opt.failure) {
-                        opt.failure.call(this, msg, errcode);
+                        opt.failure.call(this, msg);
                     } else if (!Ext.isEmpty(msg)) {
                         me.alert(msg);
                     }
@@ -245,11 +244,6 @@ Ext.define('Util.util.Utils',{
                         }
                     });
                 }
-
-                if (opt.ajaxHost && opt.ajaxHost.ajaxRequests && !opt.ajaxHost.isDestroying) {
-                    delete opt.ajaxHost.ajaxRequests[r.requestId];
-                }
-
                 /* if (opt.loadTarget) {
                     me.unLoop(opt.loadTarget);
                 }*/
@@ -314,5 +308,67 @@ Ext.define('Util.util.Utils',{
      */
     isUrl(url) {
         return this.regex.url.test(url);
-    }
+    },
+    /**
+     * 根据xtype找到组件
+     * @param  {String} xtype
+     * @param  {Boolean} exact 明确查找xtype。若为false，表示任何继承自xtype的组件都会被找到；否则，只找顶层类型为xtype的组件
+     * @return {Ext.Component}
+     */
+    getCmp(xtype, exact) {
+        if (exact === undefined) exact = true;
+        const cmps = Ext.ComponentQuery.query(xtype + (exact ? '(true)' : ''));
+
+        return cmps.length >= 1 ? cmps[0] : null;
+    },
+    // ****************************显示或隐藏 加载的菊花遮罩层****************************/
+
+    /**
+     * 显示'加载中...'的菊花
+     * @param  {Ext.Component} view 视图或者控件
+     * @param  {String} msg  提示信息
+     */
+    mask(view, msg) {
+        const message = msg || ''; // || '请稍后';
+        if (view /* && view.isPainted()*/ && !view.isDestroyed) {
+            const mask = this.getLoadMask(message);
+            if (mask && mask.getParent() !== view) {
+                view.add(mask);
+            }
+            view.setMasked(mask);
+        }
+    },
+
+    /**
+     * 隐藏'加载中...'的菊花
+     * @param  {Ext.Component} view 视图或者控件
+     */
+    unMask(view) {
+        if (view /* && view.isPainted()*/ && !view.isDestroyed &&
+            view._masked && !view._masked.isDestroyed) {
+            view.setMasked(false);
+        }
+    },
+
+    /**
+     * 获取loadmask实例，重用已有的，防止不断创建
+     * @param  {String} msg 提示信息
+     * @return {Ext.Loadmask}     [description]
+     */
+    getLoadMask(msg) {
+        let mask = this.getCmp('loadmask', true);
+        if (mask) {
+            mask.setMessage(msg);
+        } else {
+            mask = Ext.widget('loadmask', {
+                message: msg
+            });
+            mask.on('tap', 'hide', mask);
+        }
+
+        return mask;
+    },
+    toastShort(msg) {
+        if (!Ext.isEmpty(msg)) Ext.toast(msg, 1500);
+    },
 })

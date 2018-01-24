@@ -29,7 +29,7 @@ namespace SSJT.Crm.Web.Common
             //SessionProvider.Active(UserType.User); 默认为用户类别，不需要处理
             base.OnPreInit(e);
         }
-        public HrEmployee UserInfo
+        public HrEmploy UserInfo
         {
             get;set;
         }

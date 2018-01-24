@@ -43,7 +43,7 @@ namespace SSJT.Crm.Web.Data
             }
             string userName = request["userID"];
             string pwd = request["passWord"];
-            IEnumerable<HrEmployee> entities = HrEmployeeService.LoadEntity(H => H.Uid == userName && H.Pwd == pwd);
+            IEnumerable<HrEmploy> entities = HrEmployeeService.LoadEntity(H => H.UserID == userName && H.PassWord == pwd);
             if(entities.Count()>0)
             {
 

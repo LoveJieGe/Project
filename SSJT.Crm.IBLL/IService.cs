@@ -49,7 +49,7 @@ namespace SSJT.Crm.IBLL
 	{
 
 	}
-    public partial interface IHrEmployeeService:IBaseService<Model.HrEmployee>
+    public partial interface IHrEmployeeService:IBaseService<Model.HrEmploy>
 	{
 
 	}

@@ -28,7 +28,7 @@ Ext.define('SSJT.view.auth.Login', {
         },
         items: [{
             xtype: 'textfield',
-            name: 'username',
+            name: 'userID',
             placeholder: '用户名',
             required: true
         }, {

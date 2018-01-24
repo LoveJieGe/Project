@@ -17,12 +17,15 @@ namespace SSJT.Crm.Core.Client
     {
         [AjaxMethod]
         [Description("用户登录")]
-        public UserResult Login(string userid,string password)
+        public UserResult Login(string userID,string password)
         {
-            bool isExist = SqlHelper.Exists<HrEmployee>(H => H.Uid == userid && SafeHelper.DecryptDES(H.Pwd, H.Uid) == password);
+            string pwd = SafeHelper.EncryptDES(password, userID);
+            Model.CrmEntities entities = new CrmEntities();
+            HrEmploy user = entities.HrEmployee.FirstOrDefault();
+            bool isExist = SqlHelper.Exists<HrEmploy>(H => H.UserID == userID && H.PassWord == pwd);
             if(!isExist)
                 throw new Exception("用户名或密码错误!");
-            SessionFactory.GetSessionServer().RegSession(userid, password);
+            SessionFactory.GetSessionServer().RegSession(userID, password);
             return null;
         }
 
@@ -34,14 +37,14 @@ namespace SSJT.Crm.Core.Client
             Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
             string sessionID = sessionServer.GetCurrentSessionID();
             Core.Server.SessionMode mode = sessionServer.GetSessionMode(sessionID);
-            HrEmployee userInfo = mode.HrEmployee;
+            HrEmploy userInfo = mode.HrEmployee;
             //string sessionId = string.Format("{0}.{2}", this.AppName, this.GetSessionID());
-            if (SqlHelper.Exists<HrEmployee>(H => H.Uid == userInfo.Uid))
+            if (SqlHelper.Exists<HrEmploy>(H => H.UserID == userInfo.UserID))
             {
                 result = new UserResult
                 {
-                    UserID = userInfo.Uid,
-                    UserName = userInfo.UName
+                    UserID = userInfo.UserID,
+                    UserName = userInfo.UserName
                 };
                 return result;
             }

@@ -27,13 +27,13 @@ namespace SSJT.Crm.Core.Server
             }
         }
 
-        public HrEmployee HrEmployee
+        public HrEmploy HrEmployee
         {
             get
             {
                 if (this.session.ContainsKey((object)"SSJT.Crm.Model.HrEmployee"))
-                    return (HrEmployee)this.session[(object)"SSJT.Crm.Model.HrEmployee"];
-                return new HrEmployee();
+                    return (HrEmploy)this.session[(object)"SSJT.Crm.Model.HrEmployee"];
+                return new HrEmploy();
             }
             internal set
             {

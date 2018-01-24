@@ -4,11 +4,20 @@ Ext.define('SSJT.view.auth.LoginController', {
 
     init: function() {
         this.callParent(arguments);
-        //this.lookup('form').setValues({
-        //    username: 'norma.flores',
-        //    password: 'wvyrEDvxI'
-        //});
-        console.log("/path");
+        var me = this,form = this.lookup('form');
+        form.setValues({
+            userID: 'Admin',
+           password: '123456'
+        });
+        var map = new Ext.util.KeyMap({
+            target: form.element,
+            key: 13, // or Ext.event.Event.ENTER
+            handler() {
+                me.onLoginTap();
+            },
+            scope: me
+        });
+        //console.log("/path");
     },
 
     onLoginTap: function() {
@@ -17,17 +26,26 @@ Ext.define('SSJT.view.auth.LoginController', {
             values = form.getValues();
         form.clearErrors();
         if(form.validate()){
-            
-            Ext.Viewport.setMasked({ xtype: 'loadmask' });
-            App.model.Session.login(values.username, values.password)
-            .then(function(session) {
-                me.fireEvent('login', session);
-            })
-            .catch(function(errors) {
-                form.setErrors(App.util.Errors.toForm(errors));
-            })
-            .then(function(session) {
-                Ext.Viewport.setMasked(false);
+            form.ajax('ajaxRequest/UserAuthentication/Login', {
+                data: {
+                    UserID: values.userID,
+                    PassWord: values.password
+                },
+                params:{
+                    Validate:values.validate
+                } ,
+                success(r) {
+                    console.log('success', r);
+                    me.fireEvent('login', r);
+                },
+                failure(msg) {
+                    form.setErrors({
+                        userId: msg
+                    });
+                    Utils.toastShort(msg);
+                },
+                //button: btnLogin,
+                maskTarget: true
             });
         }
     },

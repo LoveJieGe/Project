@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SSJT.Crm.IDAL
 {
-    public partial interface IHrEmployeeDal : IBaseDal<Model.HrEmployee>
+    public partial interface IHrEmployeeDal : IBaseDal<Model.HrEmploy>
     {
     }
 }

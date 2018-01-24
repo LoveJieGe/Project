@@ -24,14 +24,16 @@ namespace SSJT.Crm.Core.Server
         /// <param name="password">密码</param>
         public void RegSession(string userID,string password)
         {
-            string sessionId = string.Format("{0}.{2}", this.AppName, this.GetSessionID());
-            if (!SqlHelper.Exists<HrEmployee>(H => H.Uid == userID && SafeHelper.DecryptDES(H.Pwd, H.Uid) == password))
+            string pwd = SafeHelper.EncryptDES(password, userID);
+            string sessionId = string.Format("{0}.{1}", this.AppName, this.GetSessionID());
+            if (!SqlHelper.Exists<HrEmploy>(H => H.UserID == userID && H.PassWord == pwd))
                 throw new Exception(string.Format("注册SessionID[{0}]失败", sessionId));
             if(!this.sessions.ContainsKey(sessionId))
             {
                 lock(lockObject)
                 {
-                    HrEmployee info = DbFactory.DbSession.DbContext.Set<HrEmployee>().FirstOrDefault(H => H.Uid == userID && SafeHelper.DecryptDES(H.Pwd, H.Uid) == password);
+                    
+                    HrEmploy info = DbFactory.DbSession.DbContext.Set<HrEmploy>().FirstOrDefault(H => H.UserID == userID &&H.PassWord == pwd);
                     SessionMode mode = new SessionMode
                     {
                         SessionID = sessionId,
@@ -102,7 +104,7 @@ namespace SSJT.Crm.Core.Server
         }
         public string GetCurrentSessionID()
         {
-            return string.Format("{0}.{2}", this.AppName, this.GetSessionID());
+            return string.Format("{0}.{1}", this.AppName, this.GetSessionID());
         }
     }
 }

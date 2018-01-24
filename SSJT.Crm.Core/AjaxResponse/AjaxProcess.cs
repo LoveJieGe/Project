@@ -12,7 +12,7 @@ namespace SSJT.Crm.Core.AjaxResponse
     {
         public AjaxResult DoProcess(AjaxReceive receive)
         {
-            AjaxResult result = new AjaxResult { ErrorMsg = "ok" };
+            AjaxResult result = new AjaxResult { ErrorMsg = "ok", IsSuccess = true };
             try
             {
                 if (string.IsNullOrEmpty(receive.ClassName) || string.IsNullOrEmpty(receive.MethodName))
@@ -30,6 +30,9 @@ namespace SSJT.Crm.Core.AjaxResponse
             catch (Exception ex)
             {
                 result.ErrorMsg = ex.Message;
+                result.IsSuccess = false;
+                if (ex.InnerException != null)
+                    result.ErrorMsg = ex.InnerException.Message;
             }
             finally
             {

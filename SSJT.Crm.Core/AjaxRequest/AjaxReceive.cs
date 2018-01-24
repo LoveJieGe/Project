@@ -13,8 +13,7 @@ namespace SSJT.Crm.Core.AjaxRequest
         private string methodName;
         private string data;
         private string version;
-        private string nameSpace="SSJT.Crm.Core";
-        private string fullClassName;
+        private string nameSpace="SSJT.Crm.Core.Client";
         public string ClassName
         {
             get { return this.className; }
@@ -44,6 +43,10 @@ namespace SSJT.Crm.Core.AjaxRequest
         {
             get { return this.NameSpace+"."+this.className;}
         }
+        /// <summary>
+        /// 使用客户端返回的数据填充当前对象
+        /// </summary>
+        /// <param name="context"></param>
         public void Fill(HttpContext context)
         {
             this.ClassName = context.Request["class"];

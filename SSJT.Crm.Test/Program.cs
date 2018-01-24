@@ -27,10 +27,11 @@ namespace SSJT.Crm.Test
 
             //string decryptStr = DecryptDES(encryptStr, key);
             //Console.WriteLine("Decrypt string: " + decryptStr);
-            IApplicationContext ctx = ContextRegistry.GetContext();
-            DbFactory t = ctx.GetObject("DbFactory") as DbFactory;
-            string message = t.Message;
-            Console.WriteLine(message);
+            //IApplicationContext ctx = ContextRegistry.GetContext();
+            //DbFactory t = ctx.GetObject("DbFactory") as DbFactory;
+            //string message = t.Msg;
+            //Console.WriteLine(message);
+            Console.WriteLine("静态：" + DbFactory.Message);
             Console.ReadKey();
         }
 

@@ -19,10 +19,11 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
         //Ext.route.Router.suspend();
-        Utils.ajax('ApiHandler/Login.ashx', {
+        Utils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
             success(r) {
+                debugger
                 console.log('已经是登录状态', r);
-                me.onUser(r);
+                //me.onUser(r);
             },
             callback() {
                 Ext.getBody().removeCls('launching');

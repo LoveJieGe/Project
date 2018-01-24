@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!-- <Import Project="..packagesMicrosoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7buildnet45Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..packagesMicrosoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7buildnet45Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" /> -->
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -163,13 +163,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiHandler\AjaxRequest.ashx.cs">
-      <DependentUpon>AjaxRequest.ashx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Common\ContextFactory.cs" />
+    <Compile Include="Client\UserAuthentication.cs" />
+    <Compile Include="Client\UserResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -6723,17 +6721,18 @@
     <Content Include="Main\packages\local\Util\sass\src\Readme.md" />
     <Content Include="Main\packages\local\Util\sass\var\Readme.md" />
     <Content Include="Main\packages\local\Util\src\Readme.md" />
-    <Content Include="ApiHandler\AjaxRequest.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -6751,7 +6750,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Client\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

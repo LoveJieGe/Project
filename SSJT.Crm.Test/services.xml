@@ -5,8 +5,8 @@
     <property name="Message" value="zhangsan"/>
     <!--<property name="Person" ref="Person"/>-->
   </object>
-  <object name="DbFactory"      type="SSJT.Crm.DBUtility.DbFactory,SSJT.Crm.DBUtility">
-    <property name="Message" value="zhangsan"/>
+  <object name="DbFactory"      type="SSJT.Crm.DBUtility.DbFactory,SSJT.Crm.DBUtility" init-method="Init">
+    <property name="Msg" value="zhangsan"/>
     <!--<property name="Person" ref="Person"/>-->
   </object>
   <!--<object name="Person"        type="CZBK.ItcastOA.SpringNet.Person, CZBK.ItcastOA.SpringNet">

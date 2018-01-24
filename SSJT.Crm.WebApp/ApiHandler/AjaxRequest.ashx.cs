@@ -1,17 +1,16 @@
-﻿using System;
+﻿using SSJT.Crm.Core.AjaxRequest;
+using SSJT.Crm.DBUtility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.SessionState;
-using SSJT.Crm.DBUtility;
-using SSJT.Crm.Core.AjaxRequest;
 
 namespace SSJT.Crm.WebApp.ApiHandler
 {
     /// <summary>
-    /// Login 的摘要说明
+    /// AjaxRequest 的摘要说明
     /// </summary>
-    public class Login : IHttpHandler, IRequiresSessionState
+    public class AjaxRequest : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
@@ -21,22 +20,23 @@ namespace SSJT.Crm.WebApp.ApiHandler
                 AjaxReceive receive = new AjaxReceive();
                 receive.Fill(context);
                 AjaxResult result = ContextFactory.AjaxProcess.DoProcess(receive);
-                string message = DbFactory.Message;
-                string data = context.Request["data"];
+                //string message = DbFactory.Message;
+                //string data = context.Request["data"];
                 if (!string.IsNullOrEmpty(result.ErrorMsg))
                 {
                     WriteResponse(context, result.ErrorMsg);
+                }else
+                {
+                    context.Response.ContentType = "application/json";
+                    context.Response.Write(result.ResponseText);
                 }
-                context.Response.ContentType = "application/json";
-                context.Response.Write(result.ResponseText);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 WriteResponse(context, e.Message);
             }
-            
         }
-        private void WriteResponse(HttpContext context,string msg)
+        private void WriteResponse(HttpContext context, string msg)
         {
             context.Response.Clear();
             context.Response.ContentType = "text/plain";

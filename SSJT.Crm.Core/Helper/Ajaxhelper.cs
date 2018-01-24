@@ -12,19 +12,15 @@ using Newtonsoft.Json.Converters;
 
 namespace SSJT.Crm.Core
 {
-    public static class Ajaxhelper
+    public class Ajaxhelper
     {
-        private static JsonSerializer serializer;
-        static Ajaxhelper()
+        private static JsonConverter[] converters = new JsonConverter[1]
         {
-            IsoDateTimeConverter converter = new IsoDateTimeConverter
+            (JsonConverter) new IsoDateTimeConverter()
             {
                 DateTimeFormat = "yyyy-MM-dd HH:mm:ss"
-            };
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(converter);
-            serializer = JsonSerializer.Create(settings);
-        }
+            }
+        };
         /// <summary>
         /// 用指定类方法名，搜索其参数与指定参数类型及修饰符匹配的指定方法。
         /// </summary>
@@ -66,6 +62,10 @@ namespace SSJT.Crm.Core
         {
             if (parameters != null && parameters.Length > 0)
             {
+                JsonSerializerSettings settings = new JsonSerializerSettings();
+                foreach (JsonConverter converter in Ajaxhelper.converters)
+                    settings.Converters.Add(converter);
+                JsonSerializer serializer = JsonSerializer.Create(settings);
                 int index = 0;
                 object[] obj = new object[parameters.Length];
                 JsonReader reader = new JsonTextReader(new StringReader(jsonStr));
@@ -89,10 +89,10 @@ namespace SSJT.Crm.Core
         /// <returns></returns>
         public static string ToJson(object obj)
         {
-            IsoDateTimeConverter timeConverter = new IsoDateTimeConverter();
-            //这里使用自定义日期格式，如果不使用的话，默认是ISO8601格式  
-            timeConverter.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
-            return JsonConvert.SerializeObject(obj, Formatting.Indented,timeConverter);
+            //IsoDateTimeConverter timeConverter = new IsoDateTimeConverter();
+            ////这里使用自定义日期格式，如果不使用的话，默认是ISO8601格式  
+            //timeConverter.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
+            return JsonConvert.SerializeObject(obj, Formatting.None, converters);
         }
 
 

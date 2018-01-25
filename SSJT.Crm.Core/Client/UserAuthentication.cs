@@ -44,6 +44,7 @@ namespace SSJT.Crm.Core.Client
             UserResult result = null;
             Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
             string sessionID = sessionServer.GetCurrentSessionID();
+            if (string.IsNullOrEmpty(sessionID)) return null;
             Core.Server.SessionMode mode = sessionServer.GetSessionMode(sessionID);
             HrEmploy userInfo = mode.HrEmployee;
             //string sessionId = string.Format("{0}.{2}", this.AppName, this.GetSessionID());

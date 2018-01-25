@@ -130,7 +130,7 @@ Ext.define('Util.util.Utils',{
                 // 后台路由丢失session，所以 暂时 先fix
                 if (/[^ajax|Ajax]\/[^/]+\/[^/]+$/.test(path)) {
                     const arr = path.split('/');
-                    url = Utils.joinPath(Config.httpUrl, 'ApiHandler', `${Ext.String.capitalize(arr[0])}.ashx?class=${arr[1]}&method=${arr[2]}`);
+                    url = Utils.joinPath(Config.httpUrl, 'AjaxHandler', `${Ext.String.capitalize(arr[0])}.ashx?class=${arr[1]}&method=${arr[2]}`);
                 } else {
                     url = Utils.joinPath(Config.httpUrl, path);
                 }

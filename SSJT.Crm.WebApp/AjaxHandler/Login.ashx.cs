@@ -6,7 +6,7 @@ using System.Web.SessionState;
 using SSJT.Crm.DBUtility;
 using SSJT.Crm.Core.AjaxRequest;
 
-namespace SSJT.Crm.WebApp.ApiHandler
+namespace SSJT.Crm.WebApp.AjaxHandler
 {
     /// <summary>
     /// Login 的摘要说明

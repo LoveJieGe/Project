@@ -68,7 +68,7 @@ namespace SSJT.Crm.Common
                 g.DrawString(charCode, new Font(fonts[fontIndex], 12, FontStyle.Bold), newBrush, thePoint);
             }
             //扭曲图片
-            image = TwistImage(image, true, 2, 1);
+            image = TwistImage(image, true, 1, 1);
             //将生成的图片发送到客户端
             MemoryStream stream = new MemoryStream();
             image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);

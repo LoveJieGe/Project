@@ -39,9 +39,9 @@ Ext.define('SSJT.view.auth.LoginController', {
                     me.fireEvent('login', r);
                 },
                 failure(msg) {
-                    form.setErrors({
-                        userId: msg
-                    });
+                    // form.setErrors({
+                    //     UserID: msg
+                    // });
                     Utils.toastShort(msg);
                 },
                 //button: btnLogin,

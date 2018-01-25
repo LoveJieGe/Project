@@ -104,7 +104,15 @@ namespace SSJT.Crm.Core.Server
         }
         public string GetCurrentSessionID()
         {
-            return string.Format("{0}.{1}", this.AppName, this.GetSessionID());
+            string session = string.Empty;
+            try
+            {
+                string sessionID = HttpContext.Current.Request.Cookies["ASP.NET_SessionId"].Value;
+                if (!string.IsNullOrEmpty(sessionID))
+                    session = string.Format("{0}.{1}", this.AppName, sessionID);
+            }
+            catch (Exception e){ }
+            return session;
         }
     }
 }

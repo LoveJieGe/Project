@@ -1,4 +1,5 @@
-﻿using SSJT.Crm.Core.AjaxRequest;
+﻿using SSJT.Crm.Common;
+using SSJT.Crm.Core.AjaxRequest;
 using SSJT.Crm.DBUtility;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 
-namespace SSJT.Crm.WebApp.ApiHandler
+namespace SSJT.Crm.WebApp.AjaxHandler
 {
     /// <summary>
     /// AjaxRequest 的摘要说明
@@ -20,6 +21,21 @@ namespace SSJT.Crm.WebApp.ApiHandler
             {
                 AjaxReceive receive = new AjaxReceive();
                 receive.Fill(context);
+                if (Helper.Equals(receive.MethodName, "login"))
+                {
+                    string validate = context.Request["Validate"];
+                    string vCode = context.Session["VCode"]==null?"": context.Session["VCode"].ToString();
+                    if (!Helper.Equals(validate, vCode))
+                    {
+                        context.Response.ContentType = "application/json";
+                        context.Response.Write(Core.Ajaxhelper.ToJson(new
+                        {
+                            Success = false,
+                            Message="验证码错误"
+                        }));
+                        return;
+                    }
+                }
                 AjaxResult result = ContextFactory.AjaxProcess.DoProcess(receive);
                 WriteResponse(context, result);
             }

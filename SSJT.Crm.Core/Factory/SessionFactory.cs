@@ -10,7 +10,7 @@ using SSJT.Crm.Model;
 
 namespace SSJT.Crm.Core
 {
-    public class SessionFactory
+    public class SessionFactory:ILogicalThreadAffinative
     {
         /// <summary>
         /// 获取SessionServer的实例
@@ -18,21 +18,21 @@ namespace SSJT.Crm.Core
         /// <returns></returns>
         public static ISessionServer GetSessionServer()
         {
-            ISessionServer sessionServer = CallContext.GetData("SessionServer") as ISessionServer;
+            ISessionServer sessionServer = CallContext.LogicalGetData("SessionServer") as ISessionServer;
             if (sessionServer == null)
             {
                 sessionServer = new SessionServer();
-                CallContext.SetData("SessionServer", sessionServer);
+                CallContext.LogicalSetData("SessionServer", sessionServer);
             }
             return sessionServer;
         }
         public static ISessionMode GetSessionMode()
         {
-            ISessionMode sessionMode = CallContext.GetData("SessionMode") as ISessionMode;
+            ISessionMode sessionMode = CallContext.LogicalGetData("SessionMode") as ISessionMode;
             if (sessionMode == null)
             {
                 sessionMode = new SessionMode();
-                CallContext.SetData("SessionMode", sessionMode);
+                CallContext.LogicalSetData("SessionMode", sessionMode);
             }
             return sessionMode;
         }

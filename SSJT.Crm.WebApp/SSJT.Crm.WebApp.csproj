@@ -148,7 +148,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiHandler\AjaxRequest.ashx.cs">
+    <Compile Include="AjaxHandler\AjaxRequest.ashx.cs">
       <DependentUpon>AjaxRequest.ashx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -159,7 +159,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ApiHandler\Login.ashx.cs">
+    <Compile Include="AjaxHandler\Login.ashx.cs">
       <DependentUpon>Login.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -6694,7 +6694,7 @@
     <Content Include="Main\Readme.md" />
     <Content Include="Main\resources\Readme.md" />
     <Content Include="Main\workspace.json" />
-    <Content Include="ApiHandler\Login.ashx" />
+    <Content Include="AjaxHandler\Login.ashx" />
     <Content Include="Main\packages\local\Util\examples\Readme.md" />
     <Content Include="Main\packages\local\Util\licenses\Readme.md" />
     <Content Include="Main\packages\local\Util\overrides\Readme.md" />
@@ -6708,7 +6708,7 @@
     <Content Include="Main\packages\local\Util\sass\src\Readme.md" />
     <Content Include="Main\packages\local\Util\sass\var\Readme.md" />
     <Content Include="Main\packages\local\Util\src\Readme.md" />
-    <Content Include="ApiHandler\AjaxRequest.ashx" />
+    <Content Include="AjaxHandler\AjaxRequest.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

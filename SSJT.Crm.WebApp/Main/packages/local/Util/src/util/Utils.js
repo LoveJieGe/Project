@@ -176,24 +176,22 @@ Ext.define('Util.util.Utils',{
         const request = Ext.Ajax.request(Ext.applyIf({
             url: me.getFullUrl(api),
             method: 'POST',
-            useDefaultXhrHeader: false, // 跨域
-            withCredentials: true, // 跨域时带上cookies
-
-            success(r, op) {
+            //response:包含响应数据的XMLHttpRequest对象
+            //opts:请求调用的参数
+            success:function(response, opts) {
                 debugger
-                const contentType = r.getResponseHeader('content-type'),
+                const contentType = response.getResponseHeader('content-type'),
                     isJson = /json/i.test(contentType);
-                let result = r.responseText,
+                let result = response.responseText,
                     succeed = true; // 请求成功
                 if (!Ext.isEmpty(result) && isJson) {
                     try {
                         result = Ext.decode(result);
                     } catch (e) {}
                 }
-                if (result && result.hasOwnProperty('Success')) { // 或者 result有success属性且为true时
+                if (result && result.hasOwnProperty('Success')) { // 或者 result有Success属性且为true时
                     succeed = result.Success;
                 }
-
                 if (succeed) { // result返回结果中success=true
                     if (opt.success) opt.success.call(this, result);
                 } else {
@@ -205,7 +203,7 @@ Ext.define('Util.util.Utils',{
                     }
                 }
             },
-            failure(r, op) {
+            failure:function(r, op) {
                 debugger
                 let err = r.responseText;
                 if (!Ext.isEmpty(err)) {

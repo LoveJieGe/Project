@@ -19,14 +19,22 @@ namespace SSJT.Crm.Core.Client
         [Description("用户登录")]
         public UserResult Login(string userID,string password)
         {
+            UserResult result = null;
             string pwd = SafeHelper.EncryptDES(password, userID);
-            Model.CrmEntities entities = new CrmEntities();
-            HrEmploy user = entities.HrEmployee.FirstOrDefault();
             bool isExist = SqlHelper.Exists<HrEmploy>(H => H.UserID == userID && H.PassWord == pwd);
             if(!isExist)
                 throw new Exception("用户名或密码错误!");
             SessionFactory.GetSessionServer().RegSession(userID, password);
-            return null;
+            HrEmploy userInfo = (DbFactory.DbSession.DbContext as CrmEntities).HrEmploy.FirstOrDefault(H => H.UserID == userID && H.PassWord == pwd);
+            if(userInfo!=null)
+            {
+                result = new UserResult
+                {
+                    UserID = userInfo.UserID,
+                    UserName = userInfo.UserName
+                };
+            }
+            return result;
         }
 
         [AjaxMethod]

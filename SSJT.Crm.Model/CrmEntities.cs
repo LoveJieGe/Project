@@ -13,6 +13,6 @@ namespace SSJT.Crm.Model
         {
             base.OnModelCreating(modelBuilder);
         }
-        public DbSet<HrEmploy> HrEmployee { get; set; }
+        public DbSet<HrEmploy> HrEmploy { get; set; }
     }
 }

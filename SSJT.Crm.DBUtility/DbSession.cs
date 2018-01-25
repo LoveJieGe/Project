@@ -12,7 +12,7 @@ namespace SSJT.Crm.DBUtility
     {
         public DbContext DbContext
         {
-            get { return DbContextFactory.GetDnContext(); }
+            get { return DbContextFactory.GetDbContext(); }
         }
 
         public List<T> ExcuteQuery<T>(string sql, params SqlParameter[] parameters)

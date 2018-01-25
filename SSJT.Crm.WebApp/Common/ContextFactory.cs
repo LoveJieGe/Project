@@ -15,7 +15,7 @@ namespace SSJT.Crm.WebApp
         /// <summary>
         /// Ajax操作
         /// </summary>
-        public static IAjaxProcess AjaxProcess { get; set; }
+        public static IAjaxProcess AjaxProcess { get; private set; }
         public void Init()
         {
             ContextFactory.AjaxProcess = this._ajaxProcess;

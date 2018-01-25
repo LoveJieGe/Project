@@ -11,7 +11,7 @@ namespace SSJT.Crm.DBUtility
 {
     public class DbContextFactory
     {
-        public static DbContext GetDnContext()
+        public static DbContext GetDbContext()
         {
             DbContext db = CallContext.GetData("DbContext") as DbContext;
             if(db==null)

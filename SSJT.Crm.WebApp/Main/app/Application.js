@@ -10,7 +10,8 @@ Ext.define('SSJT.Application', {
         // This will automatically load all classes in the SSJT namespace
         // so that application classes do not need to require each other.
         'SSJT.*',
-        'Util.*'
+        'Util.*',
+        'Common.*'
     ],
     quickTips: false,
     platformConfig: {

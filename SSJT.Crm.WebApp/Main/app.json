@@ -18,7 +18,8 @@
     "requires": [
         "font-awesome",
         "modern-locale",
-        "Util"
+        "Util",
+        "Common"
     ],
     "locale":"zh_CN",
     /**

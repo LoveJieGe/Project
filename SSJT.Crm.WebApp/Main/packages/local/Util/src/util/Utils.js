@@ -193,6 +193,8 @@ Ext.define('Util.util.Utils',{
                     succeed = result.Success;
                 }
                 if (succeed) { // result返回结果中success=true
+                    if(result && result.hasOwnProperty('Data'))
+                        result = Ext.decode(result.Data);
                     if (opt.success) opt.success.call(this, result);
                 } else {
                     const msg = result.Message || '';

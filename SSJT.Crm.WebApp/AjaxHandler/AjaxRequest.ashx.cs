@@ -61,8 +61,7 @@ namespace SSJT.Crm.WebApp.AjaxHandler
             {
                 context.Response.Write(Core.Ajaxhelper.ToJson(new
                 {
-                    Success = true,
-                    Data = result.ResponseText
+                    Data=result.Result
                 }));
             }
             else

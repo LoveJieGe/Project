@@ -1,6 +1,7 @@
 $app-name:  dynamic( 'SSJT' );
-$image-search-path: 'F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/build/production/SSJT/resources';
+$image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/production/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
+$include-common-util-user: dynamic(true);;
 $include-config: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(false);;
 $include-ext-abstractmanager: dynamic(false);;
@@ -773,6 +774,7 @@ $include-ssjt-view-main-main: dynamic(true);;
 $include-ssjt-view-main-maincontroller: dynamic(true);;
 $include-ssjt-view-main-mainmodel: dynamic(true);;
 $include-ssjt-view-viewport-viewportcontroller: dynamic(true);;
+$include-user: dynamic(true);;
 $include-util-model-valuetext: dynamic(true);;
 $include-util-util-config: dynamic(true);;
 $include-util-util-utils: dynamic(true);;
@@ -844,6 +846,14 @@ $current-package: 'Util';
 $current-resource-root: $Util-resource-root;
 $relative-image-path-for-uis: $Util-resource-path;
 @import '../../../../../packages/local/Util/sass/etc/all';
+
+/* including package Common */
+$Common-resource-root: 'Common' !default;
+$Common-resource-path: 'Common/images' !default;
+$current-package: 'Common';
+$current-resource-root: $Common-resource-root;
+$relative-image-path-for-uis: $Common-resource-path;
+@import '../../../../../packages/Common/sass/etc/all';
 
 
 /* ======================== VAR ======================== */

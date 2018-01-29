@@ -13,7 +13,8 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         }
     },
     routes:{
-        'login':'handleLoginRoute'
+        'login':'handleLoginRoute',
+        'home': 'showHome'
     },
     onLaunch:function(){
         this.originalRoute = SSJT.getApplication().getDefaultToken();
@@ -23,7 +24,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             success(r) {
                 debugger
                 console.log('已经是登录状态', r);
-                //me.onUser(r);
+                me.onUser(r);
             },
             callback() {
                 Ext.getBody().removeCls('launching');
@@ -70,7 +71,11 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     showLoginView:function(){
         this.showView('authlogin');
     },
+    showHome:function(){
+        this.showView('app-main');
+    },
     onLogin:function(user){
+        debugger
         var me = this,
             token = Ext.History.getToken();
             newToken = "";
@@ -90,5 +95,10 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             replace: true,
             force: true
         });
+    },
+    onUser:function(r){
+        User.setUser(r);
+        //恢复路由
+        Ext.route.Router.resume();
     }
 });

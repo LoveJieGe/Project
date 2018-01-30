@@ -17,14 +17,18 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         'home': 'showHome'
     },
     onLaunch:function(){
+        var me = this;
         this.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
-        //Ext.route.Router.suspend();
+        Ext.route.Router.suspend();
         Utils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
             success(r) {
-                debugger
                 console.log('已经是登录状态', r);
                 me.onUser(r);
+            },
+            failure:function(r){
+                Ext.route.Router.resume();
+                me.redirectTo('login', {replace: true})
             },
             callback() {
                 Ext.getBody().removeCls('launching');
@@ -72,7 +76,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.showView('authlogin');
     },
     showHome:function(){
-        this.showView('app-main');
+        this.showView('mainhome');
     },
     onLogin:function(user){
         debugger

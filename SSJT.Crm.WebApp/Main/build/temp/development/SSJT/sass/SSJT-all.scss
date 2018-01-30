@@ -1,6 +1,10 @@
 $app-name:  dynamic( 'SSJT' );
 $image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
+$include-common-nav-avatarbutton: dynamic(true);;
+$include-common-nav-button: dynamic(true);;
+$include-common-nav-tree: dynamic(true);;
+$include-common-util-user: dynamic(true);;
 $include-config: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractmanager: dynamic(true);;
@@ -763,16 +767,19 @@ $include-ssjt-application: dynamic(true);;
 $include-ssjt-model-base: dynamic(true);;
 $include-ssjt-model-personnel: dynamic(true);;
 $include-ssjt-store-personnel: dynamic(true);;
+$include-ssjt-store-main-menu: dynamic(true);;
 $include-ssjt-view-auth-login: dynamic(true);;
 $include-ssjt-view-auth-logincontroller: dynamic(true);;
-$include-ssjt-view-home-home: dynamic(true);;
+$include-ssjt-view-home-homecontroller: dynamic(true);;
 $include-ssjt-view-login-login: dynamic(true);;
 $include-ssjt-view-login-logincontroller: dynamic(true);;
+$include-ssjt-view-main-home: dynamic(true);;
 $include-ssjt-view-main-list: dynamic(true);;
 $include-ssjt-view-main-main: dynamic(true);;
 $include-ssjt-view-main-maincontroller: dynamic(true);;
 $include-ssjt-view-main-mainmodel: dynamic(true);;
 $include-ssjt-view-viewport-viewportcontroller: dynamic(true);;
+$include-user: dynamic(true);;
 $include-util-model-valuetext: dynamic(true);;
 $include-util-util-config: dynamic(true);;
 $include-util-util-utils: dynamic(true);;
@@ -844,6 +851,14 @@ $current-package: 'Util';
 $current-resource-root: $Util-resource-root;
 $relative-image-path-for-uis: $Util-resource-path;
 @import '../../../../../packages/local/Util/sass/etc/all';
+
+/* including package Common */
+$Common-resource-root: 'Common' !default;
+$Common-resource-path: 'Common/images' !default;
+$current-package: 'Common';
+$current-resource-root: $Common-resource-root;
+$relative-image-path-for-uis: $Common-resource-path;
+@import '../../../../../packages/Common/sass/etc/all';
 
 
 /* ======================== VAR ======================== */
@@ -1234,6 +1249,7 @@ $theme-default-resource-path: 'images' !default;
 $current-package: 'theme-default';
 $current-resource-root: $theme-default-resource-root;
 $relative-image-path-for-uis: $theme-default-resource-path;
+@import '../../../../../packages/local/theme-default/sass/src/list/Tree';
 @import '../../../../../packages/local/theme-default/sass/src/Button';
 @import '../../../../../packages/local/theme-default/sass/src/Toolbar';
 @import '../../../../../packages/local/theme-default/sass/src/Panel';
@@ -1244,6 +1260,14 @@ $relative-image-path-for-uis: $theme-default-resource-path;
 @import '../../../../../packages/local/theme-default/sass/src/field/Search';
 @import '../../../../../packages/local/theme-default/sass/src/grid/column/Column';
 @import '../../../../../packages/local/theme-default/sass/src/tab/Panel';
+
+/* including scss file adjacent to ..\..\..\..\..\packages\Common\src\nav\Tree.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../packages/Common/src/nav/Tree';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\auth\Login.js */
 $default-resource-root: '' !default;

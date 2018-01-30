@@ -1,0 +1,15 @@
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+
+[class^="i-task-"], [class*=" i-task-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'task' !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$i-task-css-prefix}-check:before { content: $i-task-var-check !important; }
+.#{$i-task-css-prefix}-read:before { content: $i-task-var-read !important; }
+.#{$i-task-css-prefix}-log:before { content: $i-task-var-log !important; }

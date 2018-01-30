@@ -39,6 +39,10 @@ namespace SSJT.Crm.Core.Server
                         SessionID = sessionId,
                         HrEmployee = info
                     };
+                    if (HttpContext.Current != null && HttpContext.Current.Session != null)
+                    {
+                        HttpContext.Current.Session[sessionId] = mode;
+                    }
                     this.sessions.Add(sessionId, mode);
                 }
             }
@@ -53,6 +57,7 @@ namespace SSJT.Crm.Core.Server
             lock (lockObject)
             {
                 this.sessions.Remove(sessionID);
+                HttpContext.Current.Session.Remove(sessionID);
             }
         }
         /// <summary>
@@ -62,9 +67,18 @@ namespace SSJT.Crm.Core.Server
         /// <returns></returns>
         public SessionMode GetSessionMode(string sessionID)
         {
-            if(!this.sessions.ContainsKey(sessionID))
+            SessionMode mode = null;
+            if (this.sessions.ContainsKey(sessionID))
+                mode = this.sessions[sessionID];
+            if (HttpContext.Current != null && HttpContext.Current.Session != null)
+            {
+                var r = HttpContext.Current.Session[sessionID];
+                if (r != null)
+                    mode = (r as SessionMode);
+            }
+            if(mode==null)
                 throw new Exception("您的会话已超时, 请重新登录本系统.");
-            return this.sessions[sessionID];
+            return mode;
         }
         /// <summary>
         /// 应用的名字

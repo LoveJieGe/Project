@@ -1,0 +1,12 @@
+/* FONT PATH
+ * -------------------------- */
+
+//# fashion -inline
+@font-face {
+  font-family: 'task';
+  src: url('#{$i-task-font-path}/task.woff?v=#{$i-task-version}') format('woff'),
+    url('#{$i-task-font-path}/task.ttf?v=#{$i-task-version}') format('truetype'),
+    url('#{$i-task-font-path}/task.svg?v=#{$i-task-version}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

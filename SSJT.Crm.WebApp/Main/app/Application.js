@@ -21,12 +21,14 @@ Ext.define('SSJT.Application', {
     },
     defaultToken:'home',
     viewport:{
-        controller:'viewport'
+        controller:'viewport',
+        viewModel: 'viewport'
     },
     launch:function(profile){
+        var me = this;
         var dev = Config.isDev;
         Ext.Viewport.getController().onLaunch();
-       
+        me.callParent([profile]);
     },
     getClientInfo:function(){
         return null;

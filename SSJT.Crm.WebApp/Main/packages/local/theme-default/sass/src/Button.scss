@@ -60,14 +60,6 @@
 );
 
 @include button-ui(
-    $ui: 'dark',
-    $color: $neutral-light-color,
-    $pressed-color: $neutral-light-color,
-    $background-color: $neutral-dark-color,
-    $pressed-background-color: $base-color
-);
-
-@include button-ui(
     $ui: 'segmented',
     $border-color: transparent,
     $border-style: solid,
@@ -93,7 +85,6 @@
     $hovered-background-color: mix(white, $nav-tree-background-color, 5%),
     $pressed-background-color: mix(white, $nav-tree-background-color, 10%)
   );
-
 // button 设置 border: false 即可去掉 border
 .x-button.x-noborder-trbl {
     &>.x-inner-el {

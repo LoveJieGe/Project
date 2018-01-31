@@ -179,7 +179,6 @@ Ext.define('Util.util.Utils',{
             //response:包含响应数据的XMLHttpRequest对象
             //opts:请求调用的参数
             success:function(response, opts) {
-                debugger
                 const contentType = response.getResponseHeader('content-type'),
                     isJson = /json/i.test(contentType);
                 let result = response.responseText,
@@ -206,7 +205,6 @@ Ext.define('Util.util.Utils',{
                 }
             },
             failure:function(r, op) {
-                debugger
                 let err = r.responseText;
                 if (!Ext.isEmpty(err)) {
                     try {

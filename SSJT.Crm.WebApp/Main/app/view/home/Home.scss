@@ -1,72 +1,39 @@
-//@import "../../../sass/etc/fonts/all";
-$navtree-ct-width: dynamic(220px);
-$navtree-ct-collapsed-width: dynamic(64px);
-
-.aaa{
-    background-color: red !important;
-    .navtree-ct {
-        position: relative;
-        transition: width 0.2s;
-        width: $navtree-ct-width;
-    }
-}
-.navtree-ct-collapsed {
-    width: $navtree-ct-collapsed-width;
-}
-
-
-$navtree-item-padding: dynamic(16px);
-$navtree-item-padding-big: dynamic(18px);
-
-$navtree-icon-size: dynamic(21px);
-$navtree-icon-size-big: dynamic(21px);
-.navtree-ct {
-
-    $navtree-avatar-size: $navtree-icon-size*1.6;
-    $navtree-avatar-size-big: $navtree-icon-size-big*1.8;
-    $navtree-avatar-spacing: (2*$navtree-item-padding + $navtree-icon-size - $navtree-avatar-size)/2;
-    $navtree-avatar-spacing-big: (2*$navtree-item-padding-big + $navtree-icon-size-big - $navtree-avatar-size-big)/2;
-
+@import "../../../sass/etc/fonts/all";
+.navtree-ct{
+    $navlogout-item-padding: dynamic(16px);
+    $navlogout-item-padding-big: dynamic(18px);
+    
+    $navlogout-icon-size: dynamic(21px);
+    $navlogout-icon-size-big: dynamic(21px);
+    
+    $nav-logout-background-color: dynamic(#32404e);
+    $navlogout-avatar-size: $navlogout-icon-size*1.6;
+    $navlogout-avatar-size-big: $navlogout-icon-size-big*1.8;
+    $navlogout-avatar-spacing: (2*$navlogout-item-padding + $navlogout-icon-size - $navlogout-avatar-size)/2;
+    $navlogout-avatar-spacing-big: (2*$navlogout-item-padding-big + $navlogout-icon-size-big - $navlogout-avatar-size-big)/2;
     @include button-ui(
-        $ui: 'avatar',
-        
-        $background-color: $nav-tree-background-color,
-        $hovered-background-color: mix(white, $nav-tree-background-color, 5%),
-        $pressed-background-color: mix(white, $nav-tree-background-color, 10%),
-
-        $icon-horizontal-spacing: $navtree-avatar-spacing,
-        $icon-horizontal-spacing-big: $navtree-avatar-spacing-big,
-        $icon-size: $navtree-avatar-size,
-        $icon-size-big: $navtree-avatar-size-big,
-        //$icon-font-size: $navtree-icon-size,
-        //$icon-font-size-big: $navtree-icon-size-big,
-        $padding: $navtree-avatar-spacing,
-        $padding-big: $navtree-avatar-spacing-big
+            $ui: 'logout',
+            $background-color: $nav-logout-background-color,
+            $hovered-background-color: mix(white, $nav-logout-background-color, 5%),
+            $pressed-background-color: mix(white,$nav-logout-background-color, 10%),
+    
+            $icon-horizontal-spacing: $navlogout-avatar-spacing,
+            $icon-horizontal-spacing-big: $navlogout-avatar-spacing-big,
+            $icon-size: $navlogout-avatar-size,
+            $icon-size-big: $navlogout-avatar-size-big,
+            $icon-font-size: $navlogout-icon-size,
+            $icon-font-size-big: $navlogout-icon-size-big,
+            $padding: $navlogout-avatar-spacing,
+            $padding-big: $navlogout-avatar-spacing-big
     );
-
-    .x-button-avatar {
-        .x-body-el {
-            margin: auto;
-        }
-        .avatar {
-            @include background-size(cover);
-            background-color: $neutral-color;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    }
+   
 }
-
-.navtree-ct-collapsed {
-    .x-button-avatar {
-        &.x-icon-align-left.x-has-text .x-icon-el {
-            margin: 0;
-        }
-    }
-    .x-button .x-text-el {
-        display: none;
-    }
-}
-
+@include tooltip-ui(
+    $ui: 'large',
+    $body-font-size: 14px,
+    $body-font-size-big: 14px,
+    $body-padding: 16px,
+    $body-padding-big: 18px
+);
 
 

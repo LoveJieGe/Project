@@ -2,12 +2,12 @@ Ext.define('SSJT.view.main.Home', {
     extend: 'Ext.Container',
     xtype: 'mainhome',
     requires:[
+        'Common.nav.Tree',
         'Common.nav.AvatarButton',
         'Common.nav.Button'
     ],
     controller: 'mainhome',
     referenceHolder: true,
-    cls:'aaa',
     layout: 'fit',
     items: [{
             xtype: 'container',
@@ -25,6 +25,9 @@ Ext.define('SSJT.view.main.Home', {
                 }
             },{
                 xtype: 'navavatarbutton'
+            },{
+                xtype: 'logoutbutton',
+                reference:'btnLogout'
             }, {
                 xtype: 'navbutton',
                 reference: 'btnToggle',

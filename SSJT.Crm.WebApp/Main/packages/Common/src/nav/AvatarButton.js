@@ -13,7 +13,7 @@ Ext.define('Common.nav.AvatarButton', {
         text: '<div class="title">{user.UserName}</div>' +
             '<div class="value">{user.UserID}</div>'
     },
-    hidden: true,
+    hidden: window.top!=window,
 
     onTap() {
         const me = this;

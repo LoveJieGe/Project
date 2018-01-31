@@ -56,9 +56,9 @@ Ext.define('SSJT.view.home.HomeController', {
         if (oldValue !== undefined) {
             const me = this,
                 navigation = me.lookup('navigation'),
-                navTree = me.lookup('navTree'),
-                rootEl = navTree.rootItem.el;
-
+                mainmenu = me.lookup('mainmenu'),
+                rootEl = mainmenu.rootItem.el;
+            //如果有样式则删除，没有则添加
             navigation.toggleCls('navtree-ct-collapsed');
 
             if (showNavigation) {
@@ -66,15 +66,22 @@ Ext.define('SSJT.view.home.HomeController', {
                 // will be revealed properly. The forced width is still in force from
                 // the collapse so the items won't wrap.
                 rootEl.setWidth('');
-                navTree.setMicro(false);
+                mainmenu.setMicro(false);
+                me.lookup('btnLogout').setTooltip('');
             } else {
                 // Ensure the right-side decorations (they get munged by the animation)
                 // get clipped by propping up the width of the tree's root item while we
                 // are collapsed.
+                //将Treelist UI设置为true，只显示根节点的图标。将光标悬停(或在触控设备上点击)显示图标旁边的子节点。
                 rootEl.setWidth(rootEl.getWidth());
-                navTree.setMicro(true);
+                mainmenu.setMicro(true);
+                me.lookup('btnLogout').setTooltip({
+                    xtype:'tooltip',
+                    align:'tl-tr?',
+                    ui:'large',
+                    html:'注销',
+                });
             }
-
             me.lookup('btnToggle').setCollapsed(!showNavigation);
         }
     },
@@ -85,20 +92,19 @@ Ext.define('SSJT.view.home.HomeController', {
             document.title = '任务';
         }
     },
-
     onUserChanged() {
         try {
             Task.view.widget.BodySelectCombo.bodiesCache = null;
         } catch (e) {}
     },
 
-    destroy() {
-        const me = this;
-        me.callParent(arguments);
+    // destroy() {
+    //     const me = this;
+    //     me.callParent(arguments);
 
-        // 销毁缓存的 view 实例
-        TaskHelper.destroyAllViewCache();
-    },
+    //     // 销毁缓存的 view 实例
+    //     TaskHelper.destroyAllViewCache();
+    // },
 
     ensureCenterByXType(xtype) {
         const me = this,

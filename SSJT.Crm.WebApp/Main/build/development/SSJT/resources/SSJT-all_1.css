@@ -775,7 +775,7 @@
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:495 */
 .x-treelist-nav {
     background-color: #32404e;
-    background-position: 24px 0%;
+    background-position: 44px 0%;
     padding: 0 0 0 0;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:103 */
@@ -784,12 +784,21 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:112 */
 .x-treelist-nav .x-treelist-item-selected.x-treelist-item-tool {
-    color: #f0f0f0;
+    background-color: #475360;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:117 */
+.x-treelist-nav .x-treelist-item-selected.x-treelist-item-tool:after {
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    width: 5px;
     background-color: #5fa2dd;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:134 */
 .x-treelist-nav .x-treelist-item-selected > .x-treelist-row {
-    background-color: #3f505f;
+    background-color: #475360;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:143 */
 .x-treelist-nav .x-treelist-item-tool {
@@ -798,19 +807,19 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:150 */
 .x-treelist-nav .x-treelist-item-tool-floated:after {
-    height: 44px;
+    height: 50px;
     position: absolute;
     top: 0;
     left: 0;
     content: " ";
-    width: 4px;
+    width: 5px;
     background-color: #5fa2dd;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:166 */
 .x-treelist-nav .x-treelist-item-icon:before,
 .x-treelist-nav .x-treelist-item-tool:before,
 .x-treelist-nav .x-treelist-item-expander {
-    line-height: 44px;
+    line-height: 50px;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:178 */
 .x-treelist-nav .x-treelist-item-icon,
@@ -830,25 +839,25 @@
 .x-treelist-nav .x-treelist-item-tool {
     color: #adb3b8;
     font-size: 18px;
-    width: 24px;
+    width: 44px;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:206 */
 .x-treelist-nav .x-treelist-item-tool {
-    width: 44px;
+    width: 64px;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:216 */
 .x-treelist-nav .x-treelist-item-expander {
-    color: #adb3b8;
+    color: #fff;
     font-size: 16px;
     width: 24px;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:253 */
 .x-treelist-nav .x-treelist-item-text {
     color: #adb3b8;
-    margin-left: 30px;
+    margin-left: 50px;
     margin-right: 24px;
-    font-size: 16px;
-    line-height: 44px;
+    font-size: 14px;
+    line-height: 50px;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:270 */
 .x-treelist-nav .x-treelist-row {
@@ -863,16 +872,16 @@
     display: block;
     left: 0;
     top: 0;
-    width: 6px;
+    width: 5px;
     height: 100%;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:287 */
 .x-treelist-nav .x-treelist-row-over:before {
-    background-color: #89bae6;
+    background-color: transparent;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:291 */
 .x-treelist-nav .x-treelist-item-selected > .x-treelist-row-over:before {
-    background-color: #89bae6;
+    background-color: #7cb3e3;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:295 */
 .x-treelist-nav .x-treelist-item-selected > .x-treelist-row:before {
@@ -925,7 +934,7 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:361 */
 .x-treelist-nav .x-treelist-highlight-path .x-treelist-item-over > * > * > .x-treelist-item-text {
-    color: #fff;
+    color: #d6d9dc;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:365 */
 .x-treelist-nav .x-treelist-highlight-path .x-treelist-item-over > * > * > .x-treelist-item-expander {
@@ -933,7 +942,7 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:372 */
 .x-treelist-nav .x-treelist-row-over {
-    background-color: #4f606f;
+    background-color: #3c4a57;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:376 */
 .x-treelist-nav .x-treelist-row-over > * > .x-treelist-item-icon {
@@ -941,7 +950,7 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:380 */
 .x-treelist-nav .x-treelist-row-over > * > .x-treelist-item-text {
-    color: #fff;
+    color: #d6d9dc;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:384 */
 .x-treelist-nav .x-treelist-row-over > * > .x-treelist-item-expander {
@@ -953,7 +962,7 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:400 */
 .x-treelist-nav .x-treelist-expander-first .x-treelist-item-text {
-    margin-left: 54px;
+    margin-left: 74px;
     margin-right: 0;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/src/list/TreeItem.scss:410 */
@@ -13289,6 +13298,18 @@ div.x-trigger.x-grouped {
 .x-big .x-treecell-tool-dock > .x-body-el {
     padding: 12px 0;
 }
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/list/Tree.scss:40 */
+.x-treelist-nav .x-treelist-item > * > * > .x-treelist-item-text {
+    margin-left: 6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/list/Tree.scss:45 */
+.x-treelist-nav .x-treelist-item.x-treelist-item-with-icon > * > * > .x-treelist-item-text {
+    margin-left: 50px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/list/Tree.scss:50 */
+.x-treelist-nav .x-treelist-item.x-treelist-item-floated > * > * > .x-treelist-item-text {
+    margin-left: 0;
+}
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/Button.scss:7 */
 .x-button .x-text-el .title {
     /**
@@ -13479,68 +13500,6 @@ div.x-trigger.x-grouped {
 .x-keyboard-mode .x-button-flat.x-focused:after {
     border-color: #5fa2dd;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
-.x-button-dark {
-    color: #f6f6f6;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
-.x-button-dark .x-inner-el {
-    border-color: #7c7c7c;
-    background-color: #919191;
-    background-image: none;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
-.x-button-dark .x-icon-el {
-    color: #f6f6f6;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
-.x-button-dark .x-arrow-el {
-    color: #f6f6f6;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
-.x-button-dark.x-hovered {
-    color: #f0f0f0;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
-.x-button-dark.x-hovered .x-inner-el {
-    border-color: #6d6d6d;
-    background-color: #818181;
-    background-image: none;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
-.x-button-dark.x-hovered .x-icon-el {
-    color: #f0f0f0;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
-.x-button-dark.x-hovered .x-arrow-el {
-    color: #f0f0f0;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
-.x-button-dark.x-pressing,
-.x-button-dark.x-pressed {
-    color: #f6f6f6;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
-.x-button-dark.x-pressing .x-inner-el,
-.x-button-dark.x-pressed .x-inner-el {
-    border-color: #3d8ed6;
-    background-color: #5fa2dd;
-    background-image: none;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
-.x-button-dark.x-pressing .x-icon-el,
-.x-button-dark.x-pressed .x-icon-el {
-    color: #f6f6f6;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
-.x-button-dark.x-pressing .x-arrow-el,
-.x-button-dark.x-pressed .x-arrow-el {
-    color: #f6f6f6;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
-.x-keyboard-mode .x-button-dark.x-focused:after {
-    border-color: #e1e1e1;
-}
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
 .x-button-segmented .x-inner-el {
     padding: 10px 8px;
@@ -13568,6 +13527,88 @@ div.x-trigger.x-grouped {
 .x-button-segmented.x-pressing .x-inner-el,
 .x-button-segmented.x-pressed .x-inner-el {
     border-color: #5fa2dd;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
+.x-button-nav {
+    color: #f6f6f6;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
+.x-button-nav .x-inner-el {
+    border-color: transparent;
+    background-color: #3c4a57;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+.x-button-nav .x-icon-el {
+    color: #f6f6f6;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
+.x-button-nav .x-arrow-el {
+    color: #f6f6f6;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
+.x-button-nav.x-hovered {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
+.x-button-nav.x-hovered .x-inner-el {
+    border-color: transparent;
+    background-color: #3c4a57;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
+.x-button-nav.x-hovered .x-icon-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
+.x-button-nav.x-hovered .x-arrow-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
+.x-button-nav.x-pressing,
+.x-button-nav.x-pressed {
+    color: #f6f6f6;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
+.x-button-nav.x-pressing .x-inner-el,
+.x-button-nav.x-pressed .x-inner-el {
+    border-color: transparent;
+    background-color: #475360;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
+.x-button-nav.x-pressing .x-icon-el,
+.x-button-nav.x-pressed .x-icon-el {
+    color: #f6f6f6;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
+.x-button-nav.x-pressing .x-arrow-el,
+.x-button-nav.x-pressed .x-arrow-el {
+    color: #f6f6f6;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
+.x-keyboard-mode .x-button-nav.x-focused:after {
+    border-color: #d1d3d6;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/Button.scss:90 */
+.x-button.x-noborder-trbl>.x-inner-el {
+    border-width: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/Button.scss:98 */
+.x-toolbar:not(.x-tabbar) .x-button .x-inner-el {
+    padding: 7px 7px 6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/Button.scss:102 */
+.x-big .x-toolbar:not(.x-tabbar) .x-button .x-inner-el {
+    padding: 11px 11px 11px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/Button.scss:108 */
+.x-toolbar:not(.x-tabbar) .x-button.x-has-text .x-inner-el {
+    padding: 7px 10px 6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/local/theme-default/sass/src/Button.scss:112 */
+.x-big .x-toolbar:not(.x-tabbar) .x-button.x-has-text .x-inner-el {
+    padding: 11px 10px;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:330 */
 .x-toolbar-tools {
@@ -14104,6 +14145,14 @@ div.x-trigger.x-grouped {
 .x-tabbar-flat .x-title {
     color: #f0f0f0;
 }
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:362 */
+.x-tabbar-flat-body-el {
+    padding: 4px 8px 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:367 */
+.x-big .x-tabbar-flat-body-el {
+    padding: 8px 12px 0;
+}
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:374 */
 .x-tabbar-flat-body-el.x-horizontal > .x-component {
     margin-right: 0;
@@ -14180,22 +14229,4 @@ div.x-trigger.x-grouped {
     border-color: #5fa2dd;
     background-color: transparent;
     background-image: none;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:878 */
-.x-panel-auth {
-    background-color: transparent;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:907 */
-.x-panel-auth > .x-anchor-el .x-pointer-el {
-    fill: rgba(18, 61, 64, 0.25);
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
-.x-panel-auth-body-el {
-    padding: 24px;
-    background-color: rgba(18, 61, 64, 0.25);
-    color: white;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
-.x-panel-auth-boxscroller > .x-boxscroller-body > .x-body-el {
-    border: 0;
 }

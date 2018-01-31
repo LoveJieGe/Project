@@ -53,10 +53,10 @@ namespace SSJT.Crm.Core.Server
         /// <param name="sessionID"></param>
         public void RemoveSession(string sessionID)
         {
-            if (!this.sessions.ContainsKey(sessionID)) return;
             lock (lockObject)
             {
-                this.sessions.Remove(sessionID);
+                if(this.sessions.ContainsKey(sessionID))
+                    this.sessions.Remove(sessionID);
                 HttpContext.Current.Session.Remove(sessionID);
             }
         }

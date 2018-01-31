@@ -49,6 +49,8 @@ Ext.define('SSJT.view.auth.Login', {
             },{
                 xtype: 'img',
                 mode:'img',
+                itemId:'validate',
+                id:'vId',
                 src:'ValidateCode.ashx',
                 tooltip:'换一张',
                 style:{
@@ -74,7 +76,7 @@ Ext.define('SSJT.view.auth.Login', {
             '<div> Copyright © 2017-2020 yjyrj.com All Rights Reserved</div>'+
             '<a href="http://www.sencha.com" target="_blank">'+
                 '<span class="logo ext ext-sencha"></span>'+
-                '<span class="label">Sencha</span>'+
+                '<span class="label">Crm</span>'+
             '</a>'
     }]
 });

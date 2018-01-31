@@ -8,6 +8,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         controller:{
             '*':{
                 login:'onLogin',
+                logout: 'onLogout',
                 unmatchedroute:'handleUnmatchedRoute'
             }
         }
@@ -18,17 +19,19 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     },
     onLaunch:function(){
         var me = this;
-        this.originalRoute = SSJT.getApplication().getDefaultToken();
+        // this.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
         Ext.route.Router.suspend();
+        debugger
         Utils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
             success(r) {
                 console.log('已经是登录状态', r);
                 me.onUser(r);
             },
             failure:function(r){
-                Ext.route.Router.resume();
-                me.redirectTo('login', {replace: true})
+                //true可以防止任何先前排队的标记被执行
+                Ext.route.Router.resume(true);
+                me.redirectTo('login', {replace: true,force: true})
             },
             callback() {
                 Ext.getBody().removeCls('launching');
@@ -52,12 +55,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         
     },
     handleLoginRoute:function(){
-        //debugger
-        var session = this.session;
-        if(session&&session.isValid()){
-            this.redirectTo('',{required:true});
-            return;
-        }
         this.showLoginView();
     },
     showView:function(xtype){
@@ -69,6 +66,12 @@ Ext.define('SSJT.view.viewport.ViewportController',{
                 xtype:xtype,
                 reference:xtype
             });
+            var token = Ext.History.getToken();
+            if (!Ext.isEmpty(token)) {
+                me.redirectTo(token, {
+                    force: true
+                });
+            }
         }
         viewport.setActiveItem(view);
     },
@@ -79,7 +82,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.showView('mainhome');
     },
     onLogin:function(user){
-        debugger
         var me = this,
             token = Ext.History.getToken();
             newToken = "";
@@ -94,11 +96,27 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         if (Ext.isEmpty(newToken)) {
             newToken = Utils.getApp().getDefaultToken();
         }
-
+        //force:即使散列不会更改，将其设置为true也会强制执行
         me.redirectTo(newToken, {
             replace: true,
             force: true
         });
+    },
+    onLogout:function(){
+        var me = this,
+            view = me.getView();
+        Utils.ajax('ajaxRequest/UserAuthentication/Logout', {
+            success(r) {
+                me.clearUserData();
+                me.redirectTo('login', {
+                    replace: true
+                });
+            },
+            maskTarget: view
+        });   
+    },
+    clearUserData:function(){
+        User.setUser(null);
     },
     onUser:function(r){
         User.setUser(r);

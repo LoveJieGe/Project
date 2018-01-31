@@ -59,6 +59,14 @@ namespace SSJT.Crm.Core.Client
             }
             return null;
         }
+        [AjaxMethod]
+        [Description("注销")]
+        public void Logout()
+        {
+            Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
+            string sessionID = sessionServer.GetCurrentSessionID();
+            sessionServer.RemoveSession(sessionID);
+        }
     }
     
 }

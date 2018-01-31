@@ -7,7 +7,7 @@ Ext.define('SSJT.view.auth.LoginController', {
         var me = this,form = this.lookup('form');
         form.setValues({
             userID: 'Admin',
-           password: '123456'
+            password: '123456'
         });
         var map = new Ext.util.KeyMap({
             target: form.element,
@@ -35,16 +35,12 @@ Ext.define('SSJT.view.auth.LoginController', {
                     Validate:values.validate
                 } ,
                 success(r) {
-                    console.log('success', r);
                     me.fireEvent('login', r);
                 },
                 failure(msg) {
-                    // form.setErrors({
-                    //     UserID: msg
-                    // });
                     Utils.toastShort(msg);
                 },
-                //button: btnLogin,
+                //button: 'btnLogin',
                 maskTarget: true
             });
         }

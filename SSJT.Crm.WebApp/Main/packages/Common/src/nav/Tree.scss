@@ -18,6 +18,7 @@ $navtree-item-padding-big: dynamic(18px);
 
 $navtree-icon-size: dynamic(21px);
 $navtree-icon-size-big: dynamic(21px);
+
 .navtree-ct {
 
     $navtree-avatar-size: $navtree-icon-size*1.6;
@@ -41,11 +42,11 @@ $navtree-icon-size-big: dynamic(21px);
         $padding: $navtree-avatar-spacing,
         $padding-big: $navtree-avatar-spacing-big
     );
-
+    
     .x-button-avatar {
-        .x-body-el {
-            margin: auto;
-        }
+        // .x-body-el {
+        //     margin: auto;
+        // }
         .avatar {
             @include background-size(cover);
             background-color: $neutral-color;

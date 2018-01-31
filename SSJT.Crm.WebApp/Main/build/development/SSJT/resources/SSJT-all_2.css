@@ -1,3 +1,319 @@
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:330 */
+.x-tabbar-nav {
+    background-color: #32404e;
+    background-image: none;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #f1f1f1;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:344 */
+.x-tabbar-nav .x-title {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:362 */
+.x-tabbar-nav-body-el {
+    padding: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:367 */
+.x-big .x-tabbar-nav-body-el {
+    padding: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:374 */
+.x-tabbar-nav-body-el.x-horizontal > .x-component {
+    margin-right: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:383 */
+.x-tabbar-nav-body-el.x-horizontal > .x-component:last-child {
+    margin-right: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
+.x-tab-navtab {
+    color: #adb3b8;
+    border-radius: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1246 */
+.x-big .x-tab-navtab {
+    border-radius: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
+.x-tab-navtab .x-inner-el {
+    padding: 14px 15px;
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: #000;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1260 */
+.x-big .x-tab-navtab .x-inner-el {
+    border-radius: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+.x-tab-navtab .x-icon-el {
+    color: #adb3b8;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
+.x-tab-navtab .x-arrow-el {
+    color: #adb3b8;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
+.x-tab-navtab.x-hovered .x-inner-el {
+    border-color: #000;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
+.x-tab-navtab.x-hovered .x-icon-el {
+    color: #fff;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1412 */
+.x-tab-navtab:before {
+    border-radius: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
+.x-tab-navtab.x-pressing .x-inner-el,
+.x-tab-navtab.x-pressed .x-inner-el {
+    border-color: #000;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
+.x-tab-navtab.x-pressing .x-icon-el,
+.x-tab-navtab.x-pressed .x-icon-el {
+    color: #fff;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1449 */
+.x-keyboard-mode .x-tab-navtab.x-focused .x-icon-el {
+    color: #fff;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
+.x-keyboard-mode .x-tab-navtab.x-focused:after {
+    border-style: none;
+    border-radius: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1475 */
+.x-big .x-keyboard-mode .x-tab-navtab.x-focused:after {
+    border-radius: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1438 */
+.x-tab-navtab.x-active .x-inner-el {
+    border-color: #5fa2dd;
+    background-color: transparent;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1443 */
+.x-tab-navtab.x-active .x-icon-el {
+    color: #fff;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1481 */
+.x-tab-navtab.x-active.x-focused .x-icon-el {
+    color: #fff;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/path.scss:5 */
+@font-face {
+    /* FONT PATH
+ * -------------------------- */
+    /* FONT PATH
+ * -------------------------- */
+    font-family: 'common';
+    src: url('../resources/Common/fonts/common.woff?v=1.0.8') format('woff'), url('../resources/Common/fonts/common.ttf?v=1.0.8') format('truetype'), url('../resources/Common/fonts/common.svg?v=1.0.8') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:2 */
+[class^="i-common-"],
+[class*=" i-common-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'common' !important;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:11 */
+.i-common-image:before {
+    content: "\e900" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:12 */
+.i-common-tg:before {
+    content: "\e901" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:13 */
+.i-common-number:before {
+    content: "\e902" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:14 */
+.i-common-thumbnail:before {
+    content: "\e903" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:15 */
+.i-common-list:before {
+    content: "\e904" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:16 */
+.i-common-add:before {
+    content: "\e905" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:17 */
+.i-common-minus:before {
+    content: "\e906" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:18 */
+.i-common-tree-collapse:before {
+    content: "\e907" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:19 */
+.i-common-tree-expand:before {
+    content: "\e908" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:20 */
+.i-common-todoc:before {
+    content: "\e909" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:21 */
+.i-common-cross:before {
+    content: "\e90a" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:6 */
+.navtree-ct {
+    position: relative;
+    transition: width 0.2s;
+    width: 220px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:11 */
+.navtree-ct-collapsed {
+    width: 64px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
+.navtree-ct .x-button-avatar {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
+.navtree-ct .x-button-avatar .x-inner-el {
+    border-color: #222c35;
+    background-color: #32404e;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
+.navtree-ct .x-button-avatar.x-has-text .x-inner-el {
+    padding: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
+.x-big .navtree-ct .x-button-avatar.x-has-text .x-inner-el {
+    padding: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+.navtree-ct .x-button-avatar .x-icon-el {
+    color: #f0f0f0;
+    width: 33.6px;
+    height: 33.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+.x-big .navtree-ct .x-button-avatar .x-icon-el {
+    width: 37.8px;
+    height: 37.8px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.navtree-ct .x-button-avatar .x-icon-el:before {
+    font-size: 33.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+.navtree-ct .x-button-avatar.x-has-text.x-icon-align-left .x-icon-el {
+    margin-right: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+.x-big .navtree-ct .x-button-avatar.x-has-text.x-icon-align-left .x-icon-el {
+    margin-right: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+.navtree-ct .x-button-avatar.x-has-text.x-icon-align-right .x-icon-el {
+    margin-left: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+.x-big .navtree-ct .x-button-avatar.x-has-text.x-icon-align-right .x-icon-el {
+    margin-left: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
+.navtree-ct .x-button-avatar .x-arrow-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
+.navtree-ct .x-button-avatar.x-hovered {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
+.navtree-ct .x-button-avatar.x-hovered .x-inner-el {
+    border-color: #2c353f;
+    background-color: #3c4a57;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
+.navtree-ct .x-button-avatar.x-hovered .x-icon-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
+.navtree-ct .x-button-avatar.x-hovered .x-arrow-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
+.navtree-ct .x-button-avatar.x-pressing,
+.navtree-ct .x-button-avatar.x-pressed {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
+.navtree-ct .x-button-avatar.x-pressing .x-inner-el,
+.navtree-ct .x-button-avatar.x-pressed .x-inner-el {
+    border-color: #353f48;
+    background-color: #475360;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
+.navtree-ct .x-button-avatar.x-pressing .x-icon-el,
+.navtree-ct .x-button-avatar.x-pressed .x-icon-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
+.navtree-ct .x-button-avatar.x-pressing .x-arrow-el,
+.navtree-ct .x-button-avatar.x-pressed .x-arrow-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
+.x-keyboard-mode .navtree-ct .x-button-avatar.x-focused:after {
+    border-color: #cacdd0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:50 */
+.navtree-ct .x-button-avatar .avatar {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #d0d0d0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:61 */
+.navtree-ct-collapsed .x-button-avatar.x-icon-align-left.x-has-text .x-icon-el {
+    margin: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:65 */
+.navtree-ct-collapsed .x-button .x-text-el {
+    display: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:878 */
+.x-panel-auth {
+    background-color: transparent;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:907 */
+.x-panel-auth > .x-anchor-el .x-pointer-el {
+    fill: rgba(18, 61, 64, 0.25);
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
+.x-panel-auth-body-el {
+    padding: 24px;
+    background-color: rgba(18, 61, 64, 0.25);
+    color: white;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
+.x-panel-auth-boxscroller > .x-boxscroller-body > .x-body-el {
+    border: 0;
+}
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:14 */
 .auth-login {
     -webkit-background-size: cover;
@@ -72,102 +388,366 @@
 .auth-login .auth-footer .label {
     font-weight: bold;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:878 */
-.x-panel-loginForm {
-    background-color: white;
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/path.scss:5 */
+@font-face {
+    /* FONT PATH
+ * -------------------------- */
+    /* FONT PATH
+ * -------------------------- */
+    font-family: 'task';
+    src: url('../resources/fonts/task.woff?v=1.0.3') format('woff'), url('../resources/fonts/task.ttf?v=1.0.3') format('truetype'), url('../resources/fonts/task.svg?v=1.0.3') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:907 */
-.x-panel-loginForm > .x-anchor-el .x-pointer-el {
-    fill: white;
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:4 */
+[class^="i-task-"],
+[class*=" i-task-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'task' !important;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:13 */
+.i-task-check:before {
+    content: "\e836" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:14 */
+.i-task-read:before {
+    content: "\e837" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:15 */
+.i-task-log:before {
+    content: "\e838" !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
+.navtree-ct .x-button-logout {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
+.navtree-ct .x-button-logout .x-inner-el {
+    border-color: #222c35;
+    background-color: #32404e;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
+.navtree-ct .x-button-logout.x-has-text .x-inner-el {
+    padding: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
+.x-big .navtree-ct .x-button-logout.x-has-text .x-inner-el {
+    padding: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+.navtree-ct .x-button-logout .x-icon-el {
+    color: #f0f0f0;
+    width: 33.6px;
+    height: 33.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+.x-big .navtree-ct .x-button-logout .x-icon-el {
+    width: 37.8px;
+    height: 37.8px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.navtree-ct .x-button-logout .x-icon-el:before {
+    font-size: 21px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+.navtree-ct .x-button-logout.x-has-text.x-icon-align-left .x-icon-el {
+    margin-right: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+.x-big .navtree-ct .x-button-logout.x-has-text.x-icon-align-left .x-icon-el {
+    margin-right: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+.navtree-ct .x-button-logout.x-has-text.x-icon-align-right .x-icon-el {
+    margin-left: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+.x-big .navtree-ct .x-button-logout.x-has-text.x-icon-align-right .x-icon-el {
+    margin-left: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
+.navtree-ct .x-button-logout .x-arrow-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
+.navtree-ct .x-button-logout.x-hovered {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
+.navtree-ct .x-button-logout.x-hovered .x-inner-el {
+    border-color: #2c353f;
+    background-color: #3c4a57;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
+.navtree-ct .x-button-logout.x-hovered .x-icon-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
+.navtree-ct .x-button-logout.x-hovered .x-arrow-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
+.navtree-ct .x-button-logout.x-pressing,
+.navtree-ct .x-button-logout.x-pressed {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
+.navtree-ct .x-button-logout.x-pressing .x-inner-el,
+.navtree-ct .x-button-logout.x-pressed .x-inner-el {
+    border-color: #353f48;
+    background-color: #475360;
+    background-image: none;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
+.navtree-ct .x-button-logout.x-pressing .x-icon-el,
+.navtree-ct .x-button-logout.x-pressed .x-icon-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
+.navtree-ct .x-button-logout.x-pressing .x-arrow-el,
+.navtree-ct .x-button-logout.x-pressed .x-arrow-el {
+    color: #f0f0f0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
+.x-keyboard-mode .navtree-ct .x-button-logout.x-focused:after {
+    border-color: #cacdd0;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
-.x-panel-loginForm-body-el {
-    padding: 24px;
-    background-color: white;
-    color: white;
+.x-tooltip-large-body-el {
+    padding: 16px;
+    font-size: 14px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:959 */
+.x-big .x-tooltip-large-body-el {
+    font-size: 14px;
+    padding: 18px;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
-.x-panel-loginForm-boxscroller > .x-boxscroller-body > .x-body-el {
+.x-tooltip-large-boxscroller > .x-boxscroller-body > .x-body-el {
     border: 0;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:11 */
-.login {
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:15 */
+.sidebar {
+    background-color: #919191;
+    color: #f6f6f6;
+    overflow: visible;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:25 */
+.sidebar > .x-dock {
+    overflow: visible;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+.sidebar .x-button-large.x-has-text.x-icon-align-left .x-icon-el {
+    margin-right: 16px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+.x-big .sidebar .x-button-large.x-has-text.x-icon-align-left .x-icon-el {
+    margin-right: 18px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+.sidebar .x-button-large.x-has-text.x-icon-align-right .x-icon-el {
+    margin-left: 16px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+.x-big .sidebar .x-button-large.x-has-text.x-icon-align-right .x-icon-el {
+    margin-left: 18px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
+.sidebar .x-button-picture.x-has-text .x-inner-el {
+    padding: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
+.x-big .sidebar .x-button-picture.x-has-text .x-inner-el {
+    padding: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+.sidebar .x-button-picture .x-icon-el {
+    width: 33.6px;
+    height: 33.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+.x-big .sidebar .x-button-picture .x-icon-el {
+    width: 37.8px;
+    height: 37.8px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+.sidebar .x-button-picture .x-icon-el:before {
+    font-size: 33.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+.sidebar .x-button-picture.x-has-text.x-icon-align-left .x-icon-el {
+    margin-right: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+.x-big .sidebar .x-button-picture.x-has-text.x-icon-align-left .x-icon-el {
+    margin-right: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+.sidebar .x-button-picture.x-has-text.x-icon-align-right .x-icon-el {
+    margin-left: 9.7px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+.x-big .sidebar .x-button-picture.x-has-text.x-icon-align-right .x-icon-el {
+    margin-left: 9.6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:48 */
+.sidebar-body-el {
+    z-index: 2;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:52 */
+.sidebar-micro {
+    width: 53px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:56 */
+.sidebar-micro-body-el {
+    -webkit-transition-property: -webkit-width;
+    -moz-transition-property: -moz-width;
+    -o-transition-property: -o-width;
+    transition-property: width;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    width: 53px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:61 */
+.sidebar-micro-body-el > div {
+    width: 256px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:65 */
+.expanded > .x-dock > .sidebar-micro-body-el {
+    width: 256px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:70 */
+.sidebar-slide {
+    width: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:74 */
+.sidebar-slide-body-el {
+    -webkit-transition-property: -webkit-margin-left;
+    -moz-transition-property: -moz-margin-left;
+    -o-transition-property: -o-margin-left;
+    transition-property: margin-left;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    margin-top: 57px;
+    margin-left: -75vw;
+    width: 75vw;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:81 */
+.expanded > .sidebar-slide-body-el {
+    margin-left: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:86 */
+.sidebar-mask {
+    background: black;
+    display: none;
+    opacity: 0.005;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:97 */
+.sidebar.expanded > .sidebar-mask {
+    display: block;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:2 */
+.main-menu .x-dataview-item {
+    cursor: pointer;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:5 */
+.main-menu .x-dataview-item .icon {
+    display: inline-block;
+    font-size: 21px;
+    line-height: 1;
+    margin-right: 16px;
+    height: 21px;
+    width: 21px;
+    text-align: center;
+    vertical-align: middle;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:15 */
+.x-big .main-menu .x-dataview-item .icon {
+    font-size: 21px;
+    margin-right: 18px;
+    height: 21px;
+    width: 21px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:24 */
+.main-menu .x-dataview-dark {
+    border-bottom: 2px solid #848484;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:17 */
+@-webkit-keyframes rotate-animation {
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:20 */
+@keyframes rotate-animation {
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:12 */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:17 */
+body.launching {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-image: url(../resources/images/login-background.jpg);
+    background-color: #123d40;
+    background-image: url(../resources/images/auth-background.jpg);
     background-position: center;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:15 */
-.login > .x-body-el {
-    background-color: rgba(0, 0, 0, 0.25);
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:19 */
-.login .x-formpanel {
-    width: 256px;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:21 */
-.login .x-formpanel .x-button {
-    margin: 5px 0;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:23 */
-.login .x-formpanel .x-button .x-big {
-    margin: 5px 0;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:28 */
-.login .login-header,
-.login .login-footer {
-    color: white;
-    text-align: center;
-    padding: 16px;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:32 */
-.login .login-header a,
-.login .login-footer a {
-    color: white;
-    text-decoration: none;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:38 */
-.login .login-header .logo {
-    text-shadow: 1px #aaa;
-    color: white;
-    font-size: 40px;
-    line-height: 1;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:44 */
-.login .login-header .title,
-.login .login-header .caption {
-    white-space: nowrap;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:47 */
-.login .login-header .title {
-    font-size: 20px;
-    font-weight: bold;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:51 */
-.login .login-header .caption {
-    font-size: 15px;
-    text-transform: uppercase;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:57 */
-.login .login-footer .logo {
-    font-size: 18px;
-    margin-right: 2px;
-    margin-left: -4px;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:61 */
-.login .login-footer .logo::before {
-    vertical-align: middle;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/login/Login.scss:65 */
-.login .login-footer .label {
-    font-weight: bold;
-}
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/List.scss:5 */
-.bold {
-    /*
- * This file contains styling for the main List view.
- */
-    font-weight: 500;
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:23 */
+body.launching::before {
+    -webkit-animation: rotate-animation 1s linear infinite;
+    animation: rotate-animation 1s linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url(../resources/images/loading.png);
+    background-position: center;
+    content: '';
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -15px;
+    top: 50%;
+    left: 50%;
+    width: 41px;
+    height: 41px;
 }

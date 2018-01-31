@@ -1,8 +1,9 @@
 $app-name:  dynamic( 'SSJT' );
-$image-search-path: 'f:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/production/SSJT/resources';
+$image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/production/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
 $include-common-nav-avatarbutton: dynamic(true);;
 $include-common-nav-button: dynamic(true);;
+$include-common-nav-logoutbutton: dynamic(true);;
 $include-common-nav-tree: dynamic(true);;
 $include-common-util-user: dynamic(true);;
 $include-config: dynamic(true);;

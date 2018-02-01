@@ -13,10 +13,16 @@ Ext.define('SSJT.store.main.Menu', {
         config.root = {
             expanded: true,
             children: [{
+                text:'桌面',
+                iconCls:'x-fa fa-home',
+                id:'main',
+                leaf:true
+            },{
                 text: '个人办公',
-                iconCls: 'x-fa fa-list-ul',
+                iconCls: 'x-fa fa-user',
+                id: 'office',
                 expanded: false,
-                selectable: false,
+                //selectable: false,
                 children: [{
                     text: '个人工作',
                     id: 'office/mine',
@@ -45,49 +51,49 @@ Ext.define('SSJT.store.main.Menu', {
             }, {
                 text: '客户管理',
                 id: 'customer/management',
-                iconCls: 'x-fa fa-commenting-o',
+                iconCls: 'x-fa  fa-address-book-o',
                 children:[{
                     text:'客户列表',
                     id:'customer/list',
                     leaf:true
                 },{
                     text:'联系人管理',
-                    id:'contact/management',
+                    id:'customer/contact',
                     leaf:true
                 },{
                     text:'跟进管理',
-                    id:'follow/management',
+                    id:'customer/follow',
                     leaf:true
                 }]
             },{
                 text: '财务管理',
                 id: 'financial/management',
-                iconCls: 'x-fa fa-commenting-o',
+                iconCls: 'x-fa fa-money',
                 children:[{
                     text:'收款管理',
-                    id:'credit/management',
+                    id:'financial/credit',
                     leaf:true
                 },{
                     text:'收款流水',
-                    id:'receiving/water',
+                    id:'financial/receiving',
                     leaf:true
                 },{
                     text:'开票管理',
-                    id:'billing/management',
+                    id:'financial/billing',
                     leaf:true
                 },{
                     text:'开票列表',
-                    id:'billing/list',
+                    id:'financial/billing',
                     leaf:true
                 },{
                     text:'应收与未收',
-                    id:'receive/uncollected',
+                    id:'financial/receive',
                     leaf:true
                 }]
             },{
                 text: '产品管理',
                 id: 'product/management',
-                iconCls: 'x-fa fa-commenting-o',
+                iconCls: 'x-fa fa-th-large',
                 children:[{
                     text:'产品类别',
                     id:'product/category',
@@ -99,51 +105,51 @@ Ext.define('SSJT.store.main.Menu', {
                 }]
             }, {
                 text: '人事管理',
-                iconCls: 'x-fa fa-bar-chart',
+                iconCls: 'x-fa fa-group',
                 expanded: false,
                 selectable: false,
                 children: [{
                     text: '组织结构',
-                    id: 'organizational/structure',
+                    id: 'personnel/organizational',
                     leaf: true
                 }, {
                     text: '职位管理',
-                    id: 'post/management',
+                    id: 'personnel/post',
                     leaf: true
                 }, {
                     text: '岗位管理',
-                    id: 'job/management', //'completereport',
+                    id: 'personnel/job', //'completereport',
                     leaf: true
                 }, {
                     text: '员工管理',
-                    id: 'staff/management', //'completereport',
+                    id: 'personnel/staff', //'completereport',
                     leaf: true
                 }]
             },{
                 text: '系统管理',
-                iconCls: 'x-fa fa-bar-chart',
+                iconCls: 'x-fa fa-cogs',
                 expanded: false,
                 selectable: false,
                 children: [{
                     text: '角色授权',
-                    id: 'role/authorization',
+                    id: 'system/role',
                     leaf: true
                 }, {
                     text: '日志管理',
-                    id: 'log/management',
+                    id: 'system/log',
                     leaf: true
                 }, {
                     text: '参数配置',
-                    id: 'param/config', //'completereport',
+                    id: 'system/param', //'completereport',
                     leaf: true
                 }, {
                     text: '城市管理',
-                    id: 'city/management', //'completereport',
+                    id: 'system/city', //'completereport',
                     leaf: true
                 }]
             }, {
                 text: '回收站',
-                id: 'tasks/recycle',
+                id: 'crm/recycle',
                 iconCls: 'x-fa fa-trash',
                 leaf: true
             }]

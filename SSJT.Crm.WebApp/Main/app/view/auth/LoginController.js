@@ -17,7 +17,6 @@ Ext.define('SSJT.view.auth.LoginController', {
             },
             scope: me
         });
-        //console.log("/path");
     },
 
     onLoginTap: function() {

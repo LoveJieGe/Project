@@ -1,153 +1,166 @@
+/**
+ * This class is the controller for the main view for the application. It is specified as
+ * the "controller" of the Main view class.
+ */
 Ext.define('SSJT.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.main',
 
-    routes: {
-        ':type(/:args)?': {
-            action: 'handleNavigationRoute',
-            conditions: {
-                // NOTE(SB): how to build this list automatically from the Menu store?
-                ':type': '(history|home|offices|organizations|people)',
-                ':args': '(.*)'
-            }
-        },
-        ':type/:id(/:args)?': {
-            action: 'handleDataRoute',
-            conditions: {
-                ':type': '(office|organization|person)',
-                ':id': '([a-f0-9-]{36}|create|edit)',
-                ':args': '(.*)'
-            }
-        }
+    alias: 'controller.maincontroller',
+    init(){
+        console.log("初始化");
+
+    },
+    config: {
+        showNavigation: true
     },
 
     listen: {
+        controller: {
+            '*': {
+                toggletasknavtree: 'onToggleTaskNavTree',
+                userchanged: 'onUserChanged'
+            }
+        },
         global: {
-            togglemainmenu: 'onToggleMainMenu',
-            navigationback: 'onNavigationBack'
+            afterroute: 'onAfterRoute'
         }
+    },
+
+    routes: {
+        ':type(/:args)?': {
+            action: 'toTasks',
+            conditions: {
+                // NOTE(SB): how to build this list automatically from the Menu store?
+                ':type': '(customer|main|office|product|financial|personnel|system)',
+                ':args': '(.*)'
+            }
+        }
+        // 'crm/recycle': 'toRecycleBin'
+    },
+    onToggleTaskNavTree(expand) {
+        const me = this;
+        if (expand !== undefined) {
+            me.setShowNavigation(!!expand);
+        } else {
+            me.onToggleNavigationSize();
+        }
+    },
+
+    onToggleNavigationSize() {
+        this.setShowNavigation(!this.getShowNavigation());
+    },
+    //导航条属性变化时
+    updateShowNavigation(showNavigation, oldValue) {
+        if (oldValue !== undefined) {
+            const me = this,
+                navigation = me.lookup('navigation'),
+                mainmenu = me.lookup('mainmenu'),
+                rootEl = mainmenu.rootItem.el;
+            //如果有样式则删除，没有则添加
+            navigation.toggleCls('navtree-ct-collapsed');
+
+            if (showNavigation) {
+                rootEl.setWidth('');
+                mainmenu.setMicro(false);
+                me.lookup('btnLogout').setTooltip(null);
+            } else {
+                //将Treelist UI设置为true，只显示根节点的图标。将光标悬停(或在触控设备上点击)显示图标旁边的子节点。
+                rootEl.setWidth(rootEl.getWidth());
+                mainmenu.setMicro(true);
+                me.lookup('btnLogout').setTooltip({
+                    xtype:'tooltip',
+                    align:'tl-tr?',
+                    ui:'large',
+                    html:'注销',
+                });
+            }
+            me.lookup('btnToggle').setCollapsed(!showNavigation);
+        }
+    },
+
+    // 全局路由的 after 事件处理 (MX.override.route.Route)
+    onAfterRoute(route, token) {
+        if (token.split('/')[0] == 'tasks') {
+            document.title = '任务';
+        }
+    },
+    onUserChanged() {
+        try {
+            Task.view.widget.BodySelectCombo.bodiesCache = null;
+        } catch (e) {}
+    },
+
+    // destroy() {
+    //     const me = this;
+    //     me.callParent(arguments);
+
+    //     // 销毁缓存的 view 实例
+    //     TaskHelper.destroyAllViewCache();
+    // },
+
+    ensureCenterByXType(xtype) {
+        const me = this,
+            view = me.getView();
+
+        me.lookup('mainmenu').selectNodeSilent(Ext.History.getToken());
+
+        let center = view.child('#center');
+        // 确保中间的容器是 task_container
+        if (!center || center.xtype != xtype) {
+            if (center) view.remove(center, true);
+            center = view.add({
+                xtype: xtype,
+                itemId: 'center'
+            });
+        }
+
+        return center;
     },
 
     /**
-     * @param {String} ref Component reference, MUST be valid.
-     * @protected
+     * 显示 任务 容器(其内部放置 我的任务、关注的任务、创建的任务 等)
+     * @param {String} type
      */
-    activate: function(ref) {
-        var view = ref.isComponent? ref : this.lookup(ref),
-            child = view,
-            parent;
+    toTasks(type,args) {
+        debugger
+        console.log('路由',type);
+        const me = this,
+            center = me.ensureCenterByXType('crm-container');
+            //vm = center.getViewModel(),
+            //oldTaskType = vm.get('taskType');
 
-        while (parent = child.getParent()) {
-            parent.setActiveItem(child);
-            child = parent;
-        }
+        // if (oldTaskType != type) {
+        //     vm.set('taskType', type);
+        //     vm.notify();
+        //     center.getController().onTaskTypeChange();
+        // }
+    },
+    toHome(){
+        debugger
+        me.ensureCenterByXType('crm-container');
+    },
+    toTaskMsgbox() {
+        const me = this;
 
-        return view;
+        me.ensureCenterByXType('task_msgbox_container');
     },
 
-    getContainerForViewId: function() {
-        return this.getView();
+    /**
+     * 显示报表容器
+     * @param {String} type
+     */
+    toTaskReport(type) {
+        const me = this,
+            center = me.ensureCenterByXType('task_report_container');
+
+        center.getViewModel().set('reportType', type);
+        center.getController().onReportTypeChange();
     },
 
-    ensureView: function(id, config, route) {
-        var container = this.getContainerForViewId(id),
-            item = container.child('component[viewId=' + id + ']'),
-            reset = !!item;
+    toRecycleBin() {
+        const me = this,
+            center = me.ensureCenterByXType('task_recycle_container');
 
-        if (!item) {
-            item = container.add(Ext.apply({ viewId: id }, config));
-        }
-
-        if (Ext.isDefined(item.config.route)) {
-            item.setRoute(route);
-        }
-
-        // Reset the component (form?) only if previously instantiated (i.e. with outdated data).
-        if (reset && Ext.isFunction(item.reset)) {
-            item.reset();
-        }
-
-        return item;
-    },
-
-    handleNavigationRoute: function(type, args) {
-        var store = Ext.getStore('Menu'),
-            entry = store.getById(type);
-
-        this.lookup('mainmenu').setSelection(entry);
-        if (!entry) {
-            return null;
-        }
-
-        this.activate(
-            this.ensureView(type, {
-                xtype: entry.get('xtype'),
-                title: entry.get('text')
-            }, args));
-    },
-
-    handleDataRoute: function(type, id, args) {
-        var me = this,
-            args = Ext.Array.clean((args || '').split('/')),
-            Model = App.model[Ext.String.capitalize(type)],
-            action, xtype, view;
-
-        // determine the requested action for the given "type":
-        // - #{type}/create: create a new "type"
-        // - #{type}/{id}: show record with "id"
-        // - #{type}/{id}/edit: edit record with "id"
-
-        if (id == 'create') {
-            action = 'create';
-            id = null;
-        } else if (args[0] == 'edit') {
-            action = 'edit';
-            args.shift();
-        } else {
-            action = 'show';
-        }
-
-        xtype = type + action;
-
-        // leave a developer message in case of new types addition
-        if (!Ext.ClassManager.getNameByAlias('widget.' + xtype)) {
-            Ext.log.error('Invalid route: no view for xtype: ' + xtype);
-        }
-
-        view = me.ensureView(xtype, { xtype: xtype });
-        if (id == null) {
-            view.setRecord(new Model());
-            me.activate(view);
-            return;
-        }
-
-        Ext.Viewport.setMasked({ xtype: 'loadmask' });
-        Model.load(id, {
-            callback: function(record) {
-                view.setRecord(record);
-                me.activate(view);
-                Ext.Viewport.setMasked(false);
-
-                if (type === 'person') {
-                    var user = me.getViewModel().get('user');
-                    if (record.get('id') != user.get('id')) {
-                        me.fireEvent('actionlog', 'profile', record);
-                    }
-                }
-            }
-        });
-    },
-
-    onToggleMainMenu: function(expanded) {
-        var menu = this.lookup('mainmenu');
-        if (expanded === undefined) {
-            expanded = !menu.getExpanded();
-        }
-
-        menu.setExpanded(expanded);
-    },
-
-    onNavigationBack: function() {
-        Ext.util.History.back();
+        center.getController().onSearch();
     }
 });

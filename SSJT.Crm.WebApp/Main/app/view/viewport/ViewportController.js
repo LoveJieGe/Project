@@ -11,11 +11,14 @@ Ext.define('SSJT.view.viewport.ViewportController',{
                 logout: 'onLogout',
                 unmatchedroute:'handleUnmatchedRoute'
             }
+        },
+        global:{
+            beforeroute:'onBeforeRoute'
         }
     },
     routes:{
         'login':'handleLoginRoute',
-        'home': 'showHome'
+        'home': 'showMain'
     },
     onLaunch:function(){
         var me = this;
@@ -78,8 +81,9 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     showLoginView:function(){
         this.showView('authlogin');
     },
-    showHome:function(){
-        this.showView('mainhome');
+    showMain:function(){
+        debugger
+        this.showView('main');
     },
     onLogin:function(user){
         var me = this,
@@ -115,6 +119,24 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             maskTarget: view
         });   
     },
+    // 全局路由的 before 事件处理
+    onBeforeRoute(action, route) {
+        debugger
+        const me = this,
+            lastView = me.lastView;
+
+        if (lastView) {
+            if (lastView instanceof Ext.Sheet) { // 如果上次的view是Ext.Sheet，就隐藏
+                lastView.hide();
+            }
+        }
+        /* else {
+            if (route !== window._last_route) {
+                Utils.backAllFloated(); // 隐藏所有悬浮层
+            }
+        }*/
+    },
+
     clearUserData:function(){
         User.setUser(null);
     },

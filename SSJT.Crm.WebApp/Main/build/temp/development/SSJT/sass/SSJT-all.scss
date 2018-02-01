@@ -1,10 +1,12 @@
 $app-name:  dynamic( 'SSJT' );
-$image-search-path: 'F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
+$image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
+$include-avatarhelper: dynamic(true);;
 $include-common-nav-avatarbutton: dynamic(true);;
 $include-common-nav-button: dynamic(true);;
 $include-common-nav-logoutbutton: dynamic(true);;
 $include-common-nav-tree: dynamic(true);;
+$include-common-util-avatarhelper: dynamic(true);;
 $include-common-util-user: dynamic(true);;
 $include-config: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(true);;
@@ -771,8 +773,10 @@ $include-ssjt-store-personnel: dynamic(true);;
 $include-ssjt-store-main-menu: dynamic(true);;
 $include-ssjt-view-auth-login: dynamic(true);;
 $include-ssjt-view-auth-logincontroller: dynamic(true);;
+$include-ssjt-view-crm-container: dynamic(true);;
 $include-ssjt-view-home-homecontroller: dynamic(true);;
 $include-ssjt-view-main-home: dynamic(true);;
+$include-ssjt-view-main-main: dynamic(true);;
 $include-ssjt-view-main-maincontroller: dynamic(true);;
 $include-ssjt-view-main-mainmodel: dynamic(true);;
 $include-ssjt-view-main-menu: dynamic(true);;
@@ -785,6 +789,7 @@ $include-util-model-valuetext: dynamic(true);;
 $include-util-util-config: dynamic(true);;
 $include-util-util-utils: dynamic(true);;
 $include-utils: dynamic(true);;
+$include-crm-container: dynamic(true);;
 $output-paths: ("path": "../resources");
 
 /* ======================== ETC ======================== */

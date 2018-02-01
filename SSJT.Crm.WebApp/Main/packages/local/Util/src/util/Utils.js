@@ -369,4 +369,44 @@ Ext.define('Util.util.Utils',{
     toastShort(msg) {
         if (!Ext.isEmpty(msg)) Ext.toast(msg, 1500);
     },
+     /** **************************路由跳转********************************/
+
+    /**
+     * url跳转
+     */
+    redirectTo() {
+        const app = this.getApp();
+        if (app) {
+            app.redirectTo.apply(app, arguments);
+        }
+    },
+    /**
+     * 根据 token 获取 路由对象
+     * 如果提供了第二个参数(控制器 或 app 实例)，则 只获取 它里面 有的
+     *
+     * @param {String} token
+     * @param {Ext.app.BaseController} instance 可选，控制器 或 app 实例
+     * @return {Ext.route.Route}
+     */
+    getRouteByToken(token, instance) {
+        const routes = Ext.route.Router.routes;
+
+        let enumsObj = {},
+            name,
+            route;
+        if (instance && instance.getRoutes) {
+            const obj = instance.getRoutes();
+            if (obj) enumsObj = obj;
+        } else {
+            enumsObj = routes;
+        }
+        
+        for (name in enumsObj) {
+            route = routes[name];
+            if (token && route.recognize(token)) {
+                return route;
+            }
+        }
+        return null;
+    },
 })

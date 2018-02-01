@@ -154,6 +154,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\AvatarHandler.ashx.cs">
+      <DependentUpon>AvatarHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Common\ContextFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -168,6 +171,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\config.xml" />
     <Content Include="Config\services.xml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -185,6 +189,8 @@
     <Content Include="Main\app\store\Personnel.js" />
     <Content Include="Main\app\view\auth\Login.js" />
     <Content Include="Main\app\view\auth\LoginController.js" />
+    <Content Include="Main\app\view\crm\Container.js" />
+    <Content Include="Main\app\view\crm\ContainerController.js" />
     <Content Include="Main\app\view\home\Home.js" />
     <Content Include="Main\app\view\home\HomeController.js" />
     <Content Include="Main\app\view\main\List.js" />
@@ -5075,6 +5081,7 @@
     <Content Include="Main\packages\Common\src\nav\Button.js" />
     <Content Include="Main\packages\Common\src\nav\LogoutButton.js" />
     <Content Include="Main\packages\Common\src\nav\Tree.js" />
+    <Content Include="Main\packages\Common\src\util\AvatarHelper.js" />
     <Content Include="Main\packages\Common\src\util\User.js" />
     <Content Include="Main\packages\local\modern-locale\.gitignore" />
     <Content Include="Main\packages\local\modern-locale\build.xml" />
@@ -6751,6 +6758,7 @@
     <Content Include="Main\sass\var\view\task\RightPanel.scss" />
     <Content Include="Main\.eslintrc" />
     <Content Include="Main\app\view\home\Home.scss" />
+    <Content Include="Common\AvatarHandler.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

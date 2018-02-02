@@ -24,16 +24,22 @@ namespace SSJT.Crm.Core.Client
             bool isExist = SqlHelper.Exists<HrEmploy>(H => H.UserID == userID && H.PassWord == pwd);
             if(!isExist)
                 throw new Exception("用户名或密码错误!");
-            SessionFactory.GetSessionServer().RegSession(userID, password);
+            Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
+            sessionServer.RegSession(userID, password);
             HrEmploy userInfo = (DbFactory.DbSession.DbContext as CrmEntities).HrEmploy.FirstOrDefault(H => H.UserID == userID && H.PassWord == pwd);
-            if(userInfo!=null)
+            int timeOut = sessionServer.Timeout;
+            DateTime expires = DateTime.Now;
+            expires.AddMinutes(timeOut);
+            if (userInfo!=null)
             {
                 result = new UserResult
                 {
                     UserID = userInfo.UserID,
-                    UserName = userInfo.UserName
+                    UserName = userInfo.UserName,
+                    Expires = expires
                 };
             }
+            
             return result;
         }
 
@@ -50,10 +56,14 @@ namespace SSJT.Crm.Core.Client
             //string sessionId = string.Format("{0}.{2}", this.AppName, this.GetSessionID());
             if (SqlHelper.Exists<HrEmploy>(H => H.UserID == userInfo.UserID))
             {
+                int timeOut = sessionServer.Timeout;
+                DateTime expires = DateTime.Now;
+                expires.AddMinutes(timeOut);
                 result = new UserResult
                 {
                     UserID = userInfo.UserID,
-                    UserName = userInfo.UserName
+                    UserName = userInfo.UserName,
+                    Expires = expires
                 };
                 return result;
             }

@@ -157,6 +157,7 @@
     <Compile Include="Common\AvatarHandler.ashx.cs">
       <DependentUpon>AvatarHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Common\Config.cs" />
     <Compile Include="Common\ContextFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">

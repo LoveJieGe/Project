@@ -78,7 +78,7 @@ Ext.define('Common.nav.Tree', {
     onNavSelectionChange(tree, node) {
         if (node) {
             //RouteFloated.hideAll();
-            Utils.redirectTo(node.get('id'));
+            ComUtils.redirectTo(node.get('id'));
         }
     }
 });

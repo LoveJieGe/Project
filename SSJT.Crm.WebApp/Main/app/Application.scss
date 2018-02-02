@@ -46,6 +46,72 @@ body.launching {
         height: 41px;
     }
 }
+// block management
+.page-constrained {
+    $blocks-max-width:dynamic(1024px);
+    > .x-body-el,
+    > .x-innerhtml,
+    > .x-dock-horizontal {
+        max-width: $blocks-max-width;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+.blocks {
+    $blocks-spacing: dynamic(8px);
+    padding: $blocks-spacing 0 0 $blocks-spacing;
+
+    .x-panel-block {
+        margin: 0 $blocks-spacing $blocks-spacing 0;
+    }
+
+    .tablet-profile & {
+        > .x-body-el {
+            display: flex;
+            flex-direction: row;
+
+            > .blocks-column:nth-child(1) {
+                flex: 2;
+            }
+
+            > .blocks-column:nth-child(2) {
+                flex: 1;
+
+                @media screen and (max-width: 800px) {
+                    flex: 2;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+.block-section {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.4;
+
+    .item {
+        padding: 0 16px 16px;
+
+        .label {
+            color: contrasted($base-color, 15%);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .value {
+            font-weight: 500;
+        }
+    }
+}
+
+
+
 scrollbar{
     -moz-appearance: none !important;
     background-color: transparent !important;/* 滚动条背景透明 */

@@ -11,6 +11,7 @@ namespace SSJT.Crm.Core.Client
         private string _userid;
         private string _username;
         private string _avatar;
+        private DateTime _expires;
         public string UserID
         {
             get { return this._userid; }
@@ -25,6 +26,11 @@ namespace SSJT.Crm.Core.Client
         {
             get { return this._avatar; }
             set { this._avatar = value; }
+        }
+        public DateTime Expires
+        {
+            get { return this._expires; }
+            set { this._expires = value; }
         }
     }
 }

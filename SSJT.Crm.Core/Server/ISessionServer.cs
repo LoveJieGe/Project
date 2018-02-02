@@ -12,5 +12,6 @@ namespace SSJT.Crm.Core.Server
         void RemoveSession(string sessionID);
         SessionMode GetSessionMode(string sessionID);
         string GetCurrentSessionID();
+        int Timeout { get; }
     }
 }

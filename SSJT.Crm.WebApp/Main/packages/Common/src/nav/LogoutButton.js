@@ -12,8 +12,8 @@ Ext.define('Common.nav.LogoutButton', {
         const me = this;
         me.callParent(arguments);
 
-        Utils.confirm('确定要退出系统吗?', () => {
-            Utils.getApp().fireEvent('logout');
+        ComUtils.confirm('确定要退出系统吗?', () => {
+            ComUtils.getApp().fireEvent('logout');
         });
     }
 });

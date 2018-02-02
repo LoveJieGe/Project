@@ -14,13 +14,4 @@ Ext.define('Common.nav.AvatarButton', {
             '<div class="value">{user.UserID}</div>'
     },
     hidden: window.top!=window,
-
-    onTap() {
-        const me = this;
-        me.callParent(arguments);
-
-        Utils.confirm('确定要注销吗?', () => {
-            Utils.getApp().fireEvent('logout');
-        });
-    }
 });

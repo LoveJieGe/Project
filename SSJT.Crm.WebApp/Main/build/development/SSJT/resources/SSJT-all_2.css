@@ -839,6 +839,146 @@
 .main-menu .x-dataview-dark {
     border-bottom: 2px solid #848484;
 }
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:2 */
+.person-details .block-section {
+    min-width: 25%;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:1 */
+.show-header {
+    -webkit-box-shadow: 0px 0px 5px #333;
+    -moz-box-shadow: 0px 0px 5px #333;
+    box-shadow: 0px 0px 5px #333;
+    min-height: 128px;
+    position: relative;
+    z-index: 1;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:7 */
+.show-header > .x-body-el {
+    padding: 16px 24px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:11 */
+.show-header .header-title {
+    line-height: 1.4;
+    padding: 6px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:15 */
+.show-header .header-title .icon {
+    border-right: 1px solid;
+    color: #5fa2dd;
+    float: left;
+    font-size: 38px;
+    margin-right: 8px;
+    padding-right: 8px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:24 */
+.show-header .header-title .name,
+.show-header .header-title .desc {
+    white-space: nowrap;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:29 */
+.show-header .header-title .name {
+    color: #5fa2dd;
+    font-size: 24px;
+    font-weight: 400;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:35 */
+.show-header .header-title .desc {
+    font-size: 16px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:1 */
+.person-header {
+    overflow: visible;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:4 */
+.person-header > .x-body-el {
+    overflow: visible;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:8 */
+.person-header .header-picture {
+    -webkit-box-shadow: 0 4px 5px -2px #333;
+    -moz-box-shadow: 0 4px 5px -2px #333;
+    box-shadow: 0 4px 5px -2px #333;
+    margin: 0 16px 16px 0;
+    border: 8px solid #5fa2dd;
+    height: 150px;
+    width: 150px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:16 */
+@media screen and (min-width: 600px) {
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:17 */
+    .person-header .header-picture {
+        margin-bottom: -75px;
+    }
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:22 */
+@media screen and (max-width: 599px) {
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:23 */
+    .person-header > .x-body-el {
+        padding-bottom: 32px;
+    }
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:27 */
+    .person-header .header-picture {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:32 */
+    .person-header .header-title {
+        text-align: center;
+    }
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:1 */
+.person-tools {
+    z-index: 1;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:4 */
+.person-tools > .x-body-el {
+    padding: 12px 8px 24px 8px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:8 */
+.person-tools .location {
+    background-color: #f5f5f5;
+    padding: 8px 16px;
+    text-align: center;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:13 */
+.person-tools .location .time,
+.person-tools .location .city {
+    display: inline-block;
+    font-size: 13px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:19 */
+.person-tools .location .time::before {
+    content: '|';
+    margin: 0 4px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:24 */
+.person-tools .location .city {
+    font-weight: bold;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:29 */
+@media screen and (min-width: 600px) {
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:30 */
+    .person-tools .x-toolbar {
+        margin-left: 182px;
+        margin-right: 16px;
+    }
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:36 */
+@media screen and (max-width: 599px) {
+    .person-tools {
+        margin-top: -38px;
+    }
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:39 */
+    .person-tools > .x-body-el {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:44 */
+    .person-tools .location {
+        margin-top: 16px;
+        width: 100%;
+    }
+}
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:17 */
 @-webkit-keyframes rotate-animation {
     /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
@@ -916,7 +1056,68 @@ body.launching::before {
     width: 41px;
     height: 41px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:49 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:52 */
+.page-constrained > .x-body-el,
+.page-constrained > .x-innerhtml,
+.page-constrained > .x-dock-horizontal {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:61 */
+.blocks {
+    padding: 8px 0 0 8px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:65 */
+.blocks .x-panel-block {
+    margin: 0 8px 8px 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:70 */
+.tablet-profile .blocks > .x-body-el {
+    display: flex;
+    flex-direction: row;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:74 */
+.tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(1) {
+    flex: 2;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:78 */
+.tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(2) {
+    flex: 1;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:81 */
+@media screen and (max-width: 800px) {
+    .tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(2) {
+        flex: 2;
+    }
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:86 */
+@media screen and (max-width: 600px) {
+    .tablet-profile .blocks > .x-body-el {
+        flex-direction: column;
+    }
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:93 */
+.block-section {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.4;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:98 */
+.block-section .item {
+    padding: 0 16px 16px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:101 */
+.block-section .item .label {
+    color: #2a7dc6;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:107 */
+.block-section .item .value {
+    font-weight: 500;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:115 */
 scrollbar {
     -moz-appearance: none !important;
     background-color: transparent !important;
@@ -928,7 +1129,7 @@ scrollbar {
     overflow: hidden !important;
     z-index: 999999999 !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:59 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:125 */
 scrollbar thumb {
     /* 滚动条按钮基本样式 */
     /* 滚动条按钮基本样式 */
@@ -939,7 +1140,7 @@ scrollbar thumb {
     /* 滚动条按钮边框 */
     border-color: rgba(0, 100, 255, 0.1) !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:68 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:134 */
 scrollbar:hover thumb,
 scrollbar thumb:hover,
 scrollbar thumb:active {
@@ -948,33 +1149,33 @@ scrollbar thumb:active {
     background-color: rgba(0, 100, 255, 0.75) !important;
     border: 0px !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:77 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:143 */
 scrollbar[orient="vertical"] {
     margin-left: -5px !important;
     min-width: 5px !important;
     max-width: 5px !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:83 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:149 */
 scrollbar thumb[orient="vertical"] {
     border-style: none none none solid !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:89 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:155 */
 scrollbar[orient="horizontal"] {
     margin-top: -5px !important;
     min-height: 5px !important;
     max-height: 5px !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:94 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:160 */
 scrollbar thumb[orient="horizontal"] {
     border-style: solid none none none !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:99 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:165 */
 scrollbar scrollcorner {
     /* 去除垂直与水平滚动条相交汇的角落 */
     /* 去除垂直与水平滚动条相交汇的角落 */
     display: none !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:104 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:170 */
 scrollbar scrollbarbutton {
     /* 滚动条两端按钮不显示 */
     /* 滚动条两端按钮不显示 */

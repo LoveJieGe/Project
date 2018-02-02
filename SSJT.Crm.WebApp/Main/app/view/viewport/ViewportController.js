@@ -26,7 +26,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         //检查用户是否登录
         Ext.route.Router.suspend();
         debugger
-        Utils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
+        ComUtils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
             success(r) {
                 console.log('已经是登录状态', r);
                 me.onUser(r);
@@ -44,6 +44,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
        
     },
     handleUnmatchedRoute:function(route){
+        debugger
         var me = this;
         if(!me.session||!me.session.isValid()){
             me.originalRoute = route;
@@ -86,9 +87,11 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.showView('main');
     },
     onLogin:function(user){
+        debugger
+        var user = SSJT.model.UserInfo.loadData(user);
         var me = this,
             token = Ext.History.getToken();
-            newToken = "";
+            newToken = "";     
         User.setUser(user);
 
         if (Ext.String.startsWith(token, 'login/returnurl/')) { //有returnurl参数，则转到returnurl
@@ -98,7 +101,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         }
 
         if (Ext.isEmpty(newToken)) {
-            newToken = Utils.getApp().getDefaultToken();
+            newToken = ComUtils.getApp().getDefaultToken();
         }
         //force:即使散列不会更改，将其设置为true也会强制执行
         me.redirectTo(newToken, {
@@ -109,7 +112,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     onLogout:function(){
         var me = this,
             view = me.getView();
-        Utils.ajax('ajaxRequest/UserAuthentication/Logout', {
+            ComUtils.ajax('ajaxRequest/UserAuthentication/Logout', {
             success(r) {
                 me.clearUserData();
                 me.redirectTo('login', {
@@ -132,7 +135,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         }
         /* else {
             if (route !== window._last_route) {
-                Utils.backAllFloated(); // 隐藏所有悬浮层
+                ComUtils.backAllFloated(); // 隐藏所有悬浮层
             }
         }*/
     },
@@ -141,6 +144,8 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         User.setUser(null);
     },
     onUser:function(r){
+        debugger
+        var user = SSJT.model.Session.loadData(r);
         User.setUser(r);
         //恢复路由
         Ext.route.Router.resume();

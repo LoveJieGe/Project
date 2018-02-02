@@ -208,7 +208,7 @@ namespace SSJT.Crm.Model
         /// <summary>
         /// 头像文件名字
         /// </summary>
-	    public string Avatar
+	    public string AvatarName
 	    {
             get;set;
 	    }

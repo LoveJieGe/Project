@@ -162,5 +162,11 @@ Ext.define('SSJT.view.main.MainController', {
             center = me.ensureCenterByXType('task_recycle_container');
 
         center.getController().onSearch();
+    },
+    onAvatarTap(){
+        debugger
+        var user = this.getViewModel().get('user');
+        console.log("user",user);
+        this.redirectTo(user);
     }
 });

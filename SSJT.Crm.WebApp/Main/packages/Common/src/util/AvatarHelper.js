@@ -2,7 +2,7 @@ Ext.define('Common.util.AvatarHelper',{
     singleton:true,
     alternateClassName:'AvatarHelper',
     requires:[
-        'Util.util.Utils'
+        'Common.util.Utils'
     ],
     /**
      * 组装 头像 url
@@ -14,7 +14,7 @@ Ext.define('Common.util.AvatarHelper',{
         }
 
         if (!Ext.isEmpty(userId)) {
-            return Utils.joinPath(Config.httpUrl, `Doc/Avatar.ashx?UserID=${userId}`);
+            return ComUtils.joinPath(ComConfig.httpUrl, `Doc/Avatar.ashx?UserID=${userId}`);
         }
 
         return '';

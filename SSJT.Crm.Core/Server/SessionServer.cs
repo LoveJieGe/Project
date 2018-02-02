@@ -94,16 +94,18 @@ namespace SSJT.Crm.Core.Server
         {
             get
             {
+                int time = 0;
                 string timeout =  System.Configuration.ConfigurationManager.AppSettings["Timeout"];
                 try
                 {
-                    int time=int.Parse(timeout);
-                    return time;
+                    time = int.Parse(timeout);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    return 0;
+                    if (HttpContext.Current != null && HttpContext.Current.Session != null)
+                        time = HttpContext.Current.Session.Timeout;
                 }
+                return time;
             }
         }
         public string GetSessionID()

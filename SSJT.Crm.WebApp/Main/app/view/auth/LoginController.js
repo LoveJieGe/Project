@@ -37,7 +37,7 @@ Ext.define('SSJT.view.auth.LoginController', {
                     me.fireEvent('login', r);
                 },
                 failure(msg) {
-                    Utils.toastShort(msg);
+                    ComUtils.toastShort(msg);
                 },
                 //button: 'btnLogin',
                 maskTarget: true

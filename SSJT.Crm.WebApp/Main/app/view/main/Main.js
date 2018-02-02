@@ -28,7 +28,8 @@ Ext.define('SSJT.view.main.Main', {
                 //     selectionchange:'onNavSelectionChange'
                 // }
             },{
-                xtype: 'navavatarbutton'
+                xtype: 'navavatarbutton',
+               handler:'onAvatarTap'
             },{
                 xtype: 'logoutbutton',
                 reference:'btnLogout'

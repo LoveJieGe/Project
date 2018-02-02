@@ -16,7 +16,7 @@ Ext.define('Common.util.User',{
         var me = this;
 
         // if (!user || !oldUser || user.UserID != oldUser.UserID) {
-        //     Utils.getApp().fireEvent('userchanged');
+        //     ComUtils.getApp().fireEvent('userchanged');
         // }
         Ext.Viewport.getViewModel().set('user', user);
     },

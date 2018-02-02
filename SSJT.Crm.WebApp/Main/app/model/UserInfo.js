@@ -12,8 +12,8 @@ Ext.define('SSJT.model.UserInfo',{
         } }
     ],
     isValid: function() {
-        return !Ext.isEmpty(this.get('userid'))
-            && this.get('expires') > new Date();
+        return !Ext.isEmpty(this.get('UserID'))
+            && this.get('Expires') > new Date();
     }
    
 })

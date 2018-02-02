@@ -91,9 +91,9 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         var user = SSJT.model.UserInfo.loadData(user);
         var me = this,
             token = Ext.History.getToken();
-            newToken = "";     
+            newToken = "";  
+        user = SSJT.model.UserInfo.loadData(user);
         User.setUser(user);
-
         if (Ext.String.startsWith(token, 'login/returnurl/')) { //有returnurl参数，则转到returnurl
             newToken = decodeURIComponent(token.substr(16));
         } else if (!Ext.isEmpty(token) && token != 'login') {

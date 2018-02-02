@@ -29,7 +29,7 @@ namespace SSJT.Crm.Core.Client
             HrEmploy userInfo = (DbFactory.DbSession.DbContext as CrmEntities).HrEmploy.FirstOrDefault(H => H.UserID == userID && H.PassWord == pwd);
             int timeOut = sessionServer.Timeout;
             DateTime expires = DateTime.Now;
-            expires.AddMinutes(timeOut);
+            expires = expires.AddMinutes(timeOut);
             if (userInfo!=null)
             {
                 result = new UserResult
@@ -58,7 +58,7 @@ namespace SSJT.Crm.Core.Client
             {
                 int timeOut = sessionServer.Timeout;
                 DateTime expires = DateTime.Now;
-                expires.AddMinutes(timeOut);
+                expires = expires.AddMinutes(timeOut);
                 result = new UserResult
                 {
                     UserID = userInfo.UserID,

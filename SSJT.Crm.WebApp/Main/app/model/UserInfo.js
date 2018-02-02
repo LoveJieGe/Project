@@ -2,10 +2,14 @@ Ext.define('SSJT.model.UserInfo',{
     extend:'SSJT.model.Base',
 
     fields: [
-        {name:'userid',type:'string'},
-        { name: 'username', type: 'string' },
-        {name:'avatar',type:'string'},
-        { name: 'expires', type: 'date' }
+        {name:'UserID',type:'string'},
+        { name: 'UserName', type: 'string' },
+        {name:'Avatar',type:'string'},
+        { name: 'Expires', type: 'date',convert:function(v,rec){
+            if(v&&Ext.isString(v))
+                v = Ext.Date.parse(v,'Y-m-d H:i:s',true);
+            return v;
+        } }
     ],
     isValid: function() {
         return !Ext.isEmpty(this.get('userid'))

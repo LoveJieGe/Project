@@ -29,7 +29,9 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         ComUtils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
             success(r) {
                 console.log('已经是登录状态', r);
-                me.onUser(r);
+                me.setUserInfo(r);
+                //恢复路由
+                Ext.route.Router.resume();
             },
             failure:function(r){
                 //true可以防止任何先前排队的标记被执行
@@ -114,7 +116,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             view = me.getView();
             ComUtils.ajax('ajaxRequest/UserAuthentication/Logout', {
             success(r) {
-                me.clearUserData();
+                me.setUserInfo(null);
                 me.redirectTo('login', {
                     replace: true
                 });
@@ -139,15 +141,8 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             }
         }*/
     },
-
-    clearUserData:function(){
-        User.setUser(null);
-    },
-    onUser:function(r){
-        debugger
-        var user = SSJT.model.Session.loadData(r);
+    setUserInfo:function(r){
+        r = r?SSJT.model.UserInfo.loadData(r):r;
         User.setUser(r);
-        //恢复路由
-        Ext.route.Router.resume();
     }
 });

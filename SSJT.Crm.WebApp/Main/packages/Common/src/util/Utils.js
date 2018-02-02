@@ -185,6 +185,7 @@ Ext.define('Common.util.Utils',{
                     succeed = true; // 请求成功
                 if (!Ext.isEmpty(result) && isJson) {
                     try {
+                        debugger
                         result = Ext.decode(result);
                     } catch (e) {}
                 }

@@ -31,7 +31,15 @@ Ext.define('SSJT.view.main.MainController', {
             action: 'toTasks',
             conditions: {
                 // NOTE(SB): how to build this list automatically from the Menu store?
-                ':type': '(customer|main|office|product|financial|personnel|system)',
+                ':type': '(customer|main|offices|product|financial|personnels|system)',
+                ':args': '(.*)'
+            }
+        },
+        ':type/:id(/:args)?': {
+            action: 'handleDataRoute',
+            conditions: {
+                ':type': '(office|organization|personnel)',
+                ':id': '([a-zA-Z0-9]+|create|edit)',
                 ':args': '(.*)'
             }
         }
@@ -135,6 +143,34 @@ Ext.define('SSJT.view.main.MainController', {
         //     center.getController().onTaskTypeChange();
         // }
     },
+    handleDataRoute(type,id,args){
+        var me = this,
+            args = Ext.Array.clean(args||''.split('/')),//通过数组进行筛选并删除Ext.isEmpty中定义的空项。
+            Model = SSJT.model[Ext.String.capitalize(type)],//capitalize将给定字符串的第一个字母大写
+            action, xtype, view;
+
+            if (id == 'create') {
+                action = 'create';
+                id = null;
+            } else if (args[0] == 'edit') {
+                action = 'edit';
+                args.shift();//从数组中移除第一个元素并返回该元素
+            } else {
+                action = 'show';
+            }
+            xtype = type + action;
+
+            if (!Ext.ClassManager.getNameByAlias('widget.' + xtype)) {
+                Ext.log.error('Invalid route: no view for xtype: ' + xtype);
+            }
+            view = me.ensureView(xtype, { xtype: xtype });
+            if(id==null){
+                view.setRecord(new Model());
+                me.activate(view);
+                return;
+            }
+
+    },
     toHome(){
         debugger
         me.ensureCenterByXType('crm-container');
@@ -168,5 +204,30 @@ Ext.define('SSJT.view.main.MainController', {
         var user = this.getViewModel().get('user');
         console.log("user",user);
         this.redirectTo(user);
+    },
+    ensureView(xtype,config,route){
+        var view  = this.getView(),
+            item = view.child('componnet[viewId='+xtype+']'),
+            reset = !!item;
+        if(!item){
+            item = view.add(Ext.apply({viewId:xtype},config));
+        }
+        if(Ext.isDefined(item.config.route)){
+            item.setRoute(route);
+        }
+        if (reset && Ext.isFunction(item.reset)) {
+            item.reset();
+        }
+        return item;
+    },
+    activate(ref){
+        var view = ref.isComponnet?ref:this.lookup(ref),
+            child = view,
+            parent;
+        while(parent=child.getParent()){
+            parent.setActiveItem(child);
+            child = parent;
+        }
+        return view;
     }
 });

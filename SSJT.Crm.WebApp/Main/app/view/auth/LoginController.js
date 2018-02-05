@@ -34,8 +34,6 @@ Ext.define('SSJT.view.auth.LoginController', {
                     Validate:values.validate
                 } ,
                 success(r) {
-                    if(r.User&&Ext.isArray(r.User))
-                        r.User = r.User[0];
                     me.fireEvent('login', r);
                 },
                 failure(r) {

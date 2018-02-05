@@ -25,7 +25,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         // this.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
         Ext.route.Router.suspend();
-        debugger
         ComUtils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
             success(r) {
                 console.log('已经是登录状态', r);
@@ -91,11 +90,10 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     },
     onLogin:function(user){
         debugger
-        
         var me = this,
             token = Ext.History.getToken();
             newToken = "";  
-        me.saveUser(r);
+        me.saveUser(user);
         if (Ext.String.startsWith(token, 'login/returnurl/')) { //有returnurl参数，则转到returnurl
             newToken = decodeURIComponent(token.substr(16));
         } else if (!Ext.isEmpty(token) && token != 'login') {
@@ -137,10 +135,11 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         }
     },
     saveUser:function(r){
+        debugger
         if(r&&r.User&&Ext.isArray(r.User))
             r.User = SSJT.model.Personnel.loadData(r.User[0]);
         const session = r?SSJT.model.Session.loadData(r):r;
         ComUtils.setLSItem('session',session&&session.getData(true));
-        User.setUser(session && session.getUser());
+        User.setUser(session && session.getData(true).User);
     },
 });

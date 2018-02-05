@@ -5,7 +5,8 @@ Ext.define('Common.util.Utils',{
         'Ext.Toast',
         'Ext.MessageBox',
         'Common.model.ValueText',
-        'Common.util.Config'
+        'Common.util.Config',
+        'Ext.util.LocalStorage'
     ],
     /**
      * 常用正则
@@ -185,7 +186,6 @@ Ext.define('Common.util.Utils',{
                     succeed = true; // 请求成功
                 if (!Ext.isEmpty(result) && isJson) {
                     try {
-                        debugger
                         result = Ext.decode(result);
                     } catch (e) {}
                 }
@@ -199,7 +199,7 @@ Ext.define('Common.util.Utils',{
                 } else {
                     const msg = result.Message || '';
                     if (opt.failure) {
-                        opt.failure.call(this, msg);
+                        opt.failure.call(this, result);
                     } else if (!Ext.isEmpty(msg)) {
                         me.alert(msg);
                     }
@@ -410,4 +410,24 @@ Ext.define('Common.util.Utils',{
         }
         return null;
     },
+     /** **************************LocalStorge********************************/
+    store: new Ext.util.LocalStorage({
+        id: 'app-state'
+    }),
+    getLSItem: function(key, defaultValue) {
+        var value = this.store.getItem(this.getAppName+'-'+key);
+        return value === undefined? defaultValue : Ext.decode(value);
+    },
+
+    setLSItem: function(key, value) {
+        if (value == null) {    // !== undefined && !== null
+            this.store.removeItem(this.getAppName+'-'+key);
+        } else {
+            this.store.setItem(this.getAppName+'-'+key, Ext.encode(value));
+        }
+    },
+
+    clearLsItem: function(key) {
+        this.setLSItem(key, null);
+    }
 })

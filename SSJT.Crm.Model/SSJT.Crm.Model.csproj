@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjaxPropertyAttribute.cs" />
+    <Compile Include="BaseModel.cs" />
     <Compile Include="CrmEntities.cs" />
     <Compile Include="Model\CrmContact.cs" />
     <Compile Include="Model\CrmContract.cs" />

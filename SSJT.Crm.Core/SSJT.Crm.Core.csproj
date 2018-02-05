@@ -57,9 +57,13 @@
     <Compile Include="AjaxRequest\AjaxMethod.cs" />
     <Compile Include="AjaxRequest\AjaxReceive.cs" />
     <Compile Include="AjaxRequest\AjaxResult.cs" />
+    <Compile Include="Exceptions\ErrorCode.cs" />
     <Compile Include="Client\UserAuthentication.cs" />
     <Compile Include="Client\UserResult.cs" />
+    <Compile Include="Exceptions\AjaxException.cs" />
     <Compile Include="Factory\SessionFactory.cs" />
+    <Compile Include="Helper\HelperManager.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
     <Compile Include="Server\AjaxServer.cs" />
     <Compile Include="Attribute\AjaxClassAttribute.cs" />
     <Compile Include="AjaxResponse\AjaxProcess.cs" />
@@ -87,5 +91,6 @@
       <Name>SSJT.Crm.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,19 +8,14 @@ namespace SSJT.Crm.Core.Client
 {
     public class UserResult
     {
-        private string _userid;
-        private string _username;
         private string _avatar;
         private DateTime _expires;
-        public string UserID
+        private object _user;
+
+        public object User
         {
-            get { return this._userid; }
-            set { this._userid = value; } 
-        }
-        public string UserName
-        {
-            get { return this._username; }
-            set {this._username = value;  } 
+            get { return this._user; }
+            set { this._user = value; }
         }
         public string Avatar
         {
@@ -32,5 +27,7 @@ namespace SSJT.Crm.Core.Client
             get { return this._expires; }
             set { this._expires = value; }
         }
+
+        public string id { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -11,6 +12,10 @@ using System.Threading.Tasks;
 using SSJT.Crm.DBUtility;
 using Spring.Context;
 using Spring.Context.Support;
+using SSJT.Crm.Core.AjaxRequest;
+using SSJT.Crm.Model;
+using System.Collections;
+using SSJT.Crm.Core.Exceptions;
 
 namespace SSJT.Crm.Test
 {
@@ -35,15 +40,45 @@ namespace SSJT.Crm.Test
             //string message = t.Msg;
             //Console.WriteLine(message);
             //Console.WriteLine("静态：" + DbFactory.Message);
-            Console.WriteLine("Main方法中线程：" + Thread.CurrentThread.ManagedThreadId + "主线程：" + Thread.CurrentThread.IsBackground);
-            Type type = Type.GetType("SSJT.Crm.Test.Test");
-            CallContext.SetData("Data", "123456");
-            CallContext.LogicalSetData("Data2", "789");
-            MethodInfo info = type.GetMethod("GetData");
-            info.Invoke(Activator.CreateInstance(type), null);
+            //Console.WriteLine("Main方法中线程：" + Thread.CurrentThread.ManagedThreadId + "主线程：" + Thread.CurrentThread.IsBackground);
+            //Type type = Type.GetType("SSJT.Crm.Test.Test");
+            //CallContext.SetData("Data", "123456");
+            //CallContext.LogicalSetData("Data2", "789");
+            //MethodInfo info = type.GetMethod("GetData");
+            //info.Invoke(Activator.CreateInstance(type), null);
+
+            //HrEmploy e = new HrEmploy();
+            //e.UserID = "123456";
+            //e.UserName = "管理员";
+            //DataTable table = e.ToAjaxResult();
+            //table.Columns.Add(new DataColumn("Expires", typeof(string)));
+            //table.Rows[0]["Expires"] = DateTime.Now;
+            //string js =Core.JsonHelper.ToJson(table, Core.DateTimeMode.JS);
+            //Console.WriteLine(js);
+            
+            int v = GetEnumValue(typeof(ErrorCode), Enum.GetName(typeof(ErrorCode), ErrorCode.VErrorCode));
+            int v2 = (int)Enum.ToObject(typeof(ErrorCode), ErrorCode.VErrorCode);
             Console.ReadKey();
         }
-        
+        public static int GetEnumValue(Type enumType, string enumName)
+        {
+            try
+            {
+                if (!enumType.IsEnum)
+                    throw new ArgumentException("enumType必须是枚举类型");
+                var values = Enum.GetValues(enumType);
+                var ht = new Hashtable();
+                foreach (var val in values)
+                {
+                    ht.Add(Enum.GetName(enumType, val), val);
+                }
+                return (int)ht[enumName];
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
         /// <summary>
         /// 进行DES加密
         /// </summary>

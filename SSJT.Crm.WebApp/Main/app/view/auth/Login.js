@@ -51,7 +51,7 @@ Ext.define('SSJT.view.auth.Login', {
                 mode:'img',
                 itemId:'validate',
                 id:'vId',
-                src:'ValidateCode.ashx',
+                src:'ValidateCode.ashx?_dc'+new Date(),
                 tooltip:'换一张',
                 style:{
                     cursor:'pointer'

@@ -76,6 +76,10 @@
       <Project>{ed84a816-fd0c-4d1a-861d-ebbfc2288ac5}</Project>
       <Name>SSJT.Crm.DBUtility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SSJT.Crm.Model\SSJT.Crm.Model.csproj">
+      <Project>{5ef9ec4d-0cdc-40f5-aa76-9fa994d6a87e}</Project>
+      <Name>SSJT.Crm.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="services.xml">

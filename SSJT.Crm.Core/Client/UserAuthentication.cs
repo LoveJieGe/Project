@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using SSJT.Crm.DBUtility;
 using SSJT.Crm.Model;
 using SSJT.Crm.Core;
+using SSJT.Crm.Core.Exceptions;
 
 namespace SSJT.Crm.Core.Client
 {
@@ -23,7 +24,7 @@ namespace SSJT.Crm.Core.Client
             string pwd = SafeHelper.EncryptDES(password, userID);
             bool isExist = SqlHelper.Exists<HrEmploy>(H => H.UserID == userID && H.PassWord == pwd);
             if(!isExist)
-                throw new Exception("用户名或密码错误!");
+                throw AjaxException.ToException(ErrorCode.VErrorCode, "用户名或密码错误!");
             Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
             sessionServer.RegSession(userID, password);
             HrEmploy userInfo = (DbFactory.DbSession.DbContext as CrmEntities).HrEmploy.FirstOrDefault(H => H.UserID == userID && H.PassWord == pwd);
@@ -34,8 +35,8 @@ namespace SSJT.Crm.Core.Client
             {
                 result = new UserResult
                 {
-                    UserID = userInfo.UserID,
-                    UserName = userInfo.UserName,
+                    id= userInfo.UserID,
+                    User = userInfo.ToAjaxResult(),
                     Expires = expires
                 };
             }
@@ -61,8 +62,8 @@ namespace SSJT.Crm.Core.Client
                 expires = expires.AddMinutes(timeOut);
                 result = new UserResult
                 {
-                    UserID = userInfo.UserID,
-                    UserName = userInfo.UserName,
+                    id = userInfo.UserID,
+                    User = userInfo.ToAjaxResult(),
                     Expires = expires
                 };
                 return result;

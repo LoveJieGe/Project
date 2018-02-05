@@ -94,7 +94,7 @@ namespace SSJT.Crm.Core
             //timeConverter.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
             return JsonConvert.SerializeObject(obj, Formatting.None, converters);
         }
-
+       
 
     }
 }

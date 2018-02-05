@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using SSJT.Crm.Core.AjaxRequest;
+using SSJT.Crm.Core.Exceptions;
 
 namespace SSJT.Crm.Core.AjaxResponse
 {
@@ -12,11 +13,11 @@ namespace SSJT.Crm.Core.AjaxResponse
     {
         public AjaxResult DoProcess(AjaxReceive receive)
         {
-            AjaxResult result = new AjaxResult { ErrorMsg = "ok", IsSuccess = true };
+            AjaxResult result = new AjaxResult {IsSuccess = true };
             try
             {
                 if (string.IsNullOrEmpty(receive.ClassName) || string.IsNullOrEmpty(receive.MethodName))
-                    throw new Exception("参数信息不正确");
+                    throw new Exception("参数不能解析");
                 AjaxMethod method = AjaxServer.GetAjaxMethod(receive.FullClassName, receive.MethodName);
                 result.Method = method;
                 ParameterInfo[] parameters = method.MethodInfo.GetParameters();
@@ -24,15 +25,14 @@ namespace SSJT.Crm.Core.AjaxResponse
                 object r = method.MethodInfo.Invoke(AjaxServer.GetInstance(receive.FullClassName), objArray);
                 if (r != null)
                 {
+                    result.Data = r;
                     result.Result = Ajaxhelper.ToJson(r);
                 }
             }
             catch (Exception ex)
             {
-                result.ErrorMsg = ex.Message;
                 result.IsSuccess = false;
-                if (ex.InnerException != null)
-                    result.ErrorMsg = ex.InnerException.Message;
+                HandleException(ex, result);
             }
             finally
             {
@@ -40,6 +40,23 @@ namespace SSJT.Crm.Core.AjaxResponse
             }
             result.FillResponseText();
             return result;
+        }
+        private void HandleException(Exception ex, AjaxResult result)
+        {
+            while(ex!=null)
+            {
+                if(ex is AjaxException)
+                {
+                    result.ErrorCode = ((AjaxException)ex).ErrorCode;
+                    result.ErrorMsg = ((AjaxException)ex).Message;
+                }
+                else
+                {
+                    result.ErrorCode = ErrorCode.Default;
+                    result.ErrorMsg = ex.Message;
+                }
+                ex = ex.InnerException;
+            }
         }
     }
 }

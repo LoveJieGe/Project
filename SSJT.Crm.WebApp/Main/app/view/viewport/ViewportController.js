@@ -29,12 +29,13 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         ComUtils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
             success(r) {
                 console.log('已经是登录状态', r);
-                me.setUserInfo(r);
+                me.saveUser(r);
                 //恢复路由
                 Ext.route.Router.resume();
             },
             failure:function(r){
                 //true可以防止任何先前排队的标记被执行
+                me.saveUser(null);
                 Ext.route.Router.resume(true);
                 me.redirectTo('login', {replace: true,force: true})
             },
@@ -90,12 +91,11 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     },
     onLogin:function(user){
         debugger
-        var user = SSJT.model.UserInfo.loadData(user);
+        
         var me = this,
             token = Ext.History.getToken();
             newToken = "";  
-        user = SSJT.model.UserInfo.loadData(user);
-        User.setUser(user);
+        me.saveUser(r);
         if (Ext.String.startsWith(token, 'login/returnurl/')) { //有returnurl参数，则转到returnurl
             newToken = decodeURIComponent(token.substr(16));
         } else if (!Ext.isEmpty(token) && token != 'login') {
@@ -116,7 +116,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             view = me.getView();
             ComUtils.ajax('ajaxRequest/UserAuthentication/Logout', {
             success(r) {
-                me.setUserInfo(null);
+                me.saveUser(null);
                 me.redirectTo('login', {
                     replace: true
                 });
@@ -135,14 +135,12 @@ Ext.define('SSJT.view.viewport.ViewportController',{
                 lastView.hide();
             }
         }
-        /* else {
-            if (route !== window._last_route) {
-                ComUtils.backAllFloated(); // 隐藏所有悬浮层
-            }
-        }*/
     },
-    setUserInfo:function(r){
-        r = r?SSJT.model.UserInfo.loadData(r):r;
-        User.setUser(r);
-    }
+    saveUser:function(r){
+        if(r&&r.User&&Ext.isArray(r.User))
+            r.User = SSJT.model.Personnel.loadData(r.User[0]);
+        const session = r?SSJT.model.Session.loadData(r):r;
+        ComUtils.setLSItem('session',session&&session.getData(true));
+        User.setUser(session && session.getUser());
+    },
 });

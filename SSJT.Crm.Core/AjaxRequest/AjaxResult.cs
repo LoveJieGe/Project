@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SSJT.Crm.Core.Exceptions;
 
 namespace SSJT.Crm.Core.AjaxRequest
 {
@@ -11,18 +6,20 @@ namespace SSJT.Crm.Core.AjaxRequest
     {
         public string ResponseText { get; set; }
         public string Result { get; set; }
+        public object Data { get; set; }
         public AjaxMethod Method { get; set; }
         public string ErrorMsg { get; set; }
+        public ErrorCode ErrorCode { get; set; }
         public bool IsSuccess { get; set; }
         public void FillResponseText()
         {
-            if (string.IsNullOrEmpty(this.Result))
+            if(this.IsSuccess)
             {
-                this.ResponseText = string.Format("{{\"ErrMsg\":{0}}}", Ajaxhelper.ToJson(this.ErrorMsg));
+                this.ResponseText = string.Format("{{\"Result\":{0}}}", this.Result);
             }
             else
             {
-                this.ResponseText = string.Format("{{\"Result\":{0},\"ErrMsg\":{1}}}",this.Result, Ajaxhelper.ToJson(this.ErrorMsg));
+                this.ResponseText = string.Format("{{\"ErrorCode\":{0},\"ErrMsg\":{1},\"Success\":{2}}}", this.ErrorCode, Ajaxhelper.ToJson(this.ErrorMsg), IsSuccess);
             }
         }
     }

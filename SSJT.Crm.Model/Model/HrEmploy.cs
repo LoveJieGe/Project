@@ -7,7 +7,7 @@ namespace SSJT.Crm.Model
 	/// HrEmployee:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class HrEmploy
+	public partial class HrEmploy:BaseModel
 	{
 		public int Id
 		{
@@ -17,6 +17,7 @@ namespace SSJT.Crm.Model
 		/// <summary>
 		/// 
 		/// </summary>
+		[AjaxProperty]
 		public string UserID
 		{
             set;
@@ -30,10 +31,11 @@ namespace SSJT.Crm.Model
             set;
             get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string UserName
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string UserName
 		{
             set; get;
 		}
@@ -44,10 +46,11 @@ namespace SSJT.Crm.Model
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Birthday
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public DateTime? Birthday
 		{
             set; get;
 		}
@@ -79,24 +82,27 @@ namespace SSJT.Crm.Model
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Email
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string Email
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Sex
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string Sex
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Tel
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string Tel
 		{
             set; get;
 		}
@@ -135,38 +141,43 @@ namespace SSJT.Crm.Model
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Address
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string Address
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Remarks
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string Remarks
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Education
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string Education
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Levels
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string Levels
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Professional
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        public string Professional
 		{
             set; get;
 		}

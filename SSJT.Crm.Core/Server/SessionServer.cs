@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using SSJT.Crm.Core.Exceptions;
 using SSJT.Crm.DBUtility;
 using SSJT.Crm.Model;
 
@@ -77,7 +78,7 @@ namespace SSJT.Crm.Core.Server
                     mode = (r as SessionMode);
             }
             if(mode==null)
-                throw new Exception("您的会话已超时, 请重新登录本系统.");
+                throw AjaxException.ToException(ErrorCode.SErrorCode, "您的会话已超时, 请重新登录本系统.");
             return mode;
         }
         /// <summary>

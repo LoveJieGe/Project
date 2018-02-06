@@ -138,7 +138,7 @@ Ext.define('SSJT.view.main.MainController', {
         console.log('路由',type);
         const me = this;
         //选中导航条中的项
-        me.lookup('mainmenu').selectNodeSilent(Ext.History.getToken());
+        me.lookup('mainmenu').selectNodeSilent(type);
 
         const center = me.ensureView('crm-container');
             //vm = center.getViewModel(),
@@ -155,7 +155,7 @@ Ext.define('SSJT.view.main.MainController', {
             args = Ext.Array.clean(args||''.split('/')),//通过数组进行筛选并删除Ext.isEmpty中定义的空项。
             Model = SSJT.model[Ext.String.capitalize(type)],//capitalize将给定字符串的第一个字母大写
             action, xtype, view;
-
+            me.lookup('mainmenu').setSelection(null);
             if (id == 'create') {
                 action = 'create';
                 id = null;
@@ -230,16 +230,16 @@ Ext.define('SSJT.view.main.MainController', {
         debugger
         const me = this,
             view = me.getView();
-        let center = view.child('#center');
+        let content = view.child('#content');
         // 确保中间的容器是 task_container
-        if (!center || center.xtype != xtype) {
-            if (center) view.remove(center, true);
-            center = view.add({
+        if (!content || content.xtype != xtype) {
+            if (content) view.remove(content, true);
+            content = view.add(Ext.apply({
                 xtype: xtype,
-                itemId: 'center'
-            });
+                itemId: 'content'
+            },config));
         }
-        return center;
+        return content;
     },
     activate(ref){
         var view = ref.isComponnet?ref:this.lookup(ref),

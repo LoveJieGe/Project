@@ -1,7 +1,9 @@
 Ext.define('SSJT.view.person.PersonShow', {
     extend: 'SSJT.view.widgets.Show',
     xtype: 'personshow',
-
+    requires:[
+        'SSJT.view.person.PersonShowModel'
+    ],
     controller: 'personshow',
     viewModel: {
         type: 'personshow'

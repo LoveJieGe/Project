@@ -39,10 +39,11 @@ Ext.define('Common.nav.Tree', {
         if (navStore) {
             const node = navStore.getNodeById(id);
             if (node) {
+                //暂停所有事件
                 me.suspendEvents();
                 me.setSelection(node);
+                //回复所有事件，true:在被暂停时，可以防止任何先前排队的事件被触发
                 me.resumeEvents(true);
-
                 const p = node.parentNode;
                 if (p) {
                     p.expand();
@@ -76,6 +77,7 @@ Ext.define('Common.nav.Tree', {
      * @param {Ext.data.Model} node
      */
     onNavSelectionChange(tree, node) {
+        debugger
         if (node) {
             //RouteFloated.hideAll();
             ComUtils.redirectTo(node.get('id'));

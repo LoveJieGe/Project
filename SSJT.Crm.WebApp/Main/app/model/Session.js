@@ -3,7 +3,7 @@ Ext.define('SSJT.model.Session', {
 
     fields: [
         { name: 'Expires', type: 'date' },
-        { name: 'User', reference: 'Personnel' }
+        { name: 'User', reference: 'Person' }
     ],
 
     isValid: function() {

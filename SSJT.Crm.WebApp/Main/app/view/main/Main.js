@@ -29,7 +29,7 @@ Ext.define('SSJT.view.main.Main', {
                 // }
             },{
                 xtype: 'navavatarbutton',
-               handler:'onAvatarTap'
+                handler:'onAvatarTap'
             },{
                 xtype: 'logoutbutton',
                 reference:'btnLogout'
@@ -38,10 +38,11 @@ Ext.define('SSJT.view.main.Main', {
                 reference: 'btnToggle',
                 handler: 'onToggleNavigationSize'
             }]
-        },
-         {
-            xtype: 'crm-container', //此处放 任务、任务评论、任务统计等 的容器
-            itemId: 'center'
-        }
+         }
+        ,
+        //  {
+        //     xtype: 'crm-container', //此处放 任务、任务评论、任务统计等 的容器
+        //     itemId: 'center'
+        // }
     ]
 });

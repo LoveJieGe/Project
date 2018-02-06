@@ -15,7 +15,7 @@ Ext.define('SSJT.store.main.Menu', {
             children: [{
                 text:'桌面',
                 iconCls:'x-fa fa-home',
-                id:'main',
+                id:'home',
                 leaf:true
             },{
                 text: '个人办公',

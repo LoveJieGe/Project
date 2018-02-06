@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'SSJT' );
-$image-search-path: 'F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
+$image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
 $include-avatarhelper: dynamic(true);;
 $include-comconfig: dynamic(true);;
@@ -773,10 +773,9 @@ $include-ext-viewport-windowsphone: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-ssjt-application: dynamic(true);;
 $include-ssjt-model-base: dynamic(true);;
-$include-ssjt-model-personnel: dynamic(true);;
+$include-ssjt-model-person: dynamic(true);;
 $include-ssjt-model-session: dynamic(true);;
 $include-ssjt-model-userinfo: dynamic(true);;
-$include-ssjt-store-personnel: dynamic(true);;
 $include-ssjt-store-main-menu: dynamic(true);;
 $include-ssjt-view-auth-login: dynamic(true);;
 $include-ssjt-view-auth-logincontroller: dynamic(true);;

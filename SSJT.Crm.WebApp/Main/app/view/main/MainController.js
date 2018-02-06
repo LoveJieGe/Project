@@ -8,7 +8,6 @@ Ext.define('SSJT.view.main.MainController', {
     alias: 'controller.maincontroller',
     init(){
         console.log("初始化");
-
     },
     config: {
         showNavigation: true
@@ -28,17 +27,17 @@ Ext.define('SSJT.view.main.MainController', {
 
     routes: {
         ':type(/:args)?': {
-            action: 'toTasks',
+            action: 'handleNavigationRoute',
             conditions: {
                 // NOTE(SB): how to build this list automatically from the Menu store?
-                ':type': '(customer|main|offices|product|financial|personnels|system)',
+                ':type': '(customer|home|office|product|financial|personnel|system)',
                 ':args': '(.*)'
             }
         },
         ':type/:id(/:args)?': {
             action: 'handleDataRoute',
             conditions: {
-                ':type': '(office|organization|personnel)',
+                ':type': '(office|organization|person)',
                 ':id': '([a-zA-Z0-9]+|create|edit)',
                 ':args': '(.*)'
             }
@@ -129,11 +128,11 @@ Ext.define('SSJT.view.main.MainController', {
      * 显示 任务 容器(其内部放置 我的任务、关注的任务、创建的任务 等)
      * @param {String} type
      */
-    toTasks(type,args) {
+    handleNavigationRoute(type,args) {
         debugger
         console.log('路由',type);
         const me = this,
-            center = me.ensureCenterByXType('crm-container');
+            center = me.ensureView('crm-container');
             //vm = center.getViewModel(),
             //oldTaskType = vm.get('taskType');
 
@@ -169,7 +168,21 @@ Ext.define('SSJT.view.main.MainController', {
                 me.activate(view);
                 return;
             }
+            Ext.Viewport.setMasked({ xtype: 'loadmask' });
+            Model.load(id, {
+                callback: function(record) {
+                    view.setRecord(record);
+                    me.activate(view);
+                    Ext.Viewport.setMasked(false);
 
+                    // if (type === 'person') {
+                    //     var user = me.getViewModel().get('user');
+                    //     if (record.get('CustomID') != user.get('CustomID')) {
+                    //         me.fireEvent('actionlog', 'profile', record);
+                    //     }
+                    // }
+                }
+            });
     },
     toHome(){
         debugger
@@ -206,19 +219,21 @@ Ext.define('SSJT.view.main.MainController', {
         this.redirectTo(user);
     },
     ensureView(xtype,config,route){
-        var view  = this.getView(),
-            item = view.child('componnet[viewId='+xtype+']'),
-            reset = !!item;
-        if(!item){
-            item = view.add(Ext.apply({viewId:xtype},config));
+        debugger
+        const me = this,
+            view = me.getView();
+
+        me.lookup('mainmenu').selectNodeSilent(Ext.History.getToken());
+        let center = view.child('#center');
+        // 确保中间的容器是 task_container
+        if (!center || center.xtype != xtype) {
+            if (center) view.remove(center, true);
+            center = view.add({
+                xtype: xtype,
+                itemId: 'center'
+            });
         }
-        if(Ext.isDefined(item.config.route)){
-            item.setRoute(route);
-        }
-        if (reset && Ext.isFunction(item.reset)) {
-            item.reset();
-        }
-        return item;
+        return center;
     },
     activate(ref){
         var view = ref.isComponnet?ref:this.lookup(ref),

@@ -17,26 +17,28 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         }
     },
     routes:{
-        'login':'handleLoginRoute',
-        'home': 'showMain'
+        'login':'handleLoginRoute'
+        //'home': 'showMain'
     },
     onLaunch:function(){
+        debugger
         var me = this;
-        // this.originalRoute = SSJT.getApplication().getDefaultToken();
+        me.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
         Ext.route.Router.suspend();
         ComUtils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
             success(r) {
                 console.log('已经是登录状态', r);
-                me.saveUser(r);
+                me.initiateSession(r);
                 //恢复路由
                 Ext.route.Router.resume();
             },
             failure:function(r){
+                debugger
                 //true可以防止任何先前排队的标记被执行
-                me.saveUser(null);
-                Ext.route.Router.resume(true);
-                me.redirectTo('login', {replace: true,force: true})
+                me.terminateSession();
+                Ext.route.Router.resume();
+                //me.redirectTo('login', {replace: true,force: true})
             },
             callback() {
                 Ext.getBody().removeCls('launching');
@@ -53,7 +55,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             me.redirectTo('login',{replace:true});
             return;
         }
-        var target = SSjt.getApplication().getDefaultToken();
+        var target = SSJT.getApplication().getDefaultToken();
         Ext.log.warn('Route unknown ' + route);
         if(route!==target){
             me.redirectTo(target,{replace:true});
@@ -64,7 +66,8 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.showLoginView();
     },
     showView:function(xtype){
-        var view = this.lookup(xtype),
+        debugger
+        var me = this, view = this.lookup(xtype),
             viewport = this.getView();
         if(!view){
             viewport.removeAll(true);
@@ -72,7 +75,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
                 xtype:xtype,
                 reference:xtype
             });
-            var token = Ext.History.getToken();
+            var token = me.originalRoute;
             if (!Ext.isEmpty(token)) {
                 me.redirectTo(token, {
                     force: true
@@ -85,7 +88,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.showView('authlogin');
     },
     showMain:function(){
-        debugger
         this.showView('main');
     },
     onLogin:function(user){
@@ -93,28 +95,30 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         var me = this,
             token = Ext.History.getToken();
             newToken = "";  
-        me.saveUser(user);
-        if (Ext.String.startsWith(token, 'login/returnurl/')) { //有returnurl参数，则转到returnurl
-            newToken = decodeURIComponent(token.substr(16));
-        } else if (!Ext.isEmpty(token) && token != 'login') {
-            newToken = token;
-        }
+        me.initiateSession(user);
+        //this.redirectTo(me.originalRoute, {force:true,replace: true});
+        // if (Ext.String.startsWith(token, 'login/returnurl/')) { //有returnurl参数，则转到returnurl
+        //     newToken = decodeURIComponent(token.substr(16));
+        // } else if (!Ext.isEmpty(token) && token != 'login') {
+        //     newToken = token;
+        // }
 
-        if (Ext.isEmpty(newToken)) {
-            newToken = ComUtils.getApp().getDefaultToken();
-        }
+        // if (Ext.isEmpty(newToken)) {
+        //     newToken = ComUtils.getApp().getDefaultToken();
+        // }
         //force:即使散列不会更改，将其设置为true也会强制执行
-        me.redirectTo(newToken, {
-            replace: true,
-            force: true
-        });
+        // me.redirectTo(newToken, {
+        //     replace: true,
+        //     force: true
+        // });
     },
     onLogout:function(){
         var me = this,
             view = me.getView();
             ComUtils.ajax('ajaxRequest/UserAuthentication/Logout', {
             success(r) {
-                me.saveUser(null);
+                me.terminateSession();
+                me.originalRoute = Ext.History.getToken();
                 me.redirectTo('login', {
                     replace: true
                 });
@@ -134,12 +138,22 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             }
         }
     },
-    saveUser:function(r){
+    initiateSession: function(session) {
+        this.saveSession(session);
+        this.showMain();
+    },
+    terminateSession: function() {
+        this.saveSession(null);
+        this.showLoginView();
+    },
+    saveSession:function(r){
         debugger
         if(r&&r.User&&Ext.isArray(r.User))
-            r.User = SSJT.model.Personnel.loadData(r.User[0]);
+            r.User = SSJT.model.Person.loadData(r.User[0]);
         const session = r?SSJT.model.Session.loadData(r):r;
         ComUtils.setLSItem('session',session&&session.getData(true));
         User.setUser(session && session.getData(true).User);
+        this.session = session;
     },
+    
 });

@@ -75,12 +75,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
                 xtype:xtype,
                 reference:xtype
             });
-            var token = me.originalRoute;
-            if (!Ext.isEmpty(token)) {
-                me.redirectTo(token, {
-                    force: true
-                });
-            }
         }
         viewport.setActiveItem(view);
     },
@@ -93,10 +87,10 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     onLogin:function(user){
         debugger
         var me = this,
-            token = Ext.History.getToken();
+            token = me.originalRoute;
             newToken = "";  
         me.initiateSession(user);
-        //this.redirectTo(me.originalRoute, {force:true,replace: true});
+        me.redirectTo(token, {force:true,replace: true});
         // if (Ext.String.startsWith(token, 'login/returnurl/')) { //有returnurl参数，则转到returnurl
         //     newToken = decodeURIComponent(token.substr(16));
         // } else if (!Ext.isEmpty(token) && token != 'login') {

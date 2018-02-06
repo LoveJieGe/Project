@@ -63,6 +63,16 @@ Ext.define('SSJT.view.main.MainController', {
                 navigation = me.lookup('navigation'),
                 mainmenu = me.lookup('mainmenu'),
                 rootEl = mainmenu.rootItem.el;
+            var tooltip;
+            if(!tooltip){
+                tooltip = new Ext.tip.ToolTip({
+                        xtype:'tooltip',
+                        align:'tl-tr?',
+                        dismissDelay:1000,
+                        ui:'large',
+                        html:'注销',
+                });
+            }
             //如果有样式则删除，没有则添加
             navigation.toggleCls('navtree-ct-collapsed');
 
@@ -74,12 +84,7 @@ Ext.define('SSJT.view.main.MainController', {
                 //将Treelist UI设置为true，只显示根节点的图标。将光标悬停(或在触控设备上点击)显示图标旁边的子节点。
                 rootEl.setWidth(rootEl.getWidth());
                 mainmenu.setMicro(true);
-                me.lookup('btnLogout').setTooltip({
-                    xtype:'tooltip',
-                    align:'tl-tr?',
-                    ui:'large',
-                    html:'注销',
-                });
+                me.lookup('btnLogout').setTooltip(tooltip);
             }
             me.lookup('btnToggle').setCollapsed(!showNavigation);
         }
@@ -125,14 +130,17 @@ Ext.define('SSJT.view.main.MainController', {
     },
 
     /**
-     * 显示 任务 容器(其内部放置 我的任务、关注的任务、创建的任务 等)
+     * 显示 容器(其内部放置 我的任务、关注的任务、创建的任务 等)
      * @param {String} type
      */
     handleNavigationRoute(type,args) {
         debugger
         console.log('路由',type);
-        const me = this,
-            center = me.ensureView('crm-container');
+        const me = this;
+        //选中导航条中的项
+        me.lookup('mainmenu').selectNodeSilent(Ext.History.getToken());
+
+        const center = me.ensureView('crm-container');
             //vm = center.getViewModel(),
             //oldTaskType = vm.get('taskType');
 
@@ -222,8 +230,6 @@ Ext.define('SSJT.view.main.MainController', {
         debugger
         const me = this,
             view = me.getView();
-
-        me.lookup('mainmenu').selectNodeSilent(Ext.History.getToken());
         let center = view.child('#center');
         // 确保中间的容器是 task_container
         if (!center || center.xtype != xtype) {

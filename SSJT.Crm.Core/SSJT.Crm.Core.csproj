@@ -76,6 +76,11 @@
     <Compile Include="Server\SessionMode.cs" />
     <Compile Include="Server\SessionServer.cs" />
     <Compile Include="SqlHelper\SqlHelper.cs" />
+    <Compile Include="Store\StoreFilter.cs" />
+    <Compile Include="Store\StoreGroup.cs" />
+    <Compile Include="Store\StoreParams.cs" />
+    <Compile Include="Store\StoreResult.cs" />
+    <Compile Include="Store\StoreSorter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

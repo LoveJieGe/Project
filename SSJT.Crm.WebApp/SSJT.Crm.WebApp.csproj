@@ -151,6 +151,9 @@
     <Compile Include="AjaxHandler\AjaxRequest.ashx.cs">
       <DependentUpon>AjaxRequest.ashx</DependentUpon>
     </Compile>
+    <Compile Include="AjaxHandler\StoreRequest.ashx.cs">
+      <DependentUpon>StoreRequest.ashx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -6760,6 +6763,7 @@
     <Content Include="Main\.eslintrc" />
     <Content Include="Main\app\view\home\Home.scss" />
     <Content Include="Common\AvatarHandler.ashx" />
+    <Content Include="AjaxHandler\StoreRequest.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

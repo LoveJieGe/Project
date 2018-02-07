@@ -48,11 +48,16 @@
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
     <Compile Include="Service\HrEmployeeService.cs" />
+    <Compile Include="Store\StoreProcess.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SSJT.Crm.Core\SSJT.Crm.Core.csproj">
+      <Project>{76f2e725-8cba-4662-b667-8785496a020c}</Project>
+      <Name>SSJT.Crm.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SSJT.Crm.DAL\SSJT.Crm.DAL.csproj">
       <Project>{a8ed0f84-1855-4d24-b303-be07c40afc30}</Project>
       <Name>SSJT.Crm.DAL</Name>
@@ -80,5 +85,6 @@
       <LastGenOutput>Service.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

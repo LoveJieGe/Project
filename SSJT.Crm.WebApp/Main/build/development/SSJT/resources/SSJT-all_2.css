@@ -1,4 +1,4 @@
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:330 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:330 */
 .x-tabbar-nav {
     background-color: #32404e;
     background-image: none;
@@ -6,36 +6,36 @@
     border-style: solid;
     border-color: #f1f1f1;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:344 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:344 */
 .x-tabbar-nav .x-title {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:362 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:362 */
 .x-tabbar-nav-body-el {
     padding: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:367 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:367 */
 .x-big .x-tabbar-nav-body-el {
     padding: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:374 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:374 */
 .x-tabbar-nav-body-el.x-horizontal > .x-component {
     margin-right: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:383 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:383 */
 .x-tabbar-nav-body-el.x-horizontal > .x-component:last-child {
     margin-right: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
 .x-tab-navtab {
     color: #adb3b8;
     border-radius: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1246 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1246 */
 .x-big .x-tab-navtab {
     border-radius: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
 .x-tab-navtab .x-inner-el {
     padding: 14px 15px;
     border-width: 0 0 3px 0;
@@ -45,68 +45,68 @@
     background-image: none;
     border-radius: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1260 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1260 */
 .x-big .x-tab-navtab .x-inner-el {
     border-radius: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
 .x-tab-navtab .x-icon-el {
     color: #adb3b8;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
 .x-tab-navtab .x-arrow-el {
     color: #adb3b8;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
 .x-tab-navtab.x-hovered .x-inner-el {
     border-color: #000;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
 .x-tab-navtab.x-hovered .x-icon-el {
     color: #fff;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1412 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1412 */
 .x-tab-navtab:before {
     border-radius: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
 .x-tab-navtab.x-pressing .x-inner-el,
 .x-tab-navtab.x-pressed .x-inner-el {
     border-color: #000;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
 .x-tab-navtab.x-pressing .x-icon-el,
 .x-tab-navtab.x-pressed .x-icon-el {
     color: #fff;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1449 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1449 */
 .x-keyboard-mode .x-tab-navtab.x-focused .x-icon-el {
     color: #fff;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
 .x-keyboard-mode .x-tab-navtab.x-focused:after {
     border-style: none;
     border-radius: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1475 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1475 */
 .x-big .x-keyboard-mode .x-tab-navtab.x-focused:after {
     border-radius: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1438 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1438 */
 .x-tab-navtab.x-active .x-inner-el {
     border-color: #5fa2dd;
     background-color: transparent;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1443 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1443 */
 .x-tab-navtab.x-active .x-icon-el {
     color: #fff;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1481 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/tab/Tab.scss:1481 */
 .x-tab-navtab.x-active.x-focused .x-icon-el {
     color: #fff;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/path.scss:5 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/path.scss:5 */
 @font-face {
     /* FONT PATH
  * -------------------------- */
@@ -117,7 +117,7 @@
     font-weight: normal;
     font-style: normal;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:2 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:2 */
 [class^="i-common-"],
 [class*=" i-common-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -127,165 +127,165 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:11 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:11 */
 .i-common-image:before {
     content: "\e900" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:12 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:12 */
 .i-common-tg:before {
     content: "\e901" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:13 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:13 */
 .i-common-number:before {
     content: "\e902" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:14 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:14 */
 .i-common-thumbnail:before {
     content: "\e903" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:15 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:15 */
 .i-common-list:before {
     content: "\e904" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:16 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:16 */
 .i-common-add:before {
     content: "\e905" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:17 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:17 */
 .i-common-minus:before {
     content: "\e906" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:18 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:18 */
 .i-common-tree-collapse:before {
     content: "\e907" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:19 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:19 */
 .i-common-tree-expand:before {
     content: "\e908" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:20 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:20 */
 .i-common-todoc:before {
     content: "\e909" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:21 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/sass/etc/fonts/icons.scss:21 */
 .i-common-cross:before {
     content: "\e90a" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:6 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:6 */
 .navtree-ct {
     position: relative;
     transition: width 0.2s;
     width: 220px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:11 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:11 */
 .navtree-ct-collapsed {
     width: 64px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:32 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:32 */
 .scrollbar::-webkit-scrollbar-thumb {
     /*定义滑块 内阴影+圆角*/
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px #32404e;
     background-color: #475360;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
 .navtree-ct .x-button-avatar {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
 .navtree-ct .x-button-avatar .x-inner-el {
     border-color: #222c35;
     background-color: #32404e;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
 .navtree-ct .x-button-avatar.x-has-text .x-inner-el {
     padding: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
 .x-big .navtree-ct .x-button-avatar.x-has-text .x-inner-el {
     padding: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
 .navtree-ct .x-button-avatar .x-icon-el {
     color: #f0f0f0;
     width: 33.6px;
     height: 33.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
 .x-big .navtree-ct .x-button-avatar .x-icon-el {
     width: 37.8px;
     height: 37.8px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
 .navtree-ct .x-button-avatar .x-icon-el:before {
     font-size: 33.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
 .navtree-ct .x-button-avatar.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
 .x-big .navtree-ct .x-button-avatar.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
 .navtree-ct .x-button-avatar.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
 .x-big .navtree-ct .x-button-avatar.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
 .navtree-ct .x-button-avatar .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
 .navtree-ct .x-button-avatar.x-hovered {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
 .navtree-ct .x-button-avatar.x-hovered .x-inner-el {
     border-color: #2c353f;
     background-color: #3c4a57;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
 .navtree-ct .x-button-avatar.x-hovered .x-icon-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
 .navtree-ct .x-button-avatar.x-hovered .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
 .navtree-ct .x-button-avatar.x-pressing,
 .navtree-ct .x-button-avatar.x-pressed {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
 .navtree-ct .x-button-avatar.x-pressing .x-inner-el,
 .navtree-ct .x-button-avatar.x-pressed .x-inner-el {
     border-color: #353f48;
     background-color: #475360;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
 .navtree-ct .x-button-avatar.x-pressing .x-icon-el,
 .navtree-ct .x-button-avatar.x-pressed .x-icon-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
 .navtree-ct .x-button-avatar.x-pressing .x-arrow-el,
 .navtree-ct .x-button-avatar.x-pressed .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
 .x-keyboard-mode .navtree-ct .x-button-avatar.x-focused:after {
     border-color: #cacdd0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:74 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:74 */
 .navtree-ct .x-button-avatar .avatar {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -295,33 +295,33 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:85 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:85 */
 .navtree-ct-collapsed .x-button-avatar.x-icon-align-left.x-has-text .x-icon-el {
     margin: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:89 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/nav/Tree.scss:89 */
 .navtree-ct-collapsed .x-button .x-text-el {
     display: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:878 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:878 */
 .x-panel-auth {
     background-color: transparent;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:907 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:907 */
 .x-panel-auth > .x-anchor-el .x-pointer-el {
     fill: rgba(18, 61, 64, 0.25);
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
 .x-panel-auth-body-el {
     padding: 24px;
     background-color: rgba(18, 61, 64, 0.25);
     color: white;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
 .x-panel-auth-boxscroller > .x-boxscroller-body > .x-body-el {
     border: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:14 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:14 */
 .auth-login {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -330,72 +330,72 @@
     background-image: url(../resources/images/auth-background.jpg);
     background-position: center;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:19 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:19 */
 .auth-login > .x-body-el {
     background-color: rgba(0, 0, 0, 0.25);
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:23 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:23 */
 .auth-login .x-formpanel {
     width: 256px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:26 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:26 */
 .auth-login .x-formpanel .x-button {
     margin: 5px 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:30 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:30 */
 .auth-login .x-formpanel .x-button .x-big {
     margin: 5px 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:36 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:36 */
 .auth-login .auth-header,
 .auth-login .auth-footer {
     color: white;
     text-align: center;
     padding: 16px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:42 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:42 */
 .auth-login .auth-header a,
 .auth-login .auth-footer a {
     color: white;
     text-decoration: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:49 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:49 */
 .auth-login .auth-header .logo {
     text-shadow: 1px #aaa;
     color: white;
     font-size: 40px;
     line-height: 1;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:56 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:56 */
 .auth-login .auth-header .title,
 .auth-login .auth-header .caption {
     white-space: nowrap;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:60 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:60 */
 .auth-login .auth-header .title {
     font-size: 31px;
     font-weight: bold;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:65 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:65 */
 .auth-login .auth-header .caption {
     font-size: 15px;
     text-transform: uppercase;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:72 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:72 */
 .auth-login .auth-footer .logo {
     font-size: 18px;
     margin-right: 2px;
     margin-left: -4px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:77 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:77 */
 .auth-login .auth-footer .logo::before {
     vertical-align: middle;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:82 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/auth/Login.scss:82 */
 .auth-login .auth-footer .label {
     font-weight: bold;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/path.scss:5 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/path.scss:5 */
 @font-face {
     /* FONT PATH
  * -------------------------- */
@@ -406,7 +406,7 @@
     font-weight: normal;
     font-style: normal;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:4 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:4 */
 [class^="i-task-"],
 [class*=" i-task-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -416,202 +416,202 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:13 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:13 */
 .i-task-check:before {
     content: "\e836" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:14 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:14 */
 .i-task-read:before {
     content: "\e837" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:15 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:15 */
 .i-task-log:before {
     content: "\e838" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
 .navtree-ct .x-button-logout {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
 .navtree-ct .x-button-logout .x-inner-el {
     border-color: #222c35;
     background-color: #32404e;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
 .navtree-ct .x-button-logout.x-has-text .x-inner-el {
     padding: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
 .x-big .navtree-ct .x-button-logout.x-has-text .x-inner-el {
     padding: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
 .navtree-ct .x-button-logout .x-icon-el {
     color: #f0f0f0;
     width: 33.6px;
     height: 33.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
 .x-big .navtree-ct .x-button-logout .x-icon-el {
     width: 37.8px;
     height: 37.8px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
 .navtree-ct .x-button-logout .x-icon-el:before {
     font-size: 21px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
 .navtree-ct .x-button-logout.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
 .x-big .navtree-ct .x-button-logout.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
 .navtree-ct .x-button-logout.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
 .x-big .navtree-ct .x-button-logout.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
 .navtree-ct .x-button-logout .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
 .navtree-ct .x-button-logout.x-hovered {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
 .navtree-ct .x-button-logout.x-hovered .x-inner-el {
     border-color: #2c353f;
     background-color: #3c4a57;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
 .navtree-ct .x-button-logout.x-hovered .x-icon-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
 .navtree-ct .x-button-logout.x-hovered .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
 .navtree-ct .x-button-logout.x-pressing,
 .navtree-ct .x-button-logout.x-pressed {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
 .navtree-ct .x-button-logout.x-pressing .x-inner-el,
 .navtree-ct .x-button-logout.x-pressed .x-inner-el {
     border-color: #353f48;
     background-color: #475360;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
 .navtree-ct .x-button-logout.x-pressing .x-icon-el,
 .navtree-ct .x-button-logout.x-pressed .x-icon-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
 .navtree-ct .x-button-logout.x-pressing .x-arrow-el,
 .navtree-ct .x-button-logout.x-pressed .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
 .x-keyboard-mode .navtree-ct .x-button-logout.x-focused:after {
     border-color: #cacdd0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
 .x-tooltip-large-body-el {
     padding: 16px;
     font-size: 14px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:959 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:959 */
 .x-big .x-tooltip-large-body-el {
     font-size: 14px;
     padding: 18px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
 .x-tooltip-large-boxscroller > .x-boxscroller-body > .x-body-el {
     border: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:15 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:15 */
 .sidebar {
     background-color: #919191;
     color: #f6f6f6;
     overflow: visible;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:25 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:25 */
 .sidebar > .x-dock {
     overflow: visible;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
 .sidebar .x-button-large.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 16px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
 .x-big .sidebar .x-button-large.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 18px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
 .sidebar .x-button-large.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 16px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
 .x-big .sidebar .x-button-large.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 18px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
 .sidebar .x-button-picture.x-has-text .x-inner-el {
     padding: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
 .x-big .sidebar .x-button-picture.x-has-text .x-inner-el {
     padding: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
 .sidebar .x-button-picture .x-icon-el {
     width: 33.6px;
     height: 33.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
 .x-big .sidebar .x-button-picture .x-icon-el {
     width: 37.8px;
     height: 37.8px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
 .sidebar .x-button-picture .x-icon-el:before {
     font-size: 33.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
 .sidebar .x-button-picture.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
 .x-big .sidebar .x-button-picture.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
 .sidebar .x-button-picture.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
 .x-big .sidebar .x-button-picture.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:48 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:48 */
 .sidebar-body-el {
     z-index: 2;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:52 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:52 */
 .sidebar-micro {
     width: 53px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:56 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:56 */
 .sidebar-micro-body-el {
     -webkit-transition-property: -webkit-width;
     -moz-transition-property: -moz-width;
@@ -623,19 +623,19 @@
     transition-duration: 0.25s;
     width: 53px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:61 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:61 */
 .sidebar-micro-body-el > div {
     width: 256px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:65 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:65 */
 .expanded > .x-dock > .sidebar-micro-body-el {
     width: 256px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:70 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:70 */
 .sidebar-slide {
     width: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:74 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:74 */
 .sidebar-slide-body-el {
     -webkit-transition-property: -webkit-margin-left;
     -moz-transition-property: -moz-margin-left;
@@ -649,11 +649,11 @@
     margin-left: -75vw;
     width: 75vw;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:81 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:81 */
 .expanded > .sidebar-slide-body-el {
     margin-left: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:86 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:86 */
 .sidebar-mask {
     background: black;
     display: none;
@@ -665,11 +665,11 @@
     right: 0;
     z-index: 1;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:97 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Sidebar.scss:97 */
 .sidebar.expanded > .sidebar-mask {
     display: block;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/path.scss:5 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/path.scss:5 */
 @font-face {
     /* FONT PATH
  * -------------------------- */
@@ -680,7 +680,7 @@
     font-weight: normal;
     font-style: normal;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:4 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:4 */
 [class^="i-task-"],
 [class*=" i-task-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -690,134 +690,134 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:13 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:13 */
 .i-task-check:before {
     content: "\e836" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:14 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:14 */
 .i-task-read:before {
     content: "\e837" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:15 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/sass/etc/fonts/icons.scss:15 */
 .i-task-log:before {
     content: "\e838" !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1239 */
 .navtree-ct .x-button-logout {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1253 */
 .navtree-ct .x-button-logout .x-inner-el {
     border-color: #222c35;
     background-color: #32404e;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1267 */
 .navtree-ct .x-button-logout.x-has-text .x-inner-el {
     padding: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1271 */
 .x-big .navtree-ct .x-button-logout.x-has-text .x-inner-el {
     padding: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
 .navtree-ct .x-button-logout .x-icon-el {
     color: #f0f0f0;
     width: 33.6px;
     height: 33.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:86 */
 .x-big .navtree-ct .x-button-logout .x-icon-el {
     width: 37.8px;
     height: 37.8px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
 .navtree-ct .x-button-logout .x-icon-el:before {
     font-size: 21px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1287 */
 .navtree-ct .x-button-logout.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1291 */
 .x-big .navtree-ct .x-button-logout.x-has-text.x-icon-align-left .x-icon-el {
     margin-right: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1297 */
 .navtree-ct .x-button-logout.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 9.7px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1301 */
 .x-big .navtree-ct .x-button-logout.x-has-text.x-icon-align-right .x-icon-el {
     margin-left: 9.6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1327 */
 .navtree-ct .x-button-logout .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1394 */
 .navtree-ct .x-button-logout.x-hovered {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1398 */
 .navtree-ct .x-button-logout.x-hovered .x-inner-el {
     border-color: #2c353f;
     background-color: #3c4a57;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1403 */
 .navtree-ct .x-button-logout.x-hovered .x-icon-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1407 */
 .navtree-ct .x-button-logout.x-hovered .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1422 */
 .navtree-ct .x-button-logout.x-pressing,
 .navtree-ct .x-button-logout.x-pressed {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1425 */
 .navtree-ct .x-button-logout.x-pressing .x-inner-el,
 .navtree-ct .x-button-logout.x-pressed .x-inner-el {
     border-color: #353f48;
     background-color: #475360;
     background-image: none;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1430 */
 .navtree-ct .x-button-logout.x-pressing .x-icon-el,
 .navtree-ct .x-button-logout.x-pressed .x-icon-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1434 */
 .navtree-ct .x-button-logout.x-pressing .x-arrow-el,
 .navtree-ct .x-button-logout.x-pressed .x-arrow-el {
     color: #f0f0f0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1458 */
 .x-keyboard-mode .navtree-ct .x-button-logout.x-focused:after {
     border-color: #cacdd0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:951 */
 .x-tooltip-large-body-el {
     padding: 16px;
     font-size: 14px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:959 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:959 */
 .x-big .x-tooltip-large-body-el {
     font-size: 14px;
     padding: 18px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:972 */
 .x-tooltip-large-boxscroller > .x-boxscroller-body > .x-body-el {
     border: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:40 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:40 */
 .main-menu .x-dataview-item {
     cursor: pointer;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:43 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:43 */
 .main-menu .x-dataview-item .icon {
     display: inline-block;
     font-size: 21px;
@@ -828,22 +828,22 @@
     text-align: center;
     vertical-align: middle;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:53 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:53 */
 .x-big .main-menu .x-dataview-item .icon {
     font-size: 21px;
     margin-right: 18px;
     height: 21px;
     width: 21px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:62 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/main/Menu.scss:62 */
 .main-menu .x-dataview-dark {
     border-bottom: 2px solid #848484;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:2 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:2 */
 .person-details .block-section {
     min-width: 25%;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:1 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:1 */
 .show-header {
     -webkit-box-shadow: 0px 0px 5px #333;
     -moz-box-shadow: 0px 0px 5px #333;
@@ -852,16 +852,16 @@
     position: relative;
     z-index: 1;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:7 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:7 */
 .show-header > .x-body-el {
     padding: 16px 24px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:11 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:11 */
 .show-header .header-title {
     line-height: 1.4;
     padding: 6px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:15 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:15 */
 .show-header .header-title .icon {
     border-right: 1px solid;
     color: #5fa2dd;
@@ -870,30 +870,30 @@
     margin-right: 8px;
     padding-right: 8px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:24 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:24 */
 .show-header .header-title .name,
 .show-header .header-title .desc {
     white-space: nowrap;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:29 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:29 */
 .show-header .header-title .name {
     color: #5fa2dd;
     font-size: 24px;
     font-weight: 400;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:35 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:35 */
 .show-header .header-title .desc {
     font-size: 16px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:1 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:1 */
 .person-header {
     overflow: visible;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:4 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:4 */
 .person-header > .x-body-el {
     overflow: visible;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:8 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:8 */
 .person-header .header-picture {
     -webkit-box-shadow: 0 4px 5px -2px #333;
     -moz-box-shadow: 0 4px 5px -2px #333;
@@ -903,129 +903,129 @@
     height: 150px;
     width: 150px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:16 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:16 */
 @media screen and (min-width: 600px) {
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:17 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:17 */
     .person-header .header-picture {
         margin-bottom: -75px;
     }
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:22 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:22 */
 @media screen and (max-width: 599px) {
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:23 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:23 */
     .person-header > .x-body-el {
         padding-bottom: 32px;
     }
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:27 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:27 */
     .person-header .header-picture {
         margin-left: auto;
         margin-right: auto;
     }
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:32 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowHeader.scss:32 */
     .person-header .header-title {
         text-align: center;
     }
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:1 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:1 */
 .person-tools {
     z-index: 1;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:4 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:4 */
 .person-tools > .x-body-el {
     padding: 12px 8px 24px 8px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:8 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:8 */
 .person-tools .location {
     background-color: #f5f5f5;
     padding: 8px 16px;
     text-align: center;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:13 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:13 */
 .person-tools .location .time,
 .person-tools .location .city {
     display: inline-block;
     font-size: 13px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:19 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:19 */
 .person-tools .location .time::before {
     content: '|';
     margin: 0 4px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:24 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:24 */
 .person-tools .location .city {
     font-weight: bold;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:29 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:29 */
 @media screen and (min-width: 600px) {
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:30 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:30 */
     .person-tools .x-toolbar {
         margin-left: 182px;
         margin-right: 16px;
     }
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:36 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:36 */
 @media screen and (max-width: 599px) {
     .person-tools {
         margin-top: -38px;
     }
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:39 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:39 */
     .person-tools > .x-body-el {
         flex-direction: column;
         padding-bottom: 0;
     }
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:44 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/ShowTools.scss:44 */
     .person-tools .location {
         margin-top: 16px;
         width: 100%;
     }
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:17 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:17 */
 @-webkit-keyframes rotate-animation {
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:20 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:20 */
 @keyframes rotate-animation {
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:12 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:12 */
 html,
 body {
     height: 100%;
     margin: 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:16 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:16 */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:20 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:20 */
 ::-webkit-scrollbar-button {
     width: 0px;
     height: 0px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:24 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:24 */
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:27 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:27 */
 body.launching {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1035,7 +1035,7 @@ body.launching {
     background-image: url(../resources/images/auth-background.jpg);
     background-position: center;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:33 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:33 */
 body.launching::before {
     -webkit-animation: rotate-animation 1s linear infinite;
     animation: rotate-animation 1s linear infinite;
@@ -1056,7 +1056,7 @@ body.launching::before {
     width: 41px;
     height: 41px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:52 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:52 */
 .page-constrained > .x-body-el,
 .page-constrained > .x-innerhtml,
 .page-constrained > .x-dock-horizontal {
@@ -1064,60 +1064,60 @@ body.launching::before {
     margin: 0 auto;
     width: 100%;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:61 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:61 */
 .blocks {
     padding: 8px 0 0 8px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:65 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:65 */
 .blocks .x-panel-block {
     margin: 0 8px 8px 0;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:70 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:70 */
 .tablet-profile .blocks > .x-body-el {
     display: flex;
     flex-direction: row;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:74 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:74 */
 .tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(1) {
     flex: 2;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:78 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:78 */
 .tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(2) {
     flex: 1;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:81 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:81 */
 @media screen and (max-width: 800px) {
     .tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(2) {
         flex: 2;
     }
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:86 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:86 */
 @media screen and (max-width: 600px) {
     .tablet-profile .blocks > .x-body-el {
         flex-direction: column;
     }
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:93 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:93 */
 .block-section {
     display: inline-block;
     vertical-align: top;
     line-height: 1.4;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:98 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:98 */
 .block-section .item {
     padding: 0 16px 16px;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:101 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:101 */
 .block-section .item .label {
     color: #2a7dc6;
     font-size: 14px;
     text-transform: uppercase;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:107 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:107 */
 .block-section .item .value {
     font-weight: 500;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:115 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:115 */
 scrollbar {
     -moz-appearance: none !important;
     background-color: transparent !important;
@@ -1129,7 +1129,7 @@ scrollbar {
     overflow: hidden !important;
     z-index: 999999999 !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:125 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:125 */
 scrollbar thumb {
     /* 滚动条按钮基本样式 */
     /* 滚动条按钮基本样式 */
@@ -1140,7 +1140,7 @@ scrollbar thumb {
     /* 滚动条按钮边框 */
     border-color: rgba(0, 100, 255, 0.1) !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:134 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:134 */
 scrollbar:hover thumb,
 scrollbar thumb:hover,
 scrollbar thumb:active {
@@ -1149,33 +1149,33 @@ scrollbar thumb:active {
     background-color: rgba(0, 100, 255, 0.75) !important;
     border: 0px !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:143 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:143 */
 scrollbar[orient="vertical"] {
     margin-left: -5px !important;
     min-width: 5px !important;
     max-width: 5px !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:149 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:149 */
 scrollbar thumb[orient="vertical"] {
     border-style: none none none solid !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:155 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:155 */
 scrollbar[orient="horizontal"] {
     margin-top: -5px !important;
     min-height: 5px !important;
     max-height: 5px !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:160 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:160 */
 scrollbar thumb[orient="horizontal"] {
     border-style: solid none none none !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:165 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:165 */
 scrollbar scrollcorner {
     /* 去除垂直与水平滚动条相交汇的角落 */
     /* 去除垂直与水平滚动条相交汇的角落 */
     display: none !important;
 }
-/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:170 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:170 */
 scrollbar scrollbarbutton {
     /* 滚动条两端按钮不显示 */
     /* 滚动条两端按钮不显示 */

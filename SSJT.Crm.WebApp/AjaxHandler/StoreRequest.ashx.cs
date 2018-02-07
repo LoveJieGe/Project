@@ -1,0 +1,68 @@
+﻿using Newtonsoft.Json;
+using SSJT.Crm.Core.AjaxRequest;
+using SSJT.Crm.Core.Store;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Web;
+
+namespace SSJT.Crm.WebApp.AjaxHandler
+{
+    /// <summary>
+    /// StoreRequest 的摘要说明
+    /// </summary>
+    public class StoreRequest : IHttpHandler
+    {
+
+        public void ProcessRequest(HttpContext context)
+        {
+            AjaxReceive receive = new AjaxReceive();
+            receive.Fill(context);
+            NameValueCollection cc = context.Request.Form;
+            StoreParams storeParams = new StoreParams();
+            if (!string.IsNullOrEmpty(cc["page"]))
+                storeParams.page = int.Parse(cc["page"]);
+            if (!string.IsNullOrEmpty(cc["start"]))
+                storeParams.start = int.Parse(cc["start"]);
+            if (!string.IsNullOrEmpty(cc["limit"]))
+                storeParams.limit = int.Parse(cc["limit"]);
+            if (!string.IsNullOrEmpty(cc["query"]))
+                storeParams.query = cc["query"];
+            if (!string.IsNullOrEmpty(cc["group"]))
+            {
+                StoreGroup grouper = JsonConvert.DeserializeObject<StoreGroup>(cc["group"]);
+                if (grouper != null)
+                    storeParams.group = new List<StoreGroup>(new StoreGroup[] { grouper });
+            }
+            if (!string.IsNullOrEmpty(cc["sort"]))
+                storeParams.sort = JsonConvert.DeserializeObject<List<StoreSorter>>(cc["sort"]);
+            if (!string.IsNullOrEmpty(cc["filter"]))
+                storeParams.filter = JsonConvert.DeserializeObject<List<StoreFilter>>(cc["filter"]);
+            if (string.IsNullOrEmpty(receive.Data))
+            {
+                receive.Data = JsonConvert.SerializeObject(new
+                {
+                    StoreParams = storeParams
+                });
+            }
+            else if (receive.Data.StartsWith("{") && receive.Data.EndsWith("}"))
+            {
+                string restJsonStr = receive.Data.Substring(1);
+                if (restJsonStr != "}") restJsonStr = "," + restJsonStr;
+
+                receive.Data = string.Format("{{\"StoreParams\":{0}{1}", JsonConvert.SerializeObject(storeParams), restJsonStr);
+            }
+            AjaxResult result = ContextFactory.AjaxProcess.DoProcess(receive);
+
+        }
+
+        public bool IsReusable
+        {
+            get
+            {
+                return false;
+            }
+        }
+    }
+}

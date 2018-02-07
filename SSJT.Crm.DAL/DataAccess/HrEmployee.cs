@@ -1,4 +1,7 @@
-﻿using SSJT.Crm.IDAL;
+﻿using SSJT.Crm.Core.Store;
+using SSJT.Crm.IDAL;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SSJT.Crm.DAL
 {
@@ -7,7 +10,6 @@ namespace SSJT.Crm.DAL
     /// </summary>
     public partial class HrEmployeeDal:BaseDal<Model.HrEmploy>,IHrEmployeeDal
 	{
-
-	}
+    }
 }
 

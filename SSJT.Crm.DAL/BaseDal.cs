@@ -1,4 +1,5 @@
-﻿using SSJT.Crm.Model;
+﻿using SSJT.Crm.DBUtility;
+using SSJT.Crm.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,7 @@ namespace SSJT.Crm.DAL
 {
     public abstract class BaseDal<T> where T: class,new()
     {
-        public  DbContext context = new CrmEntities();
+        public  DbContext context = DbContextFactory.GetDbContext();
         /// <summary>
         /// 获取数据库中ID最大的一条数据
         /// </summary>

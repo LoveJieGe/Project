@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace SSJT.Crm.Core.Store
 {
     [Serializable]
-    public class StoreParams
+    public class StoreParams 
     {
         public int page;
         public int start;
         public int limit;
         public string query;
-        public List<StoreGroup> group;
-        public List<StoreSorter> sort;
-        public List<StoreFilter> filter;
+        public List<GroupParam> group;
+        public List<SortParam> sort;
+        public List<FilterParam> filter;
     }
 }

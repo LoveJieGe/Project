@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SSJT.Crm.Core.Store
 {
-    public class StoreSorter
+    [Serializable]
+    public class GroupParam
     {
         public string property;
         public string direction;

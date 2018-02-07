@@ -9,7 +9,7 @@ namespace SSJT.Crm.BLL.Store
 {
     public class StoreProcess
     {
-        public void QueryPerson(StoreParams)
+        public void QueryPerson(StoreParams storeParams)
         {
 
         }

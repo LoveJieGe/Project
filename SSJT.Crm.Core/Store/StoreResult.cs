@@ -8,5 +8,8 @@ namespace SSJT.Crm.Core.Store
 {
     public class StoreResult
     {
+        public int total;
+        public object root;
+        public object footer;
     }
 }

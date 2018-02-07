@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SSJT.Crm.Core.Store
 {
     [Serializable]
-    public class StoreFilter
+    public class FilterParam
     {
         public string property;
         public string value;

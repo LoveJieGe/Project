@@ -1,9 +1,6 @@
 ﻿using SSJT.Crm.Common;
 using SSJT.Crm.Core.AjaxRequest;
-using SSJT.Crm.DBUtility;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 using SSJT.Crm.Core.Exceptions;

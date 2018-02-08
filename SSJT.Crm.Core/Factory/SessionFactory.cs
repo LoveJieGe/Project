@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using SSJT.Crm.Core.Server;
-using SSJT.Crm.Model;
 
 namespace SSJT.Crm.Core
 {

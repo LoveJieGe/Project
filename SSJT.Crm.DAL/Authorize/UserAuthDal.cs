@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using SSJT.Crm.DBUtility;
 using SSJT.Crm.Model;
-using SSJT.Crm.Core;
 using SSJT.Crm.Core.Exceptions;
+using SSJT.Crm.IDAL;
+using SSJT.Crm.Core.AjaxResponse;
+using SSJT.Crm.Core;
 
-namespace SSJT.Crm.Core.Client
+namespace SSJT.Crm.DAL
 {
-    [AjaxClass]
-    public class UserAuthentication
+
+    public class UserAuthDal: IUserAuthDal
     {
-        [AjaxMethod]
-        [Description("用户登录")]
         public UserResult Login(string userID,string password)
         {
             UserResult result = null;
@@ -44,8 +38,7 @@ namespace SSJT.Crm.Core.Client
             return result;
         }
 
-        [AjaxMethod]
-        [Description("获取当前用户的信息")]
+       
         public UserResult GetCurrentUser()
         {
             UserResult result = null;
@@ -70,8 +63,7 @@ namespace SSJT.Crm.Core.Client
             }
             return null;
         }
-        [AjaxMethod]
-        [Description("注销")]
+        
         public void Logout()
         {
             Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();

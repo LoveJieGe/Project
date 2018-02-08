@@ -7,6 +7,7 @@ using SSJT.Crm.Core.AjaxRequest;
 using System.Reflection;
 using System.ComponentModel;
 using System.Collections;
+using SSJT.Crm.Core.Exceptions;
 
 namespace SSJT.Crm.Core
 {
@@ -29,6 +30,8 @@ namespace SSJT.Crm.Core
                 {
                     AjaxMethod method = new AjaxMethod();
                     Type type = Type.GetType(className);
+                    if (type == null)
+                        throw AjaxException.ToException(ErrorCode.PErrorCode, "无效的类方法[{0}]", className);
                     method.MethodInfo = Ajaxhelper.GetMethodInfo(type, methodName);
                     SetAjaxMethod(method, method.MethodInfo);
                     methodList.Add(key, method);
@@ -45,16 +48,20 @@ namespace SSJT.Crm.Core
             method.DeclaringType = methodInfo.DeclaringType;
             method.MethodInfo = methodInfo;
             method.ReturnType = methodInfo.ReturnType;
+            AjaxClassAttribute attr = methodInfo.DeclaringType.GetCustomAttribute<AjaxClassAttribute>(true);
+            method.FullClassName = attr.DeclaringType;
             if (methodInfo.IsDefined(typeof(DescriptionAttribute), true))
                 method.Description = methodInfo.GetCustomAttribute<DescriptionAttribute>(true).Description;
         }
         /// <summary>
         /// 获取类的实例
         /// </summary>
-        /// <param name="fullClassName"></param>
+        /// <param name="fullClassName">类的完全限定名称</param>
         public static object GetInstance(string fullClassName)
         {
             Type type = Type.GetType(fullClassName);
+            if(type==null)
+                throw AjaxException.ToException(ErrorCode.PErrorCode, "无效的类方法[{0}]", fullClassName);
             object instance = Activator.CreateInstance(type);
             return instance;
         }

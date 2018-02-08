@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SSJT.Crm.Core
 {
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class AjaxMethodAttribute:Attribute
     {
     }

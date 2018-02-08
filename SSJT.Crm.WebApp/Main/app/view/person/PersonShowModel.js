@@ -3,13 +3,12 @@ Ext.define('SSJT.view.person.PersonShowModel', {
     alias: 'viewmodel.personshow',
     stores: {
         coworkers: {
-            type: 'people',
-            pageSize: 12
-        },
-
-        history: {
-            type: 'actions',
-            pageSize: 12
+            type: 'person',
+            pageSize: 12,
         }
+        // history: {
+        //     type: 'actions',
+        //     pageSize: 12
+        // }
     }
 });

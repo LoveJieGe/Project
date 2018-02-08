@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using SSJT.Crm.Core.AjaxRequest;
 using SSJT.Crm.Core.Exceptions;
 
-namespace SSJT.Crm.Core.AjaxResponse
+namespace SSJT.Crm.Core.Server
 {
     public class AjaxProcess : IAjaxProcess
     {
@@ -17,12 +17,12 @@ namespace SSJT.Crm.Core.AjaxResponse
             try
             {
                 if (string.IsNullOrEmpty(receive.ClassName) || string.IsNullOrEmpty(receive.MethodName))
-                    throw new Exception("参数不能解析");
+                    throw AjaxException.ToException(ErrorCode.PErrorCode,"参数解析出错!");
                 AjaxMethod method = AjaxServer.GetAjaxMethod(receive.FullClassName, receive.MethodName);
                 result.Method = method;
                 ParameterInfo[] parameters = method.MethodInfo.GetParameters();
                 object[] objArray = Ajaxhelper.ParseParams(receive.Data, parameters);
-                object r = method.MethodInfo.Invoke(AjaxServer.GetInstance(receive.FullClassName), objArray);
+                object r = method.MethodInfo.Invoke(AjaxServer.GetInstance(method.FullClassName), objArray);
                 if (r != null)
                 {
                     result.Data = r;

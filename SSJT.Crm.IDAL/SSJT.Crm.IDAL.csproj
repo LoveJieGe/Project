@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorize\IUserAuthDal.cs" />
     <Compile Include="DataAccess\ICrmContact.cs" />
     <Compile Include="DataAccess\IHrEmployee.cs" />
     <Compile Include="IBaseDal.cs" />
@@ -70,5 +71,6 @@
       <LastGenOutput>IDal.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

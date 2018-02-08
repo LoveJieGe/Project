@@ -55,10 +55,27 @@ namespace SSJT.Crm.Test
             //table.Rows[0]["Expires"] = DateTime.Now;
             //string js =Core.JsonHelper.ToJson(table, Core.DateTimeMode.JS);
             //Console.WriteLine(js);
-            
-            int v = GetEnumValue(typeof(ErrorCode), Enum.GetName(typeof(ErrorCode), ErrorCode.VErrorCode));
-            int v2 = (int)Enum.ToObject(typeof(ErrorCode), ErrorCode.VErrorCode);
+
+            //int v = GetEnumValue(typeof(ErrorCode), Enum.GetName(typeof(ErrorCode), ErrorCode.VErrorCode));
+            //int v2 = (int)Enum.ToObject(typeof(ErrorCode), ErrorCode.VErrorCode);
+            Type type = Type.GetType("SSJT.Crm.IBLL.IUserAuthServer,SSJT.Crm.IBLL");
+            MethodInfo[] items = type.GetMethods(BindingFlags.Public | BindingFlags.Instance);
+            foreach (MethodInfo item in items)
+            {
+                if(item.Name.Equals("GetMessage"))
+                {
+                    object o = item.Invoke(GetInstance("SSJT.Crm.BLL.UserAuthServer,SSJT.Crm.BLL"), null);
+                    Console.Write(o);
+                }
+            }
+            Console.Write("22");
             Console.ReadKey();
+        }
+        public static object GetInstance(string fullClassName)
+        {
+            Type type = Type.GetType(fullClassName);
+            object instance = Activator.CreateInstance(type);
+            return instance;
         }
         public static int GetEnumValue(Type enumType, string enumName)
         {

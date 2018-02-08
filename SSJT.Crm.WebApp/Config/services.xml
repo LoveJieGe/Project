@@ -11,6 +11,6 @@
   <object name="ContextFactory" type="SSJT.Crm.WebApp.ContextFactory,SSJT.Crm.WebApp" init-method="Init">
     <property name="_ajaxProcess" ref="AjaxProcess"/>
   </object>
-  <object name="AjaxProcess" type="SSJT.Crm.Core.AjaxResponse.AjaxProcess, SSJT.Crm.Core">
+  <object name="AjaxProcess" type="SSJT.Crm.Core.Server.AjaxProcess, SSJT.Crm.Core">
   </object>
 </objects>

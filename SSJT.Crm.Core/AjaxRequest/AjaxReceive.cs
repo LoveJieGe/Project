@@ -9,11 +9,25 @@ namespace SSJT.Crm.Core.AjaxRequest
 {
     public class AjaxReceive
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nameSpace">所操作类的命名空间，默认是SSJT.Crm.BLL</param>
+        /// <param name="assemblyName">要操作的类的程序集，默认是SSJT.Crm.BLL</param>
+        public AjaxReceive(string nameSpace,string assemblyName)
+        {
+            this.nameSpace = nameSpace;
+            this.assemblyName = assemblyName;
+        }
+        public AjaxReceive()
+        {
+        }
         private string className;
         private string methodName;
         private string data;
         private string version;
-        private string nameSpace="SSJT.Crm.Core.Client";
+        private string nameSpace= "SSJT.Crm.IBLL";
+        private string assemblyName = "SSJT.Crm.IBLL";
         public string ClassName
         {
             get { return this.className; }
@@ -34,14 +48,19 @@ namespace SSJT.Crm.Core.AjaxRequest
             get { return this.version; }
             set { this.version = value; }
         }
-        public string NameSpace
+        internal string NameSpace
         {
             get { return this.nameSpace; }
-            set { this.nameSpace = value; }
+            private set { this.nameSpace = value; }
         }
-        public string FullClassName
+        internal string AssemblyName
         {
-            get { return this.NameSpace+"."+this.className;}
+            get { return this.assemblyName; }
+            private set { this.assemblyName = value; }
+        }
+        internal string FullClassName
+        {
+            get { return this.NameSpace+"."+this.ClassName + ","+this.AssemblyName;}
         }
         /// <summary>
         /// 使用客户端返回的数据填充当前对象

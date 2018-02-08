@@ -26,7 +26,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         me.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
         Ext.route.Router.suspend();
-        ComUtils.ajax('ajaxRequest/UserAuthentication/GetCurrentUser', {
+        ComUtils.ajax('ajaxRequest/IUserAuthServer/GetCurrentUser', {
             success(r) {
                 console.log('已经是登录状态', r);
                 me.initiateSession(r);
@@ -109,7 +109,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     onLogout:function(){
         var me = this,
             view = me.getView();
-            ComUtils.ajax('ajaxRequest/UserAuthentication/Logout', {
+            ComUtils.ajax('ajaxRequest/IUserAuthServer/Logout', {
             success(r) {
                 me.terminateSession();
                 me.originalRoute = Ext.History.getToken();

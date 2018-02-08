@@ -1,8 +1,4 @@
-﻿using SSJT.Crm.Core.AjaxResponse;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using SSJT.Crm.Core.Server;
 
 namespace SSJT.Crm.WebApp
 {

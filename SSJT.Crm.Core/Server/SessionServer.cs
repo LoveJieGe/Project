@@ -7,16 +7,18 @@ using System.Web;
 using SSJT.Crm.Core.Exceptions;
 using SSJT.Crm.DBUtility;
 using SSJT.Crm.Model;
+using System.Collections;
 
 namespace SSJT.Crm.Core.Server
 {
     public class SessionServer:ISessionServer
     {
-        private Dictionary<string, SessionMode> sessions;
+        private Hashtable sessions;
         private object lockObject = new object();
         public SessionServer()
         {
-            sessions = new Dictionary<string, SessionMode>();
+            if(sessions==null)
+                sessions = Hashtable.Synchronized(new Hashtable());
         }
         /// <summary>
         /// 注册Session
@@ -70,8 +72,9 @@ namespace SSJT.Crm.Core.Server
         {
             SessionMode mode = null;
             if (this.sessions.ContainsKey(sessionID))
-                mode = this.sessions[sessionID];
-            if (HttpContext.Current != null && HttpContext.Current.Session != null)
+            {
+                mode = this.sessions[sessionID] as SessionMode;
+            }else if (HttpContext.Current != null && HttpContext.Current.Session != null)
             {
                 var r = HttpContext.Current.Session[sessionID];
                 if (r != null)

@@ -21,6 +21,10 @@ namespace SSJT.Crm.Core.Exceptions
         /// </summary>
         SErrorCode = -32092,
         /// <summary>
+        /// 参数错误
+        /// </summary>
+        PErrorCode = -32093,
+        /// <summary>
         /// 默认的错误代码
         /// </summary>
         Default  = 400

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSJT.Crm.Core.Client
+namespace SSJT.Crm.Core.AjaxResponse
 {
     public class UserResult
     {

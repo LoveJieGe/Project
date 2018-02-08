@@ -1,7 +1,6 @@
 Ext.define('SSJT.model.Person', {
     extend: 'SSJT.model.Base',
     fields: [
-        
         'UserID',
         'UserName', 
         {
@@ -18,20 +17,12 @@ Ext.define('SSJT.model.Person', {
         'Levels',
         'Professional',
         {
-            name:'Expires',
-            type:'date',
-            dateFormat:'Y-m-d H:i'
-        },{
             name:'CustomID',
             calculate:function(data){
                 return data.UserID;
             }
         }
     ],
-    isValid: function() {
-        return !Ext.isEmpty(this.get('UserID'))
-            && this.get('Expires') > new Date();
-    },
     statics: {
         /**
          * The server people.list() API treats differently a request containing a specific id,
@@ -41,12 +32,17 @@ Ext.define('SSJT.model.Person', {
          * then request the server with the desired id.
          */
         load: function(id, options, session) {
+            debugger
             var record = Ext.create('SSJT.model.Person');
             record.setSession(session),
             record.load(
-                Ext.apply({ params: { id: id } }, options)
+                Ext.apply({ params: { data: id } }, options)
             );
         }
     },
-
+    proxy: {
+        type: 'ajax',
+        api : 'storeRequest/StoreProcess/QueryPerson',
+        url:''
+    },
 });

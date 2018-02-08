@@ -9,9 +9,4 @@ Ext.define('SSJT.store.person.Person', {
 
     remoteSort: true,
     remoteFilter: true,
-
-    proxy: {
-        type: 'ajax',
-        api : 'store/OA.Task/PageQueryFakeDeleted'
-    }
 });

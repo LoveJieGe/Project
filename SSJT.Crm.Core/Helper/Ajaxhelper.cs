@@ -9,6 +9,7 @@ using System.ComponentModel;
 using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Converters;
+using SSJT.Crm.Core.Exceptions;
 
 namespace SSJT.Crm.Core
 {
@@ -74,6 +75,8 @@ namespace SSJT.Crm.Core
                     while (reader.Read() && reader.TokenType == JsonToken.PropertyName)
                     {
                         reader.Read();
+                        if (index >= parameters.Length)
+                            throw AjaxException.ToException(ErrorCode.PErrorCode,"参数解析出错!");
                         obj[index] = serializer.Deserialize(reader, parameters[index].ParameterType);
                         index++;
                     }

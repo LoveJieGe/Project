@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SSJT.Crm.Core.AjaxRequest;
 
-namespace SSJT.Crm.Core.AjaxResponse
+namespace SSJT.Crm.Core.Server
 {
     public interface IAjaxProcess
     {

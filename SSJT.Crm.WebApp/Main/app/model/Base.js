@@ -14,6 +14,7 @@ Ext.define('SSJT.model.Base', {
         namespace: 'SSJT.model'
     },
     toUrl: function() {
+        debugger
         return this.get('url');
     },
 

@@ -12,7 +12,8 @@ Ext.define('SSJT.view.widgets.Show', {
     },
     /**
      * https://www.sencha.com/blog/using-sencha-ext-config/
-     * 在eventedConfig中定义的配置选项将自动生成setter / getter方法(有关自动生成的getter / setter方法的更多信息，请参见配置)
+     * 在eventedConfig中定义的配置选项将自动生成setter / getter方法
+     * (有关自动生成的getter / setter方法的更多信息，请参见配置)
      */
     eventedConfig: {
         record: null
@@ -41,10 +42,10 @@ Ext.define('SSJT.view.widgets.Show', {
     /**
      * 配置选项使此组件可滚动。可接受的值是:
      *  true:可以自动滚动
-     * false(或null):禁用滚动——这是默认值。
-     * x或horizontal :只允许水平滚动。
-     * y or vertical:垂直滚动只允许垂直滚动,
-     * 如果需要高级配置,还接受一个Ext.scroll.Scroller的配置对象。
+     *  false(或null):禁用滚动——这是默认值。
+     *  x或horizontal :只允许水平滚动。
+     *  y or vertical:垂直滚动只允许垂直滚动,
+     *  如果需要高级配置,还接受一个Ext.scroll.Scroller的配置对象。
      */
     scrollable: {
         y: 'scroll'

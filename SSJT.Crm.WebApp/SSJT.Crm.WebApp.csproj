@@ -151,8 +151,14 @@
     <Compile Include="AjaxHandler\AjaxRequest.ashx.cs">
       <DependentUpon>AjaxRequest.ashx</DependentUpon>
     </Compile>
+    <Compile Include="AjaxHandler\BaseRequest.ashx.cs">
+      <DependentUpon>BaseRequest.ashx</DependentUpon>
+    </Compile>
     <Compile Include="AjaxHandler\StoreRequest.ashx.cs">
       <DependentUpon>StoreRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxHandler\UserRequest.ashx.cs">
+      <DependentUpon>UserRequest.ashx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -165,9 +171,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="AjaxHandler\Login.ashx.cs">
-      <DependentUpon>Login.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidateCode.ashx.cs">
@@ -6716,7 +6719,6 @@
     <Content Include="Main\Readme.md" />
     <Content Include="Main\resources\Readme.md" />
     <Content Include="Main\workspace.json" />
-    <Content Include="AjaxHandler\Login.ashx" />
     <Content Include="Main\packages\local\Util\examples\Readme.md" />
     <Content Include="Main\packages\local\Util\licenses\Readme.md" />
     <Content Include="Main\packages\local\Util\overrides\Readme.md" />
@@ -6764,6 +6766,8 @@
     <Content Include="Main\app\view\home\Home.scss" />
     <Content Include="Common\AvatarHandler.ashx" />
     <Content Include="AjaxHandler\StoreRequest.ashx" />
+    <Content Include="AjaxHandler\UserRequest.ashx" />
+    <Content Include="AjaxHandler\BaseRequest.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -6808,6 +6812,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SSJT.Crm.BLL\SSJT.Crm.BLL.csproj">
+      <Project>{8533a98c-a17b-4e8b-a721-95c9e6dd3c73}</Project>
+      <Name>SSJT.Crm.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SSJT.Crm.Common\SSJT.Crm.Common.csproj">
       <Project>{a464abbe-68f9-43c2-9b3e-aa677cfc2f7b}</Project>
       <Name>SSJT.Crm.Common</Name>
@@ -6816,9 +6824,9 @@
       <Project>{76f2e725-8cba-4662-b667-8785496a020c}</Project>
       <Name>SSJT.Crm.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SSJT.Crm.DBUtility\SSJT.Crm.DBUtility.csproj">
-      <Project>{ED84A816-FD0C-4D1A-861D-EBBFC2288AC5}</Project>
-      <Name>SSJT.Crm.DBUtility</Name>
+    <ProjectReference Include="..\SSJT.Crm.IBLL\SSJT.Crm.IBLL.csproj">
+      <Project>{85413d8c-f1f9-4481-870f-2c636db34733}</Project>
+      <Name>SSJT.Crm.IBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\SSJT.Crm.Model\SSJT.Crm.Model.csproj">
       <Project>{5ef9ec4d-0cdc-40f5-aa76-9fa994d6a87e}</Project>

@@ -25,7 +25,7 @@ Ext.define('SSJT.view.auth.LoginController', {
             values = form.getValues();
         form.clearErrors();
         if(form.validate()){
-            form.ajax('ajaxRequest/UserAuthentication/Login', {
+            form.ajax('ajaxRequest/IUserAuthServer/Login', {
                 data: {
                     UserID: values.userID,
                     PassWord: values.password

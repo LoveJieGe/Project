@@ -59,15 +59,14 @@
     <Compile Include="AjaxRequest\AjaxResult.cs" />
     <Compile Include="Exceptions\AjaxException.cs" />
     <Compile Include="Exceptions\ErrorCode.cs" />
-    <Compile Include="Client\UserAuthentication.cs" />
-    <Compile Include="Client\UserResult.cs" />
+    <Compile Include="AjaxResponse\UserResult.cs" />
     <Compile Include="Factory\SessionFactory.cs" />
     <Compile Include="Helper\HelperManager.cs" />
     <Compile Include="Helper\JsonHelper.cs" />
     <Compile Include="Server\AjaxServer.cs" />
     <Compile Include="Attribute\AjaxClassAttribute.cs" />
-    <Compile Include="AjaxResponse\AjaxProcess.cs" />
-    <Compile Include="AjaxResponse\IAjaxProcess.cs" />
+    <Compile Include="Server\AjaxProcess.cs" />
+    <Compile Include="Server\IAjaxProcess.cs" />
     <Compile Include="Attribute\AjaxMethodAttribute.cs" />
     <Compile Include="Helper\Ajaxhelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,7 +91,7 @@
       <Name>SSJT.Crm.DBUtility</Name>
     </ProjectReference>
     <ProjectReference Include="..\SSJT.Crm.Model\SSJT.Crm.Model.csproj">
-      <Project>{5EF9EC4D-0CDC-40F5-AA76-9FA994D6A87E}</Project>
+      <Project>{5ef9ec4d-0cdc-40f5-aa76-9fa994d6a87e}</Project>
       <Name>SSJT.Crm.Model</Name>
     </ProjectReference>
   </ItemGroup>

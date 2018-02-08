@@ -31,14 +31,14 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                 storeParams.query = cc["query"];
             if (!string.IsNullOrEmpty(cc["group"]))
             {
-                StoreGroup grouper = JsonConvert.DeserializeObject<StoreGroup>(cc["group"]);
+                GroupParam grouper = JsonConvert.DeserializeObject<GroupParam>(cc["group"]);
                 if (grouper != null)
-                    storeParams.group = new List<StoreGroup>(new StoreGroup[] { grouper });
+                    storeParams.group = new List<GroupParam>(new GroupParam[] { grouper });
             }
             if (!string.IsNullOrEmpty(cc["sort"]))
-                storeParams.sort = JsonConvert.DeserializeObject<List<StoreSorter>>(cc["sort"]);
+                storeParams.sort = JsonConvert.DeserializeObject<List<SortParam>>(cc["sort"]);
             if (!string.IsNullOrEmpty(cc["filter"]))
-                storeParams.filter = JsonConvert.DeserializeObject<List<StoreFilter>>(cc["filter"]);
+                storeParams.filter = JsonConvert.DeserializeObject<List<FilterParam>>(cc["filter"]);
             if (string.IsNullOrEmpty(receive.Data))
             {
                 receive.Data = JsonConvert.SerializeObject(new

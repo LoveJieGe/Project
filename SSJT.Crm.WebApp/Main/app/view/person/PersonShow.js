@@ -8,7 +8,9 @@ Ext.define('SSJT.view.person.PersonShow', {
     viewModel: {
         type: 'personshow'
     },
-
+    // store:{
+    //     type:'person'
+    // },
     title: 'Profile',
 
     items: {

@@ -23,8 +23,8 @@ namespace SSJT.Crm.BLL
         public StoreResult QueryPerson(string userID)
         {
             IStoreProcessDal storeProcess = new StoreProcessDal();
-            StoreResult result = storeProcess.QueryPerson(storeParams);
-            return result;
+            //StoreResult result = storeProcess.QueryPerson(storeParams);
+            return null;
         }
     }
 }

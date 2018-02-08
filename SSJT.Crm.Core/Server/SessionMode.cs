@@ -13,7 +13,7 @@ namespace SSJT.Crm.Core.Server
         private Hashtable session;
         public SessionMode()
         {
-            session = new Hashtable();
+            session = Hashtable.Synchronized(new Hashtable());
         }
         public string SessionID
         {

@@ -413,18 +413,18 @@ Ext.define('Common.util.Utils',{
     },
      /** **************************LocalStorge********************************/
     store: new Ext.util.LocalStorage({
-        id: this.getAppName()+'-state'
+        id: 'SSJT-state'
     }),
     getLSItem: function(key, defaultValue) {
-        var value = this.store.getItem(this.getAppName+'-'+key);
+        var value = this.store.getItem(this.getAppName()+'-'+key);
         return value === undefined? defaultValue : Ext.decode(value);
     },
 
     setLSItem: function(key, value) {
         if (value == null) {    // !== undefined && !== null
-            this.store.removeItem(this.getAppName+'-'+key);
+            this.store.removeItem(this.getAppName()+'-'+key);
         } else {
-            this.store.setItem(this.getAppName+'-'+key, Ext.encode(value));
+            this.store.setItem(this.getAppName()+'-'+key, Ext.encode(value));
         }
     },
 

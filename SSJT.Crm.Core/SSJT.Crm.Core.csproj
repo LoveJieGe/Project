@@ -57,9 +57,9 @@
     <Compile Include="AjaxRequest\AjaxMethod.cs" />
     <Compile Include="AjaxRequest\AjaxReceive.cs" />
     <Compile Include="AjaxRequest\AjaxResult.cs" />
+    <Compile Include="AjaxResponse\UserResult.cs" />
     <Compile Include="Exceptions\AjaxException.cs" />
     <Compile Include="Exceptions\ErrorCode.cs" />
-    <Compile Include="AjaxResponse\UserResult.cs" />
     <Compile Include="Factory\SessionFactory.cs" />
     <Compile Include="Helper\HelperManager.cs" />
     <Compile Include="Helper\JsonHelper.cs" />

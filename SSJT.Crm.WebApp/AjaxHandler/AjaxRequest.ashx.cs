@@ -43,7 +43,7 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                 }
                 else
                 {
-                    WriteResponse(context, result);
+                    ErrorResponse(context, result);
                 }
             }
             catch (Exception e)
@@ -56,26 +56,26 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                 context.Response.Write(msg);
             }
         }
-        private void WriteResponse(HttpContext context, AjaxResult result)
+        private void ErrorResponse(HttpContext context, AjaxResult result)
         {
             context.Response.Clear();
-
+            context.Response.ContentType = "application/json";
             if (Enum.IsDefined(typeof(ErrorCode),result.ErrorCode))
             {
-                context.Response.ContentType = "application/json";
                 context.Response.Write(Core.Ajaxhelper.ToJson(new
                 {
-                    ErrorCode = ErrorCode.VErrorCode,
+                    ErrorCode = result.ErrorCode,
                     Success = false,
                     Message = result.ErrorMsg
                 }));
             }
             else
             {
-                context.Response.ContentType = "text/plain";
-                context.Response.StatusCode = 400;
-                context.Response.TrySkipIisCustomErrors = true;
-                context.Response.Write(result.ErrorMsg);
+                context.Response.Write(Core.Ajaxhelper.ToJson(new
+                {
+                    Success = false,
+                    Message = result.ErrorMsg
+                }));
             }
         }
         public bool IsReusable

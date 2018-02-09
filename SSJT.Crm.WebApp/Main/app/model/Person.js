@@ -19,7 +19,7 @@ Ext.define('SSJT.model.Person', {
         {
             name:'CustomID',
             calculate:function(data){
-                return data.UserID;
+                return ComUtils.string2Hex(data.UserID);
             }
         }
     ],
@@ -35,14 +35,14 @@ Ext.define('SSJT.model.Person', {
             debugger
             var record = Ext.create('SSJT.model.Person');
             record.setSession(session),
+            id = ComUtils.hex2String(id);
             record.load(
-                Ext.apply({ params: { data: id } }, options)
+                Ext.apply({ params: { data: Ext.encode({UserID:id}) } }, options)
             );
         }
     },
     proxy: {
         type: 'ajax',
-        api : 'storeRequest/StoreProcess/QueryPerson',
-        url:''
+        api : 'userRequest/IStoreServer/QueryPerson',
     },
 });

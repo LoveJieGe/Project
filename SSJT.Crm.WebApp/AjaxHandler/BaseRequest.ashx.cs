@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using SSJT.Crm.Core;
 using SSJT.Crm.IBLL;
+using SSJT.Crm.Core.Exceptions;
+using SSJT.Crm.Core.AjaxRequest;
 
 namespace SSJT.Crm.WebApp.AjaxHandler
 {
@@ -17,12 +19,31 @@ namespace SSJT.Crm.WebApp.AjaxHandler
             #region 判断用户是否登录
             IStoreServer storeServer = HelperManager.GetInstance(typeof(IStoreServer)) as IStoreServer;
             //storeServer
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
             #endregion
         }
-
-        public bool IsReusable
+        protected void ErrorResponse(HttpContext context, AjaxResult result)
+        {
+            context.Response.Clear();
+            context.Response.ContentType = "application/json";
+            if (Enum.IsDefined(typeof(ErrorCode), result.ErrorCode))
+            {
+                context.Response.Write(Core.Ajaxhelper.ToJson(new
+                {
+                    ErrorCode = result.ErrorCode,
+                    Success = false,
+                    Message = result.ErrorMsg
+                }));
+            }
+            else
+            {
+                context.Response.Write(Core.Ajaxhelper.ToJson(new
+                {
+                    Success = false,
+                    Message = result.ErrorMsg
+                }));
+            }
+        }
+        public virtual bool IsReusable
         {
             get
             {

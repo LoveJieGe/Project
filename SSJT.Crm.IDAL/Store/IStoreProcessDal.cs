@@ -9,6 +9,7 @@ namespace SSJT.Crm.IDAL
 {
     public interface IStoreProcessDal
     {
-        StoreResult QueryPerson(StoreParams storeParams);
+        StoreResult QueryPersons(StoreParams storeParams);
+        StoreResult QueryPerson(string userID);
     }
 }

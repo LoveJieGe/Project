@@ -23,20 +23,6 @@ Ext.define('SSJT.view.home.HomeController', {
         }
     },
 
-    routes: {
-        'home':{
-            action: 'toTasks',
-        }
-        // 'home/:type': {
-        //     conditions: {
-        //         ':type': '(mine|followed|shared|created|completed|all)'
-        //     }
-        // },
-        // 'home/msgbox': 'toTaskMsgbox',
-        // 'home/report/:type': 'toTaskReport',
-        // 'home/recycle': 'toRecycleBin'
-    },
-
     onToggleTaskNavTree(expand) {
         const me = this;
         if (expand !== undefined) {
@@ -125,24 +111,6 @@ Ext.define('SSJT.view.home.HomeController', {
         }
 
         return center;
-    },
-
-    /**
-     * 显示 任务 容器(其内部放置 我的任务、关注的任务、创建的任务 等)
-     * @param {String} type
-     */
-    toTasks(type) {
-        console.log('路由',type);
-        // const me = this,
-        //     center = me.ensureCenterByXType('task_container'),
-        //     vm = center.getViewModel(),
-        //     oldTaskType = vm.get('taskType');
-
-        // if (oldTaskType != type) {
-        //     vm.set('taskType', type);
-        //     vm.notify();
-        //     center.getController().onTaskTypeChange();
-        // }
     },
 
     toTaskMsgbox() {

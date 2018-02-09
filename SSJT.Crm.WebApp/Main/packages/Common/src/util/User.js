@@ -2,7 +2,7 @@ Ext.define('Common.util.User',{
     alternateClassName:'User',
     singleton:true,
     requires:[
-        'Util.util.Utils'
+        'Common.util.Utils'
     ],
     config:{
         user:null

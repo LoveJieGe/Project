@@ -21,7 +21,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         //'home': 'showMain'
     },
     onLaunch:function(){
-        debugger
         var me = this;
         me.originalRoute = SSJT.getApplication().getDefaultToken();
         //检查用户是否登录
@@ -66,7 +65,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.showLoginView();
     },
     showView:function(xtype){
-        debugger
         var me = this, view = this.lookup(xtype),
             viewport = this.getView();
         if(!view){
@@ -85,7 +83,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.showView('main');
     },
     onLogin:function(user){
-        debugger
         var me = this,
             token = me.originalRoute;
             newToken = "";  

@@ -45,8 +45,8 @@ Ext.define('SSJT.view.person.PersonShowHeader', {
 
         title: {
             tpl: [
-                '<div class="name">管理员</div>',
-                '<div class="desc">头部信息</div>'
+                '<div class="name">{UserName}</div>',
+                '<div class="desc">{UserID}</div>'
             ]
         }
     }

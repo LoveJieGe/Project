@@ -13,18 +13,18 @@ namespace SSJT.Crm.BLL
 {
     public class StoreServer: IStoreServer
     {
-        public StoreResult QueryPerson(StoreParams storeParams)
+        public StoreResult QueryPersons(StoreParams storeParams)
         {
             IStoreProcessDal storeProcess = new StoreProcessDal();
-            StoreResult result = storeProcess.QueryPerson(storeParams);
+            StoreResult result = storeProcess.QueryPersons(storeParams);
             return result;
         }
 
         public StoreResult QueryPerson(string userID)
         {
-            IStoreProcessDal storeProcess = new StoreProcessDal();
+            IStoreProcessDal storeDal = new StoreProcessDal();
             //StoreResult result = storeProcess.QueryPerson(storeParams);
-            return null;
+            return storeDal.QueryPerson(userID);
         }
     }
 }

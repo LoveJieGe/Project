@@ -41,7 +41,6 @@ Ext.define(null, { // 'Ext.overrides.data.proxy.Ajax'
 
         me.on({
             exception(proxy, r, options) { //统一监听proxy的异常
-
                 var err = r.responseText;
                 if (!Ext.isEmpty(err)) {
                     try {
@@ -71,7 +70,7 @@ Ext.define(null, { // 'Ext.overrides.data.proxy.Ajax'
     },
 
     buildRequest() {
-        var info = Utils.getApp().getClientInfo();
+        var info = ComUtils.getApp().getClientInfo();
         if (info) {
             for (var i in info) {
                 if (info.hasOwnProperty(i)) {

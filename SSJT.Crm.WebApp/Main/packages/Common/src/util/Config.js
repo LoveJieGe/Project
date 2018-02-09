@@ -3,5 +3,5 @@ Ext.define('Common.util.Config',{
     singleton:true,
     isDev: Ext.manifest.env === 'development',
     httpUrl:this.isDev?'/':'/',
-    
+    showNavigation:true
 })

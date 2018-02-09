@@ -11,7 +11,7 @@ Ext.define('SSJT.view.person.PersonShow', {
     // store:{
     //     type:'person'
     // },
-    title: 'Profile',
+    title: '个人信息',
 
     items: {
         header: {

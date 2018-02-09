@@ -122,7 +122,6 @@ Ext.define('Common.util.Utils',{
      * @return {String}
      */
     getFullUrl(path) {
-        debugger
         const me = this;
         if (!Ext.isEmpty(path)) {
             let url;
@@ -130,7 +129,7 @@ Ext.define('Common.util.Utils',{
                 url = path;
             } else {
                 // 后台路由丢失session，所以 暂时 先fix
-                if (/[^ajax|Ajax]\/[^/]+\/[^/]+$/.test(path)) {
+                if (/[^ajax]\/[^/]+\/[^/]+$/.test(path)) {
                     const arr = path.split('/');
                     url = ComUtils.joinPath(ComConfig.httpUrl, 'AjaxHandler', `${Ext.String.capitalize(arr[0])}.ashx?class=${arr[1]}&method=${arr[2]}`);
                 } else {
@@ -330,7 +329,8 @@ Ext.define('Common.util.Utils',{
      */
     mask(view, msg) {
         const message = msg || ''; // || '请稍后';
-        if (view /* && view.isPainted()*/ && !view.isDestroyed) {
+        /* && view.isPainted()*/
+        if (view  && !view.isDestroyed) {
             const mask = this.getLoadMask(message);
             if (mask && mask.getParent() !== view) {
                 view.add(mask);
@@ -344,7 +344,8 @@ Ext.define('Common.util.Utils',{
      * @param  {Ext.Component} view 视图或者控件
      */
     unMask(view) {
-        if (view /* && view.isPainted()*/ && !view.isDestroyed &&
+        /* && view.isPainted()*/ 
+        if (view && !view.isDestroyed &&
             view._masked && !view._masked.isDestroyed) {
             view.setMasked(false);
         }

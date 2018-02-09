@@ -19,8 +19,10 @@ namespace SSJT.Crm.Core
             List<JsonConverter> converters = new List<JsonConverter>();
             if (dateFormat == DateTimeMode.ISO)
             {
-                IsoDateTimeConverter converter = new IsoDateTimeConverter();
-                converter.DateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss";
+                IsoDateTimeConverter converter = new IsoDateTimeConverter()
+                {
+                    DateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                };
                 converters.Add(converter);
             }
             else if (dateFormat == DateTimeMode.JS)

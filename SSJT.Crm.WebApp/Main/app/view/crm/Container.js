@@ -13,6 +13,7 @@ Ext.define('SSJT.view.crm.Container', {
     controller: 'crm-container',
     nameHolder: true,
     referenceHolder: true,
+    
     layout: 'hbox',
     userCls: 'task-container',
     items: [{

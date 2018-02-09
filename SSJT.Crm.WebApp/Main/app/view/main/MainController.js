@@ -7,7 +7,7 @@ Ext.define('SSJT.view.main.MainController', {
 
     alias: 'controller.maincontroller',
     init(){
-        console.log("初始化");
+        this.setShowNavigation(this.getView().getShowNavigation());
     },
     config: {
         showNavigation: true
@@ -43,6 +43,13 @@ Ext.define('SSJT.view.main.MainController', {
             }
         }
         // 'crm/recycle': 'toRecycleBin'
+    },
+    smallResponsive:function(a,b,c){
+        debugger
+        me.setShowNavigation(false);
+    },
+    largeResponsive:function(a,b,c){
+        me.setShowNavigation(true);
     },
     onToggleTaskNavTree(expand) {
         const me = this;
@@ -110,37 +117,22 @@ Ext.define('SSJT.view.main.MainController', {
     //     TaskHelper.destroyAllViewCache();
     // },
 
-    ensureCenterByXType(xtype) {
-        const me = this,
-            view = me.getView();
-
-        me.lookup('mainmenu').selectNodeSilent(Ext.History.getToken());
-
-        let center = view.child('#center');
-        // 确保中间的容器是 task_container
-        if (!center || center.xtype != xtype) {
-            if (center) view.remove(center, true);
-            center = view.add({
-                xtype: xtype,
-                itemId: 'center'
-            });
-        }
-
-        return center;
-    },
-
     /**
-     * 显示 容器(其内部放置 我的任务、关注的任务、创建的任务 等)
+     * 显示 容器(这个是导航条处的)
      * @param {String} type
      */
     handleNavigationRoute(type,args) {
         debugger
         console.log('路由',type);
-        const me = this;
+        const me = this,
+            entry = me.lookup('mainmenu').getStore().getById(type);
         //选中导航条中的项
         me.lookup('mainmenu').selectNodeSilent(type);
-
-        const center = me.ensureView('crm-container');
+        
+        me.activate(
+            me.ensureView(type, {
+                xtype: type
+            }, args));
             //vm = center.getViewModel(),
             //oldTaskType = vm.get('taskType');
 
@@ -177,13 +169,15 @@ Ext.define('SSJT.view.main.MainController', {
                 me.activate(view);
                 return;
             }
-            Ext.Viewport.setMasked({ xtype: 'loadmask' });
+            ComUtils.mask(me.getView());
+            //Ext.Viewport.setMasked({ xtype: 'loadmask' });
             Model.load(id, {
-                callback: function(record) {
+                callback: function(record, operation, success) {
+                    debugger
                     view.setRecord(record);
                     me.activate(view);
-                    Ext.Viewport.setMasked(false);
-
+                    //Ext.Viewport.setMasked(false);
+                    ComUtils.unMask(me.getView());
                     // if (type === 'person') {
                     //     var user = me.getViewModel().get('user');
                     //     if (record.get('CustomID') != user.get('CustomID')) {
@@ -193,58 +187,35 @@ Ext.define('SSJT.view.main.MainController', {
                 }
             });
     },
-    toHome(){
-        debugger
-        me.ensureCenterByXType('crm-container');
-    },
-    toTaskMsgbox() {
-        const me = this;
-
-        me.ensureCenterByXType('task_msgbox_container');
-    },
-
-    /**
-     * 显示报表容器
-     * @param {String} type
-     */
-    toTaskReport(type) {
-        const me = this,
-            center = me.ensureCenterByXType('task_report_container');
-
-        center.getViewModel().set('reportType', type);
-        center.getController().onReportTypeChange();
-    },
-
-    toRecycleBin() {
-        const me = this,
-            center = me.ensureCenterByXType('task_recycle_container');
-
-        center.getController().onSearch();
-    },
     onAvatarTap(){
         var user = this.getViewModel().get('user');
         console.log("user",user);
         debugger
-        this.redirectTo("personshow");
+        this.redirectTo(user);
     },
     ensureView(xtype,config,route){
         debugger
-        const me = this,
-            view = me.getView();
-        let content = view.child('#content');
-        // 确保中间的容器是 task_container
-        if (!content || content.xtype != xtype) {
-            if (content) view.remove(content, true);
-            content = view.add(Ext.apply({
-                xtype: xtype,
-                itemId: 'content'
-            },config));
+        var container = this.getView(),
+        item = container.child('component[viewId=' + xtype + ']'),
+        reset = !!item;
+        if (!item) {
+            item = container.add(Ext.apply({ 
+                viewId: xtype,
+                xtype:xtype 
+            }, config));
         }
-        return content;
+        if (Ext.isDefined(item.config.route)) {
+            item.setRoute(route);
+        }
+        // Reset the component (form?) only if previously instantiated (i.e. with outdated data).
+        if (reset && Ext.isFunction(item.reset)) {
+            item.reset();
+        }
+        return item;
     },
     activate(ref){
-        var view = ref.isComponnet?ref:this.lookup(ref),
-            child = view,
+        var view = ref.isComponent?ref:this.lookup(ref),
+            child = view||ref,
             parent;
         while(parent=child.getParent()){
             parent.setActiveItem(child);

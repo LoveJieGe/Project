@@ -14,6 +14,14 @@ namespace SSJT.Crm.IBLL
     {
         [AjaxMethod]
         [Description("获取用户的信息")]
-        StoreResult QueryPerson(StoreParams storeParams);
+        StoreResult QueryPersons(StoreParams storeParams);
+        /// <summary>
+        /// 根据用户名获取用户信息
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <returns></returns>
+        [AjaxMethod]
+        [Description("获取用户的信息")]
+        StoreResult QueryPerson(string userID);
     }
 }

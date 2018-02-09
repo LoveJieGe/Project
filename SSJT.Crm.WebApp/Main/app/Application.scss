@@ -109,6 +109,23 @@ body.launching {
         }
     }
 }
+.picture {
+    @include border-radius($picture-border-radius);
+    @include background-size(cover);
+    background-color: $neutral-color;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.picture {
+    height: 38px;
+    width: 38px;
+
+    &.large {
+        height: 48px;
+        width: 48px;
+    }
+}
 
 
 

@@ -10,7 +10,7 @@ Ext.define('SSJT.view.main.Main', {
     mixins: [
         'Ext.mixin.Responsive'
     ],
-    config:{
+    eventedConfig:{
         showNavigation:true
     },
     // platformConfig: {
@@ -23,10 +23,10 @@ Ext.define('SSJT.view.main.Main', {
     //     }
     // },
     responsiveConfig: {
-        'width >= 1366': {
+        'width >= 1024': {
             showNavigation:true
         },
-        'width <= 1365': {
+        'width < 1024': {
             showNavigation:false
         }
     },
@@ -59,8 +59,8 @@ Ext.define('SSJT.view.main.Main', {
             handler: 'onToggleNavigationSize'
         }]
      },
-     updateShowNavigation(newValue,oldValue){
-        this.controller&&this.controller.setShowNavigation(newValue);
+     listeners:{
+        shownavigationchange:'onShowNavigationChange'
      }
     // items: [
     //     //  {

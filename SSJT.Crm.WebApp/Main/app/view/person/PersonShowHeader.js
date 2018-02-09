@@ -40,6 +40,9 @@ Ext.define('SSJT.view.person.PersonShowHeader', {
             ],
             bind: {
                 src: ''
+            },
+            listeners:{
+                focusenter:function(){console.log(111)}
             }
         },
 

@@ -116,7 +116,9 @@ Ext.define('SSJT.view.main.MainController', {
     //     // 销毁缓存的 view 实例
     //     TaskHelper.destroyAllViewCache();
     // },
-
+    onShowNavigationChange:function(instance, newValue, oldValue){
+        this.setShowNavigation(newValue);
+    },
     /**
      * 显示 容器(这个是导航条处的)
      * @param {String} type

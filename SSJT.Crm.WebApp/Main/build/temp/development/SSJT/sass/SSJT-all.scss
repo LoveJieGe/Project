@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'SSJT' );
-$image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
+$image-search-path: 'F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
 $include-avatarhelper: dynamic(true);;
 $include-comconfig: dynamic(true);;
@@ -861,14 +861,6 @@ $current-package: 'theme-default';
 $current-resource-root: $theme-default-resource-root;
 $relative-image-path-for-uis: $theme-default-resource-path;
 @import '../../../../../packages/local/theme-default/sass/etc/all';
-
-/* including package Util */
-$Util-resource-root: 'Util' !default;
-$Util-resource-path: 'Util/images' !default;
-$current-package: 'Util';
-$current-resource-root: $Util-resource-root;
-$relative-image-path-for-uis: $Util-resource-path;
-@import '../../../../../packages/local/Util/sass/etc/all';
 
 /* including package Common */
 $Common-resource-root: 'Common' !default;

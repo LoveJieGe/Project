@@ -10,7 +10,7 @@ namespace SSJT.Crm.BLL
 	/// <summary>
 	/// HrEmployee
 	/// </summary>
-	public partial class HrEmployeeService:BaseService<Model.HrEmployee,DAL.HrEmployeeDal>,IHrEmployeeService
+	public partial class HrEmployeeService:BaseService<Model.HrEmploy,DAL.HrEmployeeDal>,IHrEmployeeService
 	{
 		
 	}

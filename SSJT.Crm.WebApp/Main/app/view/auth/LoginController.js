@@ -4,31 +4,47 @@ Ext.define('SSJT.view.auth.LoginController', {
 
     init: function() {
         this.callParent(arguments);
-        //this.lookup('form').setValues({
-        //    username: 'norma.flores',
-        //    password: 'wvyrEDvxI'
-        //});
-        console.log("/path");
+        var me = this,form = this.lookup('form');
+        form.setValues({
+            userID: 'Admin',
+            password: '123456'
+        });
+        var map = new Ext.util.KeyMap({
+            target: form.element,
+            key: 13, // or Ext.event.Event.ENTER
+            handler() {
+                me.onLoginTap();
+            },
+            scope: me
+        });
     },
 
     onLoginTap: function() {
         var me = this,
             form = me.lookup('form'),
             values = form.getValues();
-
         form.clearErrors();
-
-        Ext.Viewport.setMasked({ xtype: 'loadmask' });
-
-        App.model.Session.login(values.username, values.password)
-            .then(function(session) {
-                me.fireEvent('login', session);
-            })
-            .catch(function(errors) {
-                form.setErrors(App.util.Errors.toForm(errors));
-            })
-            .then(function(session) {
-                Ext.Viewport.setMasked(false);
+        if(form.validate()){
+            form.ajax('ajaxRequest/IUserAuthServer/Login', {
+                data: {
+                    UserID: values.userID,
+                    PassWord: values.password
+                },
+                params:{
+                    Validate:values.validate
+                } ,
+                success(r) {
+                    me.fireEvent('login', r);
+                },
+                failure(r) {
+                    ComUtils.toastShort(r.Message||'');
+                },
+                //button: 'btnLogin',
+                maskTarget: true
             });
+        }
+    },
+    onChangeValidate:function(sender,e){
+        sender.setSrc('ValidateCode.ashx?_dc='+new Date().getTime());
     }
 });

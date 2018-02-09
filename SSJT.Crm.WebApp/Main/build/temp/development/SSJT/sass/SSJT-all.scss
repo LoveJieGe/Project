@@ -1,7 +1,18 @@
 $app-name:  dynamic( 'SSJT' );
-$image-search-path: 'F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
+$image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
+$include-avatarhelper: dynamic(true);;
+$include-comconfig: dynamic(true);;
+$include-comutils: dynamic(true);;
+$include-common-model-valuetext: dynamic(true);;
+$include-common-nav-avatarbutton: dynamic(true);;
+$include-common-nav-button: dynamic(true);;
+$include-common-nav-logoutbutton: dynamic(true);;
+$include-common-nav-tree: dynamic(true);;
+$include-common-util-avatarhelper: dynamic(true);;
+$include-common-util-config: dynamic(true);;
 $include-common-util-user: dynamic(true);;
+$include-common-util-utils: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractmanager: dynamic(true);;
 $include-ext-abstractplugin: dynamic(true);;
@@ -53,7 +64,6 @@ $include-ext-mixin: dynamic(true);;
 $include-ext-modelmgr: dynamic(true);;
 $include-ext-navigationview: dynamic(true);;
 $include-ext-nestedlist: dynamic(true);;
-$include-ext-package: dynamic(true);;
 $include-ext-panel: dynamic(true);;
 $include-ext-perf: dynamic(true);;
 $include-ext-picker: dynamic(true);;
@@ -613,7 +623,6 @@ $include-ext-overrides-app-application: dynamic(true);;
 $include-ext-overrides-dom-element: dynamic(true);;
 $include-ext-overrides-list-tree: dynamic(true);;
 $include-ext-overrides-list-treeitem: dynamic(true);;
-$include-ext-package-entry: dynamic(true);;
 $include-ext-panel-collapser: dynamic(true);;
 $include-ext-panel-collapsible: dynamic(true);;
 $include-ext-panel-date: dynamic(true);;
@@ -761,24 +770,38 @@ $include-ext-viewport-viewport: dynamic(true);;
 $include-ext-viewport-wp: dynamic(true);;
 $include-ext-viewport-windowsphone: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
-$include-mx-model-valuetext: dynamic(true);;
-$include-mx-util-utils: dynamic(true);;
 $include-ssjt-application: dynamic(true);;
 $include-ssjt-model-base: dynamic(true);;
-$include-ssjt-model-personnel: dynamic(true);;
-$include-ssjt-store-personnel: dynamic(true);;
+$include-ssjt-model-person: dynamic(true);;
+$include-ssjt-model-session: dynamic(true);;
+$include-ssjt-model-userinfo: dynamic(true);;
+$include-ssjt-store-main-menu: dynamic(true);;
+$include-ssjt-store-person-person: dynamic(true);;
 $include-ssjt-view-auth-login: dynamic(true);;
 $include-ssjt-view-auth-logincontroller: dynamic(true);;
-$include-ssjt-view-home-home: dynamic(true);;
-$include-ssjt-view-login-login: dynamic(true);;
-$include-ssjt-view-login-logincontroller: dynamic(true);;
-$include-ssjt-view-main-list: dynamic(true);;
+$include-ssjt-view-crm-container: dynamic(true);;
+$include-ssjt-view-home-homecontroller: dynamic(true);;
+$include-ssjt-view-main-home: dynamic(true);;
 $include-ssjt-view-main-main: dynamic(true);;
 $include-ssjt-view-main-maincontroller: dynamic(true);;
 $include-ssjt-view-main-mainmodel: dynamic(true);;
+$include-ssjt-view-main-menu: dynamic(true);;
+$include-ssjt-view-main-menucontroller: dynamic(true);;
+$include-ssjt-view-person-personshow: dynamic(true);;
+$include-ssjt-view-person-personshowcontroller: dynamic(true);;
+$include-ssjt-view-person-personshowdetails: dynamic(true);;
+$include-ssjt-view-person-personshowheader: dynamic(true);;
+$include-ssjt-view-person-personshowmodel: dynamic(true);;
+$include-ssjt-view-person-showtools: dynamic(true);;
 $include-ssjt-view-viewport-viewportcontroller: dynamic(true);;
+$include-ssjt-view-viewport-viewportmodel: dynamic(true);;
+$include-ssjt-view-widgets-show: dynamic(true);;
+$include-ssjt-view-widgets-showcontroller: dynamic(true);;
+$include-ssjt-view-widgets-showheader: dynamic(true);;
+$include-ssjt-view-widgets-sidebar: dynamic(true);;
+$include-ssjt-view-widgets-widgetcontroller: dynamic(true);;
 $include-user: dynamic(true);;
-$include-utils: dynamic(true);;
+$include-crm-container: dynamic(true);;
 $output-paths: ("path": "../resources");
 
 /* ======================== ETC ======================== */
@@ -839,13 +862,13 @@ $current-resource-root: $theme-default-resource-root;
 $relative-image-path-for-uis: $theme-default-resource-path;
 @import '../../../../../packages/local/theme-default/sass/etc/all';
 
-/* including package MX */
-$MX-resource-root: 'MX' !default;
-$MX-resource-path: 'MX/images' !default;
-$current-package: 'MX';
-$current-resource-root: $MX-resource-root;
-$relative-image-path-for-uis: $MX-resource-path;
-@import '../../../../../packages/local/MX/sass/etc/all';
+/* including package Util */
+$Util-resource-root: 'Util' !default;
+$Util-resource-path: 'Util/images' !default;
+$current-package: 'Util';
+$current-resource-root: $Util-resource-root;
+$relative-image-path-for-uis: $Util-resource-path;
+@import '../../../../../packages/local/Util/sass/etc/all';
 
 /* including package Common */
 $Common-resource-root: 'Common' !default;
@@ -854,6 +877,14 @@ $current-package: 'Common';
 $current-resource-root: $Common-resource-root;
 $relative-image-path-for-uis: $Common-resource-path;
 @import '../../../../../packages/Common/sass/etc/all';
+
+/* including package SSJT */
+$SSJT-resource-root: '' !default;
+$SSJT-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $SSJT-resource-root;
+$relative-image-path-for-uis: $SSJT-resource-path;
+@import '../../../../../sass/etc/all';
 
 
 /* ======================== VAR ======================== */
@@ -1015,6 +1046,15 @@ $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/modern/theme-triton/sass/var/grid/cell/Expander';
 @import '../../../../../ext/modern/theme-triton/sass/var/tab/Tab';
 @import '../../../../../ext/modern/theme-triton/sass/var/tab/Bar';
+
+/* including package theme-default */
+$theme-default-resource-root: '' !default;
+$theme-default-resource-path: 'images' !default;
+$current-package: 'theme-default';
+$current-resource-root: $theme-default-resource-root;
+$relative-image-path-for-uis: $theme-default-resource-path;
+@import '../../../../../packages/local/theme-default/sass/var/list/Tree';
+@import '../../../../../packages/local/theme-default/sass/var/tab/Panel';
 
 
 /* ======================== RULE ======================== */
@@ -1244,6 +1284,7 @@ $theme-default-resource-path: 'images' !default;
 $current-package: 'theme-default';
 $current-resource-root: $theme-default-resource-root;
 $relative-image-path-for-uis: $theme-default-resource-path;
+@import '../../../../../packages/local/theme-default/sass/src/list/Tree';
 @import '../../../../../packages/local/theme-default/sass/src/Button';
 @import '../../../../../packages/local/theme-default/sass/src/Toolbar';
 @import '../../../../../packages/local/theme-default/sass/src/Panel';
@@ -1255,13 +1296,13 @@ $relative-image-path-for-uis: $theme-default-resource-path;
 @import '../../../../../packages/local/theme-default/sass/src/grid/column/Column';
 @import '../../../../../packages/local/theme-default/sass/src/tab/Panel';
 
-/* including scss file adjacent to ..\..\..\..\..\app\Application.js */
+/* including scss file adjacent to ..\..\..\..\..\packages\Common\src\nav\Tree.js */
 $default-resource-root: '' !default;
 $default-resource-path: 'images' !default;
 $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
-@import '../../../../../app/Application';
+@import '../../../../../packages/Common/src/nav/Tree';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\auth\Login.js */
 $default-resource-root: '' !default;
@@ -1271,18 +1312,74 @@ $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/auth/Login';
 
-/* including scss file adjacent to ..\..\..\..\..\app\view\login\Login.js */
+/* including scss file adjacent to ..\..\..\..\..\app\view\home\Home.js */
 $default-resource-root: '' !default;
 $default-resource-path: 'images' !default;
 $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
-@import '../../../../../app/view/login/Login';
+@import '../../../../../app/view/home/Home';
 
-/* including scss file adjacent to ..\..\..\..\..\app\view\main\List.js */
+/* including scss file adjacent to ..\..\..\..\..\app\view\widgets\Sidebar.js */
 $default-resource-root: '' !default;
 $default-resource-path: 'images' !default;
 $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
-@import '../../../../../app/view/main/List';
+@import '../../../../../app/view/widgets/Sidebar';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\main\Menu.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/main/Menu';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\widgets\Show.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/widgets/Show';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\person\PersonShowDetails.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/person/PersonShowDetails';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\widgets\ShowHeader.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/widgets/ShowHeader';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\person\PersonShowHeader.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/person/PersonShowHeader';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\person\ShowTools.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/person/ShowTools';
+
+/* including scss file adjacent to ..\..\..\..\..\app\Application.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/Application';

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76F2E725-8CBA-4662-B667-8785496A020C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSJT.Crm.Core</RootNamespace>
+    <AssemblyName>SSJT.Crm.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Solution\Web\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxRequest\AjaxMethod.cs" />
+    <Compile Include="AjaxRequest\AjaxReceive.cs" />
+    <Compile Include="AjaxRequest\AjaxResult.cs" />
+    <Compile Include="AjaxResponse\UserResult.cs" />
+    <Compile Include="Exceptions\AjaxException.cs" />
+    <Compile Include="Exceptions\ErrorCode.cs" />
+    <Compile Include="Factory\SessionFactory.cs" />
+    <Compile Include="Helper\HelperManager.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
+    <Compile Include="Server\AjaxServer.cs" />
+    <Compile Include="Attribute\AjaxClassAttribute.cs" />
+    <Compile Include="Server\AjaxProcess.cs" />
+    <Compile Include="Server\IAjaxProcess.cs" />
+    <Compile Include="Attribute\AjaxMethodAttribute.cs" />
+    <Compile Include="Helper\Ajaxhelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\ISessionMode.cs" />
+    <Compile Include="Server\ISessionServer.cs" />
+    <Compile Include="Server\SessionMode.cs" />
+    <Compile Include="Server\SessionServer.cs" />
+    <Compile Include="SqlHelper\SqlHelper.cs" />
+    <Compile Include="Store\FilterParam.cs" />
+    <Compile Include="Store\GroupParam.cs" />
+    <Compile Include="Store\StoreParams.cs" />
+    <Compile Include="Store\StoreResult.cs" />
+    <Compile Include="Store\SortParam.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSJT.Crm.DBUtility\SSJT.Crm.DBUtility.csproj">
+      <Project>{ED84A816-FD0C-4D1A-861D-EBBFC2288AC5}</Project>
+      <Name>SSJT.Crm.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSJT.Crm.Model\SSJT.Crm.Model.csproj">
+      <Project>{5ef9ec4d-0cdc-40f5-aa76-9fa994d6a87e}</Project>
+      <Name>SSJT.Crm.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

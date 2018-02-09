@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <!-- <Import Project="..packagesMicrosoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7buildnet45Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..packagesMicrosoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7buildnet45Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" /> -->
   <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -47,19 +47,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Spring.Core, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Core.2.0.1\lib\net45\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Web.2.0.1\lib\net45\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web.Extensions, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Web.Extensions.2.0.1\lib\net45\Spring.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web.Mvc5, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Web.Mvc5.2.0.1\lib\net45\Spring.Web.Mvc5.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -108,10 +138,6 @@
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -120,36 +146,40 @@
     <Reference Include="Microsoft.ApplicationInsights">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjaxHandler\AjaxRequest.ashx.cs">
+      <DependentUpon>AjaxRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxHandler\BaseRequest.ashx.cs">
+      <DependentUpon>BaseRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxHandler\StoreRequest.ashx.cs">
+      <DependentUpon>StoreRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxHandler\UserRequest.ashx.cs">
+      <DependentUpon>UserRequest.ashx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\AvatarHandler.ashx.cs">
+      <DependentUpon>AvatarHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Config.cs" />
+    <Compile Include="Common\ContextFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidateCode.ashx.cs">
+      <DependentUpon>ValidateCode.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\config.xml" />
+    <Content Include="Config\services.xml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -166,14 +196,19 @@
     <Content Include="Main\app\store\Personnel.js" />
     <Content Include="Main\app\view\auth\Login.js" />
     <Content Include="Main\app\view\auth\LoginController.js" />
+    <Content Include="Main\app\view\crm\Container.js" />
+    <Content Include="Main\app\view\crm\ContainerController.js" />
     <Content Include="Main\app\view\home\Home.js" />
-    <Content Include="Main\app\view\login\Login.js" />
-    <Content Include="Main\app\view\login\LoginController.js" />
+    <Content Include="Main\app\view\home\HomeController.js" />
     <Content Include="Main\app\view\main\List.js" />
     <Content Include="Main\app\view\main\Main.js" />
     <Content Include="Main\app\view\main\MainController.js" />
     <Content Include="Main\app\view\main\MainModel.js" />
+    <Content Include="Main\app\view\main\Menu.js" />
+    <Content Include="Main\app\view\main\MenuController.js" />
     <Content Include="Main\app\view\viewport\ViewportController.js" />
+    <Content Include="Main\app\view\viewport\ViewportModel.js" />
+    <Content Include="Main\app\view\widgets\Sidebar.js" />
     <Content Include="Main\bootstrap.css" />
     <Content Include="Main\bootstrap.js" />
     <Content Include="Main\build.xml" />
@@ -5049,6 +5084,11 @@
     <Content Include="Main\ext\sass\example\fashion.html" />
     <Content Include="index.html" />
     <Content Include="Main\packages\Common\build.xml" />
+    <Content Include="Main\packages\Common\src\nav\AvatarButton.js" />
+    <Content Include="Main\packages\Common\src\nav\Button.js" />
+    <Content Include="Main\packages\Common\src\nav\LogoutButton.js" />
+    <Content Include="Main\packages\Common\src\nav\Tree.js" />
+    <Content Include="Main\packages\Common\src\util\AvatarHelper.js" />
     <Content Include="Main\packages\Common\src\util\User.js" />
     <Content Include="Main\packages\local\modern-locale\.gitignore" />
     <Content Include="Main\packages\local\modern-locale\build.xml" />
@@ -5188,13 +5228,16 @@
     <Content Include="Main\packages\local\modern-locale\overrides\zh_CN\picker\Date.js" />
     <Content Include="Main\packages\local\modern-locale\overrides\zh_CN\picker\Picker.js" />
     <Content Include="Main\packages\local\modern-locale\sass\example\fashion.html" />
-    <Content Include="Main\packages\local\MX\build.xml" />
-    <Content Include="Main\packages\local\MX\overrides\Component.js" />
-    <Content Include="Main\packages\local\MX\src\model\ValueText.js" />
-    <Content Include="Main\packages\local\MX\src\util\Utils.js" />
     <Content Include="Main\packages\local\theme-default\build.xml" />
     <Content Include="Main\packages\local\theme-default\overrides\init.js" />
-    <Content Include="Main\resources\config.js" />
+    <Content Include="Main\packages\local\Util\build.xml" />
+    <Content Include="Main\packages\local\Util\src\model\ValueText.js" />
+    <Content Include="Main\packages\local\Util\src\util\Config.js" />
+    <Content Include="Main\packages\local\Util\src\util\Utils.js" />
+    <Content Include="Main\resources\fonts\aio.svg" />
+    <Content Include="Main\resources\images\auth-background.jpg" />
+    <Content Include="Main\resources\images\error-page-background.jpg" />
+    <Content Include="Main\resources\images\loading.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -5203,7 +5246,6 @@
     <Content Include="Main\app.json" />
     <Content Include="Main\app\Application.scss" />
     <Content Include="Main\app\view\auth\Login.scss" />
-    <Content Include="Main\app\view\login\Login.scss" />
     <Content Include="Main\app\view\main\List.scss" />
     <Content Include="Main\bootstrap.json" />
     <Content Include="Main\bootstrap.jsonp" />
@@ -6649,33 +6691,7 @@
     <Content Include="Main\ext\sass\etc\font-ios-variables.scss" />
     <Content Include="Main\ext\sass\etc\font-pictos-variables.scss" />
     <Content Include="Main\ext\version.properties" />
-    <Content Include="Main\packages\Common\examples\Readme.md" />
-    <Content Include="Main\packages\Common\licenses\Readme.md" />
-    <Content Include="Main\packages\Common\overrides\Readme.md" />
-    <Content Include="Main\packages\Common\package.json" />
-    <Content Include="Main\packages\Common\Readme.md" />
-    <Content Include="Main\packages\Common\resources\Readme.md" />
-    <Content Include="Main\packages\Common\sass\config.rb" />
-    <Content Include="Main\packages\Common\sass\etc\all.scss" />
-    <Content Include="Main\packages\Common\sass\etc\Readme.md" />
-    <Content Include="Main\packages\Common\sass\Readme.md" />
-    <Content Include="Main\packages\Common\sass\src\Readme.md" />
-    <Content Include="Main\packages\Common\sass\var\Readme.md" />
-    <Content Include="Main\packages\Common\src\Readme.md" />
     <Content Include="Main\packages\local\modern-locale\package.json" />
-    <Content Include="Main\packages\local\MX\examples\Readme.md" />
-    <Content Include="Main\packages\local\MX\licenses\Readme.md" />
-    <Content Include="Main\packages\local\MX\overrides\Readme.md" />
-    <Content Include="Main\packages\local\MX\package.json" />
-    <Content Include="Main\packages\local\MX\Readme.md" />
-    <Content Include="Main\packages\local\MX\resources\Readme.md" />
-    <Content Include="Main\packages\local\MX\sass\config.rb" />
-    <Content Include="Main\packages\local\MX\sass\etc\all.scss" />
-    <Content Include="Main\packages\local\MX\sass\etc\Readme.md" />
-    <Content Include="Main\packages\local\MX\sass\Readme.md" />
-    <Content Include="Main\packages\local\MX\sass\src\Readme.md" />
-    <Content Include="Main\packages\local\MX\sass\var\Readme.md" />
-    <Content Include="Main\packages\local\MX\src\Readme.md" />
     <Content Include="Main\packages\local\theme-default\examples\Readme.md" />
     <Content Include="Main\packages\local\theme-default\licenses\Readme.md" />
     <Content Include="Main\packages\local\theme-default\overrides\Readme.md" />
@@ -6703,18 +6719,65 @@
     <Content Include="Main\Readme.md" />
     <Content Include="Main\resources\Readme.md" />
     <Content Include="Main\workspace.json" />
+    <Content Include="Main\packages\local\Util\examples\Readme.md" />
+    <Content Include="Main\packages\local\Util\licenses\Readme.md" />
+    <Content Include="Main\packages\local\Util\overrides\Readme.md" />
+    <Content Include="Main\packages\local\Util\package.json" />
+    <Content Include="Main\packages\local\Util\Readme.md" />
+    <Content Include="Main\packages\local\Util\resources\Readme.md" />
+    <Content Include="Main\packages\local\Util\sass\config.rb" />
+    <Content Include="Main\packages\local\Util\sass\etc\all.scss" />
+    <Content Include="Main\packages\local\Util\sass\etc\Readme.md" />
+    <Content Include="Main\packages\local\Util\sass\Readme.md" />
+    <Content Include="Main\packages\local\Util\sass\src\Readme.md" />
+    <Content Include="Main\packages\local\Util\sass\var\Readme.md" />
+    <Content Include="Main\packages\local\Util\src\Readme.md" />
+    <Content Include="AjaxHandler\AjaxRequest.ashx" />
+    <Content Include="Main\resources\fonts\aio.ttf" />
+    <Content Include="Main\resources\fonts\aio.woff" />
+    <Content Include="Main\app\view\main\Menu.scss" />
+    <Content Include="Main\app\view\widgets\Sidebar.scss" />
+    <Content Include="Main\packages\Common\examples\Readme.md" />
+    <Content Include="Main\packages\Common\licenses\Readme.md" />
+    <Content Include="Main\packages\Common\overrides\Readme.md" />
+    <Content Include="Main\packages\Common\package.json" />
+    <Content Include="Main\packages\Common\Readme.md" />
+    <Content Include="Main\packages\Common\resources\Readme.md" />
+    <Content Include="Main\packages\Common\sass\config.rb" />
+    <Content Include="Main\packages\Common\sass\etc\all.scss" />
+    <Content Include="Main\packages\Common\sass\etc\fonts\all.scss" />
+    <Content Include="Main\packages\Common\sass\etc\fonts\icons.scss" />
+    <Content Include="Main\packages\Common\sass\etc\fonts\path.scss" />
+    <Content Include="Main\packages\Common\sass\etc\fonts\variables.scss" />
+    <Content Include="Main\packages\Common\sass\etc\Readme.md" />
+    <Content Include="Main\packages\Common\sass\Readme.md" />
+    <Content Include="Main\packages\Common\sass\src\Readme.md" />
+    <Content Include="Main\packages\Common\sass\var\Readme.md" />
+    <Content Include="Main\packages\Common\src\nav\Tree.scss" />
+    <Content Include="Main\packages\Common\src\Readme.md" />
+    <Content Include="Main\sass\config.rb" />
+    <Content Include="Main\sass\etc\all.scss" />
+    <Content Include="Main\sass\etc\fonts\all.scss" />
+    <Content Include="Main\sass\etc\fonts\icons.scss" />
+    <Content Include="Main\sass\etc\fonts\path.scss" />
+    <Content Include="Main\sass\etc\fonts\variables.scss" />
+    <Content Include="Main\sass\var\view\task\RightPanel.scss" />
+    <Content Include="Main\.eslintrc" />
+    <Content Include="Main\app\view\home\Home.scss" />
+    <Content Include="Common\AvatarHandler.ashx" />
+    <Content Include="AjaxHandler\StoreRequest.ashx" />
+    <Content Include="AjaxHandler\UserRequest.ashx" />
+    <Content Include="AjaxHandler\BaseRequest.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -6728,9 +6791,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="ValidateCode.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Client\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -6747,6 +6812,22 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SSJT.Crm.BLL\SSJT.Crm.BLL.csproj">
+      <Project>{8533a98c-a17b-4e8b-a721-95c9e6dd3c73}</Project>
+      <Name>SSJT.Crm.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSJT.Crm.Common\SSJT.Crm.Common.csproj">
+      <Project>{a464abbe-68f9-43c2-9b3e-aa677cfc2f7b}</Project>
+      <Name>SSJT.Crm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSJT.Crm.Core\SSJT.Crm.Core.csproj">
+      <Project>{76f2e725-8cba-4662-b667-8785496a020c}</Project>
+      <Name>SSJT.Crm.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSJT.Crm.IBLL\SSJT.Crm.IBLL.csproj">
+      <Project>{85413d8c-f1f9-4481-870f-2c636db34733}</Project>
+      <Name>SSJT.Crm.IBLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SSJT.Crm.Model\SSJT.Crm.Model.csproj">
       <Project>{5ef9ec4d-0cdc-40f5-aa76-9fa994d6a87e}</Project>
       <Name>SSJT.Crm.Model</Name>

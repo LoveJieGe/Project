@@ -33,6 +33,17 @@ namespace SSJT.Crm.Model
                 this.sessionId = value;
             }
         }
+        public string UserSign
+        {
+            get
+            {
+                return this.userSign;
+            }
+            set
+            {
+                this.userSign = value;
+            }
+        }
         public string UserName
         {
             get

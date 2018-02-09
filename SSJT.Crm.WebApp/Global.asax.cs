@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Spring.Web.Mvc;
 
 namespace SSJT.Crm.WebApp
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : SpringMvcApplication
     {
         protected void Application_Start()
         {
@@ -17,10 +18,10 @@ namespace SSJT.Crm.WebApp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-
-        protected void Application_BeginRequest(object sender, EventArgs e)
+        protected override void Application_BeginRequest(object sender, EventArgs e)
         {
-            if (Context.Request.FilePath != "/"&& Context.Request.FilePath != "/Home") Context.Response.Redirect("/Home");
+            base.Application_BeginRequest(sender, e);
+            //if (Context.Request.FilePath != "/"&& Context.Request.FilePath != "/Home") Context.Response.Redirect("/Home");
         }
     }
 }

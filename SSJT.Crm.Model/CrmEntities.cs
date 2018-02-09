@@ -1,16 +1,18 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace SSJT.Crm.Model
 {
-    public partial class CrmEntities:DbContext
+    public class CrmEntities:DbContext
     {
         public CrmEntities() : base("name=CrmEntity")
         {
+            Database.SetInitializer<CrmEntities>(null);
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
-        DbSet<HrEmployee> HrEmployee { get; set; }
+        public DbSet<HrEmploy> HrEmploy { get; set; }
     }
 }

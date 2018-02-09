@@ -1,0 +1,118 @@
+/**
+ * This file contains Ext.Button visual themes (ui)
+ * http://docs.sencha.com/extjs/latest/modern/Ext.Button.html#sass-mixins
+ */
+
+.x-button .x-text-el {
+    .title {
+        text-transform: uppercase;
+    }
+    .value {
+        opacity: 0.5;
+        font-size: 13px;
+    }
+}
+
+@include button-ui(
+    $ui: 'block',
+    $border-radius: 0,
+    $border-width: 0,
+    $icon-size: 28px,
+    $icon-size-big: 28px,
+    $icon-font-size: 20px,
+    $icon-font-size-big: 20px,
+    $font-size: 18px,
+    $font-size-big: 18px,
+    $font-weight: bold,
+    $line-height: 1.4,
+    $line-height-big: 1.4,
+    $icon-only-padding: 16px,
+    $icon-only-padding-big: 16px,
+    $padding: 16px,
+    $padding-big: 16px
+);
+
+@include button-ui(
+    $ui: 'action',
+    $border-radius: 0,
+    $border-width: 0
+);
+
+@include button-ui(
+    $ui: 'large',
+    $font-size: 14px,
+    $font-size-big: 14px,
+    $icon-size: 21px,
+    $icon-size-big: 21px,
+    $icon-font-size: 21px,
+    $icon-font-size-big: 21px,
+    $icon-only-padding: 16px,
+    $icon-only-padding-big: 18px,
+    $padding: 16px,
+    $padding-big: 18px
+);
+
+@include button-ui(
+    $ui: 'flat',
+    $background-color: rgba(white, 0),
+    $color: $neutral-medium-dark-color,
+    $pressed-color: $base-color
+);
+
+@include button-ui(
+    $ui: 'segmented',
+    $border-color: transparent,
+    $border-style: solid,
+    $border-width: 0 0 2px 0,
+    $hovered-border-color: $neutral-light-color,
+    $pressed-border-color: $base-color,
+    $icon-only-padding: $tab-padding,
+    $icon-only-padding-big: $tab-padding-big,
+    $padding: $tab-padding,
+    $padding-big: $tab-padding-big
+);
+// 导航树下面的收缩按钮 ui: 'nav'
+@include button-ui(
+    $ui: 'nav',
+    $border-color: transparent,
+    $hovered-border-color: transparent,
+    $pressed-border-color: transparent,
+
+    $color: $neutral-light-color,
+    $pressed-color: $neutral-light-color,
+
+    $background-color: mix(white, $nav-tree-background-color, 5%),
+    $hovered-background-color: mix(white, $nav-tree-background-color, 5%),
+    $pressed-background-color: mix(white, $nav-tree-background-color, 10%)
+  );
+// button 设置 border: false 即可去掉 border
+.x-button.x-noborder-trbl {
+    &>.x-inner-el {
+        border-width: 0;
+    }
+}
+
+// 让 toolbar 内的 button 和 input 一样高
+.x-toolbar:not(.x-tabbar) {
+    .x-button {
+        .x-inner-el {
+            padding: top($textfield-input-padding) top($textfield-input-padding) bottom($textfield-input-padding);
+        
+            @if $enable-big {
+                .#{$prefix}big & {
+                    padding: top($textfield-input-padding-big) top($textfield-input-padding-big) bottom($textfield-input-padding-big);
+                }
+            }
+        }
+
+        &.x-has-text .x-inner-el {
+            padding: $textfield-input-padding;
+        
+            @if $enable-big {
+                .#{$prefix}big & {
+                    padding: $textfield-input-padding-big;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <description>An  example that demonstrates simple IoC features.</description>
+  <object name="DbFactory" type="SSJT.Crm.DBUtility.DbFactory,SSJT.Crm.DBUtility" init-method="Init">
+    <property name="_message" value="测试" />
+    <property name="_dbSession" ref="DbSession"/>
+  </object>
+  <object name="DbSession" type="SSJT.Crm.DBUtility.DbSession, SSJT.Crm.DBUtility">
+  </object>
+<!--网站端相关配置-->
+  <object name="ContextFactory" type="SSJT.Crm.WebApp.ContextFactory,SSJT.Crm.WebApp" init-method="Init">
+    <property name="_ajaxProcess" ref="AjaxProcess"/>
+  </object>
+  <object name="AjaxProcess" type="SSJT.Crm.Core.Server.AjaxProcess, SSJT.Crm.Core">
+  </object>
+</objects>

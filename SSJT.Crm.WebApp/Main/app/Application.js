@@ -5,9 +5,14 @@
  */
 Ext.define('SSJT.Application', {
     extend: 'Ext.app.Application',
-
     name: 'SSJT',
-
+    requires: [
+        // This will automatically load all classes in the SSJT namespace
+        // so that application classes do not need to require each other.
+        'SSJT.*',
+        //'Util.*',
+        'Common.*'
+    ],
     quickTips: false,
     platformConfig: {
         desktop: {
@@ -16,13 +21,20 @@ Ext.define('SSJT.Application', {
     },
     defaultToken:'home',
     viewport:{
-        controller:'viewport'
+        controller:'viewport',
+        viewModel: 'viewport'
     },
     launch:function(profile){
+        var me = this;
+        var dev = ComConfig.isDev;
         Ext.Viewport.getController().onLaunch();
+        me.callParent([profile]);
+    },
+    getClientInfo:function(){
+        return null;
     },
     onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
+        Ext.Msg.confirm('应用程序升级', 'This application has an update, reload?',
             function (choice) {
                 if (choice === 'yes') {
                     window.location.reload();

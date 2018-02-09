@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjaxPropertyAttribute.cs" />
+    <Compile Include="BaseModel.cs" />
     <Compile Include="CrmEntities.cs" />
     <Compile Include="Model\CrmContact.cs" />
     <Compile Include="Model\CrmContract.cs" />
@@ -60,7 +62,7 @@
     <Compile Include="Model\CrmProductCategory.cs" />
     <Compile Include="Model\CrmReceive.cs" />
     <Compile Include="Model\HrDepartment.cs" />
-    <Compile Include="Model\HrEmployee.cs" />
+    <Compile Include="Model\HrEmploy.cs" />
     <Compile Include="Model\HrPosition.cs" />
     <Compile Include="Model\HrPost.cs" />
     <Compile Include="Model\ParamCity.cs" />

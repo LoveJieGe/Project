@@ -1,63 +1,71 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting causes an instance of this class to be created and
- * added to the Viewport container.
- */
 Ext.define('SSJT.view.main.Main', {
-    extend: 'Ext.tab.Panel',
-    xtype: 'app-main',
-
-    requires: [
-        'Ext.MessageBox',
-        'Ext.layout.Fit'
+    extend: 'Ext.Panel',
+    xtype: 'main',
+    requires:[
+        'Common.nav.Tree',
+        'Common.nav.AvatarButton',
+        'Common.nav.Button',
+        'SSJT.view.crm.Container'
     ],
-    mixins: ['Ext.mixin.Responsive'],
-    controller: 'main',
-    viewModel: 'main',
+    mixins: [
+        'Ext.mixin.Responsive'
+    ],
+    config:{
+        showNavigation:true
+    },
+    // platformConfig: {
+    //     phone: {
+    //         showNavigation:false
+    //     },
 
-    defaults: {
-        tab: {
-            iconAlign: 'top'
+    //     '!phone': {
+    //         showNavigation:true
+    //     }
+    // },
+    responsiveConfig: {
+        'width >= 1366': {
+            showNavigation:true
+        },
+        'width <= 1365': {
+            showNavigation:false
         }
     },
-    responsiveConfig:{
-        tall: {
-            tabBarPosition: 'bottom'
-        },
-        wide: {
-            tabBarPosition: 'left'
-        },
-    },
-   // tabBarPosition: 'bottom',
-
-    items: [
-        // TODO - Replace the content of this view to suit the needs of your application.
-        {
-            title: 'Home',
-            iconCls: 'x-fa fa-home',
-            layout: 'fit',
-            // The following grid shares a store with the classic version's grid as well!
-            items: [{
-                xtype: 'mainlist'
-            }]
+    controller: 'maincontroller',
+    //referenceHolder: true,
+    layout: 'card',
+    lbar:{
+        xtype: 'container',
+        docked: 'left',
+        cls:'navtree-ct',
+        userCls: 'navtree-ct',
+        reference: 'navigation',
+        layout: 'vbox',
+        items: [{
+            xtype: 'navtree',
+            flex: 1,
+            reference: 'mainmenu',
+            store: {
+                type: 'mainmenu'
+            },
         },{
-            title: 'Users',
-            iconCls: 'x-fa fa-user',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            xtype: 'navavatarbutton',
+            handler:'onAvatarTap'
         },{
-            title: 'Groups',
-            iconCls: 'x-fa fa-users',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Settings',
-            iconCls: 'x-fa fa-cog',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        }
-    ]
+            xtype: 'logoutbutton',
+            reference:'btnLogout'
+        }, {
+            xtype: 'navbutton',
+            reference: 'btnToggle',
+            handler: 'onToggleNavigationSize'
+        }]
+     },
+     updateShowNavigation(newValue,oldValue){
+        this.controller&&this.controller.setShowNavigation(newValue);
+     }
+    // items: [
+    //     //  {
+    //     //     xtype: 'crm-container', //此处放 任务、任务评论、任务统计等 的容器
+    //     //     itemId: 'center'
+    //     // }
+    // ]
 });

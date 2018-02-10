@@ -14,7 +14,7 @@ Ext.define('SSJT.view.widgets.ShowHeader', {
      */
     layout: {
         type: 'hbox',
-        align: 'end'
+        align: 'stretch'
     },
 
     items: {
@@ -31,7 +31,7 @@ Ext.define('SSJT.view.widgets.ShowHeader', {
             xtype: 'button',
             iconCls: 'x-fa fa-pencil',
             handler: 'onEditTap',
-            text: 'Edit',
+            text: '编辑',
             weight: 10,
             ui: 'flat',
 

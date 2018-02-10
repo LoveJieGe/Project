@@ -45,7 +45,6 @@ Ext.define('SSJT.view.main.MainController', {
         // 'crm/recycle': 'toRecycleBin'
     },
     smallResponsive:function(a,b,c){
-        debugger
         me.setShowNavigation(false);
     },
     largeResponsive:function(a,b,c){
@@ -124,7 +123,6 @@ Ext.define('SSJT.view.main.MainController', {
      * @param {String} type
      */
     handleNavigationRoute(type,args) {
-        debugger
         console.log('路由',type);
         const me = this,
             entry = me.lookup('mainmenu').getStore().getById(type);
@@ -145,7 +143,6 @@ Ext.define('SSJT.view.main.MainController', {
         // }
     },
     handleDataRoute(type,id,args){
-        debugger
         var me = this,
             args = Ext.Array.clean(args||''.split('/')),//通过数组进行筛选并删除Ext.isEmpty中定义的空项。
             Model = SSJT.model[Ext.String.capitalize(type)],//capitalize将给定字符串的第一个字母大写
@@ -175,7 +172,6 @@ Ext.define('SSJT.view.main.MainController', {
             //Ext.Viewport.setMasked({ xtype: 'loadmask' });
             Model.load(id, {
                 callback: function(record, operation, success) {
-                    debugger
                     view.setRecord(record);
                     me.activate(view);
                     //Ext.Viewport.setMasked(false);
@@ -196,7 +192,6 @@ Ext.define('SSJT.view.main.MainController', {
         this.redirectTo(user);
     },
     ensureView(xtype,config,route){
-        debugger
         var container = this.getView(),
         item = container.child('component[viewId=' + xtype + ']'),
         reset = !!item;

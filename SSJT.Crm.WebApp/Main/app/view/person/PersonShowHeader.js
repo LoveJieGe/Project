@@ -31,21 +31,36 @@ Ext.define('SSJT.view.person.PersonShowHeader', {
     ],
 
     items: {
+        editAvatar: {
+            weight: -15,
+            xtype: 'button',
+            iconCls: 'x-fa fa-pencil',
+            handler: 'onEditTap',
+            text: '编辑头像',
+            weight: 10,
+            ui: 'flat',
+
+            platformConfig: {
+                phone: {
+                    hidden: true
+                }
+            }
+        },
         image: {
             xtype: 'image',
-            weight: -10,
+            weight: -10,//较低的值被吸引到容器的开始位置——垂直布局的顶部，位置在水平布局中开始。
             userCls: [
                 'header-picture',
-                'picture'
+                'avatar'
             ],
-            bind: {
-                src: ''
-            },
+            src:'/Main/resources/images/auth-background.jpg',
+            // bind: {
+            //     src: ''
+            // },
             listeners:{
                 focusenter:function(){console.log(111)}
             }
         },
-
         title: {
             tpl: [
                 '<div class="name">{UserName}</div>',

@@ -10,5 +10,8 @@ Ext.define('SSJT.view.person.PersonShowModel', {
         //     type: 'actions',
         //     pageSize: 12
         // }
+    },
+    data:{
+        time:new Date()
     }
 });

@@ -4,7 +4,6 @@ Ext.define('SSJT.model.Base', {
         // https://docs.sencha.com/extjs/latest/modern/Ext.data.field.Field.html#cfg-calculate
         name: 'url', 
         calculate: function (data) {
-            debugger
             return Ext.String.format('{0:lowercase}/{1}',
                 this.owner.entityName,
                 data.CustomID);
@@ -14,7 +13,6 @@ Ext.define('SSJT.model.Base', {
         namespace: 'SSJT.model'
     },
     toUrl: function() {
-        debugger
         return this.get('url');
     },
 

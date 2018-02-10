@@ -119,7 +119,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
     },
     // 全局路由的 before 事件处理
     onBeforeRoute(action, route) {
-        debugger
         const me = this,
             lastView = me.lastView;
 
@@ -138,7 +137,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         this.showLoginView();
     },
     saveSession:function(r){
-        debugger
         if(r&&r.User&&Ext.isArray(r.User))
             r.User = SSJT.model.Person.loadData(r.User[0]);
         const session = r?SSJT.model.Session.loadData(r):r;

@@ -49,13 +49,18 @@ Ext.define('SSJT.view.person.ShowTools', {
         }]
     }, {
         xtype: 'component',
-        cls: 'location',
+        cls: 'header-clock',
         tpl: [
-            // '<div class="city"><span class="x-fa fa-map-marker"></span> {office.city}</div>'
-            '<div class="time"><span class="x-fa fa-clock-o"></span> 11:00 pm</div>'
+            '<div class="date">{time:date("F d , l")}</div>',
+            '<div class="time"><span class="x-fa fa-clock-o"></span> {time:date("G:i A")}</div>'
         ],
+        // bind: {
+        //     record: '{record}'
+        // }
         bind: {
-            record: '{record}'
+            data: {
+                time: '{time}'
+            }
         }
     }]
 });

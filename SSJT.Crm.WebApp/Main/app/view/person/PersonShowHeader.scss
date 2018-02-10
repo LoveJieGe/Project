@@ -8,7 +8,7 @@
     .header-picture {
         @include single-box-shadow($hoff: 0, $voff: 4px, $spread: -2px);
         margin: 0 $show-header-spacing $show-header-spacing 0;
-        border: 8px solid $panel-header-background-color;
+        border: 5px solid $panel-header-background-color;
         height: $show-header-picture-size;
         width: $show-header-picture-size;
     }
@@ -33,4 +33,6 @@
             text-align: center;
         }
     }
+
+   
 }

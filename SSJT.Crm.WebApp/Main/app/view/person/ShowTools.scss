@@ -45,5 +45,34 @@
             margin-top: $show-header-spacing;
             width: 100%;
         }
+        .header-clock {
+            display: none;
+        }
+        .header-links .item {
+            padding: 8px;
+            flex: 1;
+            width: 0;
+        }
     }
+
+    .header-clock {
+        align-items: flex-end;
+        display: flex;
+        font-weight: normal;
+        padding-bottom: 16px;
+        text-align: right;
+
+        .date {
+            color: $base-color;
+        }
+
+        .time {
+            background-color: $base-color;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+            text-align: center;
+        }
+    }
+   
 }

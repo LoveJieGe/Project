@@ -32,7 +32,6 @@ Ext.define('SSJT.model.Person', {
          * then request the server with the desired id.
          */
         load: function(id, options, session) {
-            debugger
             var record = Ext.create('SSJT.model.Person');
             record.setSession(session),
             id = ComUtils.hex2String(id);

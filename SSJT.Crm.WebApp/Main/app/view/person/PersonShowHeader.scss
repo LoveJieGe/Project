@@ -4,16 +4,27 @@
     > .x-body-el {
         overflow: visible;
     }
-
-    .header-picture {
-        @include single-box-shadow($hoff: 0, $voff: 4px, $spread: -2px);
+    .header{
         margin: 0 $show-header-spacing $show-header-spacing 0;
-        border: 5px solid $panel-header-background-color;
         height: $show-header-picture-size;
         width: $show-header-picture-size;
     }
-
+    .header-picture {
+        @include single-box-shadow($hoff: 0, $voff: 4px, $spread: -2px);
+        //margin: 0 $show-header-spacing $show-header-spacing 0;
+        border: 5px solid $panel-header-background-color;
+        height: 100%;
+        width: 100%;
+    }
+    .edit-person-picture{
+        background-image: url(get-resource-path('images/edit-photo.png'));
+        width: 33px;
+        height: 33px;
+    }
     @media screen and (min-width: 600px) {
+        .header{
+            margin-bottom: -$show-header-picture-size/2;
+        }
         .header-picture {
             margin-bottom: -$show-header-picture-size/2;
         }

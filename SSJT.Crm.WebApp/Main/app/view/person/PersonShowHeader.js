@@ -31,34 +31,70 @@ Ext.define('SSJT.view.person.PersonShowHeader', {
     ],
 
     items: {
-        editAvatar: {
-            weight: -15,
-            xtype: 'button',
-            iconCls: 'x-fa fa-pencil',
-            handler: 'onEditTap',
-            text: '编辑头像',
-            weight: 10,
-            ui: 'flat',
-
-            platformConfig: {
-                phone: {
-                    hidden: true
-                }
-            }
-        },
-        image: {
-            xtype: 'image',
+        
+        // image: {
+        //     xtype: 'image',
+        //     weight: -10,//较低的值被吸引到容器的开始位置——垂直布局的顶部，位置在水平布局中开始。
+        //     userCls: [
+        //         'header-picture',
+        //         'avatar'
+        //     ],
+        //     src:'/Main/resources/images/auth-background.jpg',
+        //     // bind: {
+        //     //     src: ''
+        //     // },
+        //     listeners:{
+        //         focusenter:function(){console.log(111)}
+        //     }
+        // },
+        // editAvatar: {
+        //     weight: -11,
+        //     xtype: 'button',
+        //     iconCls: 'x-fa fa-pencil',
+        //     handler: 'onEditTap',
+        //     text: '编辑头像',
+        //     ui: 'flat',
+        //     platformConfig: {
+        //         phone: {
+        //             hidden: true
+        //         }
+        //     }
+        // },
+        image:{
+            xtype:'container',
+            layout:'vbox',
             weight: -10,//较低的值被吸引到容器的开始位置——垂直布局的顶部，位置在水平布局中开始。
-            userCls: [
-                'header-picture',
-                'avatar'
-            ],
-            src:'/Main/resources/images/auth-background.jpg',
-            // bind: {
-            //     src: ''
-            // },
+            userCls:'header',
+            items:[{
+                xtype: 'image',
+                userCls: [
+                    'header-picture',
+                    'avatar'
+                ],
+                src:'/Main/resources/images/auth-background.jpg',
+            },{
+                xtype: 'button',
+                iconCls: 'edit-person-picture',
+                handler: 'onEditAvatar',
+                reference:'editAvattar',
+                //text: '编辑头像',
+                ui: 'flat',
+                platformConfig: {
+                    phone: {
+                        hidden: false
+                    }
+                },
+                hidden:true
+            }],
             listeners:{
-                focusenter:function(){console.log(111)}
+                mouseover:{
+                    element: 'element',//可能得值为'element', 'bodyWrapElement', 'bodyElement'
+                    fn:'showEditAvatar'
+                },
+                mouseleave:{
+                    element: 'element',//可能得值为'element', 'bodyWrapElement', 'bodyElement'
+                    fn:'hideEditAvatar'
+                }
             }
         },
         title: {

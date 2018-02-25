@@ -13,7 +13,6 @@ using SSJT.Crm.DBUtility;
 using Spring.Context;
 using Spring.Context.Support;
 using SSJT.Crm.Core.AjaxRequest;
-using SSJT.Crm.Model;
 using System.Collections;
 using SSJT.Crm.Core.Exceptions;
 
@@ -24,7 +23,7 @@ namespace SSJT.Crm.Test
 
         static void Main(string[] args)
         {
-            //string key = "Admin";
+            //string key = "Admin";324测试
 
             //string source = "123456";
 

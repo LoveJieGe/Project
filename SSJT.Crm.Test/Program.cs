@@ -23,7 +23,7 @@ namespace SSJT.Crm.Test
 
         static void Main(string[] args)
         {
-            //string key = "Admin";324
+            //string key = "Admin";324测试
 
             //string source = "123456";
 

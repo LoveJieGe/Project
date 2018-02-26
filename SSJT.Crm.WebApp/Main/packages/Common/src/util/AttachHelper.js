@@ -56,5 +56,31 @@ Ext.define('Common.util.AttachHelper', {
                 callback();
             }
         });
+    },
+    ensureCropperlibs(callback){
+        const bundleId = 'cropperlibsloaded';
+        if (!RM.isDefined(bundleId)) {
+            const path = Ext.getResourcePath('libs/cropper/', 'shared', null),
+                isDev = Ext.manifest.env == 'development',
+                ver = Ext.manifest.version,
+                arr = isDev ? [
+                    `${path}jquery-1.10.2.js?v=${ver}`,
+                    `${path}cropper.js?v=${ver}`,
+                    `${path}cropper.css?v=${ver}`
+                ] : [
+                    `${path}jquery-1.10.2.min.js?v=${ver}`,
+                    `${path}cropper.min.js?v=${ver}`,
+                    `${path}cropper.min.css?v=${ver}`
+                ];
+            RM.load(arr, bundleId, {
+                async: false
+            });
+        }
+        RM.ready(bundleId, {
+            success() {
+                if(callback)
+                    callback();
+            }
+        });
     }
 });

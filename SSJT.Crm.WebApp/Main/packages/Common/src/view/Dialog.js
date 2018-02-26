@@ -9,5 +9,6 @@ Ext.define('Common.view.Dialog', {
     hidden: true,
 
     width: 900,
-    height: '90vh'
+    height: '90vh',
+    
 });

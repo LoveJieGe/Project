@@ -1025,6 +1025,58 @@
     padding: 2px 4px;
     text-align: center;
 }
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:6 */
+.edit-avatar .top-bar {
+    padding-left: 15px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:9 */
+.edit-avatar .img-container {
+    max-width: 250px;
+    max-height: 250px;
+    display: inline-block;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:13 */
+.edit-avatar .img-container img {
+    max-width: 100%;
+    height: auto !important;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:19 */
+.edit-avatar .img-container,
+.edit-avatar .img-preview {
+    overflow: hidden;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:24 */
+.edit-avatar .docs-preview {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:28 */
+.edit-avatar .docs-preview .img-preview {
+    float: left;
+    margin-bottom: 20px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:33 */
+.edit-avatar .docs-preview .img-preview > img {
+    max-width: 100%;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:37 */
+.edit-avatar .docs-preview .preview-lg {
+    width: 264px;
+    height: 148px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:42 */
+.edit-avatar .docs-preview .preview-md {
+    width: 132px;
+    height: 74px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:47 */
+.edit-avatar .docs-preview .preview-sm {
+    width: 66px;
+    height: 37px;
+}
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:17 */
 @-webkit-keyframes rotate-animation {
     /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:8 */

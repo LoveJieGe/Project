@@ -77,7 +77,7 @@ Ext.define('SSJT.view.person.PersonShowHeader', {
                 iconCls: 'edit-person-picture',
                 handler: 'onEditAvatar',
                 reference:'editAvattar',
-                //text: '编辑头像',
+                tooltip:'修改头像',
                 ui: 'flat',
                 platformConfig: {
                     phone: {

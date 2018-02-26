@@ -1,0 +1,53 @@
+.edit-avatar{
+    $header-margin-size:dynamic(20px);
+    $header-preview-width:dynamic(264px);
+    $header-preview-height:dynamic(148px);
+    $header-image-width:dynamic(100%);
+    .top-bar{
+        padding-left: 15px;
+    }
+    .img-container{
+        max-width: 250px;
+        max-height: 250px;
+        display: inline-block;
+        img{
+            max-width: $header-image-width;
+            height: auto !important;
+        }
+        
+    }
+    .img-container, .img-preview {
+        overflow: hidden;
+        margin-left: $header-margin-size;
+        margin-bottom: $header-margin-size/2;
+    }
+    .docs-preview {
+        margin-right: 10px;
+        margin-bottom:  $header-margin-size/2;
+        display: inline-block;
+        .img-preview {
+            float: left;
+            margin-bottom: $header-margin-size;
+          }
+          
+          .img-preview > img {
+            max-width: $header-image-width;
+          }
+          
+          .preview-lg {
+            width: $header-preview-width;
+            height: $header-preview-height;
+          }
+          
+          .preview-md {
+            width: $header-preview-width/2;
+            height: $header-preview-height/2;
+          }
+          
+          .preview-sm {
+            width: $header-preview-width/4;
+            height: $header-preview-height/4;
+          }
+    }
+    
+}

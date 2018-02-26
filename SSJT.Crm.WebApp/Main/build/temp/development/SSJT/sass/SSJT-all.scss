@@ -1378,6 +1378,14 @@ $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/person/ShowTools';
 
+/* including scss file adjacent to ..\..\..\..\..\app\view\widgets\EditHeader.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/widgets/EditHeader';
+
 /* including scss file adjacent to ..\..\..\..\..\app\Application.js */
 $default-resource-root: '' !default;
 $default-resource-path: 'images' !default;

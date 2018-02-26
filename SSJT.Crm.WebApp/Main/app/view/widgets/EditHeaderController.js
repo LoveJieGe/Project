@@ -1,13 +1,16 @@
 Ext.define('SSJT.view.widgets.EditHeaderController',{
     extend:'Ext.app.ViewController',
     alias:'controller.editheader',
-    // init:function(){
-    //     // const me = this,view = me.getView(),
-    //     //     btnBrowse = view.down('#btnBrowse');
-    //     // AttachHelper.ensurePlUploadlibs(() => {
-    //     //     me.doInitUploader(btnBrowse);
-    //     // });
-    // },
+    init:function(){
+        const me = this,view = me.getView(),
+            btnBrowse = view.down('#btnBrowse');
+        AttachHelper.ensurePlUploadlibs(() => {
+            me.doInitUploader(btnBrowse);
+        });
+        AttachHelper.ensureCropperlibs(() => {
+            me.doInitCropper();
+        });
+    },
     doInitUploader:function(btnBrowse) {
         const me = this,view = me.getView();
 
@@ -17,7 +20,7 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             //Plupload会首先选择html5上传方式，如果浏览器不支持html5，则会使用flash或silverlight，
             //如果前面两者也都不支持，则会使用最传统的html4上传方式。
             //如果你想指定使用某个上传方式，或改变上传方式的优先顺序，则你可以配置该参数。
-            runtimes: 'html5,html4',
+            runtimes: 'html5,flash,html4',
             //required_features:可以使用该参数来设置你必须需要的一些功能特征，Plupload会根据你的设置来选择合适的上传方式。
             //因为，不同的上传方式，支持的功能是不同的，比如拖拽上传只有html5上传方式支持，图片压缩则只有html5,flash,silverlight上传方式支持。
             //该参数的值是一个混合类型，可以是一个以逗号分隔的字符串，
@@ -69,44 +72,50 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
      * @param {plupload.File[]} files
      */
     onFilesAdded(uploader, files) {
-        debugger
         const me = this,view = me.getView(),
-            store = me.getStore(),img = new moxie.image.Image();;
-
-        plupload.each(files, function (file) {
-            // const records = store.add({
-            //     FileID: file.id,
-            //     FileName: file.name,
-            //     Size: file.size
-            // });
-            img.load(file.getSource());
-            // if (records.length) {
-            //     const record = records[0],
-            //         img = new moxie.image.Image();
-            //     img.onload = function () {
-            //         var item = view.getItem(record);
-            //         if (item) {
-            //             var dom = Ext.fly(item).down('.img-wrap').dom;
-            //             this.embed(dom, {
-            //                 width: 100,
-            //                 height: 100,
-            //                 preserveHeaders: false
-            //             });
-            //         }
-            //     };
-               
-            // }
-
-        });
+            store = me.getStore(),img = new moxie.image.Image(),
+            $image = $('.img-container > img'),file = files[0]
+            URL = window.URL || window.webkitURL;
+        if(URL&&file){
+            let  nativefile = file.getNative(),blobURL;
+            blobURL = URL.createObjectURL(nativefile);
+            $image.one('built.cropper', function () {
+                URL.revokeObjectURL(blobURL); 
+            }).cropper('reset', true).cropper('replace', blobURL);
+        }
+    },
+    doInitCropper(){
+        const $image = $('.img-container > img'),
+        options = {
+            zoomable: false,
+            dragend: function (e) {
+                var data = $image.cropper('getData');
+                console.log(e.type, e.dragType);
+            },
+            aspectRatio: 4 / 3,
+            preview: '.img-preview',
+            crop: function (data) {
+              console.log(data);
+            //   $dataY.val(Math.round(data.y));
+            //   $dataHeight.val(Math.round(data.height));
+            //   $dataWidth.val(Math.round(data.width));
+            //   $dataRotate.val(Math.round(data.rotate));
+            }
+          };
+          $image.cropper(options);
     },
     onTapBtnBrowse(btn) {
-        debugger
-        const me = this,
-        file = this.lookup('file');
-        file.onClick();
-        // if (!window.plupload || !me.uploader) {
-        //     ComUtils.toastShort(AttachHelper.waitUploadMsg);
-        //     return;
-        // }
+        const me = this;
+        if (!window.plupload || !me.uploader) {
+            ComUtils.toastShort(AttachHelper.waitUploadMsg);
+            return;
+        }
     },
+    onChangePixel(btn){
+        const $image = $('.img-container > img');
+        $image.cropper('setAspectRatio', btn&&Ext.Number.parseFloat(btn.getValue()));
+    },
+    onCancle:function(btn){
+        this.getView().close();
+    }
 });

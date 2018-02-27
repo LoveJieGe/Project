@@ -31,7 +31,7 @@ namespace SSJT.Crm.BLL
        
         public void Logout()
         {
-            this.instance.Logout();
+            this.Instance.Logout();
         }
         public string  GetMessage()
         {

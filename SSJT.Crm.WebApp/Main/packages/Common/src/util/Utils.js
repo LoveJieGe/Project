@@ -457,5 +457,24 @@ Ext.define('Common.util.Utils',{
             }
         }
         return result;
-    }
+    },
+    /**
+     * 计算哈希值
+     *
+     * @param {String} s
+     * @return {Number}
+     */
+    hashCode(s) {
+        if (!s) return null;
+        let hash = 0,
+            i, chr, len;
+        if (!s.length) return hash;
+        for (i = 0, len = s.length; i < len; i++) {
+            chr = s.charCodeAt(i);
+            hash = (hash << 5) - hash + chr;
+            hash |= 0; // Convert to 32bit integer
+        }
+
+        return hash;
+    },
 })

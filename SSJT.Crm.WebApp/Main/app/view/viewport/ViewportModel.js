@@ -12,9 +12,9 @@ Ext.define('SSJT.view.viewport.ViewportModel', {
                 u: '{user}'
             },
             get (data) {
+                debugger
                 if(!data.u) return '';
-                return '';
-                //return `${AvatarMgr.getAvatarUrl(data.u.UserID)}&_dc=${data.u.AvatarHash}`;
+                return `${AvatarHelper.getAvatarUrl(data.u.get('UserID'))}&_dc=${data.u.AvatarHash}`;
             }
         }
     }

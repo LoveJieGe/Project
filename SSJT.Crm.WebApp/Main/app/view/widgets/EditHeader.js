@@ -68,6 +68,7 @@ Ext.define('SSJT.view.widgets.EditHeader',{
         },
         items:[{
             text:'保存',
+            handler:'onTapSave'
         },{
             text : '取消',
             handler:'onCancle',

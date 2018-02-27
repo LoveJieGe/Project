@@ -18,6 +18,7 @@ namespace SSJT.Crm.WebApp.AjaxHandler
         {
             #region 判断用户是否登录
             IStoreServer storeServer = HelperManager.GetInstance(typeof(IStoreServer)) as IStoreServer;
+            
             //storeServer
             #endregion
         }
@@ -42,6 +43,17 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                     Message = result.ErrorMsg
                 }));
             }
+        }
+        protected void ErrorResponse(HttpContext context, string code, string message)
+        {
+            context.Response.Clear();
+            context.Response.ContentType = "application/json";
+            context.Response.Write(Core.Ajaxhelper.ToJson(new
+            {
+                Success = false,
+                ErrorCode = code,
+                Message = message
+            }));
         }
         public virtual bool IsReusable
         {

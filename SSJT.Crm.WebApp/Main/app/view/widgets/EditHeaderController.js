@@ -31,7 +31,7 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             //container:用来指定Plupload所创建的html结构的父容器，默认为前面指定的browse_button的父元素。
             //该参数的值可以是一个元素的id,也可以是DOM元素本身。
             container: btnBrowse.element.dom, 
-            url: ComUtils.joinPath(ComConfig.httpUrl, 'Doc/plupload/EmImgUp.ashx'),
+            url: ComUtils.joinPath(ComConfig.httpUrl, 'Doc/plupload/ImageUpload.ashx'),
             //分片上传文件时，每片文件被切割成的大小，为数字时单位为字节。也可以使用一个带单位的字符串，如"200kb"。
             //当该值为0时表示不使用分片上传功能
             chunk_size: '1mb',
@@ -60,11 +60,17 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
                 //当文件添加到上传队列后触发
                 FilesAdded(up, files) {
                     me.onFilesAdded.apply(me, arguments);
+                },
+                FileFiltered(uploader,file){
+                    me.onFileFiltered.apply(me, arguments);
                 }
             }
         });
         uploader.init();
         me.uploader = uploader;
+    },
+    onFileFiltered(uploader,file){
+        debugger
     },
     /**
      * 选择文件后触发
@@ -72,6 +78,7 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
      * @param {plupload.File[]} files
      */
     onFilesAdded(uploader, files) {
+        debugger
         const me = this,view = me.getView(),
             store = me.getStore(),img = new moxie.image.Image(),
             $image = $('.img-container > img'),file = files[0]
@@ -89,7 +96,10 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
         options = {
             zoomable: false,
             dragend: function (e) {
+                debugger
                 var data = $image.cropper('getData');
+                var canvas = $image.cropper("getCroppedCanvas");
+                var imgurl = canvas.toDataURL("image/jpeg", 0.3);
                 console.log(e.type, e.dragType);
             },
             aspectRatio: 4 / 3,
@@ -104,18 +114,63 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
           };
           $image.cropper(options);
     },
-    onTapBtnBrowse(btn) {
+    onTapBtnBrowse:function(btn) {
         const me = this;
         if (!window.plupload || !me.uploader) {
             ComUtils.toastShort(AttachHelper.waitUploadMsg);
             return;
         }
     },
-    onChangePixel(btn){
+    onChangePixel:function(btn){
         const $image = $('.img-container > img');
         $image.cropper('setAspectRatio', btn&&Ext.Number.parseFloat(btn.getValue()));
     },
     onCancle:function(btn){
         this.getView().close();
+    },
+    onTapSave:function(btn){
+        const me = this;
+        me.startUpload();
+    },
+    /**
+     * 开始上传
+     */
+    startUpload() {
+        const me = this,
+            uploader = me.uploader;
+        if (uploader) {
+            uploader.start();
+        }
+    },
+    /**
+     * 是否全部上传完毕
+     * @param {Boolean} strict true: 成功才算完毕 / false: 成功和失败都算完毕
+     * @return {Boolean}
+     */
+    isAllDone(strict) {
+        const me = this,
+            uploader = me.uploader;
+
+        let files,
+            i,
+            status;
+        if (uploader && (files = uploader.files)) {
+            for (i = 0; i < files.length; i++) {
+                status = files[i].status;
+                if (status == plupload.QUEUED || status == plupload.UPLOADING || (strict && status == plupload.FAILED)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    },
+    destroy(){
+        const me = this;
+        me.callParent(arguments);
+        if (me.uploader) {
+            me.uploader.destroy();
+            delete me.uploader;
+        }
     }
 });

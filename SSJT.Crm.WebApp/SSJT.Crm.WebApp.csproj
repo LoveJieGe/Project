@@ -163,12 +163,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Common\AvatarHandler.ashx.cs">
+    <Compile Include="Doc\AvatarHandler.ashx.cs">
       <DependentUpon>AvatarHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Common\Config.cs" />
     <Compile Include="Common\ContextFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Doc\plupload\ImageUpload.ashx.cs">
+      <DependentUpon>ImageUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Doc\plupload\PlUploadBaseHanlder.cs" />
+    <Compile Include="Doc\plupload\PlUploadFileHanlder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6747,10 +6751,11 @@
     <Content Include="Main\sass\var\view\task\RightPanel.scss" />
     <Content Include="Main\.eslintrc" />
     <Content Include="Main\app\view\home\Home.scss" />
-    <Content Include="Common\AvatarHandler.ashx" />
+    <Content Include="Doc\AvatarHandler.ashx" />
     <Content Include="AjaxHandler\StoreRequest.ashx" />
     <Content Include="AjaxHandler\UserRequest.ashx" />
     <Content Include="AjaxHandler\BaseRequest.ashx" />
+    <Content Include="Doc\plupload\ImageUpload.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

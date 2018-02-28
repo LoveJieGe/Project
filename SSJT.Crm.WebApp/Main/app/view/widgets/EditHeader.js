@@ -9,9 +9,9 @@ Ext.define('SSJT.view.widgets.EditHeader',{
     },
     width:'auto',
     height:'auto',
-    data:{
-        store: {
-            model: 'Common.model.attach.Image'
+    viewModel:{
+        data:{
+            user:null
         }
     },
     cls:'edit-avatar',
@@ -73,5 +73,8 @@ Ext.define('SSJT.view.widgets.EditHeader',{
             text : '取消',
             handler:'onCancle',
         }]
-    }]
+    }],
+    listeners:{
+        show:'onShow'
+    }
 })

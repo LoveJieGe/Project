@@ -4,6 +4,7 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
     init:function(){
         const me = this,view = me.getView(),
             btnBrowse = view.down('#btnBrowse');
+        me.getViewModel().set('user',User.getUser());
         AttachHelper.ensurePlUploadlibs(() => {
             me.doInitUploader(btnBrowse);
         });
@@ -20,7 +21,7 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             //Plupload会首先选择html5上传方式，如果浏览器不支持html5，则会使用flash或silverlight，
             //如果前面两者也都不支持，则会使用最传统的html4上传方式。
             //如果你想指定使用某个上传方式，或改变上传方式的优先顺序，则你可以配置该参数。
-            runtimes: 'html5,flash,html4',
+            runtimes: 'html5,html4',
             //required_features:可以使用该参数来设置你必须需要的一些功能特征，Plupload会根据你的设置来选择合适的上传方式。
             //因为，不同的上传方式，支持的功能是不同的，比如拖拽上传只有html5上传方式支持，图片压缩则只有html5,flash,silverlight上传方式支持。
             //该参数的值是一个混合类型，可以是一个以逗号分隔的字符串，
@@ -37,6 +38,7 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             chunk_size: '1mb',
             //当值为true时会为每个上传的文件生成一个唯一的文件名，并作为额外的参数post到服务器端，
             //参数明为name,值为生成的文件名
+            multiple_queues:false,
             unique_names: true,
             //可以使用该参数来限制上传文件的类型，大小等，该参数以对象的形式传入，它包括三个属性：
             //mime_types：用来限定上传文件的类型，为一个数组，该数组的每个元素又是一个对象，
@@ -46,7 +48,6 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             //值可以为一个数字，单位为b,也可以是一个字符串，由数字和单位组成，如'200kb'
             // prevent_duplicates：是否允许选取重复的文件，为true时表示不允许，为false时表示允许，默认为false。
             //如果两个文件的文件名和大小都相同，则会被认为是重复的文件
-            multi_selection:false,
             filters: {
                 prevent_duplicates: true,
                 max_file_size: '4mb',
@@ -69,8 +70,23 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
         uploader.init();
         me.uploader = uploader;
     },
+    /**
+     * 在将文件添加到队列之前触发事件
+     * @param {plupload.Uploader} uploader 
+     * @param {plupload.File} file 
+     */
     onFileFiltered(uploader,file){
-        debugger
+        const me = this,
+            user = me.getViewModel().get('user'),
+            files = uploader.files.filter(function(item){
+                if(item!=file){
+                    return !(me.cropCanvasFileName(item.name)==file.name);
+                }
+                return false;
+            });
+        files.forEach(function(item){
+            uploader.removeFile(item);
+        });
     },
     /**
      * 选择文件后触发
@@ -81,7 +97,7 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
         debugger
         const me = this,view = me.getView(),
             store = me.getStore(),img = new moxie.image.Image(),
-            $image = $('.img-container > img'),file = files[0]
+            $image = me.$image||$('.img-container > img'),file = files[0]
             URL = window.URL || window.webkitURL;
         if(URL&&file){
             let  nativefile = file.getNative(),blobURL;
@@ -91,28 +107,29 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             }).cropper('reset', true).cropper('replace', blobURL);
         }
     },
+    /**
+     * 图片剪切插件初始化
+     */
     doInitCropper(){
-        const $image = $('.img-container > img'),
+        const me = this,$image = me.$image||$('.img-container > img'),
         options = {
             zoomable: false,
-            dragend: function (e) {
-                debugger
-                var data = $image.cropper('getData');
-                var canvas = $image.cropper("getCroppedCanvas");
-                var imgurl = canvas.toDataURL("image/jpeg", 0.3);
-                console.log(e.type, e.dragType);
-            },
+            // dragend: function (e) {
+            //     debugger
+            //     console.log(e.type, e.dragType);
+            // },
             aspectRatio: 4 / 3,
             preview: '.img-preview',
-            crop: function (data) {
-              console.log(data);
-            //   $dataY.val(Math.round(data.y));
-            //   $dataHeight.val(Math.round(data.height));
-            //   $dataWidth.val(Math.round(data.width));
-            //   $dataRotate.val(Math.round(data.rotate));
-            }
+            // crop: function (data) {
+            //   console.log(data);
+            // //   $dataY.val(Math.round(data.y));
+            // //   $dataHeight.val(Math.round(data.height));
+            // //   $dataWidth.val(Math.round(data.width));
+            // //   $dataRotate.val(Math.round(data.rotate));
+            // }
           };
           $image.cropper(options);
+          me.$image = $image;
     },
     onTapBtnBrowse:function(btn) {
         const me = this;
@@ -121,9 +138,14 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             return;
         }
     },
+    onShow:function(sender, e){
+        debugger
+        const me = this,
+        imgcon = me.lookup('img-container');
+    },
     onChangePixel:function(btn){
-        const $image = $('.img-container > img');
-        $image.cropper('setAspectRatio', btn&&Ext.Number.parseFloat(btn.getValue()));
+        const me = this, $image = me.$image;
+        $image&&$image.cropper('setAspectRatio', btn&&Ext.Number.parseFloat(btn.getValue()));
     },
     onCancle:function(btn){
         this.getView().close();
@@ -137,8 +159,19 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
      */
     startUpload() {
         const me = this,
-            uploader = me.uploader;
-        if (uploader) {
+            uploader = me.uploader,
+            $image = me.$image;
+        if (uploader&&$image) {
+            debugger
+            let pluploadFile = uploader.files[0],
+                canvas = $image.cropper('getCroppedCanvas'),
+                data = $image.cropper('getData'),
+                imgType = pluploadFile||pluploadFile.type,
+                imgurl = canvas.toDataURL(imgType||"image/png"),
+                file = me.dataURLtoFile(imgurl,pluploadFile.name),
+                user = me.getViewModel().get('user');
+            uploader.addFile(file);
+            uploader.setOption('multipart_params',{UserID:user&&user.get('CustomID')})
             uploader.start();
         }
     },
@@ -162,12 +195,36 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
                 }
             }
         }
-
         return true;
+    },
+    dataURLtoFile(dataurl, filename) {
+        var arr = dataurl.split(','),
+            mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]), 
+            n = bstr.length, 
+            u8arr = new Uint8Array(n),
+            me = this;
+        while(n--){
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new File([u8arr], me.cropCanvasFileName(filename), {type:mime});
+    },
+    cropCanvasFileName:function(filename) {
+        if(filename&&Ext.isString(filename)){
+            let extendsion = filename.substring(filename.lastIndexOf('.')),
+                name = filename.substring(0,filename.lastIndexOf('.')),
+                user = this.getViewModel().get('user'),
+                userID = user&&user.get('CustomID');
+            filename  = name+userID+extendsion;
+        }else{
+            filename  = userID+'.png';
+        }
+        return filename;
     },
     destroy(){
         const me = this;
         me.callParent(arguments);
+        delete me.$image;
         if (me.uploader) {
             me.uploader.destroy();
             delete me.uploader;

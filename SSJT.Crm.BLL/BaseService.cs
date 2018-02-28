@@ -17,7 +17,7 @@ namespace SSJT.Crm.BLL
         {
             CurrentDal = new K();
         }
-        public IEnumerable<T> LoadEntity(Expression<Func<T, bool>> lambdaWhere)
+        public T LoadEntity(Expression<Func<T, bool>> lambdaWhere)
         {
             return CurrentDal.LoadEntity(lambdaWhere);
         }

@@ -6,10 +6,6 @@ Ext.define('SSJT.view.person.PersonShowModel', {
             type: 'person',
             pageSize: 12,
         }
-        // history: {
-        //     type: 'actions',
-        //     pageSize: 12
-        // }
     },
     data:{
         time:new Date()

@@ -16,7 +16,7 @@ namespace SSJT.Crm.IDAL
         /// </summary>
         /// <param name="lambdaWhere">获取数据的条件lambda</param>
         /// <returns></returns>
-        IEnumerable<T> LoadEntity(Expression<Func<T, bool>> lambdaWhere);
+        T LoadEntity(Expression<Func<T, bool>> lambdaWhere);
         /// <summary>
         /// 分页形式的数据获取
         /// </summary>

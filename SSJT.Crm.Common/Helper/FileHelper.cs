@@ -119,13 +119,19 @@ namespace SSJT.Crm.Common
         public static bool OnUploadChunk(byte[] chunkData, int chunk, int chunks, string uploadedFilename)
         {
             String path = Config.AvatarPath;
-
-            // try to create the path
+            if (uploadedFilename.Contains("-source"))
+            {
+                path += "source/";
+            }
+            else if (uploadedFilename.Contains("-screen"))
+            {
+                path += "screen/";
+            }
+            // 从创建文件夹
             if (!ExistDirectory(path))
             {
                 try
                 {
-                    //Directory.CreateDirectory(path);
                     TryCreateDirectory(path);
                 }
                 catch
@@ -150,7 +156,6 @@ namespace SSJT.Crm.Common
                     DeleteTimedoutFiles(path, "*.*", 900);
                 });
             }
-
             Stream stream = null;
             try
             {

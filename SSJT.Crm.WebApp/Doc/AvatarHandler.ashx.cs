@@ -27,11 +27,11 @@ namespace SSJT.Crm.WebApp.Doc
                 {
                     context.Response.ContentType = "image/jpeg";
                     userID = Helper.FromHex(userID);
-                    IEnumerable<HrEmploy> item = ContextFactory.HrEmployService.LoadEntity(U => U.UserID == userID);
+                    HrEmploy item = ContextFactory.HrEmployService.LoadEntity(U => U.UserID == userID);
                     string avatarPath = string.Empty;
-                    if (item != null && item.Count() > 0)
+                    if (item != null)
                     {
-                        avatarPath = Config.AvatarPath + item.First().AvatarName;
+                        avatarPath = Config.AvatarPath+"screen/" + item.AvatarName;
                     }
                     byte[] bytes = FileHelper.GetFile(avatarPath);
                     if (bytes != null)

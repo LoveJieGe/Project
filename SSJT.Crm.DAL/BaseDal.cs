@@ -38,10 +38,14 @@ namespace SSJT.Crm.DAL
         /// </summary>
         /// <param name="lambdaWhere">获取数据的条件lambda</param>
         /// <returns></returns>
-        public IEnumerable<T> LoadEntity(Expression<Func<T,bool>> lambdaWhere)
+        public T LoadEntity(Expression<Func<T,bool>> lambdaWhere)
         {
             var result = context.Set<T>().Where(lambdaWhere);
-            return result;
+            if (result != null && result.Count() > 0)
+            {
+                return result.FirstOrDefault();
+            }
+            return null;
         }
         /// <summary>
         /// 分页形式的数据获取

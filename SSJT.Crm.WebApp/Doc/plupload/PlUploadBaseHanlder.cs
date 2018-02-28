@@ -1,4 +1,5 @@
-﻿using SSJT.Crm.WebApp.AjaxHandler;
+﻿using SSJT.Crm.Common;
+using SSJT.Crm.WebApp.AjaxHandler;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,14 +41,11 @@ namespace SSJT.Crm.WebApp.Doc
             if (Request.Files.Count > 0)
             {
                 HttpPostedFile fileUpload = Request.Files[0];
-
-                string fileName = fileUpload.FileName;
+                string fileName = fileUpload.FileName,userID = Request["UserID"];
                 if (string.IsNullOrEmpty(fileName) || string.Equals(fileName, "blob"))
                     fileName = Request["name"] ?? string.Empty;
-
                 // normalize file name to avoid directory traversal attacks            
                 fileName = Path.GetFileName(fileName);
-
                 // check for allowed extensions and block
                 string ext = Path.GetExtension(fileName);
                 if (!("," + AllowedExtensions.ToLower() + ",").Contains("," + ext.ToLower() + ","))
@@ -55,7 +53,19 @@ namespace SSJT.Crm.WebApp.Doc
                     WriteErrorResponse("文件类型不允许", 100, true);
                     return;
                 }
-
+                if (!string.IsNullOrEmpty(userID))
+                {
+                   
+                    if (fileName.Contains(userID))
+                    {
+                        fileName = Helper.FromHex(userID) + "-screen" + ext;
+                    }
+                    else
+                    {
+                        fileName = Helper.FromHex(userID)+"-source" + ext;
+                    }
+                }
+                
                 string tstr = Request["chunks"] ?? string.Empty;
                 int chunks = -1;
                 if (!int.TryParse(tstr, out chunks))
@@ -79,9 +89,7 @@ namespace SSJT.Crm.WebApp.Doc
                         WriteErrorResponse("文件太大", 413, true);
                         return;
                     }
-
-                    OnUploadCompleted(fileName);
-
+                    OnUploadCompleted(context,fileName);
                     return;
                 }
                 else
@@ -94,29 +102,24 @@ namespace SSJT.Crm.WebApp.Doc
                         return;
                     }
                 }
-
                 if (!OnUploadChunkStarted(chunk, chunks, fileName))
                     return;
-
                 // chunk 0 is the first one
                 if (chunk == 0)
                 {
                     if (!OnUploadStarted(chunk, chunks, fileName))
                         return;
                 }
-
                 if (!OnUploadChunk(fileUpload.InputStream, chunk, chunks, fileName))
                     return;
-
                 // last chunk
                 if (chunk >= chunks - 1)
                 {
                     // final response should just return
                     // the output you generate
-                    OnUploadCompleted(fileName);
+                    OnUploadCompleted(context,fileName);
                     return;
                 }
-
                 // if no response has been written yet write a success response
                 WriteSucessResponse(null);
             }
@@ -172,7 +175,7 @@ namespace SSJT.Crm.WebApp.Doc
         /// Completion handler called when the download completes
         /// </summary>
         /// <param name="fileName"></param>
-        protected virtual void OnUploadCompleted(string fileName)
+        protected virtual void OnUploadCompleted(HttpContext context,string fileName)
         {
 
         }

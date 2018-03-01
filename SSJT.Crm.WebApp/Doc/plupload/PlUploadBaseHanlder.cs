@@ -1,5 +1,6 @@
 ﻿using SSJT.Crm.Common;
 using SSJT.Crm.WebApp.AjaxHandler;
+using SSJT.Crm.WebApp.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,48 +41,21 @@ namespace SSJT.Crm.WebApp.Doc
             // Check to see whether there are uploaded files to process them
             if (Request.Files.Count > 0)
             {
-                HttpPostedFile fileUpload = Request.Files[0];
-                string fileName = fileUpload.FileName,userID = Request["UserID"];
-                if (string.IsNullOrEmpty(fileName) || string.Equals(fileName, "blob"))
-                    fileName = Request["name"] ?? string.Empty;
-                // normalize file name to avoid directory traversal attacks            
-                fileName = Path.GetFileName(fileName);
-                // check for allowed extensions and block
-                string ext = Path.GetExtension(fileName);
-                if (!("," + AllowedExtensions.ToLower() + ",").Contains("," + ext.ToLower() + ","))
+                PluploadFile pfile = new PluploadFile(context);
+                
+                if (!("," + AllowedExtensions.ToLower() + ",").Contains("," + pfile.FileExtension.ToLower() + ","))
                 {
                     WriteErrorResponse("文件类型不允许", 100, true);
                     return;
                 }
-                if (!string.IsNullOrEmpty(userID))
-                {
-                   
-                    if (fileName.Contains(userID))
-                    {
-                        fileName = Helper.FromHex(userID) + "-screen" + ext;
-                    }
-                    else
-                    {
-                        fileName = Helper.FromHex(userID)+"-source" + ext;
-                    }
-                }
                 
-                string tstr = Request["chunks"] ?? string.Empty;
-                int chunks = -1;
-                if (!int.TryParse(tstr, out chunks))
-                    chunks = -1;
-                tstr = Request["chunk"] ?? string.Empty;
-                int chunk = -1;
-                if (!int.TryParse(tstr, out chunk))
-                    chunk = -1;
-
                 // If there are no chunks sent the file is sent as one 
                 // this likely a plain HTML 4 upload (ie. 1 single file)
-                if (chunks == -1)
+                if (pfile.Chunks == -1)
                 {
                     if (MaxUploadSize == 0 || Request.ContentLength <= MaxUploadSize)
                     {
-                        if (!OnUploadChunk(fileUpload.InputStream, 0, 1, fileName))
+                        if (!OnUploadChunk(pfile))
                             return;
                     }
                     else
@@ -89,35 +63,35 @@ namespace SSJT.Crm.WebApp.Doc
                         WriteErrorResponse("文件太大", 413, true);
                         return;
                     }
-                    OnUploadCompleted(context,fileName);
+                    OnUploadCompleted(pfile);
                     return;
                 }
                 else
                 {
                     // this isn't exact! We can't see the full size of the upload
                     // and don't know the size of the last chunk
-                    if (chunk == 0 && MaxUploadSize > 0 && Request.ContentLength * (chunks - 1) > MaxUploadSize)
+                    if (pfile.Chunk == 0 && MaxUploadSize > 0 && Request.ContentLength * (pfile.Chunks - 1) > MaxUploadSize)
                     {
                         WriteErrorResponse("文件太大", 413, true);
                         return;
                     }
                 }
-                if (!OnUploadChunkStarted(chunk, chunks, fileName))
+                if (!OnUploadChunkStarted(pfile))
                     return;
                 // chunk 0 is the first one
-                if (chunk == 0)
+                if (pfile.Chunk == 0)
                 {
-                    if (!OnUploadStarted(chunk, chunks, fileName))
+                    if (!OnUploadStarted(pfile))
                         return;
                 }
-                if (!OnUploadChunk(fileUpload.InputStream, chunk, chunks, fileName))
+                if (!OnUploadChunk(pfile))
                     return;
                 // last chunk
-                if (chunk >= chunks - 1)
+                if (pfile.Chunk >= pfile.Chunks - 1)
                 {
                     // final response should just return
                     // the output you generate
-                    OnUploadCompleted(context,fileName);
+                    OnUploadCompleted(pfile);
                     return;
                 }
                 // if no response has been written yet write a success response
@@ -175,7 +149,7 @@ namespace SSJT.Crm.WebApp.Doc
         /// Completion handler called when the download completes
         /// </summary>
         /// <param name="fileName"></param>
-        protected virtual void OnUploadCompleted(HttpContext context,string fileName)
+        protected virtual void OnUploadCompleted(PluploadFile pfile)
         {
 
         }
@@ -187,7 +161,7 @@ namespace SSJT.Crm.WebApp.Doc
         /// <param name="chunks"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        protected virtual bool OnUploadChunkStarted(int chunk, int chunks, string fileName)
+        protected virtual bool OnUploadChunkStarted(PluploadFile pfile)
         {
             return true;
         }
@@ -200,7 +174,7 @@ namespace SSJT.Crm.WebApp.Doc
         /// <param name="chunks"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        protected virtual bool OnUploadStarted(int chunk, int chunks, string fileName)
+        protected virtual bool OnUploadStarted(PluploadFile pfile)
         {
             return true;
         }
@@ -213,7 +187,7 @@ namespace SSJT.Crm.WebApp.Doc
         /// <param name="chunks"></param>
         /// <param name="name"></param>
         /// <returns>return true on success false on failure</returns>
-        protected virtual bool OnUploadChunk(Stream chunkStream, int chunk, int chunks, string fileName)
+        protected virtual bool OnUploadChunk(PluploadFile pfile)
         {
             return true;
         }

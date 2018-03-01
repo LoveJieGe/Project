@@ -17,6 +17,12 @@ namespace SSJT.Crm.IBLL
         /// <returns></returns>
         T LoadEntity(Expression<Func<T, bool>> lambdaWhere);
         /// <summary>
+        /// 获取满足指定条件的所有数据
+        /// </summary>
+        /// <param name="lambdaWhere">获取数据的条件lambda</param>
+        /// <returns></returns>
+        IEnumerable<T> LoadEntities(Expression<Func<T, bool>> lambdaWhere);
+        /// <summary>
         /// 分页形式的数据获取
         /// </summary>
         /// <typeparam name="S">在isAsc为false时，指定按什么类型的字段排序</typeparam>

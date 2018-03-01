@@ -15,24 +15,24 @@ namespace SSJT.Crm.DAL
     {
         public StoreResult QueryPersons(StoreParams storeParams)
         {
-            IEnumerable<HrEmploy> item = new HrEmployeeDal().LoadEntity(H => H.UserID == storeParams.query);
-            if (item!=null&&item.Count() == 1)
+            HrEmploy item = new HrEmployeeDal().LoadEntity(H => H.UserID == storeParams.query);
+            if (item!=null)
             {
                 StoreResult result = new StoreResult();
-                result.root = item.First().ToAjaxResult();
-                result.total = item.Count();
+                result.root = item.ToAjaxResult();
+                result.total = 1;
                 return result;
             }
             return null;
         }
         public StoreResult QueryPerson(string userID)
         {
-            IEnumerable<HrEmploy> item = new HrEmployeeDal().LoadEntity(H => H.UserID == userID);
-            if(item!=null&&item.Count()>0)
+            HrEmploy item = new HrEmployeeDal().LoadEntity(H => H.UserID == userID);
+            if(item!=null)
             {
                 StoreResult result = new StoreResult();
-                result.root = item.First().ToAjaxResult();
-                result.total = item.Count();
+                result.root = item.ToAjaxResult();
+                result.total = 1;
                 return result;
             }
             return null;

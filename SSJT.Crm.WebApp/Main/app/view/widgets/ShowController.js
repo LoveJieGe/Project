@@ -12,6 +12,7 @@ Ext.define('SSJT.view.widgets.ShowController',{
     },
 
     onRecordChange: function(view, record) {
+        debugger
         this.getViewModel().set('record', record);
 
         // Scroll to the top of the view but make sure that the view is still

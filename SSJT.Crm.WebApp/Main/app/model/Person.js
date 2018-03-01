@@ -21,6 +21,19 @@ Ext.define('SSJT.model.Person', {
             calculate:function(data){
                 return ComUtils.string2Hex(data.UserID);
             }
+        },
+        'AvatarName',
+        {
+            naem:'AvatarHash',
+            calculate:function(data){
+                return ComUtils.hashCode(data.AvatarName);
+            }
+        },
+        {
+            name:'AvatarUrl',
+            calculate:function(data){
+                return AvatarHelper.getAvatarUrl(data.UserID);
+            }
         }
     ],
     statics: {

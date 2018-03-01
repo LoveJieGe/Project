@@ -28,6 +28,6 @@ Ext.define('Common.util.User',{
     getUserID() {
         var user = this.getUser();
         if (!user) return null;
-        return user.UserID;
+        return user.get('UserID');
     }
 });

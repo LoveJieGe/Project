@@ -1,4 +1,5 @@
 ﻿using SSJT.Crm.Common;
+using SSJT.Crm.WebApp.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,16 +18,13 @@ namespace SSJT.Crm.WebApp.Doc
         /// <param name="chunks"></param>
         /// <param name="uploadedFilename"></param>
         /// <returns></returns>
-        protected override bool OnUploadChunk(Stream chunkStream, int chunk, int chunks, string uploadedFilename)
+        protected override bool OnUploadChunk(PluploadFile pfile)
         {
-            byte[] bytes = new byte[chunkStream.Length];
-            chunkStream.Read(bytes, 0, bytes.Length);
-            chunkStream.Seek(0, SeekOrigin.Begin);
 
             bool result = false;
             try
             {
-                result = FileHelper.OnUploadChunk(bytes, chunk, chunks, uploadedFilename);
+                result = PluploadHelper.OnUploadChunk(pfile);
             }
             catch (Exception e)
             {

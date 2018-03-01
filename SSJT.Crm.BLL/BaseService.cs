@@ -21,6 +21,10 @@ namespace SSJT.Crm.BLL
         {
             return CurrentDal.LoadEntity(lambdaWhere);
         }
+        public IEnumerable<T> LoadEntities(Expression<Func<T, bool>> lambdaWhere)
+        {
+            return CurrentDal.LoadEntities(lambdaWhere);
+        }
         public IEnumerable<T> LoadPageEntities<S>(int pageIndex, int pageSize, out int totalCount, bool isAsc, 
             Expression<Func<T, S>> orederLambdaWhere, Expression<Func<T, bool>> lambdaWhere)
         {

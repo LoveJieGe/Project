@@ -31,35 +31,6 @@ Ext.define('SSJT.view.person.PersonShowHeader', {
     ],
 
     items: {
-        
-        // image: {
-        //     xtype: 'image',
-        //     weight: -10,//较低的值被吸引到容器的开始位置——垂直布局的顶部，位置在水平布局中开始。
-        //     userCls: [
-        //         'header-picture',
-        //         'avatar'
-        //     ],
-        //     src:'/Main/resources/images/auth-background.jpg',
-        //     // bind: {
-        //     //     src: ''
-        //     // },
-        //     listeners:{
-        //         focusenter:function(){console.log(111)}
-        //     }
-        // },
-        // editAvatar: {
-        //     weight: -11,
-        //     xtype: 'button',
-        //     iconCls: 'x-fa fa-pencil',
-        //     handler: 'onEditTap',
-        //     text: '编辑头像',
-        //     ui: 'flat',
-        //     platformConfig: {
-        //         phone: {
-        //             hidden: true
-        //         }
-        //     }
-        // },
         image:{
             xtype:'container',
             layout:'vbox',
@@ -71,7 +42,9 @@ Ext.define('SSJT.view.person.PersonShowHeader', {
                     'header-picture',
                     'avatar'
                 ],
-                src:'/Main/resources/images/auth-background.jpg',
+                bind:{
+                    src:'{record.AvatarUrl}'
+                }
             },{
                 xtype: 'button',
                 iconCls: 'edit-person-picture',

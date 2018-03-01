@@ -15,6 +15,9 @@ using Spring.Context.Support;
 using SSJT.Crm.Core.AjaxRequest;
 using System.Collections;
 using SSJT.Crm.Core.Exceptions;
+using SSJT.Crm.Model;
+using SSJT.Crm.BLL;
+using SSJT.Crm.IBLL;
 
 namespace SSJT.Crm.Test
 {
@@ -57,17 +60,30 @@ namespace SSJT.Crm.Test
 
             //int v = GetEnumValue(typeof(ErrorCode), Enum.GetName(typeof(ErrorCode), ErrorCode.VErrorCode));
             //int v2 = (int)Enum.ToObject(typeof(ErrorCode), ErrorCode.VErrorCode);
-            Type type = Type.GetType("SSJT.Crm.IBLL.IUserAuthServer,SSJT.Crm.IBLL");
-            MethodInfo[] items = type.GetMethods(BindingFlags.Public | BindingFlags.Instance);
-            foreach (MethodInfo item in items)
+            //Type type = Type.GetType("SSJT.Crm.IBLL.IUserAuthServer,SSJT.Crm.IBLL");
+            //MethodInfo[] items = type.GetMethods(BindingFlags.Public | BindingFlags.Instance);
+            //foreach (MethodInfo item in items)
+            //{
+            //    if(item.Name.Equals("GetMessage"))
+            //    {
+            //        object o = item.Invoke(GetInstance("SSJT.Crm.BLL.UserAuthServer,SSJT.Crm.BLL"), null);
+            //        Console.Write(o);
+            //    }
+            //}
+            //Console.Write("22");
+            //测试EF更新功能
+            //Crm.Model.CrmEntities context = new Model.CrmEntities();
+            var context
+                = new XmlApplicationContext(Directory.GetCurrentDirectory() + @"\services.xml");
+            var test = context.GetObject("ContextFactory") as ContextFactory;
+            IHrEmployeeService service = ContextFactory.HrEmployService;
+            string message = test.Message;
+            HrEmploy user = service.LoadEntity(u => u.UserID == "Admin");
+            if (user != null)
             {
-                if(item.Name.Equals("GetMessage"))
-                {
-                    object o = item.Invoke(GetInstance("SSJT.Crm.BLL.UserAuthServer,SSJT.Crm.BLL"), null);
-                    Console.Write(o);
-                }
+                user.AvatarName = "测试s3";
+                service.Update(user);
             }
-            Console.Write("22");
             Console.ReadKey();
         }
         public static object GetInstance(string fullClassName)

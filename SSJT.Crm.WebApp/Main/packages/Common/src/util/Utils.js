@@ -372,6 +372,12 @@ Ext.define('Common.util.Utils',{
     toastShort(msg) {
         if (!Ext.isEmpty(msg)) Ext.toast(msg, 1500);
     },
+    /**
+     * delay:显示的时长
+     */
+    toastShort(msg,delay) {
+        if (!Ext.isEmpty(msg)) Ext.toast(msg, delay);
+    },
      /** **************************路由跳转********************************/
 
     /**

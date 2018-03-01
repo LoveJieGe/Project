@@ -219,6 +219,7 @@ namespace SSJT.Crm.Model
         /// <summary>
         /// 头像文件名字
         /// </summary>
+        [AjaxProperty]
 	    public string AvatarName
 	    {
             get;set;

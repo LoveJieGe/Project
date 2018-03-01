@@ -12,11 +12,17 @@ namespace SSJT.Crm.IDAL
     public interface IBaseDal<T> where T:class,new()
     {
         /// <summary>
-        /// 获取满足指定条件的数据
+        /// 获取满足指定条件的一条数据
         /// </summary>
         /// <param name="lambdaWhere">获取数据的条件lambda</param>
         /// <returns></returns>
         T LoadEntity(Expression<Func<T, bool>> lambdaWhere);
+        /// <summary>
+        /// 获取满足指定条件的所有数据
+        /// </summary>
+        /// <param name="lambdaWhere">获取数据的条件lambda</param>
+        /// <returns></returns>
+        IEnumerable<T> LoadEntities(Expression<Func<T, bool>> lambdaWhere);
         /// <summary>
         /// 分页形式的数据获取
         /// </summary>

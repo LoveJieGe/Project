@@ -1,5 +1,6 @@
 ﻿using SSJT.Crm.Common;
 using SSJT.Crm.Model;
+using SSJT.Crm.WebApp.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,29 +23,20 @@ namespace SSJT.Crm.WebApp.Doc
             AllowedExtensions = ".jpg,.jpeg,.png,.gif,.bmp";
         }
 
-        protected override void OnUploadCompleted(HttpContext context,string fileName)
+        protected override void OnUploadCompleted(PluploadFile pfile)
         {
             object result = null;
-
             try
             {
-                if (fileName.Contains("screen")) return;
-                string userId = Helper.FromHex(context.Request["UserID"]);
-                if (context.Request.Files.Count > 0)
+                if (!pfile.IsScreenFile || pfile.ScreenFileName.Contains("_source")) return;
+                string userId = Helper.FromHex(pfile.Context.Request["UserID"]);
+                HrEmploy user = ContextFactory.HrEmployService.LoadEntity(u => u.UserID == userId);
+                if (user != null)
                 {
-                    string name = context.Request.Files[0].FileName;
-                    if (string.IsNullOrEmpty(name) || string.Equals(name, "blob"))
-                        fileName = Request["name"] ?? string.Empty;
-                    // normalize file name to avoid directory traversal attacks            
-                    name = Path.GetFileName(name);
-                    HrEmploy user = ContextFactory.HrEmployService.LoadEntity(u => u.UserID == userId);
-                    if (user != null)
-                    {
-                        user.AvatarName = name;
-                        ContextFactory.HrEmployService.Update(user);
-                    }
+                    user.AvatarName = pfile.ScreenFileName;
+                    ContextFactory.HrEmployService.Update(user);
+                   
                 }
-               
             }
             catch (Exception e)
             {

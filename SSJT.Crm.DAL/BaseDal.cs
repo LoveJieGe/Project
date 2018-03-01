@@ -11,14 +11,17 @@ namespace SSJT.Crm.DAL
 {
     public abstract class BaseDal<T> where T: class,new()
     {
-        public  DbContext context = DbContextFactory.GetDbContext();
+        public DbContext Context
+        {
+            get { return DbSessionFactory.GetDbSession().DbContext; }
+        }
         /// <summary>
         /// 获取数据库中ID最大的一条数据
         /// </summary>
         /// <returns></returns>
         public T GetMaxModel()
         {
-            T model = context.Set<T>().Max();
+            T model = Context.Set<T>().Max();
             return model;
         }
         /// <summary>
@@ -28,7 +31,7 @@ namespace SSJT.Crm.DAL
         /// <returns></returns>
         public bool Exists(int id)
         {
-            T model = context.Set<T>().Find(id);
+            T model = Context.Set<T>().Find(id);
             if (model != null)
                 return true;
             return false;
@@ -40,12 +43,22 @@ namespace SSJT.Crm.DAL
         /// <returns></returns>
         public T LoadEntity(Expression<Func<T,bool>> lambdaWhere)
         {
-            var result = context.Set<T>().Where(lambdaWhere);
+            var result = Context.Set<T>().Where(lambdaWhere);
             if (result != null && result.Count() > 0)
             {
                 return result.FirstOrDefault();
             }
             return null;
+        }
+        /// <summary>
+        /// 获取满足指定条件的所有数据
+        /// </summary>
+        /// <param name="lambdaWhere">获取数据的条件lambda</param>
+        /// <returns></returns>
+        public IEnumerable<T> LoadEntities(Expression<Func<T, bool>> lambdaWhere)
+        {
+            var result = Context.Set<T>().Where(lambdaWhere);
+            return result;
         }
         /// <summary>
         /// 分页形式的数据获取
@@ -60,7 +73,7 @@ namespace SSJT.Crm.DAL
         /// <returns></returns>
         public IEnumerable<T> LoadPageEntities<S>(int pageIndex, int pageSize,out int totalCount, bool isAsc, Expression<Func<T, S>> oederLambdaWhere, Expression<Func<T, bool>> lambdaWhere)
         {
-            var items = context.Set<T>().Where(lambdaWhere).Skip((pageIndex-1)*pageSize).Take(pageSize);
+            var items = Context.Set<T>().Where(lambdaWhere).Skip((pageIndex-1)*pageSize).Take(pageSize);
             totalCount = items.Count();
             if (isAsc)
             {
@@ -77,7 +90,7 @@ namespace SSJT.Crm.DAL
         /// <param name="model"></param>
         public void Add(T model)
         {
-            context.Set<T>().Add(model);
+            Context.Set<T>().Add(model);
         }
         /// <summary>
         /// 更新数据
@@ -85,7 +98,7 @@ namespace SSJT.Crm.DAL
         /// <param name="model"></param>
         public void Update(T model)
         {
-            context.Entry<T>(model).State = EntityState.Modified;
+            Context.Entry<T>(model).State = EntityState.Modified;
         }
         /// <summary>
         /// 删除数据
@@ -93,7 +106,7 @@ namespace SSJT.Crm.DAL
         /// <param name="entity"></param>
         public void Delete(T entity)
         {
-            context.Set<T>().Remove(entity);
+            Context.Set<T>().Remove(entity);
         }
     }
 }

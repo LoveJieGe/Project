@@ -4,6 +4,7 @@ using System;
 using System.Web;
 using System.Web.SessionState;
 using SSJT.Crm.Core.Exceptions;
+using System.Linq;
 
 namespace SSJT.Crm.WebApp.AjaxHandler
 {

@@ -40,7 +40,6 @@ Ext.define('SSJT.view.widgets.EditHeader',{
             value:'1',
             handler:'onChangePixel',
         }],
-        
     },{
         xtype: 'container',
         reference:'img-container',
@@ -48,7 +47,7 @@ Ext.define('SSJT.view.widgets.EditHeader',{
             height:'100%',
         },
         html:'<div class="img-container">\
-                <img src="/Main/resources/images/auth-background.jpg">\
+                <img />\
             </div>\
             <div class="docs-preview clearfix">\
                 <div class="img-preview preview-lg"></div>\

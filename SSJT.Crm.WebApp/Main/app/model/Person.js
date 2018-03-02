@@ -24,7 +24,7 @@ Ext.define('SSJT.model.Person', {
         },
         'AvatarName',
         {
-            naem:'AvatarHash',
+            name:'AvatarHash',
             calculate:function(data){
                 return ComUtils.hashCode(data.AvatarName);
             }
@@ -32,6 +32,7 @@ Ext.define('SSJT.model.Person', {
         {
             name:'AvatarUrl',
             calculate:function(data){
+                debugger
                 return AvatarHelper.getAvatarUrl(data.UserID);
             }
         }

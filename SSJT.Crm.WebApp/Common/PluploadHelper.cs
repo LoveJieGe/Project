@@ -27,16 +27,8 @@ namespace SSJT.Crm.WebApp.Common
             byte[] chunkData = new byte[chunkStream.Length];
             chunkStream.Read(chunkData, 0, chunkData.Length);
             chunkStream.Seek(0, SeekOrigin.Begin);
-            if (pfile.IsScreenFile|| pfile.ScreenFileName.Contains("_screen"))
-            {
-                path += "screen/";
-                uploadedFilename = pfile.ScreenFileName;
-            }
-            else
-            {
-                path += "source/";
-                uploadedFilename = pfile.SourceFileName;
-            }
+            path += pfile.IsScreenFile?  "screen/" :"source/";
+            uploadedFilename = pfile.ScreenFileName;
            // 从创建文件夹
            if (!FileHelper.ExistDirectory(path))
             {

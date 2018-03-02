@@ -6,7 +6,6 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             btnBrowse = view.down('#btnBrowse'),
             img = me.lookup('img-container'),
             user = User.getUser();
-            debugger
         me.getViewModel().set('user',user);
         var imagetab = img.innerHtmlElement.down('.img-container > img');
         if(imagetab&&imagetab.dom)
@@ -76,6 +75,9 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
                 },
                 Error(up, err) {
                     me.onUploadError.apply(me, arguments);
+                },
+                FileUploaded(uploader,file,responseObject){
+                    me.onFileUpload.apply(me,arguments);
                 }
             }
         });
@@ -106,10 +108,9 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
      * @param {plupload.File[]} files
      */
     onFilesAdded(uploader, files) {
-        debugger
         const me = this,view = me.getView(),
             store = me.getStore(),img = new moxie.image.Image(),
-            $image = me.$image||$('.img-container > img'),file = files[0]
+            $image = me.$image,file = files[0]
             URL = window.URL || window.webkitURL;
         if(URL&&file){
             let  nativefile = file.getNative(),blobURL;
@@ -120,8 +121,14 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             }).cropper('reset', true).cropper('replace', blobURL);
         }
     },
+    onFileUpload(uploader,file,r){
+        console.log(r);
+    },
     onUploadComplete(up, files){
-        const me = this,img = me.lookup('img-container');
+        debugger
+        const me = this,
+            viewModel = Ext.Viewport.getViewModel()
+            person = ComUtils.getCmp('personshowheader');
         if(me.hasFailed()){
             ComUtils.toastShort('图片上传失败!');
             return;
@@ -129,16 +136,15 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
         files.forEach(function(item){
             let nativefile = item.getNative(),
                 blobURL,
-                URL = window.URL || window.webkitURL,
-                imagetab = img.innerHtmlElement.down('.img-container > img');;
+                URL = window.URL || window.webkitURL;
                 if(nativefile&&nativefile.isscreen&&URL){
                     blobURL = URL.createObjectURL(nativefile);
-                    if(imagetab&&imagetab.dom)
-                        imagetab.dom.src = blobURL;
+                    if(viewModel)
+                        viewModel.set('userAvatar',blobURL)
                 }
         });
         //隐藏窗体
-        me.onCancle();
+        me.onTapCancle();
     },
     onUploadError(uploader, err) {
         console.log('onUploadError', arguments);
@@ -209,21 +215,30 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
     },
     onTapBtnBrowse:function(btn) {
         const me = this;
-        if (!window.plupload || !me.uploader) {
+        if (!window.plupload || !me.uploader||!me.$image) {
             ComUtils.toastShort(AttachHelper.waitUploadMsg);
             return;
         }
     },
     onShow:function(sender, e){
         // debugger
-        // const me = this,
-        // imgcon = me.lookup('img-container');
+        const me = this,
+            uploader = me.uploader;
+        if(uploader&&uploader.files.length<=0){
+            let imgcon = me.lookup('img-container'),
+                imagetab = imgcon.innerHtmlElement.down('.img-container > img'),
+                file = me.dataURLtoFile(me.getBase64DataUrl(imagetab.dom));
+            if(file){
+                //file.isscreen = true;
+                me.uploader.addFile(file)
+            }
+        }
     },
     onChangePixel:function(btn){
         const me = this, $image = me.$image;
         $image&&$image.cropper('setAspectRatio', btn&&Ext.Number.parseFloat(btn.getValue()));
     },
-    onCancle:function(btn){
+    onTapCancle:function(btn){
         this.getView().close();
     },
     onTapSave:function(btn){
@@ -238,7 +253,6 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             uploader = me.uploader,
             $image = me.$image;
         if (uploader&&$image&&uploader.files.length>0) {
-            debugger
             let pluploadFile = uploader.files[0],
                 canvas = $image.cropper('getCroppedCanvas'),
                 imgType = pluploadFile.type,
@@ -285,15 +299,26 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
         }
         return new File([u8arr], me.cropCanvasFileName(filename), {type:mime});
     },
-    cropCanvasFileName:function(filename) {
+    getBase64DataUrl(img,type) {
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, img.width, img.height);
+        const dataURL = canvas.toDataURL(type||'image/png');
+        return dataURL;
+    },
+    cropCanvasFileName:function(filename,type) {
+        if(!Ext.isString(type)&&!ComUtils.regex.picture.test(type))type='image/png';
+        var types = type.split('/'),ext = '.'+types[1];
         if(filename&&Ext.isString(filename)){
-            let extendsion = filename.substring(filename.lastIndexOf('.')),
-                name = filename.substring(0,filename.lastIndexOf('.')),
+            let name = filename.substring(0,filename.lastIndexOf('.')),
                 user = this.getViewModel().get('user'),
                 userID = user&&user.get('CustomID');
-            filename  = name+userID+extendsion;
+                ext = filename.substring(filename.lastIndexOf('.'))||ext;
+            filename  = name+userID+ext;
         }else{
-            filename  = userID+'.png';
+            filename  = new Date().getTime()+ext;
         }
         return filename;
     },

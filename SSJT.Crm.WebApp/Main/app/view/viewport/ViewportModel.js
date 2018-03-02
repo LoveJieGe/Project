@@ -13,7 +13,7 @@ Ext.define('SSJT.view.viewport.ViewportModel', {
             },
             get (data) {
                 if(!data.u) return '';
-                return `${AvatarHelper.getAvatarUrl(data.u.get('UserID'))}&_dc=${data.u.get('AvatarHash')}`;
+                return `${AvatarHelper.getAvatarUrl(data.u.get('UserID'))}&_dc=${new Date().getTime()}`;
             }
         }
     }

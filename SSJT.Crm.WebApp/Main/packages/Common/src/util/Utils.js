@@ -12,7 +12,8 @@ Ext.define('Common.util.Utils',{
      * 常用正则
      */
     regex: {
-        url: /^(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-/]))?$/i
+        url: /^(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-/]))?$/i,
+        picture:/^image\/(?:png|jpg|jpeg|gif|bmp)$/i
     },
 
     /**

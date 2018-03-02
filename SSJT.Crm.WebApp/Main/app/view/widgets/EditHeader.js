@@ -70,7 +70,7 @@ Ext.define('SSJT.view.widgets.EditHeader',{
             handler:'onTapSave'
         },{
             text : '取消',
-            handler:'onCancle',
+            handler:'onTapCancle',
         }]
     }],
     listeners:{

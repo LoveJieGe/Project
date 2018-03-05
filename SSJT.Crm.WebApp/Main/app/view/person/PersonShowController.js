@@ -19,10 +19,13 @@ Ext.define('SSJT.view.person.PersonShowController', {
         this.callParent(arguments);
     },
     onRecordChange: function(view, record) {
+        debugger
         const me = this,
             vm = this.getViewModel();
-        if(record.isModel&&(record instanceof SSJT.model.Person))
+        if(record&&record.isModel&&(record instanceof SSJT.model.Person))
             vm.set('user',record);
+        else
+            vm.set('user',null);
         this.callParent(arguments);
     },
     showEditAvatar:function(e){

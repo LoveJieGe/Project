@@ -6,3 +6,8 @@
         width: 100%;
     }
 }
+.person-create{
+    .x-label-el::after{
+        color: red;
+    }
+}

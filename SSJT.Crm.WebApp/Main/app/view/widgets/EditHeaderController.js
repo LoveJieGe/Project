@@ -16,6 +16,7 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
         AttachHelper.ensureCropperlibs(() => {
             me.doInitCropper();
         });
+        this.callParent(arguments);
     },
     doInitUploader:function(btnBrowse) {
         const me = this,view = me.getView();
@@ -75,9 +76,6 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
                 },
                 Error(up, err) {
                     me.onUploadError.apply(me, arguments);
-                },
-                FileUploaded(uploader,file,responseObject){
-                    me.onFileUpload.apply(me,arguments);
                 }
             }
         });
@@ -121,14 +119,12 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
             }).cropper('reset', true).cropper('replace', blobURL);
         }
     },
-    onFileUpload(uploader,file,r){
-        console.log(r);
-    },
     onUploadComplete(up, files){
         debugger
         const me = this,
             viewModel = Ext.Viewport.getViewModel()
-            person = ComUtils.getCmp('personshowheader');
+            ps = ComUtils.getCmp('personshow'),
+            vm = ps.getViewModel();
         if(me.hasFailed()){
             ComUtils.toastShort('图片上传失败!');
             return;
@@ -140,7 +136,9 @@ Ext.define('SSJT.view.widgets.EditHeaderController',{
                 if(nativefile&&nativefile.isscreen&&URL){
                     blobURL = URL.createObjectURL(nativefile);
                     if(viewModel)
-                        viewModel.set('userAvatar',blobURL)
+                        viewModel.set('userAvatar',blobURL);
+                    if(vm)
+                        vm.set('userAvatar',blobURL);
                 }
         });
         //隐藏窗体

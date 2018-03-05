@@ -841,7 +841,18 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:2 */
 .person-details .block-section {
-    min-width: 25%;
+    min-width: 50%;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:5 */
+.person-details .label {
+    display: inline-block;
+    width: 60px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:9 */
+.person-details .value {
+    display: inline-block;
+    border-bottom: 1px dotted silver;
+    width: 220px;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:1 */
 .show-header {
@@ -1025,6 +1036,15 @@
     padding: 2px 4px;
     text-align: center;
 }
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Wizard.scss:1 */
+.wizard-screen {
+    align-items: center;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/Wizard.scss:4 */
+.wizard-screen > .x-body-el {
+    max-width: 768px;
+    width: 100%;
+}
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/EditHeader.scss:6 */
 .edit-avatar .top-bar {
     padding-left: 15px;
@@ -1079,12 +1099,12 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:17 */
 @-webkit-keyframes rotate-animation {
-    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:10 */
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
@@ -1092,38 +1112,38 @@
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/packages/core/sass/etc/mixins/animation.scss:20 */
 @keyframes rotate-animation {
-    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:8 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:9 */
+    /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:10 */
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:12 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:13 */
 html,
 body {
     height: 100%;
     margin: 0;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:16 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:17 */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:20 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:21 */
 ::-webkit-scrollbar-button {
     width: 0px;
     height: 0px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:24 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:25 */
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:27 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:28 */
 body.launching {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1133,7 +1153,7 @@ body.launching {
     background-image: url(../resources/images/auth-background.jpg);
     background-position: center;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:33 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:34 */
 body.launching::before {
     -webkit-animation: rotate-animation 1s linear infinite;
     animation: rotate-animation 1s linear infinite;
@@ -1154,7 +1174,7 @@ body.launching::before {
     width: 41px;
     height: 41px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:52 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:53 */
 .page-constrained > .x-body-el,
 .page-constrained > .x-innerhtml,
 .page-constrained > .x-dock-horizontal {
@@ -1162,60 +1182,60 @@ body.launching::before {
     margin: 0 auto;
     width: 100%;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:61 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:62 */
 .blocks {
     padding: 8px 0 0 8px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:65 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:66 */
 .blocks .x-panel-block {
     margin: 0 8px 8px 0;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:70 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:71 */
 .tablet-profile .blocks > .x-body-el {
     display: flex;
     flex-direction: row;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:74 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:75 */
 .tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(1) {
     flex: 2;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:78 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:79 */
 .tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(2) {
     flex: 1;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:81 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:82 */
 @media screen and (max-width: 800px) {
     .tablet-profile .blocks > .x-body-el > .blocks-column:nth-child(2) {
         flex: 2;
     }
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:86 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:87 */
 @media screen and (max-width: 600px) {
     .tablet-profile .blocks > .x-body-el {
         flex-direction: column;
     }
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:93 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:94 */
 .block-section {
     display: inline-block;
     vertical-align: top;
     line-height: 1.4;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:98 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:99 */
 .block-section .item {
     padding: 0 16px 16px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:101 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:102 */
 .block-section .item .label {
     color: #2a7dc6;
     font-size: 14px;
     text-transform: uppercase;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:107 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:108 */
 .block-section .item .value {
     font-weight: 500;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:112 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:113 */
 .avatar {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -1230,17 +1250,17 @@ body.launching::before {
     background-repeat: no-repeat;
     background-position: center;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:120 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:121 */
 .avatar {
     height: 38px;
     width: 38px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:124 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:125 */
 .avatar.large {
     height: 48px;
     width: 48px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:132 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:133 */
 scrollbar {
     -moz-appearance: none !important;
     background-color: transparent !important;
@@ -1252,7 +1272,7 @@ scrollbar {
     overflow: hidden !important;
     z-index: 999999999 !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:142 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:143 */
 scrollbar thumb {
     /* 滚动条按钮基本样式 */
     /* 滚动条按钮基本样式 */
@@ -1263,7 +1283,7 @@ scrollbar thumb {
     /* 滚动条按钮边框 */
     border-color: rgba(0, 100, 255, 0.1) !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:151 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:152 */
 scrollbar:hover thumb,
 scrollbar thumb:hover,
 scrollbar thumb:active {
@@ -1272,33 +1292,33 @@ scrollbar thumb:active {
     background-color: rgba(0, 100, 255, 0.75) !important;
     border: 0px !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:160 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:161 */
 scrollbar[orient="vertical"] {
     margin-left: -5px !important;
     min-width: 5px !important;
     max-width: 5px !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:166 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:167 */
 scrollbar thumb[orient="vertical"] {
     border-style: none none none solid !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:172 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:173 */
 scrollbar[orient="horizontal"] {
     margin-top: -5px !important;
     min-height: 5px !important;
     max-height: 5px !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:177 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:178 */
 scrollbar thumb[orient="horizontal"] {
     border-style: solid none none none !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:182 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:183 */
 scrollbar scrollcorner {
     /* 去除垂直与水平滚动条相交汇的角落 */
     /* 去除垂直与水平滚动条相交汇的角落 */
     display: none !important;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:187 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/Application.scss:188 */
 scrollbar scrollbarbutton {
     /* 滚动条两端按钮不显示 */
     /* 滚动条两端按钮不显示 */

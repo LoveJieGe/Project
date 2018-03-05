@@ -16,6 +16,9 @@ Ext.define('SSJT.model.Person', {
         'Education',
         'Levels',
         'Professional',
+        'Dname',
+        'ZhiWu',
+        'Post',
         {
             name:'CustomID',
             calculate:function(data){
@@ -32,7 +35,6 @@ Ext.define('SSJT.model.Person', {
         {
             name:'AvatarUrl',
             calculate:function(data){
-                debugger
                 return AvatarHelper.getAvatarUrl(data.UserID);
             }
         }

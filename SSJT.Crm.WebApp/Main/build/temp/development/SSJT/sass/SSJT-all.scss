@@ -800,6 +800,8 @@ $include-ssjt-view-person-personshowdetails: dynamic(true);;
 $include-ssjt-view-person-personshowheader: dynamic(true);;
 $include-ssjt-view-person-personshowmodel: dynamic(true);;
 $include-ssjt-view-person-showtools: dynamic(true);;
+$include-ssjt-view-person-wizard: dynamic(true);;
+$include-ssjt-view-person-wizardcontroller: dynamic(true);;
 $include-ssjt-view-viewport-viewportcontroller: dynamic(true);;
 $include-ssjt-view-viewport-viewportmodel: dynamic(true);;
 $include-ssjt-view-widgets-editheader: dynamic(true);;
@@ -808,7 +810,8 @@ $include-ssjt-view-widgets-show: dynamic(true);;
 $include-ssjt-view-widgets-showcontroller: dynamic(true);;
 $include-ssjt-view-widgets-showheader: dynamic(true);;
 $include-ssjt-view-widgets-sidebar: dynamic(true);;
-$include-ssjt-view-widgets-widgetcontroller: dynamic(true);;
+$include-ssjt-view-widgets-wizard: dynamic(true);;
+$include-ssjt-view-widgets-wizardcontroller: dynamic(true);;
 $include-user: dynamic(true);;
 $include-viewcache: dynamic(true);;
 $include-crm-container: dynamic(true);;
@@ -1377,6 +1380,14 @@ $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/person/ShowTools';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\widgets\Wizard.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/widgets/Wizard';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\widgets\EditHeader.js */
 $default-resource-root: '' !default;

@@ -4,6 +4,7 @@
  */
 $enable-font-awesome: dynamic(true);
 $avatar-border-radius: dynamic(50%);
+$form-max-width: dynamic(768px);
 @include keyframes(rotate-animation) {
     0% { @include rotate(0); }
     100% { @include rotate(360); }

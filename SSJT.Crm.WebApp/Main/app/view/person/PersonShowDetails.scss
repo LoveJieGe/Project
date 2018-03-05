@@ -1,5 +1,14 @@
 .person-details {
     .block-section {
-        min-width: 25%;
+        min-width: 50%;
+    }
+    .label{
+        display: inline-block;
+        width: 60px;
+    }
+    .value{
+        display: inline-block;
+        border-bottom: 1px dotted #c0c0c0;
+        width: 220px;
     }
 }

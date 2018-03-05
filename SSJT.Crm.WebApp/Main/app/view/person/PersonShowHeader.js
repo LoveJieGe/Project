@@ -43,7 +43,7 @@ Ext.define('SSJT.view.person.PersonShowHeader', {
                     'avatar'
                 ],
                 bind:{
-                    src:'{record.AvatarUrl}'
+                    src:'{userAvatar}'
                 }
             },{
                 xtype: 'button',

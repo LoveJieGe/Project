@@ -26,7 +26,7 @@ namespace SSJT.Crm.WebApp.Doc
                 else
                 {
                     context.Response.ContentType = "image/png";
-                    userID = Helper.FromHex(userID);
+                    userID = Crm.Common.Helper.FromHex(userID);
                     HrEmploy item = ContextFactory.HrEmployService.LoadEntity(U => U.UserID == userID);
                     string avatarPath = string.Empty;
                     if (item != null)

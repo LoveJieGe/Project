@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SSJT.Crm.Model
 {
-    public class BaseModel
+    public class BaseModel: INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public DataTable ToAjaxResult()
         {
             Type type = this.GetType();
@@ -28,6 +32,31 @@ namespace SSJT.Crm.Model
             table.Rows.Add(row);
             return table;
         }
+        public object this[string name]
+        {
+            get
+            {
+                object propertyValue = this.GetPropertyValue(name);
+                return propertyValue;
+            }
+            set
+            {
+                object propertyValue = this.GetPropertyValue(name);
+                this.SetProperty(ref propertyValue, value);
+            }
+        }
+        protected void SetProperty<T>(ref T prop, T value, [CallerMemberName] string propertyName = "")
+        {
+            if (!EqualityComparer<T>.Default.Equals(prop, value))
+            {
+                prop = value;
+                OnPropertyChanged(propertyName);
+            }
+        }
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         protected static DataColumn StoreDataColumn(string propName, Type propType)
         {
             if (propType == typeof(int?))
@@ -41,6 +70,19 @@ namespace SSJT.Crm.Model
         protected  object GetSqlParam(object paramValue)
         {
             return paramValue != null ? paramValue : (object)DBNull.Value;
+        }
+
+        private object GetPropertyValue(string name)
+        {
+            if (!string.IsNullOrEmpty(name))
+            {
+                PropertyInfo property = this.GetType().GetProperty(name);
+                if (property != null)
+                {
+                    return property.GetValue(this, null);
+                }
+            }
+            return null;
         }
     }
 }

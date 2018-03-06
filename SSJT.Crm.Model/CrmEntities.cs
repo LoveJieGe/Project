@@ -7,7 +7,7 @@ namespace SSJT.Crm.Model
     {
         public CrmEntities() : base("name=CrmEntity")
         {
-            //Database.SetInitializer<CrmEntities>(null);
+            Database.SetInitializer<CrmEntities>(null);
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

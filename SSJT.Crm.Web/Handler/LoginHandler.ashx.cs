@@ -22,7 +22,7 @@ namespace SSJT.Crm.Web.Data
             string action = context.Request["Action"];
             if (string.IsNullOrEmpty(action))
                 return;
-            if (Helper.Equals("login", action))
+            if (Crm.Common.Helper.Equals("login", action))
             {
                 LoginHandle(context);
             }
@@ -36,7 +36,7 @@ namespace SSJT.Crm.Web.Data
             HttpRequest request = context.Request;
             string validateCodeString = context.Session["VCode"].ToString();
             string valudateInput = PageHelper.ValidateInputText(request["validateCode"]);
-            if (!Helper.Equals(valudateInput, validateCodeString))
+            if (!Crm.Common.Helper.Equals(valudateInput, validateCodeString))
             {
                 context.Response.Write("no:验证码输入有误!");
                 return;

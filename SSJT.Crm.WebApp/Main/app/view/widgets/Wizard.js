@@ -14,7 +14,7 @@ Ext.define('SSJT.view.widgets.Wizard', {
             xtype: 'toolbar',
             weighted: true,
             ui: 'tools',
-
+            shadow:true,
             defaults: {
                 ui: 'flat'
             },
@@ -48,6 +48,12 @@ Ext.define('SSJT.view.widgets.Wizard', {
                         handler: 'onSubmitTap',
                         iconCls: 'x-fa fa-save',
                         weight: 10
+                    },
+                    cancel: {
+                        xtype:'button',
+                        handler: 'onCancelTap',
+                        weight: 10,
+                        iconCls: 'x-fa fa-reply'
                     }
                 }
             },
@@ -147,14 +153,6 @@ Ext.define('SSJT.view.widgets.Wizard', {
         me.add(me.getToolbar());
         me.lookup('tabs').add(me.getScreens());
     },
-
-    // reset: function() {
-    //     var me = this;
-    //     me.callParent();
-    //     me.fireEvent('reset');
-    //     return me;
-    // },
-
     // [WORKAROUND] Ext.form.Panel override the setRecord and updateRecord methods in a way
     // that we can't use updateRecord to be notified when the record actually changes.
     setRecord: function(record) {

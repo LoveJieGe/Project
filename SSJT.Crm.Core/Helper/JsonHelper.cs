@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
+using SSJT.Crm.Core.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,23 @@ namespace SSJT.Crm.Core
             if (fields.Length > 0)
                 setting.ContractResolver = new ExcludePropertiesContractResolver(fields);
             return JsonConvert.SerializeObject(obj, Formatting.None, setting);
+        }
+        public static object JTokenToObejct(JToken token, Type type)
+        {
+            bool flag = IsJTokenNull(token);
+            if ((flag && type.IsValueType) && (Nullable.GetUnderlyingType(type) == null))
+            {
+                throw AjaxException.ToException("Null 无法转换为非空类型 " + type);
+            }
+            if (flag)
+            {
+                return null;
+            }
+            return typeof(JToken).GetMethod("ToObject", new Type[0]).MakeGenericMethod(new Type[] { type }).Invoke(token, null);
+        }
+        public static bool IsJTokenNull(JToken token)
+        {
+            return ((token == null) || (token.Type == JTokenType.Null));
         }
     }
     public enum DateTimeMode

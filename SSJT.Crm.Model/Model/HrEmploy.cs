@@ -57,14 +57,14 @@ namespace SSJT.Crm.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public int? Did
-		{
+		public int? DepId
+        {
             set; get;
 		}
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Dname
+		public string DepName
 		{
             set; get;
 		}
@@ -94,7 +94,7 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
-        public string Sex
+        public string Gender
 		{
             set; get;
 		}
@@ -224,6 +224,19 @@ namespace SSJT.Crm.Model
 	    {
             get;set;
 	    }
+        /// <summary>
+        /// 手机号码
+        /// </summary>
+        [AjaxProperty]
+        public string Mobile
+        {
+            get;set;
+        }
+        [AjaxProperty]
+        public string IsRoot
+        {
+            get;set;
+        }
 	}
 }
 

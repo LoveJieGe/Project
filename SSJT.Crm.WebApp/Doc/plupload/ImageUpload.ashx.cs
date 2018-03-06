@@ -29,7 +29,7 @@ namespace SSJT.Crm.WebApp.Doc
             try
             {
                 if (!pfile.IsScreenFile || pfile.ScreenFileName.Contains("_source")) return;
-                string userId = Helper.FromHex(pfile.Context.Request["UserID"]);
+                string userId = Crm.Common.Helper.FromHex(pfile.Context.Request["UserID"]);
                 HrEmploy user = ContextFactory.HrEmployService.LoadEntity(u => u.UserID == userId);
                 if (user != null)
                 {

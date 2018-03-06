@@ -1,6 +1,9 @@
-﻿using SSJT.Crm.Core.Exceptions;
+﻿using Newtonsoft.Json.Linq;
+using SSJT.Crm.Core.Exceptions;
+using SSJT.Crm.Model;
 using System;
 using System.Collections;
+using System.Reflection;
 
 namespace SSJT.Crm.Core
 {
@@ -83,6 +86,35 @@ namespace SSJT.Crm.Core
         {
             Type type = Type.GetType(declaringType);
             return GetInstance(type);
+        }
+
+        public static bool SetFieldValue(BaseModel model, string field, JToken value)
+        {
+            object newValue = null;
+            object oldValue = null;
+            bool flag = false;
+            if (model != null)
+            {
+                Type type = model.GetType();
+                PropertyInfo prop = null;
+                PropertyInfo prop2 = type.GetProperty(field, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+                if (prop2 != null && prop2.CanWrite)
+                {
+                    prop = prop2;
+                    newValue = JsonHelper.JTokenToObejct(value, prop.PropertyType);
+                    oldValue = prop.GetValue(model, null);
+                    prop.SetValue(model, newValue, null);
+                    flag = true;
+                }
+                else
+                {
+                    newValue = value.ToObject<string>();
+                    oldValue = model[field];
+                    model[field] = newValue;
+                    flag = true;
+                }
+            }
+            return flag;
         }
     }
 }

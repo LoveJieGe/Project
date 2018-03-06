@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SSJT.Crm.Core;
 using System.ComponentModel;
+using System.Data;
+using Newtonsoft.Json.Linq;
 
 namespace SSJT.Crm.IBLL
 {
@@ -23,5 +25,14 @@ namespace SSJT.Crm.IBLL
         [AjaxMethod]
         [Description("获取用户的信息")]
         StoreResult QueryPerson(string userID);
+        /// <summary>
+        /// 更新用户的信息
+        /// </summary>
+        /// <param name="values">用户信息的值</param>
+        /// <param name="fieldNames">用户信息的字段名称</param>
+        /// <returns></returns>
+        [AjaxMethod]
+        [Description("更新用户的信息")]
+        DataTable UpdateEmployee(string userID,JObject values, string[] fieldNames);
     }
 }

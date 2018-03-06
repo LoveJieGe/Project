@@ -1,9 +1,12 @@
-﻿using SSJT.Crm.Core.Store;
+﻿using Newtonsoft.Json.Linq;
+using SSJT.Crm.Core;
+using SSJT.Crm.Core.Store;
 using SSJT.Crm.DBUtility;
 using SSJT.Crm.IDAL;
 using SSJT.Crm.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -13,9 +16,22 @@ namespace SSJT.Crm.DAL
 {
     public class StoreProcessDal: IStoreProcessDal
     {
+        private IHrEmployeeDal _employeeDal;
+        public IHrEmployeeDal EmployeeDal
+        {
+            get {
+                if (this._employeeDal == null)
+                    this._employeeDal = new HrEmployeeDal();
+                return this._employeeDal;
+            }
+        }
+        public DbContext Context
+        {
+            get { return DbSessionFactory.GetDbSession().DbContext; }
+        }
         public StoreResult QueryPersons(StoreParams storeParams)
         {
-            HrEmploy item = new HrEmployeeDal().LoadEntity(H => H.UserID == storeParams.query);
+            HrEmploy item = EmployeeDal.LoadEntity(H => H.UserID == storeParams.query);
             if (item!=null)
             {
                 StoreResult result = new StoreResult();
@@ -27,13 +43,34 @@ namespace SSJT.Crm.DAL
         }
         public StoreResult QueryPerson(string userID)
         {
-            HrEmploy item = new HrEmployeeDal().LoadEntity(H => H.UserID == userID);
+            HrEmploy item = EmployeeDal.LoadEntity(H => H.UserID == userID);
             if(item!=null)
             {
                 StoreResult result = new StoreResult();
                 result.root = item.ToAjaxResult();
                 result.total = 1;
                 return result;
+            }
+            return null;
+        }
+
+        public DataTable UpdateEmployee(string userID,JObject values, string[] fieldNames)
+        {
+            HrEmploy info = EmployeeDal.LoadEntity(H => H.UserID == userID);
+            if (info != null)
+            {
+                foreach (JProperty jProp in values.Properties())
+                {
+                    string name = jProp.Name;
+                    JToken value = jProp.Value;
+                    if (name == "UserID")
+                        continue;
+                    if(!JsonHelper.IsJTokenNull(value))
+                        HelperManager.SetFieldValue(info, name, value);
+                }
+                EmployeeDal.Update(info);
+                Context.SaveChanges();
+                return info.ToAjaxResult();
             }
             return null;
         }

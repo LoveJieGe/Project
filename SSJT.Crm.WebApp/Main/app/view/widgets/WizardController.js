@@ -4,6 +4,9 @@ Ext.define('SSJT.view.widgets.WizardController',{
     requires:[
         'Ext.History'
     ],
+    statics:{
+        fieldNames:null
+    },
     onScreenAdd: function(tab,items) {
         this.resync();
     },
@@ -65,9 +68,47 @@ Ext.define('SSJT.view.widgets.WizardController',{
     },
     onSubmitTap:function(){
         const me = this,
-            form = me.getView();
+            form = me.getView(),
+            values = form.getValues();
         if(!form.validate())
             return;
-        
+        debugger
+        if(values.Levels){
+            values.Levels = me.getEducationText(values.Levels);
+        }
+        form.ajax('ajaxRequest/IStoreServer/UpdateEmployee',{
+            data:{
+                userID:'Admin',
+                values:values,
+                fieldnames:me.getFieldNames()
+            },
+            success(data){
+                debugger
+                console.log(data)
+            },
+            failure(data){
+                debugger
+            },
+            maskTarget:form
+        })
+    },
+    getEducationText(value){
+        if(!Ext.isEmpty(value)&&Ext.isString(value)){
+            const me = this,
+                levels = me.lookup('levels'),
+                sel = levels.getSelection();
+            return sel&&sel.get('text');
+        }
+        return null;
+    },
+    getFieldNames:function(){
+        const me = this,
+            self = me.self;
+        if(!self.fieldNames){
+            const form = me.getView(),
+                fields = form.query('field[name]');
+            self.fieldNames = fields.map(v=>v.getName());
+        }
+        return self.fieldNames;
     }
 });

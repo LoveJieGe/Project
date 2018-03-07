@@ -34,6 +34,13 @@ Ext.define('SSJT.view.person.Wizard', {
         defaults:{
             labelTextAlign:'right'
         },
+        platformConfig:{
+            phone:{
+                defaults:{
+                    labelWidth:'85px'
+                }
+            }
+        },
         items: [{
             xtype: 'textfield',
             reference: 'username',
@@ -74,6 +81,13 @@ Ext.define('SSJT.view.person.Wizard', {
         defaults:{
             labelTextAlign:'right'
         },
+        platformConfig:{
+            phone:{
+                defaults:{
+                    labelWidth:'85px'
+                }
+            }
+        },
         items: [{
             xtype: 'datepickerfield',
             reference: 'birthday',
@@ -87,6 +101,7 @@ Ext.define('SSJT.view.person.Wizard', {
             validateDisabled:true,
             name:'Email',
             label: '邮箱',
+            validators:/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/,
             required: true,
             bind: '{record.Email}'
         }, {
@@ -95,11 +110,13 @@ Ext.define('SSJT.view.person.Wizard', {
             name:'Mobile',
             label: '手机',
             required: true,
+            validators:/^[1][3,4,5,6,7,8][0-9]{9}$/,
             bind: '{record.Mobile}'
         },{
             xtype: 'textfield',
             name:'Tel',
             reference: 'phone',
+            validators:/^(([0\+]\d{2,3}-)?(0\d{2,3})-?)(\d{7,8})(-(\d{3,}))?$/,
             label: '电话',
             bind: '{record.Tel}'
         }, {
@@ -115,6 +132,13 @@ Ext.define('SSJT.view.person.Wizard', {
         iconCls: 'x-fa fa-sitemap',
         defaults:{
             labelTextAlign:'right'
+        },
+        platformConfig:{
+            phone:{
+                defaults:{
+                    labelWidth:'85px'
+                }
+            }
         },
         items: [{
             xtype: 'textfield',

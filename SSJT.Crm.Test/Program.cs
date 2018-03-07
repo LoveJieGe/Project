@@ -26,17 +26,17 @@ namespace SSJT.Crm.Test
 
         static void Main(string[] args)
         {
-            //string key = "Admin";324测试
+            string key = "Admin"; //324测试
 
-            //string source = "123456";
+            string source = "123456";
 
-            //Console.WriteLine("Source  string: " + source);
+            Console.WriteLine("Source  string: " + source);
 
-            //string encryptStr = EncryptDES(source, key);
-            //Console.WriteLine("Encrypt string: " + encryptStr);
+            string encryptStr = EncryptDES(source, key);
+            Console.WriteLine("Encrypt string: " + encryptStr);
 
-            //string decryptStr = DecryptDES(encryptStr, key);
-            //Console.WriteLine("Decrypt string: " + decryptStr);
+            string decryptStr = DecryptDES(encryptStr, key);
+            Console.WriteLine("Decrypt string: " + decryptStr);
             //IApplicationContext ctx = ContextRegistry.GetContext();
             //DbFactory t = ctx.GetObject("DbFactory") as DbFactory;
             //string message = t.Msg;
@@ -73,17 +73,17 @@ namespace SSJT.Crm.Test
             //Console.Write("22");
             //测试EF更新功能
             //Crm.Model.CrmEntities context = new Model.CrmEntities();
-            var context
-                = new XmlApplicationContext(Directory.GetCurrentDirectory() + @"\services.xml");
-            var test = context.GetObject("ContextFactory") as ContextFactory;
-            IHrEmployeeService service = ContextFactory.HrEmployService;
-            string message = test.Message;
-            HrEmploy user = service.LoadEntity(u => u.UserID == "Admin");
-            if (user != null)
-            {
-                user.AvatarName = "测试s3";
-                service.Update(user);
-            }
+            //var context
+            //    = new XmlApplicationContext(Directory.GetCurrentDirectory() + @"\services.xml");
+            //var test = context.GetObject("ContextFactory") as ContextFactory;
+            //IHrEmployeeService service = ContextFactory.HrEmployService;
+            //string message = test.Message;
+            //HrEmploy user = service.LoadEntity(u => u.UserID == "Admin");
+            //if (user != null)
+            //{
+            //    user.AvatarName = "测试s3";
+            //    service.Update(user);
+            //}
             Console.ReadKey();
         }
         public static object GetInstance(string fullClassName)

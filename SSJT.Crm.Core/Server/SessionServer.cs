@@ -134,5 +134,13 @@ namespace SSJT.Crm.Core.Server
             catch (Exception e){ }
             return session;
         }
+        public HrEmploy CurrentUser
+        {
+            get {
+
+                SessionMode mode = this.GetSessionMode(this.GetCurrentSessionID());
+                return mode.HrEmployee;
+            }
+        }
     }
 }

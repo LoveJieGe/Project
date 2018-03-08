@@ -49,7 +49,7 @@ namespace SSJT.Crm.IDAL
 	{
 
 	}
-    public partial interface IHrEmployeeDal:IBaseDal<Model.HrEmploy>
+    public partial interface IHrEmployDal:IBaseDal<Model.HrEmploy>
 	{
 
 	}
@@ -77,7 +77,7 @@ namespace SSJT.Crm.IDAL
 	{
 
 	}
-    public partial interface IPersonalNotesDal:IBaseDal<Model.PersonalNotes>
+    public partial interface IPersonalNoteDal:IBaseDal<Model.PersonalNote>
 	{
 
 	}

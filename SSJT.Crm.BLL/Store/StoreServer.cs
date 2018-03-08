@@ -41,5 +41,10 @@ namespace SSJT.Crm.BLL
         {
             return this.StoreDal.UpdateEmployee(userID, values, fieldNames);
         }
+
+        public StoreResult QueryPersonNotes(StoreParams storeParams)
+        {
+            return this.StoreDal.QueryPersonNotes(storeParams);
+        }
     }
 }

@@ -10,10 +10,10 @@
 <!--网站端相关配置-->
   <object name="ContextFactory" type="SSJT.Crm.WebApp.ContextFactory,SSJT.Crm.WebApp" init-method="Init">
     <property name="_ajaxProcess" ref="AjaxProcess"/>
-    <property name="_hrEmployeeService" ref="HrEmployeeService"/>
+    <property name="_hrEmployService" ref="HrEmployService"/>
   </object>
   <object name="AjaxProcess" type="SSJT.Crm.Core.Server.AjaxProcess, SSJT.Crm.Core">
   </object>
-  <object name="HrEmployeeService" type="SSJT.Crm.BLL.HrEmployeeService, SSJT.Crm.BLL">
+  <object name="HrEmployService" type="SSJT.Crm.BLL.HrEmployService, SSJT.Crm.BLL">
   </object>
 </objects>

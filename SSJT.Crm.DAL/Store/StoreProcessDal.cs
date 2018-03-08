@@ -74,5 +74,23 @@ namespace SSJT.Crm.DAL
             }
             return null;
         }
+
+        public StoreResult QueryPersonNotes(StoreParams storeParams)
+        {
+            IPersonalNoteDal noteDal = new PersonalNoteDal();
+            Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
+            HrEmploy model = sessionServer.CurrentUser;
+            IEnumerable<PersonalNote> notes = noteDal.LoadPageEntities(storeParams.page, storeParams.limit, out int total, false, p => p.CreateDate, p => p.CreatorId == model.UserID);
+            if (notes.Count() > 0)
+            {
+                StoreResult result = new StoreResult()
+                {
+                    root = notes.ToList(),
+                    total = total
+                };
+                return result;
+            }
+            return null;
+        }
     }
 }

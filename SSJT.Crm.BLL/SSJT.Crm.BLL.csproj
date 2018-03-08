@@ -52,7 +52,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service\HrEmployeeService.cs" />
+    <Compile Include="Service\HrEmployService.cs" />
     <Compile Include="Store\StoreServer.cs" />
     <Compile Include="Utils\BusinessFactory.cs" />
   </ItemGroup>

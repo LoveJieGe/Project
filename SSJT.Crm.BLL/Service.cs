@@ -51,7 +51,7 @@ namespace SSJT.Crm.BLL
 	{
 
 	}
-    public partial class HrEmployeeService:BaseService<Model.HrEmploy,DAL.HrEmployeeDal>,IHrEmployeeService
+    public partial class HrEmployService:BaseService<Model.HrEmploy,DAL.HrEmployeeDal>,IHrEmployService
 	{
 
 	}
@@ -79,7 +79,7 @@ namespace SSJT.Crm.BLL
 	{
 
 	}
-    public partial class PersonalNotesService:BaseService<Model.PersonalNotes,DAL.PersonalNotesDal>,IPersonalNotesService
+    public partial class PersonalNoteService:BaseService<Model.PersonalNote,DAL.PersonalNoteDal>,IPersonalNoteService
 	{
 
 	}

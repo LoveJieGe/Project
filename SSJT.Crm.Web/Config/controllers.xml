@@ -2,7 +2,7 @@
 <objects xmlns="http://www.springframework.net">
 
   <object  name="/Data/LoginHandler.ashx"  >
-    <property name="HrEmployeeService" ref="HrEmployeeService" />
+    <property name="HrEmployService" ref="HrEmployService" />
   </object>
   <!--intentionally do NOT register the AccountController or the ValuesController with the container; demonstrates that the underlying
   default controller factory will properly (attempt to!) resolve all controllers not registered with Spring.NET

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SSJT.Crm.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace SSJT.Crm.Core.Server
         SessionMode GetSessionMode(string sessionID);
         string GetCurrentSessionID();
         int Timeout { get; }
+        HrEmploy CurrentUser { get; }
     }
 }

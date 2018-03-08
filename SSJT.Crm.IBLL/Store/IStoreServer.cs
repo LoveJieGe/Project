@@ -34,5 +34,13 @@ namespace SSJT.Crm.IBLL
         [AjaxMethod]
         [Description("更新用户的信息")]
         DataTable UpdateEmployee(string userID,JObject values, string[] fieldNames);
+        /// <summary>
+        /// 获取便签
+        /// </summary>
+        /// <param name="storeParams"></param>
+        /// <returns></returns>
+        [AjaxMethod]
+        [Description("获取用户便签")]
+        StoreResult QueryPersonNotes(StoreParams storeParams);
     }
 }

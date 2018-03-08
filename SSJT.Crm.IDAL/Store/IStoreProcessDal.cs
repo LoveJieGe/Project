@@ -20,5 +20,11 @@ namespace SSJT.Crm.IDAL
         /// <param name="fieldNames">用户信息字段名称</param>
         /// <returns></returns>
         DataTable UpdateEmployee(string userID,JObject values, string[] fieldNames);
+        /// <summary>
+        /// 获取便签
+        /// </summary>
+        /// <param name="storeParams"></param>
+        /// <returns></returns>
+        StoreResult QueryPersonNotes(StoreParams storeParams);
     }
 }

@@ -9,12 +9,12 @@ namespace SSJT.Crm.Test
 {
     public class ContextFactory
     {
-        private IHrEmployeeService _hrEmployeeService;
+        private IHrEmployService _hrEmployeeService;
         public string Message { get; set; }
         /// <summary>
         /// Ajax操作
         /// </summary>
-        public static IHrEmployeeService HrEmployService { get; private set; }
+        public static IHrEmployService HrEmployService { get; private set; }
         public void Init()
         {
             ContextFactory.HrEmployService = this._hrEmployeeService;

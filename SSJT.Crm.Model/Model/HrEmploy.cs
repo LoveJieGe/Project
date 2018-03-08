@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SSJT.Crm.Model
 {
 	/// <summary>
-	/// HrEmployee:实体类(属性说明自动提取数据库字段的描述信息)
+	/// HrEmploy:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
 	public partial class HrEmploy:BaseModel

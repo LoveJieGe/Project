@@ -1,0 +1,23 @@
+Ext.define('SSJT.view.widgets.Browse',{
+    extend:'Ext.Panel',
+    xtype:'browse',
+    config:{
+        store:null,
+        fields:{
+            search:{
+                property:'#search',
+                defaultValue:null
+            }
+        }
+    },
+    eventedConfig:{
+        store:null
+    },
+    controller:'',
+    viewModel:{
+        data:{
+            filters:null
+        }
+    },
+    layout:'fit',
+});

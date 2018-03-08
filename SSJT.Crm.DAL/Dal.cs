@@ -50,7 +50,7 @@ namespace SSJT.Crm.DAL
 	{
 
 	}
-    public partial class HrEmployeeDal:BaseDal<Model.HrEmploy>,IHrEmployeeDal
+    public partial class HrEmployDal:BaseDal<Model.HrEmploy>,IHrEmployDal
 	{
 
 	}
@@ -78,7 +78,7 @@ namespace SSJT.Crm.DAL
 	{
 
 	}
-    public partial class PersonalNotesDal:BaseDal<Model.PersonalNotes>,IPersonalNotesDal
+    public partial class PersonalNoteDal:BaseDal<Model.PersonalNote>,IPersonalNoteDal
 	{
 
 	}

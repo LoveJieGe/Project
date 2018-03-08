@@ -1,0 +1,59 @@
+Ext.define('SSJT.model.PersonNote',{
+    extend:'SSJT.model.Base',
+    fields:[
+        'NoteID',
+        'NoteContent',
+        'Priority',
+        'NoteColor',
+        {
+            name:'LocationX',
+            type:'int'
+        },
+        {
+            name:'LocationY',
+            type:'int'
+        },
+        {
+            name:'Width',
+            type:'int'
+        },
+        {
+            name:'Height',
+            type:'int'
+        },
+        {
+            name:'IsShow',
+            type:'boolean'
+        },
+        'CreatorId',
+        'CreatorName',
+        {
+            name:'CreateDate',
+            type:'date',
+            dateFormat:'Y-m-d H:i:s'
+        },
+        'UpdaterID',
+        'UpdaterName',
+        {
+            name:'UpdateDate',
+            type:'date',
+            dateFormat:'Y-m-d H:i:s'
+        },
+        {
+            name:'IsFinish',
+            type:'boolean'
+        },
+        {
+            name:'FinishDate',
+            type:'date',
+            dateFormat:'Y-m-d H:i:s'
+        },
+        {
+            name:'CustomID',
+            calculate:function(data){
+                return ComUtils.string2Hex(data.NoteID);
+            }
+        }
+    ]
+
+});

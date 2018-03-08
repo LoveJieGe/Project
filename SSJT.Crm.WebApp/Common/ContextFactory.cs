@@ -9,16 +9,16 @@ namespace SSJT.Crm.WebApp
     public class ContextFactory
     {
         private IAjaxProcess _ajaxProcess;
-        private IHrEmployeeService _hrEmployeeService;
+        private IHrEmployService _hrEmployService;
         /// <summary>
         /// Ajax操作
         /// </summary>
         public static IAjaxProcess AjaxProcess { get; private set; }
-        public static IHrEmployeeService HrEmployService { get; private set; }
+        public static IHrEmployService HrEmployService { get; private set; }
         public void Init()
         {
             ContextFactory.AjaxProcess = this._ajaxProcess;
-            ContextFactory.HrEmployService = this._hrEmployeeService;
+            ContextFactory.HrEmployService = this._hrEmployService;
         }
     }
 }

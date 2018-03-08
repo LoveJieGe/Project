@@ -6,10 +6,10 @@
     <!--<property name="Person" ref="Person"/>-->
   </object>
   <object name="ContextFactory" type="SSJT.Crm.Test.ContextFactory,SSJT.Crm.Test" init-method="Init">
-    <property name="_hrEmployeeService" ref="HrEmployeeService"/>
+    <property name="_hrEmployService" ref="HrEmployService"/>
     <property name="Message" value="zhangsan"/>
   </object>
-  <object name="HrEmployeeService" type="SSJT.Crm.BLL.HrEmployeeService, SSJT.Crm.BLL">
+  <object name="HrEmployService" type="SSJT.Crm.BLL.HrEmployService, SSJT.Crm.BLL">
   </object>
   <!--<object name="Person"        type="CZBK.ItcastOA.SpringNet.Person, CZBK.ItcastOA.SpringNet">
     <property name="Age" value="16"/>

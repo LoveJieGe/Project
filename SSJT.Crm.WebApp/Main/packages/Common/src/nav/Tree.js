@@ -63,7 +63,11 @@ Ext.define('Common.nav.Tree', {
             const selected = tree.getSelection();
             if (!selected || selected.parentNode !== node) { // 如果当前已选节点不是该父节点的子节点
                 //展开节点
-                node.expand(); 
+                if(node.isExpanded()){
+                    node.collapse();
+                }else{
+                    node.expand(); 
+                }
                 //tree.setSelection(node.childNodes[0]); // 选中第一个子节点
                 return false;
             }

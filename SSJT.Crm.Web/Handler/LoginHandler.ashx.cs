@@ -14,7 +14,7 @@ namespace SSJT.Crm.Web.Data
     /// </summary>
     public class LoginHandler : IHttpHandler, IRequiresSessionState
     {
-        public IHrEmployeeService HrEmployeeService { get; set; }
+        public IHrEmployService HrEmployService { get; set; }
         public void ProcessRequest(HttpContext context)
         {
             //context.Response.ContentType = "text/plain";
@@ -43,7 +43,7 @@ namespace SSJT.Crm.Web.Data
             }
             string userName = request["userID"];
             string pwd = request["passWord"];
-            HrEmploy entities = HrEmployeeService.LoadEntity(H => H.UserID == userName && H.PassWord == pwd);
+            HrEmploy entities = HrEmployService.LoadEntity(H => H.UserID == userName && H.PassWord == pwd);
             
         }
         public bool IsReusable

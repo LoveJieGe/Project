@@ -76,7 +76,7 @@ namespace SSJT.Crm.Test
             //var context
             //    = new XmlApplicationContext(Directory.GetCurrentDirectory() + @"\services.xml");
             //var test = context.GetObject("ContextFactory") as ContextFactory;
-            //IHrEmployeeService service = ContextFactory.HrEmployService;
+            //IHrEmployService service = ContextFactory.HrEmployService;
             //string message = test.Message;
             //HrEmploy user = service.LoadEntity(u => u.UserID == "Admin");
             //if (user != null)

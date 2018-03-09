@@ -5,15 +5,16 @@ Ext.define('SSJT.view.mine.work.Note',{
     //         property:'country'
     //     }
     // }
-    controller:'personalnote',
+    xtype:'mine_work_note',
+    controller:'mine_work_note',
     viewModel:{
-        type:'personalnote'
+        type:'mine_work_note'
     },
     bind:{
         store:'{notes}'
     },
     tbar: {
-        xtype: 'browsetoolbar'
+        xtype: 'notetoolbar'
     },
     items: [{
         xtype: 'grid',
@@ -28,10 +29,10 @@ Ext.define('SSJT.view.mine.work.Note',{
             disabled: true
         },
 
-        plugins: [{
-            type: 'listpaging',
-            autoPaging: true
-        }],
+        // plugins: [{
+        //     type: 'listpaging',
+        //     autoPaging: true
+        // }],
 
         columns: [{
             text: '编号',

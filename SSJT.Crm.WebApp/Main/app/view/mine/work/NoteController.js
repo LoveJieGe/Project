@@ -1,6 +1,6 @@
 Ext.define('SSJT.view.mine.work.NoteController', {
     extend: 'SSJT.view.widgets.BrowseController',
-    alias: 'controller.personalnote',
+    alias: 'controller.mine_work_note',
 
     control: {
         '#': {

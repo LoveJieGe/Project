@@ -1,5 +1,5 @@
 Ext.define('SSJT.view.widgets.BrowseController',{
-    extend:'Ext.app.Controller',
+    extend:'Ext.app.ViewController',
     alias:'controller.browse',
     control:{
         '#':{
@@ -11,18 +11,19 @@ Ext.define('SSJT.view.widgets.BrowseController',{
      * 以获得所配置的毫秒数。如果在此期间再次调用，将取消即将到来的调用，超时时间将再次开始。
      */
     initViewModel: function(vm) {
+        const me = this;
         vm.bind(
             { bindTo: '{filters}', deep: true },
             Ext.Function.createBuffered(function() {
-                if (!this.destroyed) {
-                    this.updateFilters()
+                if (!me.destroyed) {
+                    me.updateFilters()
                 }
-            }, 500, this, {}));
+            }, 500, me, {}));
     },
     onStoreChange(){
-        this.updateFields(true);
+        this.updateFilters(true);
     },
-    updateFields(reload){
+    updateFilters(reload){
         const me = this,
             view = me.getView(),
             store = view.getStore(),

@@ -7,7 +7,12 @@ Ext.define('SSJT.view.main.MainController', {
 
     alias: 'controller.maincontroller',
     init(){
-        this.setShowNavigation(this.getView().getShowNavigation());
+        debugger
+        const me = this,
+            mainmenu = me.lookup('mainmenu'),
+            store = mainmenu.getStore();
+            store.load();
+        me.setShowNavigation(this.getView().getShowNavigation());
     },
     config: {
         showNavigation: true
@@ -123,15 +128,18 @@ Ext.define('SSJT.view.main.MainController', {
      * @param {String} type
      */
     handleNavigationRoute(type,args) {
+        debugger
         console.log('路由',type);
         const me = this,
-            entry = me.lookup('mainmenu').getStore().getById(type);
+            dataId = (type||'')+(args||'');
+            node = me.lookup('mainmenu').getStore().getNodeById(dataId);
+        var mtype = node&&node.get('mtype')
         //选中导航条中的项
-        me.lookup('mainmenu').selectNodeSilent(type);
+        me.lookup('mainmenu').selectNodeSilent(dataId);
         
         me.activate(
-            me.ensureView(type, {
-                xtype: type
+            me.ensureView(mtype, {
+                xtype: mtype
             }, args));
             //vm = center.getViewModel(),
             //oldTaskType = vm.get('taskType');

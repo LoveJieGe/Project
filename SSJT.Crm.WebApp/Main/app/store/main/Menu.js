@@ -4,16 +4,18 @@ Ext.define('SSJT.store.main.Menu', {
     model:'SSJT.model.MainMenu',
     data:{
         items:[
-            {id:'home',text:'桌面',xtype:'home',icon:'x-fa fa-home',parentId:'root',leaf:true},
-        {id:'office',text:'个人办公',xtype:'office',icon:'x-fa fa-user',parentId:'root',leaf:false},
-        {id:'office/mine',text:'个人工作',xtype:'office/mine',icon:'',leaf:false,parentId:'office'},
-        {id:'office/mine/notes',text:'我的便签',xtype:'mine_work_note',icon:'',parentId:'office/mine',leaf:true},
-        {id:'office/mine/schedule',text:'日程安排',xtype:'',icon:'',parentId:'office/mine',leaf:true},
-        {id:'office/info',text:'信息中心',xtype:'office/info',leaf:false,icon:'',parentId:'office'},
-        {id:'office/info/news',text:'新闻',xtype:'office/info/news',icon:'',parentId:'office/info',leaf:true},
-        {id:'office/info/announcement',text:'公告',xtype:'office/info/announcement',icon:'',parentId:'office/info',leaf:true},
-        {id:'recycle',text:'回收站',xtype:'crm/recycle',icon:'x-fa fa-trash',parentId:'root',leaf:true}
+            {id:'home',text:'桌面',mtype:'home',iconCls:'x-fa fa-home',parentId:'root',leaf:true},
+        {id:'office',text:'个人办公',mtype:'office',iconCls:'x-fa fa-user',parentId:'root',leaf:false},
+        {id:'office/mine',text:'个人工作',mtype:'office/mine',iconCls:'',leaf:false,parentId:'office'},
+        {id:'office/mine_notes',text:'我的便签',mtype:'mine_work_note',iconCls:'',parentId:'office/mine',leaf:true},
+        {id:'office/mine_schedule',text:'日程安排',mtype:'',iconCls:'',parentId:'office/mine',leaf:true},
+        {id:'office/info',text:'信息中心',mtype:'office/info',leaf:false,iconCls:'',parentId:'office'},
+        {id:'office/info_news',text:'新闻',mtype:'office/info/news',iconCls:'',parentId:'office/info',leaf:true},
+        {id:'office/info_announcement',text:'公告',mtype:'office/info/announcement',iconCls:'',parentId:'office/info',leaf:true},
+        {id:'recycle',text:'回收站',mtype:'crm/recycle',iconCls:'x-fa fa-trash',parentId:'root',leaf:true}
     ]},
+    parentIdProperty: 'parentId',
+    //autoLoad: true,
     proxy: {
         type: 'memory',
         reader: {
@@ -51,7 +53,6 @@ Ext.define('SSJT.store.main.Menu', {
     },
     constructor(config) {
         config = config || {};
-        debugger
         // var me = this,data = me.rootData.items,root = {
         //     expanded: true,
         //     children:[]

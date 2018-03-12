@@ -797,6 +797,9 @@ $include-ssjt-view-main-maincontroller: dynamic(true);;
 $include-ssjt-view-main-mainmodel: dynamic(true);;
 $include-ssjt-view-main-menu: dynamic(true);;
 $include-ssjt-view-main-menucontroller: dynamic(true);;
+$include-ssjt-view-mine-work-note: dynamic(true);;
+$include-ssjt-view-mine-work-notecontroller: dynamic(true);;
+$include-ssjt-view-mine-work-notemodel: dynamic(true);;
 $include-ssjt-view-mine-work-notetoolbar: dynamic(true);;
 $include-ssjt-view-person-personshow: dynamic(true);;
 $include-ssjt-view-person-personshowcontroller: dynamic(true);;
@@ -1316,14 +1319,6 @@ $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../packages/Common/src/nav/Tree';
 
-/* including scss file adjacent to ..\..\..\..\..\app\view\home\Home.js */
-$default-resource-root: '' !default;
-$default-resource-path: 'images' !default;
-$current-package: false;
-$current-resource-root: $default-resource-root;
-$relative-image-path-for-uis: $default-resource-path;
-@import '../../../../../app/view/home/Home';
-
 /* including scss file adjacent to ..\..\..\..\..\app\view\auth\Login.js */
 $default-resource-root: '' !default;
 $default-resource-path: 'images' !default;
@@ -1331,6 +1326,14 @@ $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/auth/Login';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\home\Home.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/home/Home';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\widgets\Sidebar.js */
 $default-resource-root: '' !default;

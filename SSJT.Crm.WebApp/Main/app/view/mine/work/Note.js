@@ -16,6 +16,7 @@ Ext.define('SSJT.view.mine.work.Note',{
     tbar: {
         xtype: 'notetoolbar'
     },
+    ui: 'block',
     items: [{
         xtype: 'grid',
         emptyText: '暂无数据',
@@ -24,7 +25,8 @@ Ext.define('SSJT.view.mine.work.Note',{
         rowNumbers:{
             text:'#'
         },
-        infinite:false,
+        titleBar: null,
+        //infinite:false,
         selectable: {
             disabled: true
         },
@@ -33,7 +35,7 @@ Ext.define('SSJT.view.mine.work.Note',{
         //     type: 'listpaging',
         //     autoPaging: true
         // }],
-
+        //sortable: false,
         columns: [{
             text: '编号',
             dataIndex: 'NoteID',
@@ -41,46 +43,57 @@ Ext.define('SSJT.view.mine.work.Note',{
             cell: {
                 encodeHtml: false
             },
+            groupable:false,
             tpl: '<a class="item-title" href="#">{NoteID}</a>'
+            
         }, {
             text: '内容',
             dataIndex: 'NoteContent',
             flex: 2,
+            groupable:false,
             cell: {
                 encodeHtml: false
             },
         }, {
             text: '纸张颜色',
+            groupable:false,
             dataIndex: 'NoteColor',
             flex: 1,
         },{
             text: '重要程度',
+            groupable:false,
             dataIndex: 'Priority',
             flex: 1,
         },{
             text: '创建者',
+            groupable:false,
             dataIndex: 'CreatorName',
             flex: 1,
         },{
             text: '创建日期',
+            groupable:false,
+            width:76,
             dataIndex: 'CreateDate',
-            flex: 1,
         },{
             text: '更新者',
+            groupable:false,
             dataIndex: 'UpdaterName',
             flex: 1,
         },{
             text: '更新日期',
+            groupable:false,
+            width:76,
             dataIndex: 'UpdateDate',
-            flex: 1,
         },{
             text: '完成',
+            groupable:false,
             dataIndex: 'IsFinish',
-            flex: 1,
+            width:60
         },{
             text: '完成日期',
+            groupable:false,
+            width:76,
             dataIndex: 'FinishDate',
-            flex: 1,
         }],
 
         listeners: {

@@ -4,8 +4,8 @@ Ext.define('SSJT.model.MainMenu',{
     fields:[
         'id',
         'text',
-        'xtype',
-        'icon',
+        'mtype',
+        'iconCls',
         'parentId',
         {
             name:'leaf',

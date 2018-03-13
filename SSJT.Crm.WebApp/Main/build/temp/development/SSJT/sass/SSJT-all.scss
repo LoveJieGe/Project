@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'SSJT' );
-$image-search-path: 'F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
+$image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
 $include-attachhelper: dynamic(true);;
 $include-avatarhelper: dynamic(true);;
@@ -18,6 +18,7 @@ $include-common-util-resourcemanager: dynamic(true);;
 $include-common-util-user: dynamic(true);;
 $include-common-util-utils: dynamic(true);;
 $include-common-view-dialog: dynamic(true);;
+$include-common-view-note: dynamic(true);;
 $include-common-view-mixin-viewcache: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractmanager: dynamic(true);;
@@ -1318,6 +1319,14 @@ $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../packages/Common/src/nav/Tree';
+
+/* including scss file adjacent to ..\..\..\..\..\packages\Common\src\view\Note.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../packages/Common/src/view/Note';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\auth\Login.js */
 $default-resource-root: '' !default;

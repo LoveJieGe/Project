@@ -1,0 +1,17 @@
+.note{
+    .header-inner{
+        padding: 0 5px;
+        .x-button >.x-inner-el{
+            padding: 5px
+        }
+    }
+
+    @include button-ui(
+        $ui: 'headbtn',
+        $icon-size: 21px,
+        $icon-size-big: 21px,
+        $icon-font-size: 21px,
+        $icon-font-size-big: 21px
+    );
+
+}

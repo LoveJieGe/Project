@@ -33,7 +33,6 @@ Ext.define('SSJT.view.viewport.ViewportController',{
                 Ext.route.Router.resume();
             },
             failure:function(r){
-                debugger
                 //true可以防止任何先前排队的标记被执行
                 me.terminateSession();
                 Ext.route.Router.resume();

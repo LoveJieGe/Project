@@ -1,9 +1,12 @@
 Ext.define('Common.view.Note',{
     extend:'Ext.Dialog',
+    xtype:'note',
     requires:[
-        'Ext.panel.Resizer'
+        'Ext.panel.Resizer',
+        'Common.view.NoteController'
     ],
-    action:'view',//true或者false
+    controller:'note',
+    action:'add',//true或者false
     actionMsg:'确定要隐藏该控件?',
     width:250,
     height:200,
@@ -24,23 +27,40 @@ Ext.define('Common.view.Note',{
             ui:'headbtn',
         },
         items:[{
-            iconCls:'i-common-priority-one',
+            iconCls:'i-common-priority-three',
             tooltip:'设置优先级',
-            
+            arrow:false,
+            reference:'prioritymenu',
+            menu:{
+                xtype: 'menu',
+                floated: false,
+                docked: 'left',
+                defaults:{
+                    handler:'onMenuItemTap'
+                },
+                items: [{
+                    iconCls:'i-common-priority-one',
+                    text: '低'
+                },{
+                    iconCls:'i-common-priority-two',
+                    text: '中'
+                },{
+                    iconCls:'i-common-priority-three',
+                    text: '高'
+                }]
+            }
         },{
             iconCls:'x-fa fa-eye-slash',
             tooltip:'隐藏',
             handler:'onHideNote'
         }]
     },
-    // items:[{
-    //     xtype:'container',
-    //     docked:'top',
-    //     items: [{
-    //         xtype: 'button',
-    //         iconCls:'i-common-priority-one'
-    //     }]
-    // }],
+    items:[{
+        xtype:'textareafield',
+        border:false,
+        height:'100%',
+        padding:0
+    }],
     resizable:{
         edges:'all',
         minSize:[250,200]
@@ -56,15 +76,5 @@ Ext.define('Common.view.Note',{
         })
         me.callParent();
     },
-    onHideNote(){
-        var me = this;
-        ComUtils.confirm(me.actionMsg,function(){
-            if(me.action){
-                let action = Ext.util.Format.lowercase(me.action);
-                if(action=='add'){
-                    me.destroy();
-                }
-            }
-        })
-    }
+   
 })

@@ -6,7 +6,7 @@ Ext.define('Common.view.Note',{
         'Common.view.NoteController'
     ],
     controller:'note',
-    action:'add',//true或者false
+    action:'add',//add或者edit或者view
     actionMsg:'确定要隐藏该控件?',
     width:250,
     height:200,

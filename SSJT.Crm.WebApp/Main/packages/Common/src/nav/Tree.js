@@ -32,7 +32,6 @@ Ext.define('Common.nav.Tree', {
      * @param {String} id
      */
     selectNodeSilent(id) {
-        debugger
         const me = this,
             navStore = me.getStore();
 
@@ -81,7 +80,6 @@ Ext.define('Common.nav.Tree', {
      * @param {Ext.data.Model} node
      */
     onNavSelectionChange(tree, node) {
-        debugger
         if (node) {
             //RouteFloated.hideAll();
             ComUtils.redirectTo(node.get('id'));

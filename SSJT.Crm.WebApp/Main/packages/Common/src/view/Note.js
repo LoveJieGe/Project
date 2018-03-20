@@ -76,6 +76,8 @@ Ext.define('Common.view.Note',{
             text:'保存',
             weight:-10
         }]
+    },{
+        xtype:'colorpicker'
     }],
     resizable:{
         edges:'all',

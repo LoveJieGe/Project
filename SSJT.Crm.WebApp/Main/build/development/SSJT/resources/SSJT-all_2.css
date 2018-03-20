@@ -315,11 +315,15 @@
 .navtree-ct-collapsed .x-button .x-text-el {
     display: none;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:2 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:1 */
+.note {
+    border-radius: 5px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:3 */
 .note .header-inner {
     padding: 0 5px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:4 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:5 */
 .note .header-inner .x-button >.x-inner-el {
     padding: 5px;
     background-color: transparent;
@@ -338,20 +342,20 @@
 .note .x-button-headbtn .x-icon-el:before {
     font-size: 21px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:17 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:18 */
 .note .x-button .x-inner-el {
     padding: 6px 8px;
     background-color: transparent;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:21 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:22 */
 .note .default-color {
     background-color: #ffe66f;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:24 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:25 */
 .note .default-tool-color {
     background-color: rgba(255, 230, 111, 0.9);
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:27 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:28 */
 .note .default-text-color {
     background-color: rgba(255, 230, 111, 0.6);
 }

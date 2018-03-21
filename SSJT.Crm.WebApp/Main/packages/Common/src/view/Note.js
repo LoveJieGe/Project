@@ -84,6 +84,22 @@ Ext.define('Common.view.Note',{
             text:'保存',
             weight:-10
         }]
+    },{
+        xtype:'container',
+        docked: 'bottom',
+        height:30,
+        cls:'default-tool-color',
+        items:[{
+            xtype:'button',
+            ui:'round raised',
+            margin:'0 0 0 2',
+            width:60,
+            cls:'default-color',
+            text:'保存',
+            weight:-10
+        }]
+    },{
+        xtype:'colorpicker'
     }],
     resizable:{
         edges:'all',

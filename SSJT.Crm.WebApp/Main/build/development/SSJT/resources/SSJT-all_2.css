@@ -322,6 +322,7 @@
 /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:4 */
 .note .header-inner .x-button >.x-inner-el {
     padding: 5px;
+    background-color: transparent;
 }
 /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Button.scss:1277 */
 .note .x-button-headbtn .x-icon-el {
@@ -336,6 +337,23 @@
 /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-base/sass/etc/mixins/icon.scss:93 */
 .note .x-button-headbtn .x-icon-el:before {
     font-size: 21px;
+}
+/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:17 */
+.note .x-button .x-inner-el {
+    padding: 6px 8px;
+    background-color: transparent;
+}
+/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:21 */
+.note .default-color {
+    background-color: #ffe66f;
+}
+/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:24 */
+.note .default-tool-color {
+    background-color: rgba(255, 230, 111, 0.9);
+}
+/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/packages/Common/src/view/Note.scss:27 */
+.note .default-text-color {
+    background-color: rgba(255, 230, 111, 0.6);
 }
 /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Panel.scss:878 */
 .x-panel-auth {

@@ -6,7 +6,12 @@ Ext.define('Common.view.Note',{
         'Common.view.NoteController'
     ],
     controller:'note',
-    action:'add',//true或者false
+    viewModel:{
+        data:{
+            record:null
+        }
+    },
+    action:'add',//edit或者view
     actionMsg:'确定要隐藏该控件?',
     width:250,
     height:200,
@@ -17,14 +22,14 @@ Ext.define('Common.view.Note',{
         //html:'<span class="i-common-priority-one"></span><span class="x-fa fa-eye-slash"></span>',
         height:30,
         minHeight:30,
-        style:{
-            backgroundColor:'rgb(255, 230, 111)'
-        },
         innerCls:'header-inner',
+        cls:'default-tool-color',
         defaults:{
             border:false,
             xtype: 'button',
             ui:'headbtn',
+            userCls:'default-color',
+            innerCls:'default-color'
         },
         items:[{
             iconCls:'i-common-priority-three',
@@ -57,9 +62,28 @@ Ext.define('Common.view.Note',{
     },
     items:[{
         xtype:'textareafield',
+        reference:'textarea',
         border:false,
         height:'100%',
-        padding:0
+        cls:'default-text-color',
+        padding:0,
+        bind:{
+            value:'{record.NoteContent}'
+        }
+    },{
+        xtype:'container',
+        docked: 'bottom',
+        height:30,
+        cls:'default-tool-color',
+        items:[{
+            xtype:'button',
+            ui:'round raised',
+            margin:'0 0 0 2',
+            width:60,
+            cls:'default-color',
+            text:'保存',
+            weight:-10
+        }]
     }],
     resizable:{
         edges:'all',
@@ -68,12 +92,16 @@ Ext.define('Common.view.Note',{
     initialize(){
         debugger
         var me = this,
-            btns = me.query('button');
-        btns.forEach(function(item){
-            if(item&&item.innerElement){
-                item.innerElement.setStyle('background-color','rgb(255, 230, 111)')
-            }
-        })
+            btns = me.query('button'),
+            textarea = me.lookup('textarea');
+        // btns.forEach(function(item){
+        //     if(item&&item.innerElement){
+        //         item.innerElement.setStyle('background-color','rgb(255, 230, 111)')
+        //     }
+        // })
+        if(textarea&&textarea.inputWrapElement){
+            textarea.inputWrapElement.setStyle('background','none');
+        }
         me.callParent();
     },
    

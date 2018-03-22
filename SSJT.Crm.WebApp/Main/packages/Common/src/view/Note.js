@@ -13,10 +13,14 @@ Ext.define('Common.view.Note',{
     },
     action:'add',//edit或者view
     actionMsg:'确定要隐藏该控件?',
-    width:250,
-    height:200,
+    bind:{
+        width:'{record.Width}',
+        height:'{record.Height}',
+    },
     modal:false,
     border:false,
+    minWidth:250,
+    minHeight:200,
     cls:'note',
     header:{
         //html:'<span class="i-common-priority-one"></span><span class="x-fa fa-eye-slash"></span>',
@@ -84,22 +88,6 @@ Ext.define('Common.view.Note',{
             text:'保存',
             weight:-10
         }]
-    },{
-        xtype:'container',
-        docked: 'bottom',
-        height:30,
-        cls:'default-tool-color',
-        items:[{
-            xtype:'button',
-            ui:'round raised',
-            margin:'0 0 0 2',
-            width:60,
-            cls:'default-color',
-            text:'保存',
-            weight:-10
-        }]
-    },{
-        xtype:'colorpicker'
     }],
     resizable:{
         edges:'all',

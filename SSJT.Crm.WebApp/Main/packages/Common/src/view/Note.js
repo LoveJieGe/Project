@@ -19,7 +19,7 @@ Ext.define('Common.view.Note',{
     },
     modal:false,
     border:false,
-    minWidth:250,
+    minWidth:260,
     minHeight:200,
     cls:'note',
     header:{
@@ -32,8 +32,6 @@ Ext.define('Common.view.Note',{
             border:false,
             xtype: 'button',
             ui:'headbtn',
-            userCls:'default-color',
-            innerCls:'default-color'
         },
         items:[{
             iconCls:'i-common-priority-three',
@@ -77,16 +75,62 @@ Ext.define('Common.view.Note',{
     },{
         xtype:'container',
         docked: 'bottom',
+        reference:'bottomTool',
         height:30,
         cls:'default-tool-color',
-        items:[{
-            xtype:'button',
+        defaultType:'button',
+        defaults:{
             ui:'round raised',
             margin:'0 0 0 2',
+            height:25,
+            width:25,
+            bottom:3,
+            border:false,
+            handler:'onColorTap'
+        },
+        items:[{
             width:60,
+            reference:'btnsave',
+            top:2,
             cls:'default-color',
             text:'保存',
-            weight:-10
+            weight:-10,
+            bottom:0,
+            left:2,
+            handler:'onBtnSave'
+        },{
+            right:175,
+            style:{
+                'background-color':'rgba(207, 158, 158,1)'
+            }
+        },{
+            right:145,
+            cls:'default-color'
+        },{
+            right:116,
+            style:{
+                'background-color':'rgba(255, 204, 204,1)'
+            }
+        },{
+            right:87,
+            style:{
+                'background-color':'rgba(153, 204, 153,1)'
+            }
+        },{
+            right:59,
+            style:{
+                'background-color':'rgba(149, 202, 202,1)'
+            }
+        },{
+            right:31,
+            style:{
+                'background-color':'rgba(132, 193, 255,1)'
+            }
+        },{
+            right:2,
+            style:{
+                'background-color':'rgba(128, 128, 192,1)'
+            }
         }]
     }],
     resizable:{
@@ -94,7 +138,6 @@ Ext.define('Common.view.Note',{
         minSize:[250,200]
     },
     initialize(){
-        debugger
         var me = this,
             btns = me.query('button'),
             textarea = me.lookup('textarea');
@@ -108,5 +151,9 @@ Ext.define('Common.view.Note',{
         }
         me.callParent();
     },
+    setRecord: function(record) {
+        debugger
+        this.getViewModel().set('record', record);
+    }
    
 })

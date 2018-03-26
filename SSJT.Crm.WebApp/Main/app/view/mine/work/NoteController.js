@@ -12,8 +12,22 @@ Ext.define('SSJT.view.mine.work.NoteController', {
     //     var vm = this.getViewModel();
     //     vm.getStore('countries').reload();
     // },
-
-    // onCreate: function() {
-    //     this.redirectTo('office/create');
-    // }
+    init(){
+        const me = this;
+        me.on
+        me.callParent(arguments);
+    },
+    onCreate: function() {
+        var note_view = Ext.create('Common.view.Note'),
+            note_model = Ext.create('SSJT.model.PersonalNote'),
+            note_viewmodel = note_view.getViewModel();
+        note_view.setRecord(note_model);
+        note_view.show();
+    },
+    onSearch(){
+        var me = this,
+            view = me.getView(),
+            grid = view.getComponent('grid'),
+            tbar = view.getTbar();
+    }
 });

@@ -5,22 +5,25 @@ Ext.define('SSJT.view.mine.work.Note',{
     //         property:'country'
     //     }
     // }
+    requires:[
+        'Ext.Progress'
+    ],
     xtype:'mine_work_note',
     controller:'mine_work_note',
-    viewModel:{
-        type:'mine_work_note'
-    },
-    bind:{
-        store:'{notes}'
-    },
+    // viewModel:{
+    //     type:'mine_work_note'
+    // },
     tbar: {
         xtype: 'notetoolbar'
     },
     ui: 'block',
     items: [{
         xtype: 'grid',
+        itemId:'grid',
         emptyText: '暂无数据',
-        bind: '{notes}',
+        store:{
+            type:'personalnote'
+        },
         ui: 'listing',
         rowNumbers:{
             text:'#'

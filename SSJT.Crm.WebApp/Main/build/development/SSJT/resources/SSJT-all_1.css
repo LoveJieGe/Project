@@ -13615,7 +13615,7 @@ div.x-trigger.x-grouped {
     background-color: #f6f6f6;
     background-image: none;
     border-color: #767676;
-    box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0 3px 2px 0px rgba(0, 0, 0, 0.3);
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/ext/modern/theme-neptune/sass/var/Toolbar.scss:344 */
 .x-toolbar-tools .x-title {

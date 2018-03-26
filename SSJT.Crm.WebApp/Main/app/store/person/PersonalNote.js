@@ -1,7 +1,10 @@
-Ext.define('SSJT.store.person.PersonNote',{
+Ext.define('SSJT.store.person.PersonalNote',{
     extend:'Ext.data.Store',
-    alias:'store.personnote',
-    model:'SSJT.model.PersonNote',
+    alias:'store.personalnote',
+    requires:[
+        'SSJT.model.PersonalNote'
+    ],
+    model:'SSJT.model.PersonalNote',
     remoteFilter:true,
     remoteSort:true,
     proxy: {

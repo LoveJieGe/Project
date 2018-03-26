@@ -1,4 +1,4 @@
-Ext.define('SSJT.model.PersonNote',{
+Ext.define('SSJT.model.PersonalNote',{
     extend:'SSJT.model.Base',
     fields:[
         'NoteID',

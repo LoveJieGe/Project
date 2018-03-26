@@ -32,6 +32,7 @@ Ext.define(null, { // 'Ext.overrides.data.proxy.Ajax'
     },
 
     updateApi(api) {
+        debugger
         this.setUrl(ComUtils.getFullUrl(api));
     },
 

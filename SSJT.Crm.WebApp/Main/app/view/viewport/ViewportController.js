@@ -8,6 +8,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         controller:{
             '*':{
                 login:'onLogin',
+                needlogin:'onNeedLogin',
                 logout: 'onLogout',
                 unmatchedroute:'handleUnmatchedRoute'
             }
@@ -44,6 +45,14 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             maskTarget: false
         });
        
+    },
+    onNeedLogin:function(){
+        var me = this;
+        me.terminateSession();
+        me.originalRoute = Ext.History.getToken();
+        me.redirectTo('login', {
+            replace: true
+        });
     },
     handleUnmatchedRoute:function(route){
         debugger

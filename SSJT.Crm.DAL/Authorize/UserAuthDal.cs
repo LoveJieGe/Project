@@ -22,7 +22,7 @@ namespace SSJT.Crm.DAL
             Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
             sessionServer.RegSession(userID, password);
             HrEmploy userInfo = (DbFactory.DbSession.DbContext as CrmEntities).HrEmploy.FirstOrDefault(H => H.UserID == userID && H.PassWord == pwd);
-            int timeOut = sessionServer.Timeout;
+            int timeOut = sessionServer.GetTimeout();
             DateTime expires = DateTime.Now;
             expires = expires.AddMinutes(timeOut);
             if (userInfo!=null)
@@ -50,7 +50,7 @@ namespace SSJT.Crm.DAL
             //string sessionId = string.Format("{0}.{2}", this.AppName, this.GetSessionID());
             if (SqlHelper.Exists<HrEmploy>(H => H.UserID == userInfo.UserID))
             {
-                int timeOut = sessionServer.Timeout;
+                int timeOut = sessionServer.GetTimeout();
                 DateTime expires = DateTime.Now;
                 expires = expires.AddMinutes(timeOut);
                 result = new UserResult
@@ -68,7 +68,7 @@ namespace SSJT.Crm.DAL
         {
             Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
             string sessionID = sessionServer.GetCurrentSessionID();
-            sessionServer.RemoveSession(sessionID);
+            sessionServer.RemoveCache(sessionID);
         }
     }
     

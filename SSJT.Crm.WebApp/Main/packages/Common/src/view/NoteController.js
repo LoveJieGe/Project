@@ -3,7 +3,7 @@ Ext.define('Common.view.NoteController',{
     alias:'controller.note',
     init(){
         var me = this,
-            viewModel = me.getViewModel();
+            vm = me.getViewModel();
         me.callParent(arguments);
     },
     onHideNote(){
@@ -21,8 +21,11 @@ Ext.define('Common.view.NoteController',{
     onMenuItemTap(m,e){
         const me = this,
             iconCls = m&&m.getIconCls(),
-            menu = me.lookup('prioritymenu');
+            menu = me.lookup('prioritymenu'),
+            vm = me.getViewModel(),
+            record = vm.get('record');;
         menu.setIconCls(iconCls);
+        record.set('Priority',m.value);
     },
     onColorTap(btn,e,opt){
         const me = this,
@@ -49,7 +52,16 @@ Ext.define('Common.view.NoteController',{
             return 'rgba('+rgba.join(',')+')';
         }
     },
-    onBtnSave(){
-
+    onBtnSave(btn,e,opt){
+        debugger
+        const me = this,
+            view = me.getView(),
+            vm = me.getViewModel(),
+            record = vm.get('record');
+        record.set('Width',view.getWidth());
+        record.set('Height',view.getHeight());
+        record.set('NoteColor',btn.el.getStyle('background-color'));
+        record.set('LocationX',view.getX());
+        record.set('LocationY',view.getY());
     }
 })

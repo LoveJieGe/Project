@@ -10,10 +10,16 @@ namespace SSJT.Crm.Core.Server
     public interface ISessionServer
     {
         void RegSession(string userID, string password);
-        void RemoveSession(string sessionID);
+        void RemoveCache(string sessionID);
         SessionMode GetSessionMode(string sessionID);
         string GetCurrentSessionID();
-        int Timeout { get; }
+        int GetTimeout();
+        void SetTimeOut(int time);
         HrEmploy CurrentUser { get; }
+        /// <summary>
+        /// 判断用户是否登录
+        /// </summary>
+        /// <returns>true代表已经登录</returns>
+        bool HasLogin();
     }
 }

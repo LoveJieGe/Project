@@ -12,11 +12,12 @@ namespace SSJT.Crm.WebApp.AjaxHandler
     /// <summary>
     /// StoreRequest 的摘要说明
     /// </summary>
-    public class StoreRequest : IHttpHandler
+    public class StoreRequest : BaseRequest
     {
 
-        public void ProcessRequest(HttpContext context)
+        public override void ProcessRequest(HttpContext context)
         {
+            base.ProcessRequest(context);
             AjaxReceive receive = new AjaxReceive();
             receive.Fill(context);
             NameValueCollection cc = context.Request.Form;
@@ -54,14 +55,14 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                 receive.Data = string.Format("{{\"StoreParams\":{0}{1}", JsonConvert.SerializeObject(storeParams), restJsonStr);
             }
             AjaxResult result = ContextFactory.AjaxProcess.DoProcess(receive);
-
-        }
-
-        public bool IsReusable
-        {
-            get
+            if (result.IsSuccess)
             {
-                return false;
+                context.Response.ContentType = "application/json";
+                context.Response.Write(Core.JsonHelper.ToJson(result.Data, Core.DateTimeMode.JS));
+            }
+            else
+            {
+                ErrorResponse(context, result);
             }
         }
     }

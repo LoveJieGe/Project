@@ -26,15 +26,5 @@ namespace SSJT.Crm.Core
             }
             return sessionServer;
         }
-        public static ISessionMode GetSessionMode()
-        {
-            ISessionMode sessionMode = CallContext.LogicalGetData("SessionMode") as ISessionMode;
-            if (sessionMode == null)
-            {
-                sessionMode = new SessionMode();
-                CallContext.LogicalSetData("SessionMode", sessionMode);
-            }
-            return sessionMode;
-        }
     }
 }

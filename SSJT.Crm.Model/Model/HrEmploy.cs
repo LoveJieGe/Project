@@ -42,6 +42,7 @@ namespace SSJT.Crm.Model
         /// </summary>
         [AjaxProperty]
         [StringLength(50)]
+        [Required]
         public string UserName
 		{
             set; get;

@@ -90,7 +90,7 @@ namespace SSJT.Crm.DAL
                 };
                 return result;
             }
-            return null;
+            return new StoreResult { total=0,root=""};
         }
     }
 }

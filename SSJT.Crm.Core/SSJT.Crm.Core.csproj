@@ -66,12 +66,15 @@
     <Compile Include="Server\AjaxServer.cs" />
     <Compile Include="Attribute\AjaxClassAttribute.cs" />
     <Compile Include="Server\AjaxProcess.cs" />
+    <Compile Include="Server\CookieManager.cs" />
     <Compile Include="Server\IAjaxProcess.cs" />
     <Compile Include="Attribute\AjaxMethodAttribute.cs" />
     <Compile Include="Helper\Ajaxhelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\ISessionMode.cs" />
     <Compile Include="Server\ISessionServer.cs" />
+    <Compile Include="Server\ServerConfig.cs" />
+    <Compile Include="Server\SessionManager.cs" />
     <Compile Include="Server\SessionMode.cs" />
     <Compile Include="Server\SessionServer.cs" />
     <Compile Include="SqlHelper\SqlHelper.cs" />

@@ -12,7 +12,7 @@ Ext.define(null, { // 'Ext.overrides.data.proxy.Ajax'
         /**
          * 当 proxy 请求失败时，是否把异常信息弹出来(Ext.Msg.alert)
          */
-        silence: false,
+        showError: false,
 
         useDefaultXhrHeader: false,
 
@@ -42,6 +42,7 @@ Ext.define(null, { // 'Ext.overrides.data.proxy.Ajax'
 
         me.on({
             exception(proxy, r, options) { //统一监听proxy的异常
+                debugger
                 var err = r.responseText;
                 if (!Ext.isEmpty(err)) {
                     try {
@@ -50,22 +51,25 @@ Ext.define(null, { // 'Ext.overrides.data.proxy.Ajax'
                 } else {
                     err = r.statusText;
                 }
-
-                var msg = err.message || err;
-                if (r.status == '0') {
-                    ComUtils.toastShort(msg || 'communication failure');
-                } else if (r.status == '-1') { // ajax被中止
-                    // aborted
-                } else if (ComUtils.isUnauthorized(r.status)) { // 未授权
+                const msg = err.Message || err,
+                    status = r.status,
+                    errorCode = err.ErrorCode||'';
+                if (ComUtils.isUnauthorized(r.status)) { // 未授权
                     ComUtils.toastShort(msg);
                     // 转到登录页
                     ComUtils.getApp().fireEvent('needlogin');
-                } else if (!this.getSilence()) {
+                } else if(errorCode==ComUtils.errorCode.SErrorCode){
+                    ComUtils.getApp().fireEvent('needlogin');
+                }else if (status == '0') {
+                    ComUtils.toastShort(msg || 'communication failure');
+                }  else  if (this.getShowError()) {
                     ComUtils.alert(msg);
+                } else if (status == '-1') { // ajax被中止
+                    // aborted
                 }
-                //<debug>
-                console.log(arguments);
-                //</debug>
+                // <debug>
+                // console.log(arguments);
+                // </debug>
             }
         });
     },

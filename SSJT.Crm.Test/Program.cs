@@ -76,6 +76,16 @@ namespace SSJT.Crm.Test
             Crm.Model.CrmEntities context = new Model.CrmEntities();
             var flag = context.Database.CreateIfNotExists();
             var notes = context.PersonalNote.Where(p => p.IsFinish == "Y");
+            if (flag)
+            {
+                Console.WriteLine("创建成功");
+            }
+
+            //IHrEmployService noteDal = new HrEmployService();
+            //int total = 0;
+            //var tables = noteDal.LoadPageEntities(1, 25, out total, true, h => h.UserID, h => h.UserID == "Admin");
+            //string userID = tables.First().UserID;
+            //Console.WriteLine(tables.First().UserID);
             //var context
             //    = new XmlApplicationContext(Directory.GetCurrentDirectory() + @"\services.xml");
             //var test = context.GetObject("ContextFactory") as ContextFactory;

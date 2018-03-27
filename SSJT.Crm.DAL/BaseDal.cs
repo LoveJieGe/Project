@@ -73,16 +73,17 @@ namespace SSJT.Crm.DAL
         /// <returns></returns>
         public IEnumerable<T> LoadPageEntities<S>(int pageIndex, int pageSize,out int totalCount, bool isAsc, Expression<Func<T, S>> oederLambdaWhere, Expression<Func<T, bool>> lambdaWhere)
         {
-            var items = Context.Set<T>().Where(lambdaWhere).Skip((pageIndex-1)*pageSize).Take(pageSize);
-            totalCount = items.Count();
+            var items = Context.Set<T>().Where(lambdaWhere);
             if (isAsc)
             {
-                return items;
+                items = items.OrderBy(oederLambdaWhere).Skip((pageIndex - 1) * pageSize).Take(pageSize);
             }
             else
             {
-                return items.OrderByDescending(oederLambdaWhere);
+                items = items.OrderByDescending(oederLambdaWhere).Skip((pageIndex - 1) * pageSize).Take(pageSize);
             }
+            totalCount = items.Count();
+            return items;
         }
         /// <summary>
         /// 添加一条数据

@@ -3,7 +3,11 @@ Ext.define('SSJT.model.PersonalNote',{
     fields:[
         'NoteID',
         'NoteContent',
-        'Priority',
+        {
+            name:'Priority',
+            type:'string',
+            defaultValue:'H'
+        },
         'NoteColor',
         {
             name:'LocationX',
@@ -23,7 +27,8 @@ Ext.define('SSJT.model.PersonalNote',{
         },
         {
             name:'IsShow',
-            type:'boolean'
+            type:'boolean',
+            defaultValue:false
         },
         'CreatorId',
         'CreatorName',
@@ -41,7 +46,8 @@ Ext.define('SSJT.model.PersonalNote',{
         },
         {
             name:'IsFinish',
-            type:'boolean'
+            type:'boolean',
+            defaultValue:false
         },
         {
             name:'FinishDate',

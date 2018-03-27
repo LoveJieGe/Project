@@ -128,7 +128,6 @@ Ext.define('SSJT.view.main.MainController', {
      * @param {String} type
      */
     handleNavigationRoute(type,args) {
-        debugger
         console.log('路由',type);
         const me = this,
             dataId = (type||'')+(args||'');
@@ -151,7 +150,6 @@ Ext.define('SSJT.view.main.MainController', {
         // }
     },
     handleDataRoute(type,id,args){
-        debugger
         var me = this,
             args = Ext.Array.clean((args||'').split('/')),//通过数组进行筛选并删除Ext.isEmpty中定义的空项。
             Model = SSJT.model[Ext.String.capitalize(type)],//capitalize将给定字符串的第一个字母大写
@@ -197,7 +195,6 @@ Ext.define('SSJT.view.main.MainController', {
     onAvatarTap(){
         var user = this.getViewModel().get('user');
         console.log("user",user);
-        debugger
         this.redirectTo(user);
     },
     ensureView(xtype,config,route){

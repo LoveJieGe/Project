@@ -8,7 +8,7 @@ Ext.define('Common.view.Note',{
     controller:'note',
     viewModel:{
         data:{
-            record:null
+            record:null,
         }
     },
     action:'add',//edit或者view
@@ -47,13 +47,16 @@ Ext.define('Common.view.Note',{
                 },
                 items: [{
                     iconCls:'i-common-priority-one',
-                    text: '低'
+                    text: '低',
+                    value:'L'
                 },{
                     iconCls:'i-common-priority-two',
-                    text: '中'
+                    text: '中',
+                    value:'M'
                 },{
                     iconCls:'i-common-priority-three',
-                    text: '高'
+                    text: '高',
+                    value:'H'
                 }]
             }
         },{
@@ -152,7 +155,6 @@ Ext.define('Common.view.Note',{
         me.callParent();
     },
     setRecord: function(record) {
-        debugger
         this.getViewModel().set('record', record);
     }
    

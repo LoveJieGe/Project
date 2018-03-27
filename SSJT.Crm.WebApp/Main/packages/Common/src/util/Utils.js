@@ -23,7 +23,20 @@ Ext.define('Common.util.Utils',{
         query: '((\\?(?:&?[^=&]*=[^=&]*)*)?)', // 可以匹配 空字符串、?、?DocEntry=30000
         query2: '(\\?(?:&?[^=&]*=[^=&]*)*)' // 可以匹配 ?、?DocEntry=30000
     },
-
+    errorCode:{
+        /// 用户名或密码、验证码错误代码
+        VErrorCode : -32091,
+        /// 其他错误代码
+        OErrorCode : -32090,
+        /// 用户验证失败错误
+        SErrorCode : -32092,
+        /// 参数错误
+        PErrorCode : -32093,
+        /// 默认的错误代码
+        Default  : 400,
+        //没有授权的错误码
+        UnauthorizedCode:401
+    },
     /**
      * 当前是否是development模式
      * @property {Boolean}

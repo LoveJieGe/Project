@@ -13,7 +13,8 @@ namespace SSJT.Crm.Model
         #region Model
         [AjaxProperty]
         [Key]
-        public int NoteID
+        [StringLength(20)]
+        public string NoteID
 		{
             get;set;
 		}

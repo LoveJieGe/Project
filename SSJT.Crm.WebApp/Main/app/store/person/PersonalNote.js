@@ -9,6 +9,6 @@ Ext.define('SSJT.store.person.PersonalNote',{
     remoteSort:true,
     proxy: {
         type: 'ajax',
-        api : 'userRequest/IStoreServer/QueryPersonNotes',
+        api : 'storeRequest/IStoreServer/QueryPersonNotes',
     },
 })

@@ -14,7 +14,7 @@ Ext.define('SSJT.view.mine.work.NoteController', {
     // },
     init(){
         const me = this;
-        me.on
+        me.onSearch();
         me.callParent(arguments);
     },
     onCreate: function() {
@@ -28,6 +28,22 @@ Ext.define('SSJT.view.mine.work.NoteController', {
         var me = this,
             view = me.getView(),
             grid = view.getComponent('grid'),
-            tbar = view.getTbar();
+            tbar = view.getTbar(),
+            fields = tbar.query('field[name]'),
+            store = grid.getStore(),
+            filters = [],
+            value;
+
+        Ext.each(fields, (field) => {
+            value = field.getValue();
+            if(!Ext.isEmpty(value)) {
+                filters.push({ property: field.getName(), value: value });
+            }
+        });
+        store.suppressNextFilter = true;
+        store.clearFilter(true);
+        store.setFilters(filters);
+        store.suppressNextFilter = false;
+        store.loadPage(1);
     }
 });

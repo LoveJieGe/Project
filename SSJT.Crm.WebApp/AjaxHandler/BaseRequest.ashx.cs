@@ -16,16 +16,52 @@ namespace SSJT.Crm.WebApp.AjaxHandler
     {
         public virtual void ProcessRequest(HttpContext context)
         {
+
             #region 判断用户是否登录
-            IStoreServer storeServer = HelperManager.GetInstance(typeof(IStoreServer)) as IStoreServer;
-            
-            //storeServer
+            try
+            {
+                Core.Server.ISessionServer sessionserver = SessionFactory.GetSessionServer();
+                if (sessionserver.HasLogin())
+                {
+                    sessionserver.SetTimeOut(sessionserver.GetTimeout());
+                }
+                else
+                {
+                    Model.HrEmploy model = sessionserver.CurrentUser;
+                    if (model != null)
+                    {
+                        sessionserver.SetTimeOut(sessionserver.GetTimeout());
+                    }
+                    else
+                    {
+                        context.Response.Clear();
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = 400;
+                        context.Response.Write(Core.Ajaxhelper.ToJson(new
+                        {
+                            ErrorCode = ErrorCode.SErrorCode,
+                            Success = false,
+                            Message = "您的会话已超时, 请重新登录本系统."
+                        }));
+                        return;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                while (e.InnerException != null)
+                {
+                    e = e.InnerException;
+                }
+                ErrorResponse(context, 400, e.Message);
+            }
             #endregion
         }
         protected void ErrorResponse(HttpContext context, AjaxResult result)
         {
             context.Response.Clear();
             context.Response.ContentType = "application/json";
+            context.Response.StatusCode = 400;
             if (Enum.IsDefined(typeof(ErrorCode), result.ErrorCode))
             {
                 context.Response.Write(Core.Ajaxhelper.ToJson(new
@@ -44,10 +80,11 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                 }));
             }
         }
-        protected void ErrorResponse(HttpContext context, string code, string message)
+        protected void ErrorResponse(HttpContext context, int code, string message)
         {
             context.Response.Clear();
             context.Response.ContentType = "application/json";
+            context.Response.StatusCode = code;
             context.Response.Write(Core.Ajaxhelper.ToJson(new
             {
                 Success = false,

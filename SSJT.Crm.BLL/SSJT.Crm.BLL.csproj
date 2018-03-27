@@ -53,6 +53,7 @@
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
     <Compile Include="Service\HrEmployService.cs" />
+    <Compile Include="Service\PersonalService.cs" />
     <Compile Include="Store\StoreServer.cs" />
     <Compile Include="Utils\BusinessFactory.cs" />
   </ItemGroup>

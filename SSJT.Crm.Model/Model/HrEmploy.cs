@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SSJT.Crm.Model
@@ -9,6 +10,7 @@ namespace SSJT.Crm.Model
 	[Serializable]
 	public partial class HrEmploy:BaseModel
 	{
+        [Key]
 		public int Id
 		{
             set;
@@ -18,15 +20,19 @@ namespace SSJT.Crm.Model
 		/// 
 		/// </summary>
 		[AjaxProperty]
+        [Required]
+        [StringLength(20)]
 		public string UserID
 		{
             set;
             get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string PassWord
+        /// <summary>
+        /// 
+        /// </summary>
+        [Required]
+        [StringLength(40)]
+        public string PassWord
 		{
             set;
             get;
@@ -35,14 +41,16 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [StringLength(50)]
         public string UserName
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string CardId
+        /// <summary>
+        /// 
+        /// </summary>
+        [StringLength(20)]
+        public string CardId
 		{
             set; get;
 		}
@@ -50,21 +58,23 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [DataType(DataType.DateTime)]
         public DateTime? Birthday
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public int? DepId
+        /// <summary>
+        /// 
+        /// </summary>
+        public int? DepId
         {
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string DepName
+        /// <summary>
+        /// 
+        /// </summary>
+        [StringLength(50)]
+        public string DepName
 		{
             set; get;
 		}
@@ -75,10 +85,11 @@ namespace SSJT.Crm.Model
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Post
+        /// <summary>
+        /// 
+        /// </summary>
+        [StringLength(50)]
+        public string Post
 		{
             set; get;
 		}
@@ -86,6 +97,7 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [StringLength(80)]
         public string Email
 		{
             set; get;
@@ -94,6 +106,7 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [StringLength(8)]
         public string Gender
 		{
             set; get;
@@ -102,14 +115,16 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [StringLength(20)]
         public string Tel
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Status
+        /// <summary>
+        /// 
+        /// </summary>
+        [StringLength(20)]
+        public string Status
 		{
             set; get;
 		}
@@ -120,10 +135,11 @@ namespace SSJT.Crm.Model
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string ZhiWu
+        /// <summary>
+        /// 
+        /// </summary>
+        [StringLength(50)]
+        public string ZhiWu
 		{
             set; get;
 		}
@@ -135,9 +151,10 @@ namespace SSJT.Crm.Model
             set; get;
 		}
 		/// <summary>
-		/// 
+		/// 入学日期
 		/// </summary>
-		public string EntryDate
+        [DataType(DataType.DateTime)]
+		public DateTime? EntryDate
 		{
             set; get;
 		}
@@ -145,6 +162,7 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [StringLength(255)]
         public string Address
 		{
             set; get;
@@ -153,6 +171,7 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [Column(TypeName ="text")]
         public string Remarks
 		{
             set; get;
@@ -161,6 +180,7 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [StringLength(40)]
         public string Education
 		{
             set; get;
@@ -169,6 +189,7 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [StringLength(40)]
         public string Levels
 		{
             set; get;
@@ -177,20 +198,24 @@ namespace SSJT.Crm.Model
         /// 
         /// </summary>
         [AjaxProperty]
+        [StringLength(40)]
         public string Professional
 		{
             set; get;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string IsDelete
+        /// <summary>
+        /// 
+        /// </summary>
+        [StringLength(1)]
+        [Column(TypeName ="char")]
+        public string IsDelete
 		{
             set; get;
 		}
 		/// <summary>
 		/// 
 		/// </summary>
+        [DataType(DataType.DateTime)]
 		public DateTime? DeleteTime
 		{
             set; get;
@@ -198,21 +223,25 @@ namespace SSJT.Crm.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public byte[] Portal
+        
+		//public byte[] Portal
+		//{
+  //          set; get;
+		//}
+        /// <summary>
+        /// 
+        /// </summary>
+        [StringLength(40)]
+        public string Theme
 		{
             set; get;
 		}
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Theme
-		{
-            set; get;
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string CanLogin
+        [StringLength(1)]
+        [Column(TypeName = "char")]
+        public string CanLogin
 		{
             set; get;
 		}
@@ -220,6 +249,7 @@ namespace SSJT.Crm.Model
         /// 头像文件名字
         /// </summary>
         [AjaxProperty]
+        [StringLength(100)]
 	    public string AvatarName
 	    {
             get;set;
@@ -228,11 +258,14 @@ namespace SSJT.Crm.Model
         /// 手机号码
         /// </summary>
         [AjaxProperty]
+        [StringLength(20)]
         public string Mobile
         {
             get;set;
         }
         [AjaxProperty]
+        [StringLength(1)]
+        [Column(TypeName ="char")]
         public string IsRoot
         {
             get;set;

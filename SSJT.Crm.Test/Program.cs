@@ -18,6 +18,7 @@ using SSJT.Crm.Core.Exceptions;
 using SSJT.Crm.Model;
 using SSJT.Crm.BLL;
 using SSJT.Crm.IBLL;
+using System.Data.Entity;
 
 namespace SSJT.Crm.Test
 {
@@ -26,17 +27,17 @@ namespace SSJT.Crm.Test
 
         static void Main(string[] args)
         {
-            string key = "Admin"; //324测试
+            //string key = "Admin"; //324测试
 
-            string source = "123456";
+            //string source = "123456";
 
-            Console.WriteLine("Source  string: " + source);
+            //Console.WriteLine("Source  string: " + source);
 
-            string encryptStr = EncryptDES(source, key);
-            Console.WriteLine("Encrypt string: " + encryptStr);
+            //string encryptStr = EncryptDES(source, key);
+            //Console.WriteLine("Encrypt string: " + encryptStr);//WW+KDTUrwwA=
 
-            string decryptStr = DecryptDES(encryptStr, key);
-            Console.WriteLine("Decrypt string: " + decryptStr);
+            //string decryptStr = DecryptDES(encryptStr, key);
+            //Console.WriteLine("Decrypt string: " + decryptStr);
             //IApplicationContext ctx = ContextRegistry.GetContext();
             //DbFactory t = ctx.GetObject("DbFactory") as DbFactory;
             //string message = t.Msg;
@@ -72,7 +73,9 @@ namespace SSJT.Crm.Test
             //}
             //Console.Write("22");
             //测试EF更新功能
-            //Crm.Model.CrmEntities context = new Model.CrmEntities();
+            Crm.Model.CrmEntities context = new Model.CrmEntities();
+            var flag = context.Database.CreateIfNotExists();
+            var notes = context.PersonalNote.Where(p => p.IsFinish == "Y");
             //var context
             //    = new XmlApplicationContext(Directory.GetCurrentDirectory() + @"\services.xml");
             //var test = context.GetObject("ContextFactory") as ContextFactory;

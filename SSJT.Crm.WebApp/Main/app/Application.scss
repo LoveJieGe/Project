@@ -110,6 +110,18 @@ body.launching {
         }
     }
 }
+a {
+    color: mix($base-dark-color, $base-color);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    .x-selected & {
+        color: $base-light-color;
+    }
+}
 .avatar {
     @include border-radius($avatar-border-radius);
     @include background-size(cover);

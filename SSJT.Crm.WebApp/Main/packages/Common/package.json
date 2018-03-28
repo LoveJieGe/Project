@@ -231,7 +231,12 @@
              * By default, all subfolders in the path are considered example applications.
              */
         },
-
+        "framework": "ext",
+        "builds": {
+            "default": {
+                "theme": "theme-default"
+            }
+        },
         /**
          * The framework this package will use (i.e., "ext" or "touch").
          * This is only needed if the built package will be used by a non-Cmd application.

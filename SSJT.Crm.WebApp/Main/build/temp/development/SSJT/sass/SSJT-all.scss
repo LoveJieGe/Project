@@ -1,10 +1,14 @@
 $app-name:  dynamic( 'SSJT' );
-$image-search-path: 'F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
+$image-search-path: 'F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/build/development/SSJT/resources';
 $theme-name:  dynamic( 'theme-default' );
 $include-attachhelper: dynamic(true);;
 $include-avatarhelper: dynamic(true);;
 $include-comconfig: dynamic(true);;
 $include-comutils: dynamic(true);;
+$include-common-grid-cell-check: dynamic(true);;
+$include-common-grid-cell-datetime: dynamic(true);;
+$include-common-grid-column-check: dynamic(true);;
+$include-common-grid-column-datetime: dynamic(true);;
 $include-common-model-valuetext: dynamic(true);;
 $include-common-model-attach-image: dynamic(true);;
 $include-common-nav-avatarbutton: dynamic(true);;
@@ -1071,6 +1075,7 @@ $current-package: 'theme-default';
 $current-resource-root: $theme-default-resource-root;
 $relative-image-path-for-uis: $theme-default-resource-path;
 @import '../../../../../packages/local/theme-default/sass/var/list/Tree';
+@import '../../../../../packages/local/theme-default/sass/var/grid/column/Column';
 @import '../../../../../packages/local/theme-default/sass/var/tab/Panel';
 
 
@@ -1360,6 +1365,14 @@ $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/main/Menu';
+
+/* including scss file adjacent to ..\..\..\..\..\app\view\mine\work\Note.js */
+$default-resource-root: '' !default;
+$default-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $default-resource-root;
+$relative-image-path-for-uis: $default-resource-path;
+@import '../../../../../app/view/mine/work/Note';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\widgets\Show.js */
 $default-resource-root: '' !default;

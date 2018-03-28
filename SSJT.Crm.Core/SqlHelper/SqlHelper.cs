@@ -26,5 +26,39 @@ namespace SSJT.Crm.Core
                 return true;
             return false;
         }
+        /// <summary>
+        /// 随机生成一个表的ID
+        /// </summary>
+        public static string  GenerateTableID()
+        {
+            TimeSpan span = (TimeSpan)(DateTime.Now - new DateTime(0x7d0, 1, 1));
+            long num = Convert.ToInt64((double)(span.TotalMilliseconds / 100.0));
+            StringBuilder builder = new StringBuilder();
+            while (num >= 0x24L)
+            {
+                long num2 = num % 0x24L;
+                if (num2 < 10L)
+                {
+                    builder.Insert(0, num2);
+                }
+                else
+                {
+                    builder.Insert(0, (char)((ushort)((0x41L + num2) - 10L)));
+                }
+                num /= 0x24L;
+            }
+            if (num > 0L)
+            {
+                if (num < 10L)
+                {
+                    builder.Insert(0, num);
+                }
+                else
+                {
+                    builder.Insert(0, (char)((ushort)((0x41L + num) - 10L)));
+                }
+            }
+            return builder.ToString();
+        }
     }
 }

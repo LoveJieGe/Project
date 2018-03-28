@@ -63,5 +63,17 @@ Ext.define('Common.view.NoteController',{
         record.set('NoteColor',btn.el.getStyle('background-color'));
         record.set('LocationX',view.getX());
         record.set('LocationY',view.getY());
+        ComUtils.ajax('ajaxRequest/IPersonalService/InsertData',{
+            data:{
+                p0:record.data
+            },
+            success(r){
+                console.log(r);
+            },
+            faiture(r){
+                console.log(r);
+            },
+            maskTarget: true
+        })
     }
 })

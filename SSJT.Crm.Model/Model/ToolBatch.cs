@@ -5,8 +5,8 @@ namespace SSJT.Crm.Model
 	/// ToolBatch:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class ToolBatch
-	{
+	public partial class ToolBatch : BaseModel
+    {
 		public ToolBatch()
 		{}
 		#region Model

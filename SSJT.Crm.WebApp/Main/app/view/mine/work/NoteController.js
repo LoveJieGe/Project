@@ -45,5 +45,16 @@ Ext.define('SSJT.view.mine.work.NoteController', {
         store.setFilters(filters);
         store.suppressNextFilter = false;
         store.loadPage(1);
+    },
+    onDateRenderer(value,record){
+        if(Ext.isDate(value)) 
+            return Ext.util.Format.date(value, 'Y-m-d h:i:s'); 
+        return value;
+    },
+    onCheckRenderer(value,record){
+        debugger
+        if(value=='Y')
+            return true;
+        return false;
     }
 });

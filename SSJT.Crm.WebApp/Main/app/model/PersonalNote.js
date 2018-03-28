@@ -27,8 +27,8 @@ Ext.define('SSJT.model.PersonalNote',{
         },
         {
             name:'IsShow',
-            type:'boolean',
-            defaultValue:false
+            type:'string',
+            defaultValue:'N'
         },
         'CreatorId',
         'CreatorName',
@@ -46,8 +46,8 @@ Ext.define('SSJT.model.PersonalNote',{
         },
         {
             name:'IsFinish',
-            type:'boolean',
-            defaultValue:false
+            type:'string',
+            defaultValue:'N'
         },
         {
             name:'FinishDate',

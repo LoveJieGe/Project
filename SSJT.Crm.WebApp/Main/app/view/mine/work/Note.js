@@ -42,7 +42,8 @@ Ext.define('SSJT.view.mine.work.Note',{
         columns: [{
             text: '编号',
             dataIndex: 'NoteID',
-            flex: 2,
+            align:'center',
+            width:80,
             cell: {
                 encodeHtml: false
             },
@@ -52,7 +53,7 @@ Ext.define('SSJT.view.mine.work.Note',{
         }, {
             text: '内容',
             dataIndex: 'NoteContent',
-            flex: 2,
+            flex: 1,
             groupable:false,
             cell: {
                 encodeHtml: false
@@ -60,47 +61,64 @@ Ext.define('SSJT.view.mine.work.Note',{
         }, {
             text: '纸张颜色',
             groupable:false,
+            align:'center',
+            width:75,
+            cell: {
+                encodeHtml: false
+            },
             dataIndex: 'NoteColor',
-            flex: 1,
+            tpl:'<span class="Span-ConType" style="background-color:{NoteColor};"></span>'
         },{
             text: '重要程度',
             groupable:false,
             dataIndex: 'Priority',
-            flex: 1,
+            width:75,
+            align:'center',
+            renderer:function(value){
+                return !(value==='H')?!(value==='M')?'低':'中':'高';
+            }
         },{
             text: '创建者',
             groupable:false,
             dataIndex: 'CreatorName',
-            flex: 1,
+            width:60
         },{
+            xtype:'com_datetimecolumn',
             text: '创建日期',
             groupable:false,
-            width:76,
+            align:'center',
+            width:125,
             dataIndex: 'CreateDate',
         },{
             text: '更新者',
             groupable:false,
             dataIndex: 'UpdaterName',
-            flex: 1,
-        },{
-            text: '更新日期',
-            groupable:false,
-            width:76,
-            dataIndex: 'UpdateDate',
-        },{
-            text: '完成',
-            groupable:false,
-            dataIndex: 'IsFinish',
             width:60
         },{
+            xtype:'com_datetimecolumn',
+            text: '更新日期',
+            groupable:false,
+            width:125,
+            dataIndex: 'UpdateDate',
+            align:'center'
+        },{
+            xtype:'com_checkcolumn',
+            text: '完成',
+            headerCheckbox:false,
+            groupable:false,
+            dataIndex: 'IsFinish',
+            width:60,
+        },{
+            xtype:'com_datetimecolumn',
             text: '完成日期',
             groupable:false,
-            width:76,
+            align:'center',
+            width:125,
             dataIndex: 'FinishDate',
         }],
 
-        listeners: {
-            childdoubletap: 'onChildActivate'
-        }
+        // listeners: {
+        //     childdoubletap: 'onChildActivate'
+        // }
     }]
 });

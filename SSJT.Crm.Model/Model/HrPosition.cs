@@ -5,8 +5,8 @@ namespace SSJT.Crm.Model
 	/// HrPosition:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class HrPosition
-	{
+	public partial class HrPosition : BaseModel
+    {
 		public HrPosition()
 		{}
 		#region Model

@@ -5,8 +5,8 @@ namespace SSJT.Crm.Model
 	/// SysButton:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class SysButton
-	{
+	public partial class SysButton : BaseModel
+    {
 		public SysButton()
 		{}
 		#region Model

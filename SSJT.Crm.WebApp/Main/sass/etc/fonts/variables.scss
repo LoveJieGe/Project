@@ -5,6 +5,7 @@
 
 $i-task-css-prefix:       i-task !default;
 $i-task-version:          "1.0.3" !default;
+$i-task-font-path: get-resource-path('fonts');
 
 $i-task-var-check: "\e836";
 $i-task-var-read: "\e837";

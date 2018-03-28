@@ -42,14 +42,16 @@ namespace SSJT.Crm.Model
             set
             {
                 object propertyValue = this.GetPropertyValue(name);
-                this.SetProperty(ref propertyValue, value);
+                this.SetProperty(ref propertyValue, value,name);
             }
         }
         protected void SetProperty<T>(ref T prop, T value, [CallerMemberName] string propertyName = "")
         {
+           
             if (!EqualityComparer<T>.Default.Equals(prop, value))
             {
-                prop = value;
+                PropertyInfo property = this.GetType().GetProperty(propertyName);
+                property.SetValue(this, value);
                 OnPropertyChanged(propertyName);
             }
         }

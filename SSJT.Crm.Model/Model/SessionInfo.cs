@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SSJT.Crm.Model
 {
     [Serializable]
-    public partial class SessionInfo
+    public partial class SessionInfo : BaseModel
     {
         private string sessionId;
         private string userSign;

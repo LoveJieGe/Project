@@ -5,7 +5,7 @@ namespace SSJT.Crm.Model
 	/// CrmContact:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class CrmContact
+	public partial class CrmContact:BaseModel
 	{
 		public CrmContact()
 		{}

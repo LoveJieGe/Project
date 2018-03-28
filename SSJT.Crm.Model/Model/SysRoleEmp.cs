@@ -5,8 +5,8 @@ namespace SSJT.Crm.Model
 	/// SysRoleEmp:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class SysRoleEmp
-	{
+	public partial class SysRoleEmp : BaseModel
+    {
 		public SysRoleEmp()
 		{}
 		#region Model

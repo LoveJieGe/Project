@@ -19,6 +19,7 @@ using SSJT.Crm.Model;
 using SSJT.Crm.BLL;
 using SSJT.Crm.IBLL;
 using System.Data.Entity;
+using SSJT.Crm.Core;
 
 namespace SSJT.Crm.Test
 {
@@ -73,13 +74,13 @@ namespace SSJT.Crm.Test
             //}
             //Console.Write("22");
             //测试EF更新功能
-            Crm.Model.CrmEntities context = new Model.CrmEntities();
-            var flag = context.Database.CreateIfNotExists();
-            var notes = context.PersonalNote.Where(p => p.IsFinish == "Y");
-            if (flag)
-            {
-                Console.WriteLine("创建成功");
-            }
+            //Crm.Model.CrmEntities context = new Model.CrmEntities();
+            //var flag = context.Database.CreateIfNotExists();
+            //var notes = context.PersonalNote.Where(p => p.IsFinish == "Y");
+            //if (flag)
+            //{
+            //    Console.WriteLine("创建成功");
+            //}
 
             //IHrEmployService noteDal = new HrEmployService();
             //int total = 0;
@@ -97,6 +98,11 @@ namespace SSJT.Crm.Test
             //    user.AvatarName = "测试s3";
             //    service.Update(user);
             //}
+            //测试
+            //string s = SqlHelper.GenerateTableID();
+            //Console.WriteLine(s);
+            PersonalNote note = new PersonalNote();
+            note["NoteID"] = SqlHelper.GenerateTableID();
             Console.ReadKey();
         }
         public static object GetInstance(string fullClassName)

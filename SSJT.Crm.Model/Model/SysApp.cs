@@ -5,8 +5,8 @@ namespace SSJT.Crm.Model
 	/// SysApp:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class SysApp
-	{
+	public partial class SysApp : BaseModel
+    {
 		public SysApp()
 		{}
 		#region Model

@@ -68,6 +68,7 @@ Ext.define('Common.view.NoteController',{
                 p0:record.data
             },
             success(r){
+                debugger
                 console.log(r);
             },
             faiture(r){

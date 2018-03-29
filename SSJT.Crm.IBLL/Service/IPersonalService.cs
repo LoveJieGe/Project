@@ -19,5 +19,9 @@ namespace SSJT.Crm.IBLL
         [AjaxMethod]
         [Description("添加便签")]
         Model.PersonalNote InsertData(Model.PersonalNote model);
+
+        [AjaxMethod]
+        [Description("删除便签")]
+        void DeleteNote(string noteId);
     }
 }

@@ -1,5 +1,6 @@
 Ext.define('SSJT.model.PersonalNote',{
     extend:'SSJT.model.Base',
+    idProperty:'NoteID',
     fields:[
         'NoteID',
         'NoteContent',

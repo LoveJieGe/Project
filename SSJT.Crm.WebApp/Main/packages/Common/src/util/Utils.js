@@ -229,7 +229,9 @@ Ext.define('Common.util.Utils',{
                     err = r.statusText;
                 }
 
-                const msg = err.message || err;
+                const msg = err.Message || err,
+                    errorCode = err.ErrorCode||'';
+
                 if (r.status == '0') {
                     me.toastShort(msg || 'communication failure');
                 } else if (r.status == '-1') { // ajax被中止
@@ -240,7 +242,7 @@ Ext.define('Common.util.Utils',{
                     this.getApp().fireEvent('needlogin');
                     me.toastShort(msg);
                 } else if (opt.failure) { // 普通异常
-                    opt.failure.call(this, msg, r.status);
+                    opt.failure.call(this, msg, errorCode);
                 } else {
                     me.alert(msg);
                 }

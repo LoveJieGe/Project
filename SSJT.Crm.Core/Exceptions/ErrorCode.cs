@@ -9,6 +9,10 @@ namespace SSJT.Crm.Core.Exceptions
     public enum ErrorCode
     {
         /// <summary>
+        /// 数据丢失
+        /// </summary>
+        DataLostCode = -32090,
+        /// <summary>
         /// 用户名或密码、验证码错误代码
         /// </summary>
         VErrorCode = -32091,

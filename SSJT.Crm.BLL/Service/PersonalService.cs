@@ -1,4 +1,5 @@
 ﻿using SSJT.Crm.Core;
+using SSJT.Crm.Core.Exceptions;
 using SSJT.Crm.IBLL;
 using SSJT.Crm.Model;
 using System;
@@ -11,12 +12,30 @@ namespace SSJT.Crm.BLL
 {
     public class PersonalService: IPersonalService
     {
+        private IPersonalNoteService _noteService = new PersonalNoteService();
+        internal IPersonalNoteService NoteService
+        {
+            get
+            {
+                if (this._noteService == null)
+                {
+                    _noteService = new PersonalNoteService();
+                }
+                return this._noteService;
+            }
+        }
         public PersonalNote InsertData(PersonalNote model)
         {
-            IPersonalNoteService service = new PersonalNoteService();
             model.NoteID = SqlHelper.GenerateTableID();
-            service.Add(model);
+            NoteService.Add(model);
             return model;
+        }
+        public void DeleteNote(string noteId)
+        {
+            PersonalNote info = NoteService.LoadEntity(p => p.NoteID == noteId);
+            if (info == null)
+                throw AjaxException.ToException(ErrorCode.DataLostCode,"数据已丢失或已删除");
+            NoteService.Delete(info);
         }
     }
 }

@@ -44,28 +44,19 @@ Ext.define('SSJT.view.mine.work.Note',{
             dataIndex: 'NoteID',
             align:'center',
             width:80,
-            cell: {
-                encodeHtml: false
-            },
             groupable:false,
-            tpl: '<a class="item-title" href="#">{NoteID}</a>'
+            tpl: '<a class="item-title" href="javascript:void(0)">{NoteID}</a>'
             
         }, {
             text: '内容',
             dataIndex: 'NoteContent',
             flex: 1,
             groupable:false,
-            cell: {
-                encodeHtml: false
-            },
         }, {
             text: '纸张颜色',
             groupable:false,
             align:'center',
             width:75,
-            cell: {
-                encodeHtml: false
-            },
             dataIndex: 'NoteColor',
             tpl:'<span class="Span-ConType" style="background-color:{NoteColor};"></span>'
         },{
@@ -115,10 +106,39 @@ Ext.define('SSJT.view.mine.work.Note',{
             align:'center',
             width:125,
             dataIndex: 'FinishDate',
+        },{
+            text:'编辑',
+            hideable:false,
+            sortable:false,
+            width:20,
+            cell:{
+                tools:{
+                    edit:{
+                        hanlder:'onEditNote',
+                        iconCls:'x-fa fa-edit',
+                        tooltip:'编辑'
+                    }
+                }
+            }
+        },{
+            text:'删除',
+            hideable:false,
+            sortable:false,
+            width:20,
+            cell:{
+                tools:{
+                    delete:{
+                        handler:'onDeleteNote',
+                        iconCls:'x-fa fa-remove',
+                        tooltip:'删除'
+                    }
+                }
+            }
         }],
 
-        // listeners: {
-        //     childdoubletap: 'onChildActivate'
-        // }
+        listeners: {
+            childtap: 'onChildTap',
+            // childdoubletap: 'onChildActivate'
+        }
     }]
 });

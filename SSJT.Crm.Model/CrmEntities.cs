@@ -9,7 +9,7 @@ namespace SSJT.Crm.Model
         {
             //if (!Database.Exists())
             //{
-                  Database.SetInitializer(new Initializer());
+                  //Database.SetInitializer(new Initializer());
             //}
 
         }

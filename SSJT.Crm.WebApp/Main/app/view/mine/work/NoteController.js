@@ -46,15 +46,35 @@ Ext.define('SSJT.view.mine.work.NoteController', {
         store.suppressNextFilter = false;
         store.loadPage(1);
     },
-    onDateRenderer(value,record){
-        if(Ext.isDate(value)) 
-            return Ext.util.Format.date(value, 'Y-m-d h:i:s'); 
-        return value;
+    onDeleteNote(g,o,e){
+        ComUtils.confirm('确定删除该行数据?',()=>{
+            let me = this,
+                view = me.getView(),
+                record = o.record,
+                store = g.getStore();
+            view.ajax('ajaxRequest/IPersonalService/DeleteNote',{
+                data:{
+                    NoteID:record.get('NoteID')
+                },
+                success(r){
+                    ComUtils.toastShort('删除成功!');
+                    if(store&&record){
+                        store.remove(record);
+                    }
+                },
+                maskTarget: view
+            });
+        })
+
     },
-    onCheckRenderer(value,record){
+    onChildTap(list, location){
         debugger
-        if(value=='Y')
-            return true;
-        return false;
+        if(!location.record)return;
+        const me = this,
+            event = location.event,
+            ele = Ext.fly(event.target),
+            record = location.record;
+        var selections = list.getSelections(),
+            selectable = list.getSelectable();
     }
 });

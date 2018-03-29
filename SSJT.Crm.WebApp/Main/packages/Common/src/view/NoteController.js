@@ -68,7 +68,8 @@ Ext.define('Common.view.NoteController',{
                 p0:record.data
             },
             success(r){
-                debugger
+                ComUtils.getApp().fireEvent('personalAdd',r);
+                view.close();
                 console.log(r);
             },
             faiture(r){

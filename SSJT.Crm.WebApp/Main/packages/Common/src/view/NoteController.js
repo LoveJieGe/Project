@@ -70,12 +70,8 @@ Ext.define('Common.view.NoteController',{
             success(r){
                 ComUtils.getApp().fireEvent('personalAdd',r);
                 view.close();
-                console.log(r);
             },
-            faiture(r){
-                console.log(r);
-            },
-            maskTarget: true
+            maskTarget: view
         })
     }
 })

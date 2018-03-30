@@ -26,11 +26,11 @@ Ext.define('SSJT.view.widgets.EditHeader',{
         },
         items:[{
             itemId: 'btnBrowse',
-            text: '选择图片',
+            //text: '选择图片',
             //tooltip: '图片',
             iconCls: 'i-common-image',
             handler:'onTapBtnBrowse',
-            preventDefaultAction: false
+            //preventDefaultAction: false
         },{
             text: '4x3',
             value:'1.3333333333333333',

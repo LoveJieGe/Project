@@ -78,10 +78,14 @@ Ext.define('SSJT.view.mine.work.NoteController', {
         var selections = list.getSelections(),
             selectable = list.getSelectable();
         if(ele.hasCls('item-title')){
-            let note_view = Ext.create('Common.view.Note',{
-                itemId:'Note_'+noteId,
-                action:'view'
-            });
+            let note_view_id = 'note-'+noteId.toString().toLowerCase(),
+                note_view = Ext.getCmp(note_view_id);
+            if(!note_view){
+                note_view = Ext.create('Common.view.Note',{
+                    id:'note-'+noteId.toString().toLowerCase(),
+                    action:'view'
+                });
+            }
             note_view.setRecord(record);
             note_view.show();
         }

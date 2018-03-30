@@ -3,7 +3,20 @@ Ext.define('Common.view.NoteController',{
     alias:'controller.note',
     init(){
         var me = this,
-            vm = me.getViewModel();
+            view = me.getView(),
+            vm = me.getViewModel(),
+            record = vm.get('record');
+        if(record&&record.isModel){
+            let x = record.get('LocationX'),
+                y = record.get('LocationY');
+            if(x>0)view.setX(x);
+            if(y>0)view.setY(x);
+        }else if(record){
+            let x = record.LocationX,
+                y = record.LocationY;
+            if(x>0)view.setX(x);
+            if(y>0)view.setY(x);
+        }
         me.callParent(arguments);
     },
     onHideNote(){
@@ -20,37 +33,22 @@ Ext.define('Common.view.NoteController',{
     },
     onMenuItemTap(m,e){
         const me = this,
-            iconCls = m&&m.getIconCls(),
-            menu = me.lookup('prioritymenu'),
+            iconCls = m.getIconCls(),
             vm = me.getViewModel(),
             record = vm.get('record');;
-        menu.setIconCls(iconCls);
+        vm.set('Priority',iconCls);
         record.set('Priority',m.value);
     },
     onColorTap(btn,e,opt){
         const me = this,
             view = me.getView(),
             color = btn.el.getStyle('background-color');
-            toolRgba = me.setRgba(color,0.9),
-            textRgba = me.setRgba(color,0.6),
-            header = view.getHeader(),
-            bottom = me.lookup('bottomTool'),
-            textarea = me.lookup('textarea'),
-            btn = me.lookup('btnsave');
-        btn.el.setStyle('background-color',color);
-        header.el.setStyle('background-color',toolRgba);
-        bottom.el.setStyle('background-color',toolRgba);
-        textarea.el.setStyle('background-color',textRgba);
-    },
-    setRgba(rgba,alpha){
-        rgba = rgba&&rgba.match(/(\d(\.\d+)?)+/g);
-        if(rgba&&rgba.length==4){
-            rgba[3] = alpha;
-            return 'rgba('+rgba.join(',')+')';
-        }else if(rgba&&rgba.length==3){
-            rgba.push(alpha);
-            return 'rgba('+rgba.join(',')+')';
-        }
+            // toolRgba = view.setRgba(color,0.9),
+            // textRgba = view.setRgba(color,0.6),
+            vm = me.getViewModel();
+        // vm.set('ToolColor',toolRgba);
+        // vm.set('TextColor',textRgba);
+        vm.set('NoteColor',color);
     },
     onBtnSave(btn,e,opt){
         debugger
@@ -60,7 +58,6 @@ Ext.define('Common.view.NoteController',{
             record = vm.get('record');
         record.set('Width',view.getWidth());
         record.set('Height',view.getHeight());
-        record.set('NoteColor',btn.el.getStyle('background-color'));
         record.set('LocationX',view.getX());
         record.set('LocationY',view.getY());
         ComUtils.ajax('ajaxRequest/IPersonalService/InsertData',{

@@ -9,6 +9,74 @@ Ext.define('Common.view.Note',{
     viewModel:{
         data:{
             record:null,
+            statusType:'add',
+        },
+        formulas:{
+            Priority:{
+                get:function(get){
+                    let r = get('record');
+                    if(r&&r.get('Priority')){
+                        let value = r.get('Priority');
+                        return !(value==='H')?!(value==='M')?
+                        'i-common-priority-one':
+                        'i-common-priority-two':
+                        'i-common-priority-three';
+                    }
+                    return 'i-common-priority-three';
+                }
+            },
+            NoteColor:{
+                get:function(get){
+                    let view = this.getView(),r = get('record');
+                    if(r&&r.get('NoteColor')){
+                        return r.get('NoteColor');
+                    }
+                    return 'rgb(255, 230, 111)';
+                },
+                set:function(value){
+                    let me = this,
+                        view = me.getView(),
+                        record = me.get('record');
+                    if(record){
+                        record.set('NoteColor',value);
+                    }
+                    const  toolRgba = view.setRgba(value,0.9),
+                        textRgba = view.setRgba(value,0.6);
+                    me.set({
+                        'ToolColor':toolRgba,
+                        'TextColor':textRgba,
+                        'Color':value
+                    });
+                }
+            },
+            Color:{
+                bind:{
+                    d:'{NoteColor}',
+                },
+                get:function(data){
+                    return data.d;
+                }
+            },
+            ToolColor:{
+                bind:{
+                    d:'{NoteColor}',
+                },
+                get:function(data){
+                    let me = this,
+                        view = me.getView();
+                    return view.setRgba(data.d,0.9);
+                }
+            },
+            TextColor:{
+                bind:{
+                    d:'{NoteColor}',
+                },
+                get:function(data){
+                    let me = this,
+                        view = me.getView();
+                    return view.setRgba(data.d,0.6);
+                }
+            }
         }
     },
     action:'add',//edit或者view
@@ -27,14 +95,20 @@ Ext.define('Common.view.Note',{
         height:30,
         minHeight:30,
         innerCls:'header-inner',
-        cls:'default-tool-color',
+        bind:{
+            style:{
+                'background-color':'{ToolColor}'
+            }
+        },
         defaults:{
             border:false,
             xtype: 'button',
             ui:'headbtn',
         },
         items:[{
-            iconCls:'i-common-priority-three',
+            bind:{
+                iconCls:'{Priority}',
+            },
             tooltip:'设置优先级',
             arrow:false,
             reference:'prioritymenu',
@@ -70,9 +144,11 @@ Ext.define('Common.view.Note',{
         reference:'textarea',
         border:false,
         height:'100%',
-        cls:'default-text-color',
         padding:0,
         bind:{
+            style:{
+                'background-color':'{TextColor}'
+            },
             value:'{record.NoteContent}'
         }
     },{
@@ -80,7 +156,11 @@ Ext.define('Common.view.Note',{
         docked: 'bottom',
         reference:'bottomTool',
         height:30,
-        cls:'default-tool-color',
+        bind:{
+            style:{
+                'background-color':'{ToolColor}'
+            }
+        },
         defaultType:'button',
         defaults:{
             ui:'round raised',
@@ -95,7 +175,11 @@ Ext.define('Common.view.Note',{
             width:60,
             reference:'btnsave',
             top:2,
-            cls:'default-color',
+            bind:{
+                style:{
+                    'background-color':'{Color}'
+                }
+            },
             text:'保存',
             weight:-10,
             bottom:0,
@@ -155,7 +239,29 @@ Ext.define('Common.view.Note',{
         me.callParent();
     },
     setRecord: function(record) {
-        this.getViewModel().set('record', record);
-    }
+        debugger
+        if(record){
+            const me = this,
+                vm = me.getViewModel();
+            vm.set('record', record);
+            if(record.get('LocationX')>0){
+                me.setX(record.get('LocationX'));
+            }
+            if(record.get('LocationY')>0){
+                me.setY(record.get('LocationY'));
+            }
+            vm.set('NoteColor',record.get('NoteColor'));
+        }
+    },
+    setRgba(rgba,alpha){
+        rgba = rgba&&rgba.match(/(\d(\.\d+)?)+/g);
+        if(rgba&&rgba.length==4){
+            rgba[3] = alpha;
+            return 'rgba('+rgba.join(',')+')';
+        }else if(rgba&&rgba.length==3){
+            rgba.push(alpha);
+            return 'rgba('+rgba.join(',')+')';
+        }
+    },
    
 })

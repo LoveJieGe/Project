@@ -10,6 +10,8 @@ Ext.define('Common.view.Note',{
         data:{
             record:null,
             statusType:'add',
+            Width:0,
+            Height:0,
         },
         formulas:{
             Priority:{
@@ -76,14 +78,23 @@ Ext.define('Common.view.Note',{
                         view = me.getView();
                     return view.setRgba(data.d,0.6);
                 }
+            },
+            IsHideBBar:{
+                bind:{
+                    d:'{statusType}'
+                },
+                get:function(data){
+                    return data.d.toString().toLowerCase()=='view';
+                }
             }
         }
     },
-    action:'add',//edit或者view
     actionMsg:'确定要隐藏该控件?',
     bind:{
-        width:'{record.Width}',
-        height:'{record.Height}',
+        width:'{Width}',
+        height:'{Height}',
+        x:'{X}',
+        y:'{Y}'
     },
     modal:false,
     border:false,
@@ -159,7 +170,8 @@ Ext.define('Common.view.Note',{
         bind:{
             style:{
                 'background-color':'{ToolColor}'
-            }
+            },
+            hidden:'{IsHideBBar}'
         },
         defaultType:'button',
         defaults:{
@@ -220,6 +232,9 @@ Ext.define('Common.view.Note',{
             }
         }]
     }],
+    listeners:{
+        beforeshow:'onBeforeShow'
+    },
     resizable:{
         edges:'all',
         minSize:[250,200]
@@ -238,6 +253,7 @@ Ext.define('Common.view.Note',{
         }
         me.callParent();
     },
+
     setRecord: function(record) {
         debugger
         if(record){
@@ -245,12 +261,17 @@ Ext.define('Common.view.Note',{
                 vm = me.getViewModel();
             vm.set('record', record);
             if(record.get('LocationX')>0){
-                me.setX(record.get('LocationX'));
+                vm.set('X',record.get('LocationX'));
             }
             if(record.get('LocationY')>0){
-                me.setY(record.get('LocationY'));
+                vm.set('Y',record.get('LocationY'));
             }
             vm.set('NoteColor',record.get('NoteColor'));
+            vm.set('Width',record.get('Width'));
+            vm.set('Height',record.get('Height'));
+            if(!record.phantom){
+                vm.set('statusType','view');
+            }
         }
     },
     setRgba(rgba,alpha){

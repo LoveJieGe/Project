@@ -82,7 +82,7 @@ Ext.define('SSJT.view.mine.work.NoteController', {
                 note_view = Ext.getCmp(note_view_id);
             if(!note_view){
                 note_view = Ext.create('Common.view.Note',{
-                    id:'note-'+noteId.toString().toLowerCase(),
+                    id:note_view_id,
                     action:'view'
                 });
             }

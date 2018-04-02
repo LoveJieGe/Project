@@ -1,23 +1,20 @@
 Ext.define('Common.view.NoteController',{
     extend:'Ext.app.ViewController',
     alias:'controller.note',
-    init(){
-        var me = this,
-            view = me.getView(),
-            vm = me.getViewModel(),
+    onBeforeShow(sender, e){
+        debugger
+        const vm = sender.getViewModel(),
             record = vm.get('record');
         if(record&&record.isModel){
             let x = record.get('LocationX'),
-                y = record.get('LocationY');
-            if(x>0)view.setX(x);
-            if(y>0)view.setY(x);
-        }else if(record){
-            let x = record.LocationX,
-                y = record.LocationY;
-            if(x>0)view.setX(x);
-            if(y>0)view.setY(x);
+                y = record.get('LocationY'),
+                w = record.get('Width'),
+                h = record.get('Height');
+            if(x>0)sender.setX(x);
+            if(y>0)sender.setY(x);
+            if(w>0)sender.setWidth(w);
+            if(h>0)sender.setHeight(h);
         }
-        me.callParent(arguments);
     },
     onHideNote(){
         var me = this,

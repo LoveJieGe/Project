@@ -43,7 +43,7 @@ Ext.define('SSJT.view.mine.work.Note',{
             text: '编号',
             dataIndex: 'NoteID',
             align:'center',
-            width:80,
+            width:85,
             groupable:false,
             tpl: '<a class="item-title" href="javascript:void(0)">{NoteID}</a>'
             

@@ -32,6 +32,28 @@ namespace SSJT.Crm.Model
             table.Rows.Add(row);
             return table;
         }
+        public void CopyFrom(BaseModel model)
+        {
+            if (model == null) return;
+            Type destType =this.GetType();
+            Type sourcetype = model.GetType();
+            if (sourcetype != null&&destType!=null)
+            {
+                foreach (PropertyInfo sourceInfo in sourcetype.GetProperties(BindingFlags.Public|BindingFlags.Instance))
+                {
+                    if (sourceInfo.GetIndexParameters().Length > 0) continue;
+                    if (sourceInfo.CanRead && sourceInfo.CanWrite)
+                    {
+                        PropertyInfo destInfo = destType.GetProperty(sourceInfo.Name, BindingFlags.Public | BindingFlags.Instance);
+                        object sourceValue = sourceInfo.GetValue((object)model, null);
+                        if (destInfo != null&& destInfo.CanWrite&& destInfo.CanRead && sourceValue != null)
+                        {
+                            destInfo.SetValue((object)this, sourceValue, null);
+                        }
+                    }
+                }
+            }
+        }
         public object this[string name]
         {
             get

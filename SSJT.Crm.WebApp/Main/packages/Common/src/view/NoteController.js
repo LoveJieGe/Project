@@ -2,31 +2,41 @@ Ext.define('Common.view.NoteController',{
     extend:'Ext.app.ViewController',
     alias:'controller.note',
     onBeforeShow(sender, e){
-        debugger
         const vm = sender.getViewModel(),
             record = vm.get('record');
-        if(record&&record.isModel){
-            let x = record.get('LocationX'),
-                y = record.get('LocationY'),
-                w = record.get('Width'),
-                h = record.get('Height');
-            if(x>0)sender.setX(x);
-            if(y>0)sender.setY(x);
-            if(w>0)sender.setWidth(w);
-            if(h>0)sender.setHeight(h);
+        if(record){
+            if(record.get('LocationX')>0)
+                sender.setX(record.get('LocationX'));
+            if(record.get('LocationY')>0)
+                sender.setY(record.get('LocationY'));
         }
     },
     onHideNote(){
         var me = this,
-            view = me.getView();
-        ComUtils.confirm(view.actionMsg,function(){
-            if(view.action){
-                let action = Ext.util.Format.lowercase(view.action);
-                if(action=='add'){
-                    view.destroy();
-                }
-            }
-        })
+            view = me.getView(),
+            vm = view.getViewModel(),
+            type = Ext.util.Format.lowercase(vm.get('statusType'));
+        if(type=='view'){
+            view.hide();
+        }else if(type=='add'){
+            view.close();
+        }else if(type=='edit'){
+            ComUtils.confirm('确定放弃更改隐藏便签?',function(){
+                view.hide();
+            })
+        }
+    },
+    onEditNote(btn,e,opt){
+        var me = this
+            vm = me.getViewModel();
+        vm.set('statusType','edit');
+    },
+    onReturn(btn,e,opt){
+        var me = this;
+        ComUtils.confirm('确定放弃更改返回浏览?',function(){
+            let vm = me.getViewModel();
+            vm.set('statusType','view');
+        });
     },
     onMenuItemTap(m,e){
         const me = this,
@@ -40,11 +50,7 @@ Ext.define('Common.view.NoteController',{
         const me = this,
             view = me.getView(),
             color = btn.el.getStyle('background-color');
-            // toolRgba = view.setRgba(color,0.9),
-            // textRgba = view.setRgba(color,0.6),
             vm = me.getViewModel();
-        // vm.set('ToolColor',toolRgba);
-        // vm.set('TextColor',textRgba);
         vm.set('NoteColor',color);
     },
     onBtnSave(btn,e,opt){
@@ -52,18 +58,49 @@ Ext.define('Common.view.NoteController',{
         const me = this,
             view = me.getView(),
             vm = me.getViewModel(),
-            record = vm.get('record');
-        record.set('Width',view.getWidth());
-        record.set('Height',view.getHeight());
+            record = vm.get('record'),
+            w = view.getWidth(),
+            h = view.getHeight(),
+            status = vm.get('statusType');
+        record.set('Width',w>0?w:view.getMinWidth());
+        record.set('Height',h>0?h:view.getMinHeight());
         record.set('LocationX',view.getX());
         record.set('LocationY',view.getY());
-        ComUtils.ajax('ajaxRequest/IPersonalService/InsertData',{
+        
+        ComUtils.ajax(`ajaxRequest/IPersonalService/${status=='add'?'Insert':'Update'}Data`,{
             data:{
                 p0:record.data
             },
             success(r){
-                ComUtils.getApp().fireEvent('personalAdd',r);
-                view.close();
+                debugger
+                ComUtils.getApp().fireEvent(`personal${status=='add'?'Add':'Update'}`,r);
+                if(status=='edit'){
+                    let note_model = Ext.create('SSJT.model.PersonalNote',r);
+                    vm.set('record',note_model);
+                    vm.set('statusType','view');
+                }else{
+                    view.close();
+                }
+            },
+            maskTarget: view
+        })
+    },
+    onFinishNote(btn,e,opt){
+        const me = this,
+            view = me.getView(),
+            vm = me.getViewModel(),
+            record = vm.get('record'),
+            noteID = record&&record.get('NoteID');
+        ComUtils.ajax('ajaxRequest/IPersonalService/FinishNote',{
+            data:{
+                NoteID:noteID
+            },
+            success(r){
+                ComUtils.getApp().fireEvent('personalUpdate',r);
+                record.set({
+                    'IsFinish':r.IsFinish,
+                    'FinishDate':r.FinishDate
+                });
             },
             maskTarget: view
         })

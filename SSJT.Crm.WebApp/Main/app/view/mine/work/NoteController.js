@@ -85,8 +85,8 @@ Ext.define('SSJT.view.mine.work.NoteController', {
                     id:note_view_id,
                     action:'view'
                 });
+                note_view.setRecord(record);
             }
-            note_view.setRecord(record);
             note_view.show();
         }
     }

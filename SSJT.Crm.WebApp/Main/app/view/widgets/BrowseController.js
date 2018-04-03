@@ -4,7 +4,8 @@ Ext.define('SSJT.view.widgets.BrowseController',{
     listen:{
         controller:{
             '*':{
-                personalAdd:'onPersonalAdd'
+                personalAdd:'onPersonalAdd',
+                personalUpdate:'onPersonalUpdate'
             }
         }
     },
@@ -21,10 +22,20 @@ Ext.define('SSJT.view.widgets.BrowseController',{
             store.insert(0, record);
         }
     },
+    onPersonalUpdate:function(r){
+        debugger
+        const me = this,
+            view = me.getView(),
+            grid = view.down('#grid');
+            store = grid&&grid.getStore();
+        if(store){
+            store.reload();
+        }
+    },
     onSearch:function(){
 
     },
     onRefreshTap:function(){
-
+        
     },
 });

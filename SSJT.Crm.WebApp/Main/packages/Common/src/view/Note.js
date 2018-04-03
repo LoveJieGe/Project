@@ -10,11 +10,17 @@ Ext.define('Common.view.Note',{
         data:{
             record:null,
             statusType:'add',
-            Width:0,
-            Height:0,
         },
         formulas:{
-            Priority:{
+            IsView:{
+                bind:{
+                    d:'{statusType}'
+                },
+                get:function(data){
+                    return data.d.toString().toLowerCase()=='view';
+                }
+            },
+            PriorityCls:{
                 get:function(get){
                     let r = get('record');
                     if(r&&r.get('Priority')){
@@ -27,9 +33,56 @@ Ext.define('Common.view.Note',{
                     return 'i-common-priority-three';
                 }
             },
+            PriorityTip:{
+                bind:{
+                    d:'{IsView}'
+                },
+                get:function(data){
+                    if(data.d){
+                        let me = this,
+                            r= me.get('record');
+                        if(r&&r.get('Priority')){
+                            let value = r.get('Priority');
+                            return !(value==='H')?!(value==='M')?'低':'中':'高';
+                        }
+                    }
+                    return '设置优先级';
+                }
+            },
+            PriorityMenu:{
+                bind:{
+                    d:'{IsView}'
+                },
+                get:function(data){
+                    if(!data.d){
+                        return {
+                            xtype: 'menu',
+                            floated: false,
+                            docked: 'left',
+                            defaults:{
+                                handler:'onMenuItemTap'
+                            },
+                            items: [{
+                                iconCls:'i-common-priority-one',
+                                text: '低',
+                                value:'L'
+                            },{
+                                iconCls:'i-common-priority-two',
+                                text: '中',
+                                value:'M'
+                            },{
+                                iconCls:'i-common-priority-three',
+                                text: '高',
+                                value:'H'
+                            }]
+                        };
+                    }
+                    return null;
+                }
+            },
             NoteColor:{
                 get:function(get){
-                    let view = this.getView(),r = get('record');
+                    let r = get('record');
                     if(r&&r.get('NoteColor')){
                         return r.get('NoteColor');
                     }
@@ -79,17 +132,8 @@ Ext.define('Common.view.Note',{
                     return view.setRgba(data.d,0.6);
                 }
             },
-            IsHideBBar:{
-                bind:{
-                    d:'{statusType}'
-                },
-                get:function(data){
-                    return data.d.toString().toLowerCase()=='view';
-                }
-            }
         }
     },
-    actionMsg:'确定要隐藏该控件?',
     bind:{
         width:'{Width}',
         height:'{Height}',
@@ -117,37 +161,50 @@ Ext.define('Common.view.Note',{
             ui:'headbtn',
         },
         items:[{
+            iconCls:'i-common-return',
+            tooltip:'返回',
+            handler:'onReturn',
+            weight:-20,
             bind:{
-                iconCls:'{Priority}',
+                hidden:'{statusType!="edit"}'
+            }
+
+        },{
+            iconCls:'i-common-add',
+            tooltip:'添加',
+            handler:'onAddNote',
+            weight:-10,
+            bind:{
+                hidden:'{!IsView}'
+            }
+
+        },{
+            bind:{
+                iconCls:'{PriorityCls}',
+                menu:'{PriorityMenu}',
+                tooltip:'{PriorityTip}'
             },
-            tooltip:'设置优先级',
             arrow:false,
             reference:'prioritymenu',
-            menu:{
-                xtype: 'menu',
-                floated: false,
-                docked: 'left',
-                defaults:{
-                    handler:'onMenuItemTap'
-                },
-                items: [{
-                    iconCls:'i-common-priority-one',
-                    text: '低',
-                    value:'L'
-                },{
-                    iconCls:'i-common-priority-two',
-                    text: '中',
-                    value:'M'
-                },{
-                    iconCls:'i-common-priority-three',
-                    text: '高',
-                    value:'H'
-                }]
-            }
+        },{
+            iconCls:'x-fa fa-pencil',
+            tooltip:'编辑',
+            bind:{
+                hidden:'{!IsView}'
+            },
+            handler:'onEditNote'
         },{
             iconCls:'x-fa fa-eye-slash',
             tooltip:'隐藏',
             handler:'onHideNote'
+        },{
+            iconCls:'i-common-finish',
+            tooltip:'完成',
+            
+            bind:{
+                hidden:'{!IsView}',
+                handler:'{record.IsFinish=="Y"?"":"onFinishNote"}',
+            }
         }]
     },
     items:[{
@@ -160,7 +217,8 @@ Ext.define('Common.view.Note',{
             style:{
                 'background-color':'{TextColor}'
             },
-            value:'{record.NoteContent}'
+            value:'{record.NoteContent}',
+            readOnly:'{IsView}'
         }
     },{
         xtype:'container',
@@ -171,7 +229,7 @@ Ext.define('Common.view.Note',{
             style:{
                 'background-color':'{ToolColor}'
             },
-            hidden:'{IsHideBBar}'
+            hidden:'{IsView}'
         },
         defaultType:'button',
         defaults:{
@@ -232,30 +290,22 @@ Ext.define('Common.view.Note',{
             }
         }]
     }],
-    listeners:{
-        beforeshow:'onBeforeShow'
-    },
     resizable:{
         edges:'all',
         minSize:[250,200]
     },
+    listeners:{
+        beforeshow:'onBeforeShow'
+    },
     initialize(){
         var me = this,
-            btns = me.query('button'),
             textarea = me.lookup('textarea');
-        // btns.forEach(function(item){
-        //     if(item&&item.innerElement){
-        //         item.innerElement.setStyle('background-color','rgb(255, 230, 111)')
-        //     }
-        // })
         if(textarea&&textarea.inputWrapElement){
             textarea.inputWrapElement.setStyle('background','none');
         }
         me.callParent();
     },
-
     setRecord: function(record) {
-        debugger
         if(record){
             const me = this,
                 vm = me.getViewModel();
@@ -271,6 +321,10 @@ Ext.define('Common.view.Note',{
             vm.set('Height',record.get('Height'));
             if(!record.phantom){
                 vm.set('statusType','view');
+            }else{
+                if(Ext.isEmpty(record.get('NoteColor'))){
+                    vm.set('NoteColor','rgb(255, 230, 111)');
+                }
             }
         }
     },

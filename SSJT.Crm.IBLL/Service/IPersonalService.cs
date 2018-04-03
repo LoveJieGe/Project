@@ -1,4 +1,5 @@
 ﻿using SSJT.Crm.Core;
+using SSJT.Crm.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,28 @@ namespace SSJT.Crm.IBLL
         /// <returns></returns>
         [AjaxMethod]
         [Description("添加便签")]
-        Model.PersonalNote InsertData(Model.PersonalNote model);
+        PersonalNote InsertData(Model.PersonalNote model);
 
         [AjaxMethod]
         [Description("删除便签")]
         void DeleteNote(string noteId);
+
+        /// <summary>
+        /// 完成便签
+        /// </summary>
+        /// <param name="noteId"></param>
+        /// <returns></returns>
+        [AjaxMethod]
+        [Description("完成便签")]
+        PersonalNote FinishNote(string noteId);
+
+        /// <summary>
+        /// 更新数据
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [AjaxMethod]
+        [Description("更新数据")]
+        PersonalNote UpdateData(PersonalNote model);
     }
 }

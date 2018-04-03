@@ -114,7 +114,7 @@ Ext.define('SSJT.view.mine.work.Note',{
             cell:{
                 tools:{
                     edit:{
-                        hanlder:'onEditNote',
+                        handler:'onEditNote',
                         iconCls:'x-fa fa-edit',
                         tooltip:'编辑'
                     }

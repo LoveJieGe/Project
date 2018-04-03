@@ -67,8 +67,24 @@ Ext.define('SSJT.view.mine.work.NoteController', {
         })
 
     },
-    onChildTap(list, location){
+    onEditNote(g,o,e){
         debugger
+        const me = this,
+            view = me.getView(),
+            record = o.record,
+            store = g.getStore(),
+            note_view_id = 'note-'+record.get('NoteID').toString().toLowerCase(),
+            note_view = Ext.getCmp(note_view_id);
+            if(!note_view){
+                note_view = Ext.create('Common.view.Note',{
+                    id:note_view_id,
+                });
+                note_view.setRecord(record);
+            }
+            note_view.getViewModel().set('statusType','edit');
+            note_view.show();
+    },
+    onChildTap(list, location){
         if(!location.record)return;
         const me = this,
             event = location.event,
@@ -83,10 +99,10 @@ Ext.define('SSJT.view.mine.work.NoteController', {
             if(!note_view){
                 note_view = Ext.create('Common.view.Note',{
                     id:note_view_id,
-                    action:'view'
                 });
                 note_view.setRecord(record);
             }
+            note_view.getViewModel().set('statusType','view');
             note_view.show();
         }
     }

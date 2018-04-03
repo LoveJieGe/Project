@@ -21,11 +21,12 @@ Ext.define('Common.view.Note',{
                 }
             },
             PriorityCls:{
-                get:function(get){
-                    let r = get('record');
-                    if(r&&r.get('Priority')){
-                        let value = r.get('Priority');
-                        return !(value==='H')?!(value==='M')?
+                bind:{
+                    d:'{record.Priority}'
+                },
+                get:function(data){
+                    if(data.d){
+                        return !(data.d==='H')?!(data.d==='M')?
                         'i-common-priority-one':
                         'i-common-priority-two':
                         'i-common-priority-three';
@@ -81,10 +82,12 @@ Ext.define('Common.view.Note',{
                 }
             },
             NoteColor:{
-                get:function(get){
-                    let r = get('record');
-                    if(r&&r.get('NoteColor')){
-                        return r.get('NoteColor');
+                bind:{
+                    d:'{record.NoteColor}'
+                },
+                get:function(data){
+                    if(data.d){
+                        return data.d;
                     }
                     return 'rgb(255, 230, 111)';
                 },
@@ -131,7 +134,7 @@ Ext.define('Common.view.Note',{
                         view = me.getView();
                     return view.setRgba(data.d,0.6);
                 }
-            },
+            }
         }
     },
     bind:{
@@ -171,7 +174,7 @@ Ext.define('Common.view.Note',{
 
         },{
             iconCls:'i-common-add',
-            tooltip:'添加',
+            tooltip:'新增',
             handler:'onAddNote',
             weight:-10,
             bind:{
@@ -309,7 +312,7 @@ Ext.define('Common.view.Note',{
         if(record){
             const me = this,
                 vm = me.getViewModel();
-            vm.set('record', record);
+            vm.set('record',record );
             if(record.get('LocationX')>0){
                 vm.set('X',record.get('LocationX'));
             }

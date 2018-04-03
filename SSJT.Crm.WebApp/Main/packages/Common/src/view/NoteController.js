@@ -2,7 +2,8 @@ Ext.define('Common.view.NoteController',{
     extend:'Ext.app.ViewController',
     alias:'controller.note',
     onBeforeShow(sender, e){
-        const vm = sender.getViewModel(),
+        const me = this,
+            vm = sender.getViewModel(),
             record = vm.get('record');
         if(record){
             if(record.get('LocationX')>0)
@@ -34,7 +35,15 @@ Ext.define('Common.view.NoteController',{
     onReturn(btn,e,opt){
         var me = this;
         ComUtils.confirm('确定放弃更改返回浏览?',function(){
-            let vm = me.getViewModel();
+            let vm = me.getViewModel(),
+                view = me.getView(),
+                record = vm.get('record');
+            if(record){
+                for(let key in record.modified)
+                {
+                    record.set(`${key}`,record.modified[key])
+                }
+            }
             vm.set('statusType','view');
         });
     },
@@ -43,7 +52,7 @@ Ext.define('Common.view.NoteController',{
             iconCls = m.getIconCls(),
             vm = me.getViewModel(),
             record = vm.get('record');;
-        vm.set('Priority',iconCls);
+        vm.set('PriorityCls',iconCls);
         record.set('Priority',m.value);
     },
     onColorTap(btn,e,opt){
@@ -72,11 +81,10 @@ Ext.define('Common.view.NoteController',{
                 p0:record.data
             },
             success(r){
-                debugger
                 ComUtils.getApp().fireEvent(`personal${status=='add'?'Add':'Update'}`,r);
                 if(status=='edit'){
                     let note_model = Ext.create('SSJT.model.PersonalNote',r);
-                    vm.set('record',note_model);
+                    view.setRecord(note_model);
                     vm.set('statusType','view');
                 }else{
                     view.close();

@@ -38,7 +38,7 @@ Ext.define('SSJT.view.mine.work.Note',{
         //     type: 'listpaging',
         //     autoPaging: true
         // }],
-        //sortable: false,
+        sortable: false,
         columns: [{
             text: '编号',
             dataIndex: 'NoteID',

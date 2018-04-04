@@ -24,6 +24,13 @@ Ext.define('SSJT.view.mine.work.NoteController', {
         note_view.setRecord(note_model);
         note_view.show();
     },
+    onRefreshTap:function(){
+        var me = this,
+            view = me.getView(),
+            grid = view.getComponent('grid'),
+            store = grid.getStore();
+        store.reload();
+    },
     onSearch(){
         var me = this,
             view = me.getView(),

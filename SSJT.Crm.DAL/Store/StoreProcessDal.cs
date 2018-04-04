@@ -81,6 +81,14 @@ namespace SSJT.Crm.DAL
             Core.Server.ISessionServer sessionServer = SessionFactory.GetSessionServer();
             HrEmploy model = sessionServer.CurrentUser;
             IEnumerable<PersonalNote> notes = noteDal.LoadPageEntities(storeParams.page, storeParams.limit, out int total, false, p => p.CreateDate, p => p.CreatorId == model.UserID);
+            if (storeParams.filter != null)
+            {
+                foreach (FilterParam filter in storeParams.filter)
+                {
+                    if (string.IsNullOrEmpty(filter.value)) continue;
+                    notes = notes.Where(p => p["NoteID"].ToString().Contains(filter.value) || p.NoteContent.Contains(filter.value));
+                }
+            }
             if (notes.Count() > 0)
             {
                 StoreResult result = new StoreResult()

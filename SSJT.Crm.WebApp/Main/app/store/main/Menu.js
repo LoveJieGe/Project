@@ -12,6 +12,10 @@ Ext.define('SSJT.store.main.Menu', {
         {id:'office/info',text:'信息中心',mtype:'office/info',leaf:false,iconCls:'',parentId:'office'},
         {id:'office/info_news',text:'新闻',mtype:'office/info/news',iconCls:'',parentId:'office/info',leaf:true},
         {id:'office/info_announcement',text:'公告',mtype:'office/info/announcement',iconCls:'',parentId:'office/info',leaf:true},
+        {id:'crmmanage',text:'Crm客户管理',mtype:'crmmanage',iconCls:'x-fa  fa-address-book-o',parentId:'root',leaf:false},
+        {id:'manage',text:'客户管理',mtype:'manage',iconCls:'',parentId:'crmmanage',leaf:false},
+        {id:'manage/custom_list',text:'客户列表',mtype:'custom_list',iconCls:'',parentId:'manage',leaf:true},
+        {id:'manage/contact_manage',text:'联系人管理',mtype:'contact_manage',iconCls:'',parentId:'manage',leaf:true},
         {id:'recycle',text:'回收站',mtype:'crm/recycle',iconCls:'x-fa fa-trash',parentId:'root',leaf:true}
     ]},
     parentIdProperty: 'parentId',

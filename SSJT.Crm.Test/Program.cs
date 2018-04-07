@@ -101,10 +101,22 @@ namespace SSJT.Crm.Test
             //测试
             //string s = SqlHelper.GenerateTableID();
             //Console.WriteLine(s);
-            PersonalNote note = new PersonalNote();
-            note["NoteID"] = SqlHelper.GenerateTableID();
+            //PersonalNote note = new PersonalNote();
+            //note["NoteID"] = SqlHelper.GenerateTableID();
+
+            //天气服务测试
+            cn.com.webxml.www.WeatherWebService w = new cn.com.webxml.www.WeatherWebService();
+            string[] result =w.getWeatherbyCityName("苏州");
+            //WeatherWebServiceSoapClient weather = new WeatherWebServiceSoapClient("WeatherWebServiceSoap");
+            //s = new string[23];
+            //string[]  result = weather.getWeatherbyCityName("苏州");
+            foreach (string s in result)
+            {
+                Console.WriteLine(s);
+            }
             Console.ReadKey();
         }
+
         public static object GetInstance(string fullClassName)
         {
             Type type = Type.GetType(fullClassName);

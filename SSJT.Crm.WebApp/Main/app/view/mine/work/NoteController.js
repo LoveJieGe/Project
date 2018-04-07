@@ -76,7 +76,7 @@ Ext.define('SSJT.view.mine.work.NoteController', {
     },
     onEditNote(g,o,e){
         debugger
-        const me = this,
+        var me = this,
             view = me.getView(),
             record = o.record,
             store = g.getStore(),
@@ -84,7 +84,7 @@ Ext.define('SSJT.view.mine.work.NoteController', {
             note_view = Ext.getCmp(note_view_id);
             if(!note_view){
                 note_view = Ext.create('Common.view.Note',{
-                    id:note_view_id,
+                    id:note_view_id
                 });
                 note_view.setRecord(record);
             }

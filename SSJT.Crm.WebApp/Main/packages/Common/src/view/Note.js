@@ -341,5 +341,15 @@ Ext.define('Common.view.Note',{
             return 'rgba('+rgba.join(',')+')';
         }
     },
+    doDestroy(){
+        debugger
+        const me = this,
+            btn = me.lookup('prioritymenu'),
+            menu = btn&&btn.getMenu();
+        if(menu&&!menu.destroyed){
+            menu.destroy();
+        }
+        me.callParent(arguments);
+    }
    
 })

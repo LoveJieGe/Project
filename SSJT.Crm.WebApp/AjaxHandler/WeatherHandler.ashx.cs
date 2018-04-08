@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SSJT.Crm.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +19,34 @@ namespace SSJT.Crm.WebApp.AjaxHandler
 
         public override void ProcessRequest(HttpContext context)
         {
-            string city = GetCity(GetIP(context));
-            cn.com.webxml.www.WeatherWebService w = new cn.com.webxml.www.WeatherWebService();
-            string[] result = w.getWeatherbyCityName(city);
+            string city = context.Request["city"];
+            if (!string.IsNullOrEmpty(city))
+            {
+                try
+                {
+                    cn.com.webxml.www.WeatherWebService w = new cn.com.webxml.www.WeatherWebService();
+                    string[] result = w.getWeatherbyCityName(city);
+                    WeatherInfo info = FillData(result);
+                    context.Response.ContentType = "application/json";
+                    context.Response.Write(Core.JsonHelper.ToJson(info, Core.DateTimeMode.JS));
+                }
+                catch (Exception e)
+                {
+                    string msg = e.Message;
+                    while (e != null)
+                    {
+                        msg = e.Message;
+                        e = e.InnerException;
+                    }
+                    ErrorResponse(context, 400, msg);
+                }
+                
+            }
+            //string city = GetCity(GetIP(context));
             //context.Response.ContentType = "text/plain";
             //context.Response.Write("Hello World");
         }
+        #region 根据ip地址获取城市名称
         public static bool HasChinese(string str)
         {
             return Regex.IsMatch(str, @"[\u4e00-\u9fa5]");
@@ -141,6 +164,41 @@ namespace SSJT.Crm.WebApp.AjaxHandler
             {
                 return ("未知");
             }
+        }
+        #endregion
+        public WeatherInfo FillData(string[] result)
+        {
+            WeatherInfo info = null;
+            if (result != null && result.Length > 0)
+            {
+                info = new WeatherInfo();
+                info.Province = result[0];
+                info.City = result[1];
+                info.CityCode = result[2];
+                info.CityImage = result[3];
+                info.LastModifyDate = string.IsNullOrEmpty(result[4])?DateTime.Now:Convert.ToDateTime(result[4]);
+                info.TempC1 = result[5];
+                info.WeatherDesc1 = result[6];
+                info.Wind1 = result[7];
+                info.ImageFrom1 = result[8];
+                info.ImageTo1 = result[9];
+                info.WeatherLive = result[10];
+                info.WeatherIndex = result[11];
+                //第二天信息
+                info.TempC2 = result[12];
+                info.WeatherDesc2 = result[13];
+                info.Wind2 = result[14];
+                info.ImageFrom2 = result[15];
+                info.ImageTo2 = result[16];
+                //第三天
+                info.TempC3 = result[17];
+                info.WeatherDesc3 = result[18];
+                info.Wind3 = result[19];
+                info.ImageFrom3 = result[20];
+                info.ImageTo3 = result[21];
+                info.CityDesc = result[22];
+            }
+            return info;
         }
     }
 }

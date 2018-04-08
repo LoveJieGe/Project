@@ -1,0 +1,32 @@
+Ext.define('SSJT.model.WeatherInfo',{
+    extend:'Ext.data.Model',
+    fields:[
+        'Province',
+        'City',
+        'CityCode',
+        'CityImage',
+        'CityDesc',
+        {
+            name:'LastModifyDate',
+            type:'date'
+        },
+        'Week', 
+        'TempC1',
+        'TempC2',
+        'TempC3',
+        'WeatherDesc1',
+        'WeatherDesc2', 
+        'WeatherDesc3', 
+        'ImageFrom1', 
+        'ImageFrom2',
+        'ImageFrom3',
+        'ImageTo1',
+        'ImageTo2',
+        'ImageTo3', 
+        'Wind1', 
+        'Wind2', 
+        'Wind3', 
+        'WeatherIndex', 
+        'WeatherLive'
+    ]
+})

@@ -87,6 +87,7 @@
     <Compile Include="Model\SysRoleEmp.cs" />
     <Compile Include="Model\TableInformation.cs" />
     <Compile Include="Model\ToolBatch.cs" />
+    <Compile Include="Other\WeatherInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,10 +7,10 @@ namespace SSJT.Crm.Model
     {
         public CrmEntities() : base("name=CrmEntity")
         {
-            //if (!Database.Exists())
-            //{
-                  //Database.SetInitializer(new Initializer());
-            //}
+            if (!Database.Exists())
+            {
+                Database.SetInitializer(new Initializer());
+            }
 
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

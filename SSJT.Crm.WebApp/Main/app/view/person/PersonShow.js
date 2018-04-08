@@ -31,7 +31,14 @@ Ext.define('SSJT.view.person.PersonShow', {
                             xtype: 'personshowdetails'
                         },
                     }
-                }
+                },
+                // right:{
+                //     items:{
+                //         weather:{
+
+                //         }
+                //     }
+                // }
             }
         }
     }

@@ -45,5 +45,26 @@ namespace SSJT.Crm.Common
         }
 
         #endregion
+
+        /// <summary>
+        /// 摄氏温度转换成华氏温度
+        /// </summary>
+        /// <param name="temperatureCelsius"></param>
+        /// <returns></returns>
+        public static double CelsiusToFahrenheit(string temperatureCelsius)
+        {
+            double celsius = System.Double.Parse(temperatureCelsius);
+            return (celsius * 9 / 5) + 32;
+        }
+        /// <summary>
+        /// 华氏温度转换成摄氏温度
+        /// </summary>
+        /// <param name="temperatureFahrenheit"></param>
+        /// <returns></returns>
+        public static double FahrenheitToCelsius(string temperatureFahrenheit)
+        {
+            double fahrenheit = System.Double.Parse(temperatureFahrenheit);
+            return (fahrenheit - 32) * 5 / 9;
+        }
     }
 }

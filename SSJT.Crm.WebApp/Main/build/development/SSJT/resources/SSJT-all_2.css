@@ -910,20 +910,83 @@
     display: inline-block;
     border: 1px solid black;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:2 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:2 */
 .person-details .block-section {
     min-width: 50%;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:5 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:5 */
 .person-details .label {
     display: inline-block;
     width: 60px;
 }
-/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShowDetails.scss:9 */
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:9 */
 .person-details .value {
     display: inline-block;
     border-bottom: 1px dotted silver;
     width: 220px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:16 */
+.person-weather .ctop {
+    height: 26px;
+    line-height: 26px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:20 */
+.person-weather .clearfix {
+    zoom: 1;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:22 */
+.person-weather .clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:30 */
+.person-weather .city {
+    height: 26px;
+    overflow: hidden;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:34 */
+.person-weather .fl {
+    float: left;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:37 */
+.person-weather .fr {
+    float: right;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:40 */
+.person-weather .time {
+    color: #7e7e7e;
+    font-size: 13px;
+    margin-right: 10px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:45 */
+.person-weather big {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:53 */
+.person-weather h1 {
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:58 */
+.person-weather .weather-desc {
+    width: 33.33333%;
+    text-align: center;
+}
+/* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:61 */
+.person-weather .weather-desc span {
+    display: block;
+    margin-left: -10px;
+    padding: 5px;
+    font-weight: bold;
 }
 /* F:/MyProject/Git/Source/Project/SSJT.Crm.WebApp/Main/app/view/widgets/ShowHeader.scss:1 */
 .show-header {

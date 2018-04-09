@@ -1,0 +1,90 @@
+.person-details {
+    .block-section {
+        min-width: 50%;
+    }
+    .label{
+        display: inline-block;
+        width: 60px;
+    }
+    .value{
+        display: inline-block;
+        border-bottom: 1px dotted #c0c0c0;
+        width: 220px;
+    }
+}
+.person-weather{
+    .ctop{
+        height: 26px;
+        line-height: 26px;
+    }
+    .clearfix{
+        zoom:1;
+        &:after{
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            height: 0;
+        }
+    }
+    .city{
+        height: 26px;
+        overflow: hidden;
+    }
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+    .time{
+        color: #7e7e7e;
+        font-size: 13px;
+        margin-right: 10px;
+    }
+    big{
+        width:30px;
+        height:30px;
+        background-repeat: no-repeat;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+    h1{
+        height: 24px;
+        line-height: 24px;
+        font-size: 18px;
+    }
+    .weather-desc{
+        display: inline-block;
+        width:33.333333%;
+        text-align: center;
+        span{
+            display: block;
+            margin-left: -10px;
+            padding: 5px;
+            font-weight: bold;
+        }
+    }
+    .sunny-day{
+        background: -webkit-gradient(linear,0% 0,0% 100%,from(#50b2fb),to(#a6d4f6));
+        background: -o-linear-gradient(top,#50b2fb,#a6d4f6);
+        background: -ms-linear-gradient(top,#50b2fb,#a6d4f6);
+        background: -moz-linear-gradient(top,#50b2fb,#a6d4f6);
+        background: linear-gradient(#50b2fb,#a6d4f6);
+    }
+    .partly-cloudy-day{
+        background: -ms-linear-gradient(top,#0e7fdf,#69b8f0);
+        background: -moz-linear-gradient(top,#0e7fdf,#69b8f0);
+        background: -webkit-gradient(linear,0% 0,0% 100%,from(#0e7fdf),to(#69b8f0));
+        background: -o-linear-gradient(top,#0e7fdf,#69b8f0);
+        background: linear-gradient(#0e7fdf,#69b8f0);
+    }
+    .cloudy-day{
+        background: -ms-linear-gradient(top,#88a9ca,#bcd3e3);
+        background: -moz-linear-gradient(top,#88a9ca,#bcd3e3);
+        background: -webkit-gradient(linear,0% 0,0% 100%,from(#88a9ca),to(#bcd3e3));
+        background: -o-linear-gradient(top,#88a9ca,#bcd3e3);
+        background: linear-gradient(#88a9ca,#bcd3e3);
+    }
+}

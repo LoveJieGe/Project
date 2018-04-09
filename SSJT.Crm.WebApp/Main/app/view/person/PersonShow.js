@@ -2,7 +2,8 @@ Ext.define('SSJT.view.person.PersonShow', {
     extend: 'SSJT.view.widgets.Show',
     xtype: 'personshow',
     requires:[
-        'SSJT.view.person.PersonShowModel'
+        'SSJT.view.person.PersonShowModel',
+        'SSJT.view.person.ShowWeather'
     ],
     controller: 'personshow',
     viewModel: {
@@ -32,13 +33,13 @@ Ext.define('SSJT.view.person.PersonShow', {
                         },
                     }
                 },
-                // right:{
-                //     items:{
-                //         weather:{
-
-                //         }
-                //     }
-                // }
+                right:{
+                    items:{
+                        weather:{
+                            xtype:'personshowweather'
+                        }
+                    }
+                }
             }
         }
     }

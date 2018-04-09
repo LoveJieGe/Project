@@ -1385,13 +1385,13 @@ $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
 @import '../../../../../app/view/widgets/Show';
 
-/* including scss file adjacent to ..\..\..\..\..\app\view\person\PersonShowDetails.js */
+/* including scss file adjacent to ..\..\..\..\..\app\view\person\PersonShow.js */
 $default-resource-root: '' !default;
 $default-resource-path: 'images' !default;
 $current-package: false;
 $current-resource-root: $default-resource-root;
 $relative-image-path-for-uis: $default-resource-path;
-@import '../../../../../app/view/person/PersonShowDetails';
+@import '../../../../../app/view/person/PersonShow';
 
 /* including scss file adjacent to ..\..\..\..\..\app\view\widgets\ShowHeader.js */
 $default-resource-root: '' !default;

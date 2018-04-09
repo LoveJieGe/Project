@@ -22,7 +22,7 @@ Ext.define('SSJT.view.person.PersonShowController', {
         debugger
         const me = this,
             vm = this.getViewModel(),
-            weather = vm.getStore('weather');
+            weatherView = view.down('personshowweather');
         if(record&&record.isModel&&(record instanceof SSJT.model.Person))
             vm.set('user',record);
         else
@@ -33,8 +33,8 @@ Ext.define('SSJT.view.person.PersonShowController', {
                     city:result.city
                 },
                 success(r){
-                    let model = Ext.create(weather.getModel(),r);
-                    weather.add(model);
+                    //let model = Ext.create(weather.getModel(),r);
+                    weatherView&&weatherView.setData(r);
                 }
             });
         });

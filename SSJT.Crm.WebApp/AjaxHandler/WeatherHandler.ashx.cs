@@ -178,7 +178,7 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                 info.CityImage = result[3];
                 info.LastModifyDate = string.IsNullOrEmpty(result[4])?DateTime.Now:Convert.ToDateTime(result[4]);
                 info.TempC1 = result[5];
-                info.WeatherDesc1 = result[6];
+                info.WeatherDesc1 = result[6].Split(' ')[1];
                 info.Wind1 = result[7];
                 info.ImageFrom1 = result[8];
                 info.ImageTo1 = result[9];
@@ -186,13 +186,13 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                 info.WeatherIndex = result[11];
                 //第二天信息
                 info.TempC2 = result[12];
-                info.WeatherDesc2 = result[13];
+                info.WeatherDesc2 = result[13].Split(' ')[1];
                 info.Wind2 = result[14];
                 info.ImageFrom2 = result[15];
                 info.ImageTo2 = result[16];
                 //第三天
                 info.TempC3 = result[17];
-                info.WeatherDesc3 = result[18];
+                info.WeatherDesc3 = result[18].Split(' ')[1];
                 info.Wind3 = result[19];
                 info.ImageFrom3 = result[20];
                 info.ImageTo3 = result[21];

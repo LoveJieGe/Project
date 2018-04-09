@@ -1,14 +1,17 @@
 Ext.define('SSJT.view.person.PersonShowModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.personshow',
-    stores:{
-        weather:{
-            type:'weatherinfo'
-        }
-    },
+    // stores:{
+    //     weather:{
+    //         type:'weatherinfo'
+    //     }
+    // },
     data:{
         time:new Date(),
-        user:null
+        user:null,
+        // weather:{
+        //     type:'weatherinfo'
+        // }
     },
     formulas:{
         userAvatar: {

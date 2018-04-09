@@ -90,16 +90,6 @@ Ext.define('SSJT.view.widgets.Show', {
 
                 right: {
                     weighted: true,
-                    // items: {
-                    //     history: {
-                    //         xtype: 'historypanel',
-                    //         bind: '{history}',
-                    //         ui: 'block',
-                    //         listeners: {
-                    //             'childtap': 'onHistoryChildTap'
-                    //         }
-                    //     }
-                    // }
                 }
             }
         }

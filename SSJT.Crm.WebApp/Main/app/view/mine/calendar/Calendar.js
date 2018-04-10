@@ -29,7 +29,7 @@ Ext.define('SSJT.view.mine.calendar.Calendar', {
             autoLoad: true,
             proxy: {
                 type: 'ajax',
-                //url: '/KitchenSink/CalendarFull'
+                api:''
             }
         }
     }]

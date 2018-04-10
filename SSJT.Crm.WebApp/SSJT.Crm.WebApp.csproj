@@ -171,6 +171,12 @@
     <Compile Include="AjaxHandler\WeatherHandler.ashx.cs">
       <DependentUpon>WeatherHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="AngularJs\BaseCORSHandler.ashx.cs">
+      <DependentUpon>BaseCORSHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AngularJs\Sites.ashx.cs">
+      <DependentUpon>Sites.ashx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -6781,6 +6787,8 @@
     <Content Include="Doc\plupload\ImageUpload.ashx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <Content Include="AjaxHandler\WeatherHandler.ashx" />
+    <Content Include="AngularJs\Sites.ashx" />
+    <Content Include="AngularJs\BaseCORSHandler.ashx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

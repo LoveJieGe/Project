@@ -55,15 +55,27 @@
         line-height: 24px;
         font-size: 18px;
     }
+    .weatcher{
+        display: flex;
+        justify-content: space-between;
+    }
     .weather-desc{
         display: inline-block;
-        width:33.333333%;
+        width:33%;
         text-align: center;
+        margin: 0 5px 0 5px;
+        padding: 20px 0 30px 0;
         span{
             display: block;
             margin-left: -10px;
             padding: 5px;
             font-weight: bold;
+        }
+        &:first-child{
+            margin-left: 0px;
+        }
+        &:last-child{
+            margin-right: 0px;
         }
     }
     .sunny-day{
@@ -86,5 +98,21 @@
         background: -webkit-gradient(linear,0% 0,0% 100%,from(#88a9ca),to(#bcd3e3));
         background: -o-linear-gradient(top,#88a9ca,#bcd3e3);
         background: linear-gradient(#88a9ca,#bcd3e3);
+    }
+    @media screen and (max-width: 765px){
+        .weatcher{
+            display: inline;
+        }
+        .weather-desc{
+            width:100%;
+            margin: 5px 0 5px 0;
+            padding: 0 0 10px 0;
+            &:first-child{
+                margin-top: 0px;
+            }
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
     }
 }

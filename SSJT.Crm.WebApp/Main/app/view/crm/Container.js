@@ -7,6 +7,8 @@ Ext.define('SSJT.view.crm.Container', {
         'Ext.field.Text',
         'Ext.field.ComboBox',
         'Ext.plugin.Responsive',
+        'SSJT.view.crm.ListItem',
+        'SSJT.store.main.ListItem'
     ],
 
     xtype: 'crm-container',
@@ -32,7 +34,10 @@ Ext.define('SSJT.view.crm.Container', {
 
     }, {
         xtype: 'panel',
-        html:'hhhhh',
+        items:[{
+            xtype:'menu-listItem',
+            
+        }],
         width: 340
     }]
 });

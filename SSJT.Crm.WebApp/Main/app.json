@@ -19,7 +19,8 @@
         "font-awesome",
         "modern-locale",
         //"Util",
-        "Common"
+        "Common",
+        "calendar"
     ],
     "locale":"zh_CN",
     /**

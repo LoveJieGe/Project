@@ -8,7 +8,7 @@ Ext.define('SSJT.store.main.Menu', {
         {id:'office',text:'个人办公',mtype:'office',iconCls:'x-fa fa-user',parentId:'root',leaf:false},
         {id:'office/mine',text:'个人工作',mtype:'office/mine',iconCls:'',leaf:false,parentId:'office'},
         {id:'office/mine_notes',text:'我的便签',mtype:'mine_work_note',iconCls:'',parentId:'office/mine',leaf:true},
-        {id:'office/mine_schedule',text:'日程安排',mtype:'',iconCls:'',parentId:'office/mine',leaf:true},
+        {id:'office/mine_schedule',text:'日程安排',mtype:'mine_work_calendar',iconCls:'',parentId:'office/mine',leaf:true},
         {id:'office/info',text:'信息中心',mtype:'office/info',leaf:false,iconCls:'',parentId:'office'},
         {id:'office/info_news',text:'新闻',mtype:'office/info/news',iconCls:'',parentId:'office/info',leaf:true},
         {id:'office/info_announcement',text:'公告',mtype:'office/info/announcement',iconCls:'',parentId:'office/info',leaf:true},
@@ -70,6 +70,10 @@ Ext.define('SSJT.store.main.Menu', {
     }
 });
 
+
+// var nestedList = Ext.create('Ext.NestedList', {
+    
+// });
 /**
  * config.root = {
             expanded: true,

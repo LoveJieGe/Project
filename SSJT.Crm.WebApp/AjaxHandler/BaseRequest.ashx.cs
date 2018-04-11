@@ -12,10 +12,11 @@ namespace SSJT.Crm.WebApp.AjaxHandler
     /// <summary>
     /// BaseRequest 的摘要说明
     /// </summary>
-    public class BaseRequest : IHttpHandler
+    public class BaseRequest : BaseCORSHandler
     {
-        public virtual void ProcessRequest(HttpContext context)
+        public override void ProcessRequest(HttpContext context)
         {
+            base.ProcessRequest(context);
 
             #region 判断用户是否登录
             try

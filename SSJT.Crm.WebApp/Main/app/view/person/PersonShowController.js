@@ -16,17 +16,13 @@ Ext.define('SSJT.view.person.PersonShowController', {
             interval: 5000
         };
         Ext.TaskManager.start(task);
+        me.loadWeather();
         this.callParent(arguments);
     },
-    onRecordChange: function(view, record) {
-        debugger
+    loadWeather(){
         const me = this,
-            vm = this.getViewModel(),
-            weatherView = view.down('personshowweather');
-        if(record&&record.isModel&&(record instanceof SSJT.model.Person))
-            vm.set('user',record);
-        else
-            vm.set('user',null);
+            view = me.getView(),
+            weatherView = view.down('personshowweather')
         ComUtils.loadWeather(function(result){
             ComUtils.ajax('/AjaxHandler/WeatherHandler.ashx',{
                 params:{
@@ -38,6 +34,14 @@ Ext.define('SSJT.view.person.PersonShowController', {
                 }
             });
         });
+    },
+    onRecordChange: function(view, record) {
+        const me = this,
+            vm = this.getViewModel();
+        if(record&&record.isModel&&(record instanceof SSJT.model.Person))
+            vm.set('user',record);
+        else
+            vm.set('user',null);
         //weather.load();
         this.callParent(arguments);
     },
@@ -51,5 +55,6 @@ Ext.define('SSJT.view.person.PersonShowController', {
     },
     onEditAvatar:function(){
         AvatarHelper.showAvatarDialog();
-    }
+    },
+
 });

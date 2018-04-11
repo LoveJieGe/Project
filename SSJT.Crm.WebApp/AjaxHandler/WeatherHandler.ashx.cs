@@ -16,9 +16,9 @@ namespace SSJT.Crm.WebApp.AjaxHandler
     /// </summary>
     public class WeatherHandler : BaseRequest
     {
-
         public override void ProcessRequest(HttpContext context)
         {
+            base.ProcessRequest(context);
             string city = context.Request["city"];
             if (!string.IsNullOrEmpty(city))
             {

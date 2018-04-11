@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SSJT.Crm.Model
 {
 	/// <summary>
@@ -7,190 +10,232 @@ namespace SSJT.Crm.Model
 	[Serializable]
 	public partial class CrmContact:BaseModel
 	{
-		public CrmContact()
-		{}
-		#region Model
-		private int _id;
-		private string _name;
-		private string _sex;
-		private string _department;
-		private string _position;
-		private string _birthday;
-		private string _tel;
-		private string _fax;
-		private string _email;
-		private string _mobile;
-		private string _qq;
-		private string _cadd;
-		private string _hobby;
-		private string _remarks;
-		private int? _customerid;
-		private string _customername;
-		private int? _createid;
-		private DateTime? _createdate;
-		private int? _isdelete;
-		private DateTime? _deletetime;
-		/// <summary>
-		/// 
-		/// </summary>
-		public int Id
+        /// <summary>
+        /// 联系人ID
+        /// </summary>
+        [Key]
+        [AjaxProperty]
+		public int CntID
 		{
-			set{ _id=value;}
-			get{return _id;}
+            get;set;
 		}
 		/// <summary>
-		/// 
+		/// 联系人名字
 		/// </summary>
-		public string Name
+        [StringLength(50)]
+        [AjaxProperty]
+        public string CntName
 		{
-			set{ _name=value;}
-			get{return _name;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Sex
+        /// <summary>
+        /// 性别
+        /// </summary>
+        [AjaxProperty]
+        public int Gender
+        {
+            get;set;
+		}
+        /// <summary>
+        /// 部门ID
+        /// </summary>
+        [StringLength(20)]
+        [AjaxProperty]
+        public string DepID
+        {
+            get;set;
+        }
+        /// <summary>
+        /// 部门名字
+        /// </summary>
+        [StringLength(40)]
+        [AjaxProperty]
+        public string DepName
 		{
-			set{ _sex=value;}
-			get{return _sex;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Department
+        /// <summary>
+        /// 职位
+        /// </summary>
+        [StringLength(80)]
+        [AjaxProperty]
+        public string Position
 		{
-			set{ _department=value;}
-			get{return _department;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Position
+        /// <summary>
+        /// 
+        /// </summary>
+        [AjaxProperty]
+        [DataType(DataType.DateTime)]
+		public DateTime? Birthday
 		{
-			set{ _position=value;}
-			get{return _position;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Birthday
+        /// <summary>
+        /// 移动电话
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(20)]
+        public string Mobile
+        {
+            get;set;
+		}
+        /// <summary>
+        /// 单位电话
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(20)]
+        public string WorkPhone
+        {
+            get; set;
+        }
+        /// <summary>
+        /// 家庭电话
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(40)]
+        public string HomePhone
+        {
+            get; set;
+        }
+        /// <summary>
+        /// 传真
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(20)]
+        public string Fax
 		{
-			set{ _birthday=value;}
-			get{return _birthday;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Tel
+        /// <summary>
+        /// 邮箱
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(100)]
+        public string Email
 		{
-			set{ _tel=value;}
-			get{return _tel;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Fax
+
+        /// <summary>
+        /// QQ号码
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(40)]
+        public string QQ
+        {
+            get; set;
+        }
+        /// <summary>
+        /// 微信号码
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(40)]
+        public string WeChat
+        {
+            get;set;
+        }
+        /// <summary>
+        /// 身份证
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(80)]
+        public string IDCard
 		{
-			set{ _fax=value;}
-			get{return _fax;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Email
+        /// <summary>
+        /// 爱好
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(255)]
+        public string Hobby
 		{
-			set{ _email=value;}
-			get{return _email;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Mobile
+        /// <summary>
+        /// 备注说明
+        /// </summary>
+        [AjaxProperty]
+        [Column(TypeName = "text")]
+        public string Remarks
 		{
-			set{ _mobile=value;}
-			get{return _mobile;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Qq
+        /// <summary>
+        /// 联系人地址
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(255)]
+        public string Address
+        {
+            get;set;
+        }
+        /// <summary>
+        /// 创建者ID
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(20)]
+        public string CreatorId
+        {
+            get;set;
+		}
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        [AjaxProperty]
+        [DataType(DataType.DateTime)]
+        public DateTime? CreateDate
+        {
+            get; set;
+        }
+        /// <summary>
+        /// 更新者名字
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(20)]
+        public string UpdaterID
+        {
+            get; set;
+        }
+        /// <summary>
+        /// 更新者名字
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(40)]
+        public string UpdaterName
+        {
+            get; set;
+        }
+        /// <summary>
+        /// 更新时间
+        /// </summary>
+        [AjaxProperty]
+        [DataType(DataType.DateTime)]
+        public DateTime? UpdateDate
+        {
+            get; set;
+        }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        [AjaxProperty]
+        [StringLength(1)]
+        [Column(TypeName = "char")]
+        public int? IsDelete
 		{
-			set{ _qq=value;}
-			get{return _qq;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string CAdd
+        /// <summary>
+        /// 删除日期
+        /// </summary>
+        [AjaxProperty]
+        [DataType(DataType.DateTime)]
+        public DateTime? DeleteTime
 		{
-			set{ _cadd=value;}
-			get{return _cadd;}
+            get;set;
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Hobby
-		{
-			set{ _hobby=value;}
-			get{return _hobby;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Remarks
-		{
-			set{ _remarks=value;}
-			get{return _remarks;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public int? CustomerId
-		{
-			set{ _customerid=value;}
-			get{return _customerid;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string CustomerName
-		{
-			set{ _customername=value;}
-			get{return _customername;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public int? CreateId
-		{
-			set{ _createid=value;}
-			get{return _createid;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public DateTime? CreateDate
-		{
-			set{ _createdate=value;}
-			get{return _createdate;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public int? IsDelete
-		{
-			set{ _isdelete=value;}
-			get{return _isdelete;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public DateTime? DeleteTime
-		{
-			set{ _deletetime=value;}
-			get{return _deletetime;}
-		}
-		#endregion Model
 
 	}
 }

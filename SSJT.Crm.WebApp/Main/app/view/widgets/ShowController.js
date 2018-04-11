@@ -22,5 +22,5 @@ Ext.define('SSJT.view.widgets.ShowController',{
     },
     onEditTap: function() {
         this.redirectTo(this.getRecord().toEditUrl());
-    },
+    }
 })

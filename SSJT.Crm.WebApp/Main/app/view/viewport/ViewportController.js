@@ -118,6 +118,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
             success(r) {
                 me.terminateSession();
                 me.originalRoute = Ext.History.getToken();
+                me.stopTasks();
                 me.redirectTo('login', {
                     replace: true
                 });
@@ -152,5 +153,7 @@ Ext.define('SSJT.view.viewport.ViewportController',{
         User.setUser(session && session.getData(true).User);
         this.session = session;
     },
-    
+    stopTasks(){
+        Ext.TaskManager.destroy();
+    }
 });

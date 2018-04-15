@@ -11,13 +11,14 @@ namespace SSJT.Crm.WebApp.AjaxHandler
     /// <summary>
     /// AjaxRequest 的摘要说明
     /// </summary>
-    public class AjaxRequest : IHttpHandler, IRequiresSessionState
+    public class AjaxRequest : BaseCORSHandler, IRequiresSessionState
     {
 
-        public void ProcessRequest(HttpContext context)
+        public override void ProcessRequest(HttpContext context)
         {
             try
             {
+                base.ProcessRequest(context);
                 AjaxReceive receive = new AjaxReceive();
                 receive.Fill(context);
                 if (Helper.Equals(receive.MethodName, "login"))
@@ -77,13 +78,6 @@ namespace SSJT.Crm.WebApp.AjaxHandler
                     Success = false,
                     Message = result.ErrorMsg
                 }));
-            }
-        }
-        public bool IsReusable
-        {
-            get
-            {
-                return false;
             }
         }
     }

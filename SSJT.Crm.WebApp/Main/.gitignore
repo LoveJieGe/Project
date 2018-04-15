@@ -2,5 +2,7 @@
 #bootstrap.*
 #classic.json*
 #modern.json*
-#.sencha
+.sencha
 *.log
+/build
+.vscode

@@ -1,7 +1,6 @@
-#/build
-#bootstrap.*
-#classic.json*
-#modern.json*
+bootstrap.*
+classic.json*
+modern.json*
 .sencha
 *.log
 /build

@@ -10,7 +10,6 @@ Ext.define('SSJT.view.widgets.BrowseController',{
         }
     },
     onPersonalAdd:function(r){
-        debugger
         const me = this,
             view = me.getView(),
             grid = view.down('#grid');
@@ -23,7 +22,6 @@ Ext.define('SSJT.view.widgets.BrowseController',{
         }
     },
     onPersonalUpdate:function(r){
-        debugger
         const me = this,
             view = me.getView(),
             grid = view.down('#grid');

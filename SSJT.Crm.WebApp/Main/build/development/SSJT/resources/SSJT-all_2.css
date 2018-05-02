@@ -1668,6 +1668,10 @@
     display: inline-block;
     border: 1px solid black;
 }
+/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/mine/work/Note.scss:7 */
+.crm-gridrow-color {
+    background-color: lightskyblue !important;
+}
 /* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/view/person/PersonShow.scss:2 */
 .person-details .block-section {
     min-width: 50%;
@@ -2293,4 +2297,8 @@ scrollbar scrollbarbutton {
     /* 滚动条两端按钮不显示 */
     /* 滚动条两端按钮不显示 */
     display: none !important;
+}
+/* F:/C_Project/Git/Source/Project/SSJT.Crm/SSJT.Crm.WebApp/Main/app/Application.scss:204 */
+.SSJT-x-gridrow .x-cells-el {
+    width: 100% !important;
 }

@@ -6,7 +6,8 @@ Ext.define('SSJT.view.mine.work.Note',{
     //     }
     // }
     requires:[
-        'Ext.Progress'
+        'Ext.Progress',
+        'Ext.grid.plugin.PagingToolbar'
     ],
     xtype:'mine_work_note',
     controller:'mine_work_note',
@@ -17,6 +18,7 @@ Ext.define('SSJT.view.mine.work.Note',{
         xtype: 'notetoolbar'
     },
     ui: 'block',
+    
     items: [{
         xtype: 'grid',
         itemId:'grid',
@@ -30,14 +32,15 @@ Ext.define('SSJT.view.mine.work.Note',{
         },
         titleBar: null,
         //infinite:false,
+        columnLines:true,
         selectable: {
             disabled: true
         },
 
-        // plugins: [{
-        //     type: 'listpaging',
-        //     autoPaging: true
-        // }],
+        plugins: {
+            gridpagingtoolbar:true
+        },
+        userCls:'SSJT-x-gridrow',
         sortable: false,
         columns: [{
             text: '编号',
@@ -65,7 +68,13 @@ Ext.define('SSJT.view.mine.work.Note',{
             dataIndex: 'Priority',
             width:75,
             align:'center',
-            renderer:function(value){
+            renderer:function(value,record,dataIndex,cell,column){
+                let row = cell.row;
+                if(value=='H'){
+                    row.addCls('crm-gridrow-color');
+                }else{
+                    row.removeCls('crm-gridrow-color');
+                }
                 return !(value==='H')?!(value==='M')?'低':'中':'高';
             }
         },{

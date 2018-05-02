@@ -46,5 +46,13 @@ namespace SSJT.Crm.BLL
         {
             return this.StoreDal.QueryPersonNotes(storeParams);
         }
+
+        public void OnExport(object[] list)
+        {
+            foreach (object o in list)
+            {
+
+            }
+        }
     }
 }

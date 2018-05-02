@@ -20,6 +20,7 @@ using SSJT.Crm.BLL;
 using SSJT.Crm.IBLL;
 using System.Data.Entity;
 using SSJT.Crm.Core;
+using Newtonsoft.Json;
 
 namespace SSJT.Crm.Test
 {
@@ -105,15 +106,17 @@ namespace SSJT.Crm.Test
             //note["NoteID"] = SqlHelper.GenerateTableID();
 
             //天气服务测试
-            cn.com.webxml.www.WeatherWebService w = new cn.com.webxml.www.WeatherWebService();
-            string[] result =w.getWeatherbyCityName("苏州");
-            //WeatherWebServiceSoapClient weather = new WeatherWebServiceSoapClient("WeatherWebServiceSoap");
-            //s = new string[23];
-            //string[]  result = weather.getWeatherbyCityName("苏州");
-            foreach (string s in result)
-            {
-                Console.WriteLine(s);
-            }
+            //cn.com.webxml.www.WeatherWebService w = new cn.com.webxml.www.WeatherWebService();
+            //string[] result =w.getWeatherbyCityName("苏州");
+            ////WeatherWebServiceSoapClient weather = new WeatherWebServiceSoapClient("WeatherWebServiceSoap");
+            ////s = new string[23];
+            ////string[]  result = weather.getWeatherbyCityName("苏州");
+            //foreach (string s in result)
+            //{
+            //    Console.WriteLine(s);
+            //}
+
+            BalancesTest.Convert();
             Console.ReadKey();
         }
 
@@ -197,5 +200,9 @@ namespace SSJT.Crm.Test
         }
         
 
+    }
+    public class Param {
+        public string ID { get; set; }
+        public string Name { get; set; }
     }
 }

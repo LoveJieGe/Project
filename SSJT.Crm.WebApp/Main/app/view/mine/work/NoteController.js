@@ -34,6 +34,7 @@ Ext.define('SSJT.view.mine.work.NoteController', {
                     Width:x.getComputedWidth()
                 });
             });
+            
             // ComUtils.ajax('ajaxRequest/IStoreServer/OnExport',{
             //     method:'GET',
             //     data:{

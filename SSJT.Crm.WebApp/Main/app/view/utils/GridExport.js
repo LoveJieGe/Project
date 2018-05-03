@@ -5,7 +5,7 @@ Ext.define('SSJT.view.utils.GridExport',{
         'Ext.exporter.file.excel.Workbook'
     ],
 
-    onExport(grid,opt){
+    onExport(grid,opt,isVisible){
         const me = this;
         let workbook = me.writeWorkBook(opt);
         me.writeStyle(workbook);
@@ -99,6 +99,25 @@ Ext.define('SSJT.view.utils.GridExport',{
                 },
                 format:format
             })
+        },
+        writeGridData(workbook,grid,opt,isVisible){
+            let table = workbook.addWorksheet(Ext.apply({
+                name:'GridData',
+            },opt.worksheet)).addTable(Ext.applyIf({
+                defaultColumnWidth:80,
+                defaultRowHeight:15
+            },opt.table));
+        },
+        handlerColumn(grid,isVisible){
+            const header = grid.getHeaderContainer();
+            let columns,columnArr = [];
+            if(isVisible){
+                let tempColumn;
+                columns = header.getVisibleColumns();
+                columns.forEach(x=>{
+                    
+                });
+            }
         }
     }
     

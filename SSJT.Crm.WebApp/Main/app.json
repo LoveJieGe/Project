@@ -18,6 +18,7 @@
     "requires": [
         "font-awesome",
         "modern-locale",
+        "exporter",
         //"Util",
         "Common",
         "calendar"

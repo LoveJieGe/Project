@@ -200,3 +200,8 @@ scrollbar scrollcorner{
 scrollbar scrollbarbutton { 
     display: none ! important; 
 }
+.SSJT-x-gridrow{
+    .x-cells-el{
+        width:100% !important;
+    }
+}

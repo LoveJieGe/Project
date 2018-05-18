@@ -190,7 +190,7 @@ Ext.define('Common.util.Utils',{
         }
         const request = Ext.Ajax.request(Ext.applyIf({
             url: me.getFullUrl(api),
-            method: 'POST',
+            method: opt.method||'POST',
             //response:包含响应数据的XMLHttpRequest对象
             //opts:请求调用的参数
             success:function(response, opts) {

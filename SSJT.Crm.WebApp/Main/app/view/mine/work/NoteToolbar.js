@@ -7,6 +7,13 @@ Ext.define('SSJT.view.mine.work.NoteToolbar',{
             iconCls:'x-fa fa-plus',
             handler:'onCreate',
             text:'新增',
-        }
+        },
+        export:{
+            xtype:'button',
+            weight:30,
+            iconCls:'x-fa fa-plus',
+            handler:'onExportDocument',
+            text:'导出',
+        },
     }
 })

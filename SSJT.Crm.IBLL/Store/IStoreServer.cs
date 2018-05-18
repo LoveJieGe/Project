@@ -42,5 +42,9 @@ namespace SSJT.Crm.IBLL
         [AjaxMethod]
         [Description("获取用户便签")]
         StoreResult QueryPersonNotes(StoreParams storeParams);
+
+        [AjaxMethod]
+        [Description("导出功能")]
+        void OnExport(object[] list);
     }
 }

@@ -17,6 +17,39 @@ Ext.define('SSJT.view.mine.work.NoteController', {
         me.onSearch();
         me.callParent(arguments);
     },
+    onExportDocument(){
+        const me = this,
+            view = me.getView(),
+            grid = view.down('grid');
+            debugger
+        if(grid&&grid.isGrid){
+            let store = grid.getStore(),
+                columns =grid.getVisibleColumns(),
+                result=[];
+            columns.forEach(x=>{
+                if(x.isRowNumberer||(!x.getDataIndex()))return;
+                result.push({
+                    ColumnName:x.getDataIndex(),
+                    VisibleIndex:x.getVisibleIndex(),
+                    Width:x.getComputedWidth()
+                });
+            });
+            
+            // ComUtils.ajax('ajaxRequest/IStoreServer/OnExport',{
+            //     method:'GET',
+            //     data:{
+            //         P0:result
+            //     },
+            //     success(r){
+            //         debugger
+            //         console.log(r);
+            //     },
+            //     failure(r){
+            //         debugger
+            //     }
+            // })
+        }
+    },
     onCreate: function() {
         var note_view = Ext.create('Common.view.Note'),
             note_model = Ext.create('SSJT.model.PersonalNote'),

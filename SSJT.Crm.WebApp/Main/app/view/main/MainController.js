@@ -7,7 +7,6 @@ Ext.define('SSJT.view.main.MainController', {
 
     alias: 'controller.maincontroller',
     init(){
-        debugger
         const me = this,
             mainmenu = me.lookup('mainmenu'),
             store = mainmenu.getStore();

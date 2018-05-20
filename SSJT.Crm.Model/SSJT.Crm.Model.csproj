@@ -71,7 +71,7 @@
     <Compile Include="Model\ParamSysParamType.cs" />
     <Compile Include="Model\PersonalCalendar.cs" />
     <Compile Include="Model\PersonalNote.cs" />
-    <Compile Include="Model\PublicNews.cs" />
+    <Compile Include="Model\News.cs" />
     <Compile Include="Model\PublicNotice.cs" />
     <Compile Include="Model\SessionInfo.cs" />
     <Compile Include="Model\SysApp.cs" />

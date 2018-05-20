@@ -5,8 +5,11 @@ Ext.define('SSJT.view.utils.GridExport',{
         'Ext.exporter.file.excel.Workbook'
     ],
 
-    onExport(grid,opt,isVisible){
+    onGridExport(grid,opt,isVisible){
         const me = this;
+        if(grid&&grid.isGrid){
+            
+        }
         let workbook = me.writeWorkBook(opt);
         me.writeStyle(workbook);
     },

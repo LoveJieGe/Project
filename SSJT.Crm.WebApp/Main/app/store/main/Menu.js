@@ -10,7 +10,7 @@ Ext.define('SSJT.store.main.Menu', {
         {id:'office/mine_notes',text:'我的便签',mtype:'mine_work_note',iconCls:'',parentId:'office/mine',leaf:true},
         {id:'office/mine_schedule',text:'日程安排',mtype:'mine_work_calendar',iconCls:'',parentId:'office/mine',leaf:true},
         {id:'office/info',text:'信息中心',mtype:'office/info',leaf:false,iconCls:'',parentId:'office'},
-        {id:'office/info_news',text:'新闻',mtype:'office/info/news',iconCls:'',parentId:'office/info',leaf:true},
+        {id:'office/info_news',text:'新闻',mtype:'info_container',iconCls:'',parentId:'office/info',leaf:true},
         {id:'office/info_announcement',text:'公告',mtype:'office/info/announcement',iconCls:'',parentId:'office/info',leaf:true},
         {id:'crmmanage',text:'Crm客户管理',mtype:'crmmanage',iconCls:'x-fa  fa-address-book-o',parentId:'root',leaf:false},
         {id:'manage',text:'客户管理',mtype:'manage',iconCls:'',parentId:'crmmanage',leaf:false},

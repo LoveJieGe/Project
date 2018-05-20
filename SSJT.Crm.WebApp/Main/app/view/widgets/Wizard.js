@@ -147,7 +147,6 @@ Ext.define('SSJT.view.widgets.Wizard', {
     }],
 
     initialize: function() {
-        debugger
         var me = this;
         me.callParent();
         me.add(me.getToolbar());

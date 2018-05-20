@@ -12,7 +12,6 @@ Ext.define('SSJT.view.person.Wizard', {
     viewModel: {
         formulas:{
             Levels:function(get){
-                debugger
                 const me = this,
                     r = get('record');
                 if(r){

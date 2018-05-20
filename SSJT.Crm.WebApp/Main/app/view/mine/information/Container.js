@@ -1,0 +1,14 @@
+Ext.define('SSJT.view.mine.information.Container',{
+    extend:'SSJT.view.widgets.Browse',
+    xtype:'info_container',
+    requires:[
+        'SSJT.view.mine.information.InfoToolbar'
+    ],
+    tbar:{
+        xtype:'info_toolbar'
+    },
+    layout:'card',
+    items:[{
+        xtype:'information_news'
+    }]
+})

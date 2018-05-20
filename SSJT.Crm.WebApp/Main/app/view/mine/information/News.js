@@ -1,0 +1,65 @@
+Ext.define('SSJT.view.mine.information.News',{
+    extend:'Ext.grid.Grid',
+    xtype:'information_news',
+    requires:[
+        'SSJT.store.person.info.News'
+    ],
+    rowNumbers:{
+        text:'#'
+    },
+    store:{
+        type:'info_news'
+    },
+    columns:[{
+        text:'编号',
+        dataIndex:'NewsId',
+        width:150
+    },{
+        text:'新闻标题',
+        dataIndex:'NewsTitle',
+        flex:1
+    },{
+        text:'发布人',
+        dataIndex:'NewsTitle',
+        width:60
+        
+    },{
+        text:'发布部门',
+        dataIndex:'NewsTitle',
+        width:120
+        
+    },{
+        text:'发布时间',
+        dataIndex:'NewsTitle',
+        width:125
+        
+    },{
+        text:'编辑',
+        hideable:false,
+        sortable:false,
+        width:20,
+        cell:{
+            tools:{
+                edit:{
+                    handler:'onEditNote',
+                    iconCls:'x-fa fa-edit',
+                    tooltip:'编辑'
+                }
+            }
+        }
+    },{
+        text:'删除',
+        hideable:false,
+        sortable:false,
+        width:20,
+        cell:{
+            tools:{
+                delete:{
+                    handler:'onDeleteNote',
+                    iconCls:'x-fa fa-remove',
+                    tooltip:'删除'
+                }
+            }
+        }
+    }]
+})

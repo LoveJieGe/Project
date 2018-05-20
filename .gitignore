@@ -157,7 +157,7 @@ PublishScripts/
 # except build/, which is used as an MSBuild target.
 #**/packages/build/
 #!**/Main/**/packages/*
-local.packages
+packages/
 SSJT.Crm.WebApp/Main/build
 
 # Uncomment if necessary however generally it will be regenerated when needed

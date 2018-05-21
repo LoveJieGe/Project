@@ -1,0 +1,13 @@
+
+$headercontainer-background-color: contrasted($background-color, 10%);
+$headercontainer-border-width: 0 0 1px;
+
+$gridcolumn-sorted-background-color: contrasted($background-color, 20%);
+$gridcolumn-border-color:  #ccc;
+$gridcolumn-font-weight: 800;
+$gridcolumn-sort-icon-color: white;
+$gridcolumn-sort-asc-icon: $fa-var-angle-up $gridcolumn-sort-icon-font-size $font-icon-font-family;
+$gridcolumn-sort-desc-icon: $fa-var-angle-down $gridcolumn-sort-icon-font-size $font-icon-font-family;
+$gridcolumn-trigger-background-color: transparent;
+// $gridcolumn-trigger-icon-color: white;
+$gridcolumn-trigger-width: 24px;

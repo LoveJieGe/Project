@@ -1,0 +1,31 @@
+.note{
+    border-radius: 5px;
+    .header-inner{
+        padding: 0 5px;
+        .x-button >.x-inner-el{
+            padding: 5px;
+            background-color: transparent;
+        }
+    }
+
+    @include button-ui(
+        $ui: 'headbtn',
+        $icon-size: 21px,
+        $icon-size-big: 21px,
+        $icon-font-size: 21px,
+        $icon-font-size-big: 21px
+    );
+    .x-button .x-inner-el{
+        padding: 6px 8px;
+        background-color: transparent;
+    }
+    .default-color{
+        background-color:rgb(255, 230, 111)
+    }
+    .default-tool-color{
+        background-color:rgba(255, 230, 111,0.9)
+    }
+    .default-text-color{
+        background-color:rgba(255, 230, 111,0.6)
+    }
+}

@@ -1,0 +1,26 @@
+
+[class^="i-common-"], [class*=" i-common-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'common' !important;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+.#{$i-common-css-prefix}-image:before { content: $i-common-var-image !important; }
+.#{$i-common-css-prefix}-tg:before { content: $i-common-var-tg !important; }
+.#{$i-common-css-prefix}-number:before { content: $i-common-var-number !important; }
+.#{$i-common-css-prefix}-thumbnail:before { content: $i-common-var-thumbnail !important; }
+.#{$i-common-css-prefix}-list:before { content: $i-common-var-list !important; }
+.#{$i-common-css-prefix}-add:before { content: $i-common-var-add !important; }
+.#{$i-common-css-prefix}-minus:before { content: $i-common-var-minus !important; }
+.#{$i-common-css-prefix}-tree-collapse:before { content: $i-common-var-tree-collapse !important; }
+.#{$i-common-css-prefix}-tree-expand:before { content: $i-common-var-tree-expand !important; }
+.#{$i-common-css-prefix}-todoc:before { content: $i-common-var-todoc !important; }
+.#{$i-common-css-prefix}-cross:before { content: $i-common-var-cross !important; }
+.#{$i-common-css-prefix}-priority-one:before { content: $i-common-var-priority-one !important; }
+.#{$i-common-css-prefix}-priority-two:before { content: $i-common-var-priority-two !important; }
+.#{$i-common-css-prefix}-priority-three:before { content: $i-common-var-priority-three !important; }
+.#{$i-common-css-prefix}-finish:before { content: $i-common-var-finish !important; }
+.#{$i-common-css-prefix}-return:before { content: $i-common-var-return !important; }

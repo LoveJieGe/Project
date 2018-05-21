@@ -83,7 +83,7 @@ namespace SSJT.Crm.BLL
 	{
 
 	}
-    public partial class PublicNewsService:BaseService<Model.PublicNews,DAL.PublicNewsDal>,IPublicNewsService
+    public partial class PublicNewsService:BaseService<Model.News,DAL.PublicNewsDal>,IPublicNewsService
 	{
 
 	}

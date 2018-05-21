@@ -1,5 +1,20 @@
 Ext.define('SSJT.view.mine.information.NewsEdit',{
     extend:'Common.view.Dialog',
     xtype:'info_news_edit',
-    
+    items:[{
+        xtype:'container',
+        layout:'hbox',
+        items:[{
+            xtype:'fieldcontainer',
+            items:[{
+                xtype:'textfield',
+                label:'新闻标题',
+            },{
+                xtype:'textfield',
+                label:'部门'
+            }]
+        },{
+            xtype:' textareafield'
+        }]
+    }]
 })

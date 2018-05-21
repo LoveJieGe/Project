@@ -81,7 +81,7 @@ namespace SSJT.Crm.IDAL
 	{
 
 	}
-    public partial interface IPublicNewsDal:IBaseDal<Model.PublicNews>
+    public partial interface IPublicNewsDal:IBaseDal<Model.News>
 	{
 
 	}

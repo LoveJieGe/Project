@@ -6,8 +6,8 @@
 	},
 	"globals": {
 		"Ext": true,
-		"Util": true
-		// "RM": true,
+		"Util": true,
+		"Common": true
 		// "Config": true,
 		// "Utils": true,
 		// "AbstractHome": true,

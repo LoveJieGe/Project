@@ -82,7 +82,7 @@ namespace SSJT.Crm.DAL
 	{
 
 	}
-    public partial class PublicNewsDal:BaseDal<Model.PublicNews>,IPublicNewsDal
+    public partial class PublicNewsDal:BaseDal<Model.News>,IPublicNewsDal
 	{
 
 	}

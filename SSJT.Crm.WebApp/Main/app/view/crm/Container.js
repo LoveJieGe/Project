@@ -15,7 +15,7 @@ Ext.define('SSJT.view.crm.Container', {
     controller: 'crm-container',
     nameHolder: true,
     referenceHolder: true,
-    
+
     layout: 'hbox',
     userCls: 'task-container',
     items: [{
@@ -24,19 +24,20 @@ Ext.define('SSJT.view.crm.Container', {
         scrollable: 'y',
         ui: 'block',
         flex: 1,
-        //layout: 'vbox',
-        html:'qqqqq',
+        // layout: 'vbox',
+        html:'<input type="file" id="excel-file">',
         items: [
-            /*, {
+            /*
+            , {
                 xtype: 'task_minelist' // 此处放任务的各种视图
-            }*/
+            }
+            */
         ]
 
     }, {
         xtype: 'panel',
         items:[{
-            xtype:'menu-listItem',
-            
+            xtype:'menu-listItem'
         }],
         width: 340
     }]

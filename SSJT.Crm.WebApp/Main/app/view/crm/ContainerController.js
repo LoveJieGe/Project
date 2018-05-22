@@ -1,4 +1,7 @@
-Ext.define('crm-container',{
+Ext.define('crm-container', {
     extend:'Ext.app.ViewController',
-    alias:'controller.crm-container'
-})
+    alias:'controller.crm-container',
+    init() {
+        CrmHelper.loadExceljs();
+    }
+});

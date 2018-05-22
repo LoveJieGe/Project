@@ -1,4 +1,4 @@
-Ext.define('SSJT.model.ColorInformation',{
+Ext.define('Common.model.ColorInformation',{
     extend:'Ext.data.Model',
     alias:'model.colorInformation',
     fields:[

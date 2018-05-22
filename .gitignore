@@ -159,6 +159,7 @@ PublishScripts/
 #!**/Main/**/packages/*
 packages/
 !SSJT.Crm.WebApp/Main/packages/
+!SSJT.Crm.WebApp/Main/ext/packages/
 SSJT.Crm.WebApp/Main/build
 
 # Uncomment if necessary however generally it will be regenerated when needed

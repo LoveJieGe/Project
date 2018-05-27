@@ -139,7 +139,9 @@ a {
         width: 48px;
     }
 }
-
+.x-field.x-required > .x-label-el:after{
+    color:red;
+}
 
 
 scrollbar{

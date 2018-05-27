@@ -45,6 +45,7 @@ namespace SSJT.Crm.IBLL
         /// <param name="id"></param>
         /// <returns></returns>
         bool Exists(int id);
+        bool Exists(params object[] keyValues);
         /// <summary>
         /// 添加一条记录
         /// </summary>

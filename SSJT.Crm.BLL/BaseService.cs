@@ -5,6 +5,7 @@ using SSJT.Crm.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace SSJT.Crm.BLL
 {
@@ -40,6 +41,10 @@ namespace SSJT.Crm.BLL
         {
             return this.CurrentDal.Exists(id);
         }
+        public bool Exists(params object[] keyValues)
+        {
+            return this.CurrentDal.Exists(keyValues);
+        }
         /// <summary>
         /// 添加数据之前
         /// </summary>
@@ -47,12 +52,16 @@ namespace SSJT.Crm.BLL
         public virtual void BeforeAdd(T model)
         {
             HrEmploy user = SessionFactory.GetSessionServer().CurrentUser;
-            if (user != null)
-            {
-                model["CreatorId"] = user.UserID;
-                model["CreatorName"] = user.UserName;
-            }
-            model["CreateDate"] = DateTime.Now;
+            HelperManager.CopyToModel(user, model, new string[] { "UserID", "UserName" },new string[] { "CreatorId", "CreatorName" });
+            //if (user != null)
+            //{
+            //    model["CreatorId"] = user.UserID;
+            //    model["CreatorName"] = user.UserName;
+            //}
+            Type type = model.GetType();
+            PropertyInfo info = type.GetProperty("CreateDate");
+            if(info!=null)
+                model["CreateDate"] = DateTime.Now;
         }
         /// <summary>
         /// 添加一条记录
@@ -72,12 +81,16 @@ namespace SSJT.Crm.BLL
         public virtual void BeforeUpdate(T model)
         {
             HrEmploy user = SessionFactory.GetSessionServer().CurrentUser;
-            if (user != null)
-            {
-                model["UpdaterID"] = user.UserID;
-                model["UpdaterName"] = user.UserName;
-            }
-            model["UpdateDate"] = DateTime.Now;
+            HelperManager.CopyToModel(user, model, new string[] { "UserID", "UserName" }, new string[] { "UpdaterID", "UpdaterName" });
+            //if (user != null)
+            //{
+            //    model["UpdaterID"] = user.UserID;
+            //    model["UpdaterName"] = user.UserName;
+            //}
+            Type type = model.GetType();
+            PropertyInfo info = type.GetProperty("UpdateDate");
+            if (info != null)
+                model["UpdateDate"] = DateTime.Now;
         }
         /// <summary>
         /// 更新一条记录

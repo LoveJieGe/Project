@@ -51,7 +51,7 @@ namespace SSJT.Crm.BLL
 	{
 
 	}
-    public partial class HrEmployService:BaseService<Model.HrEmploy,DAL.HrEmployeeDal>,IHrEmployService
+    public partial class HrEmployService:BaseService<Model.HrEmploy,DAL.HrEmployDal>,IHrEmployService
 	{
 
 	}
@@ -83,7 +83,7 @@ namespace SSJT.Crm.BLL
 	{
 
 	}
-    public partial class PublicNewsService:BaseService<Model.News,DAL.PublicNewsDal>,IPublicNewsService
+    public partial class NewsService:BaseService<Model.News,DAL.NewsDal>,INewsService
 	{
 
 	}

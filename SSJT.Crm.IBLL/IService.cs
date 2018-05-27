@@ -81,7 +81,7 @@ namespace SSJT.Crm.IBLL
 	{
 
 	}
-    public partial interface IPublicNewsService:IBaseService<Model.News>
+    public partial interface INewsService:IBaseService<Model.News>
 	{
 
 	}

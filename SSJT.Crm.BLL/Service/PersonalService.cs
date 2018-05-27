@@ -24,6 +24,19 @@ namespace SSJT.Crm.BLL
                 return this._noteService;
             }
         }
+        private INewsService _newsService = null;
+        internal INewsService NewsService
+        {
+            get
+            {
+                if (this._newsService == null)
+                {
+                    _newsService = new NewsService();
+                }
+                return this._newsService;
+            }
+        }
+        #region 便签
         public PersonalNote InsertData(PersonalNote model)
         {
             model.NoteID = SqlHelper.GenerateTableID();
@@ -57,5 +70,20 @@ namespace SSJT.Crm.BLL
             NoteService.Update(info);
             return info;
         }
+        #endregion
+        #region 新闻
+        public int InsertNews(News news)
+        {
+            int newsId = 10000;
+            News maxNews = NewsService.GetMaxModel();
+            if (maxNews != null)
+            {
+                newsId = maxNews.NewsId + 1;
+            }
+            news.NewsId = newsId;
+            NewsService.Add(news);
+            return newsId;
+        }
+        #endregion
     }
 }

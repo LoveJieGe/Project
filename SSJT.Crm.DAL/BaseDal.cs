@@ -37,6 +37,18 @@ namespace SSJT.Crm.DAL
             return false;
         }
         /// <summary>
+        /// 判断是否存在某条数据
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool Exists(params object[] keyValues)
+        {
+            T model = Context.Set<T>().Find(keyValues);
+            if (model != null)
+                return true;
+            return false;
+        }
+        /// <summary>
         /// 获取满足指定条件的数据
         /// </summary>
         /// <param name="lambdaWhere">获取数据的条件lambda</param>

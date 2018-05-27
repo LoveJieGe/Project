@@ -192,6 +192,17 @@
     </Compile>
     <Compile Include="Doc\plupload\PlUploadBaseHanlder.cs" />
     <Compile Include="Doc\plupload\PlUploadFileHanlder.cs" />
+    <Compile Include="Doc\ueditor\Handler\Config.cs" />
+    <Compile Include="Doc\ueditor\Handler\ConfigHandler.cs" />
+    <Compile Include="Doc\ueditor\Handler\CrawlerHandler.cs" />
+    <Compile Include="Doc\ueditor\Handler\Handler.cs" />
+    <Compile Include="Doc\ueditor\Handler\ListFileHandler.cs" />
+    <Compile Include="Doc\ueditor\Handler\NotSupportedHandler.cs" />
+    <Compile Include="Doc\ueditor\Handler\PathFormater.cs" />
+    <Compile Include="Doc\ueditor\Handler\UploadHandler.cs" />
+    <Compile Include="Doc\ueditor\UEditorHandler.ashx.cs">
+      <DependentUpon>UEditorHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6789,6 +6800,8 @@
     <Content Include="AjaxHandler\WeatherHandler.ashx" />
     <Content Include="AngularJs\Sites.ashx" />
     <Content Include="AngularJs\BaseCORSHandler.ashx" />
+    <Content Include="Doc\ueditor\UEditorHandler.ashx" />
+    <Content Include="Doc\ueditor\config.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

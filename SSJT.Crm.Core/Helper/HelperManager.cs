@@ -116,5 +116,51 @@ namespace SSJT.Crm.Core
             }
             return flag;
         }
+        /// <summary>
+        /// 把一个模型中的值赋值到另一个模型中
+        /// </summary>
+        /// <param name="sourceModel">源模型</param>
+        /// <param name="destModel">目标模型</param>
+        /// <param name="sourceNames">要复制的源模型中的字段，如果为null则赋值所有的</param>
+        /// <param name="destNames">目的模型中的字段</param>
+        public static void CopyToModel(BaseModel sourceModel, BaseModel destModel, string[] sourceNames = null, string[] destNames = null)
+        {
+            if (sourceModel == null || destModel == null) return;
+            Type sourceType = sourceModel.GetType();
+            Type destType = destModel.GetType();
+            if (sourceNames == null || destNames == null || sourceNames.Length <= 0 || destNames.Length <= 0)
+            {
+                PropertyInfo[] sourceInfos = sourceType.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                foreach (PropertyInfo info in sourceInfos)
+                {
+                    string name = info.Name;
+                    object value = info.GetValue(sourceModel);
+                    PropertyInfo destInfo = destType.GetProperty(name);
+                    if (destInfo != null)
+                    {
+                        destInfo.SetValue(destModel, value, null);
+                    }
+                }
+            }
+            else
+            {
+                if (sourceNames.Length == destNames.Length)
+                {
+                    for (int i = 0, len = sourceNames.Length; i < len; i++)
+                    {
+                        string sourceName = sourceNames[i],
+                            destName = destNames[i];
+                        PropertyInfo sourceInfo = sourceType.GetProperty(sourceName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                        PropertyInfo destInfo = destType.GetProperty(destName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                        if (sourceInfo != null && destInfo != null)
+                        {
+                            destModel[destName] = sourceModel[sourceName];
+                        }
+                    }
+                }
+            }
+            
+            
+        }
     }
 }

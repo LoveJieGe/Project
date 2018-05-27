@@ -271,12 +271,18 @@
         var conUrl = convert_url(url);
 
         $G("preview").innerHTML = '<div class="previewMsg"><span>'+lang.urlError+'</span></div>'+
-        '<embed class="previewVideo" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"' +
-            ' src="' + conUrl + '"' +
-            ' width="' + 420  + '"' +
-            ' height="' + 280  + '"' +
-            ' wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true" >' +
-        '</embed>';
+        // '<embed class="previewVideo" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"' +
+        //     ' src="' + conUrl + '"' +
+        //     ' width="' + 420  + '"' +
+        //     ' height="' + 280  + '"' +
+        //     ' wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true" >' +
+        // '</embed>';
+        '<video class="previewVideo"' +
+        ' src="' + conUrl + '"' +
+        ' width="' + 420  + '"' +
+        ' height="' + 280  + '"' +
+        ' wmode="transparent" play="true" loop="false" data-setup="{}" controls preload="auto">' +
+        '</video>';
     }
 
 
@@ -714,7 +720,9 @@
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
                 //这里可以通过data对象添加POST参数
-                header['X_Requested_With'] = 'XMLHttpRequest';
+                if (actionUrl.toLowerCase().indexOf('jsp') != -1) {
+                    header['X_Requested_With'] = 'XMLHttpRequest';
+                }
             });
 
             uploader.on('uploadProgress', function (file, percentage) {

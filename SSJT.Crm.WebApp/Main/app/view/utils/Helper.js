@@ -9,9 +9,9 @@ Ext.define('SSJT.view.utils.Helper',{
             key = `Crm_${xtype}`;
         let view = me.getFromViewCache(key);
         if(!view){
-            view = Ext.create({
+            view = Ext.create(Ext.applyIf({
                 xtype:xtype
-            },config);
+            },config));
             me.addToViewCache(view);
         }
 

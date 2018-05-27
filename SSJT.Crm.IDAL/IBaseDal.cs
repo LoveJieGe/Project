@@ -47,6 +47,12 @@ namespace SSJT.Crm.IDAL
         /// <returns></returns>
         bool Exists(int id);
         /// <summary>
+        /// 判断是否存在某条记录
+        /// </summary>
+        /// <param name="keyValues"></param>
+        /// <returns></returns>
+        bool Exists(params object[] keyValues);
+        /// <summary>
         /// 添加一条记录
         /// </summary>
         /// <param name="model"></param>

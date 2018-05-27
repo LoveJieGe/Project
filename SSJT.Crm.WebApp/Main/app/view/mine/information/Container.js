@@ -7,6 +7,7 @@ Ext.define('SSJT.view.mine.information.Container',{
     tbar:{
         xtype:'info_toolbar'
     },
+    controller:'info_container',
     layout:'card',
     items:[{
         xtype:'information_news'

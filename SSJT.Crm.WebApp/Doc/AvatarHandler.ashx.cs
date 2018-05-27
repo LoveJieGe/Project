@@ -31,7 +31,7 @@ namespace SSJT.Crm.WebApp.Doc
                     string avatarPath = string.Empty;
                     if (item != null)
                     {
-                        avatarPath = Config.AvatarPath+"screen/" + item.AvatarName;
+                        avatarPath = Crm.Common.Config.AvatarPath+"screen/" + item.AvatarName;
                     }
                     byte[] bytes = FileHelper.GetFile(avatarPath);
                     if (bytes != null)
